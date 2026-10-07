@@ -13,11 +13,11 @@
     "social": {
       "alt_text": {
         "share_on_facebook": "Del på Facebook",
-        "share_on_twitter": "Del på X",
+        "share_on_twitter": "Tweet på Twitter",
         "share_on_pinterest": "Pin på Pinterest"
       },
       "links": {
-        "twitter": "X (Twitter)",
+        "twitter": "Twitter",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -118,10 +118,7 @@
         "maximum_of": "Maksimum på {{ quantity }}",
         "multiples_of": "Økninger på {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i handlekurven",
-        "note": "Vis antallsregler",
-        "min_of": "Minimum {{ quantity }}",
-        "max_of": "Maksimum {{ quantity }}",
-        "in_cart_aria_label": "Antall ({{ quantity }} i handlekurven)"
+        "note": "Vis antallsregler"
       },
       "price": {
         "from_price_html": "Fra {{ price }}",
@@ -155,8 +152,8 @@
         "load_video": "Spill av video {{ index }} i gallerivisning",
         "image_available": "Bilde {{ index }} er nå tilgjengelig i gallerivisning"
       },
-      "nested_label": "{{ title }} for {{ parent_title }}",
       "view_full_details": "Vis alle detaljer",
+      "include_taxes": "Avgift inkludert.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beregnes ved kassen.",
       "choose_options": "Velg alternativer",
       "choose_product_options": "Velg alternativer for {{ product_name }}",
@@ -173,13 +170,10 @@
         "title": "Volumprissetting",
         "note": "Volumprissetting er tilgjengelig",
         "minimum": "{{ quantity }}+",
-        "price_range": "{{ minimum }}–{{ maximum }}",
-        "price_at_each_html": "til {{ price }}/pr. stk"
+        "price_at_each": "til {{ price }}/pr. stk",
+        "price_range": "{{ minimum }}–{{ maximum }}"
       },
-      "product_variants": "Produktvarianter",
-      "taxes_included": "Inkludert avgifter.",
-      "duties_included": "Inkluder tollplikter.",
-      "duties_and_taxes_included": "Inkludert tollplikter og avgifter."
+      "product_variants": "Produktvarianter"
     },
     "modal": {
       "label": "Mediegalleri"
@@ -282,10 +276,12 @@
       "note": "Spesielle instruksjoner for bestillingen",
       "checkout": "Kasse",
       "empty": "Handlekurven din er tom",
-      "product_disclosure": "Produktopplysning",
-      "product_disclosures": "Produktopplysninger",
       "cart_error": "Det oppstod en feil under oppdateringen av handlekurven din. Prøv på nytt.",
       "cart_quantity_error_html": "Du kan bare legge {{ quantity }} av denne varen i handlekurven.",
+      "taxes_and_shipping_policy_at_checkout_html": "Avgifter, rabatter og <a href=\"{{ link }}\">frakt</a> beregnes i kassen",
+      "taxes_included_but_shipping_at_checkout": "Inkluderte avgifter, frakt og rabatter beregnes i kassen",
+      "taxes_included_and_shipping_policy_html": "Inkluderte avgifter. <a href=\"{{ link }}\">Frakt</a> og rabatter beregnes i kassen.",
+      "taxes_and_shipping_at_checkout": "Avgifter, rabatter og frakt beregnes i kassen",
       "headings": {
         "product": "Produkt",
         "price": "Pris",
@@ -299,15 +295,7 @@
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logg på</a> for å betale raskere."
       },
       "estimated_total": "Estimert totalsum",
-      "new_estimated_total": "Ny estimert totalsum",
-      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Inkludert tollplikter og avgifter. Rabatter og <a href=\"{{ link }}\">frakt</a> beregnes i kassen.",
-      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Inkludert tollplikter og avgifter. Rabatter og frakt beregnes i kassen.",
-      "taxes_included_shipping_at_checkout_with_policy_html": "Inkludert avgifter. Rabatter og <a href=\"{{ link }}\">frakt</a> beregnes i kassen.",
-      "taxes_included_shipping_at_checkout_without_policy": "Inkludert avgifter. Rabatter og frakt beregnes i kassen.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Inkluder tollplikter. Avgifter, rabatter og <a href=\"{{ link }}\">frakt</a> beregnes i kassen.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Inkluder tollplikter. Avgifter, rabatter og frakt beregnes i kassen.",
-      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Avgifter, rabatter og <a href=\"{{ link }}\">frakt</a> beregnes i kassen.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Avgifter, rabatter og frakt beregnes i kassen."
+      "new_estimated_total": "Ny estimert totalsum"
     },
     "footer": {
       "payment": "Betalingsmåter"
@@ -371,10 +359,7 @@
       "remove_all_items_confirmation": "Vil du fjerne alle {{ quantity }} varer fra handlekurven?",
       "remove_all": "Fjern alle",
       "cancel": "Avbryt",
-      "remove_all_single_item_confirmation": "Vil du fjerne én vare fra handlekurven?",
-      "min_error": "Denne varen har et minimumsantall på {{ min }}",
-      "max_error": "Denne varen har et maksimumsantall på {{ max }}",
-      "step_error": "Du kan bare legge til denne varen i multipler av {{ step }}"
+      "remove_all_single_item_confirmation": "Vil du fjerne én vare fra handlekurven?"
     }
   },
   "localization": {
@@ -393,6 +378,7 @@
       "view_addresses": "Vis adresser",
       "return": "Gå tilbake til kontodetaljer"
     },
+    "account_fallback": "Konto",
     "activate_account": {
       "title": "Aktiver konto",
       "subtext": "Opprett passordet ditt for å aktivere kontoen.",
@@ -436,8 +422,7 @@
       "password": "Passord",
       "title": "Logg på",
       "sign_in": "Logg inn",
-      "submit": "Send inn",
-      "alternate_provider_separator": "eller"
+      "submit": "Send inn"
     },
     "order": {
       "title": "Bestilling {{ name }}",

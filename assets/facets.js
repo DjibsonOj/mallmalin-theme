@@ -5,7 +5,7 @@ class FacetFiltersForm extends HTMLElement {
 
     this.debouncedOnSubmit = debounce((event) => {
       this.onSubmitHandler(event);
-    }, 800);
+    }, 500);
 
     const facetForm = this.querySelector('form');
     facetForm.addEventListener('input', this.debouncedOnSubmit.bind(this));
@@ -32,11 +32,10 @@ class FacetFiltersForm extends HTMLElement {
   static renderPage(searchParams, event, updateURLHash = true) {
     FacetFiltersForm.searchParamsPrev = searchParams;
     const sections = FacetFiltersForm.getSections();
-    const updateEvent = FacetFiltersForm.startUpdateEvent(searchParams);
     const countContainer = document.getElementById('ProductCount');
     const countContainerDesktop = document.getElementById('ProductCountDesktop');
     const loadingSpinners = document.querySelectorAll(
-      '.facets-container .loading__spinner, facet-filters-form .loading__spinner',
+      '.facets-container .loading__spinner, facet-filters-form .loading__spinner'
     );
     loadingSpinners.forEach((spinner) => spinner.classList.remove('hidden'));
     document.getElementById('ProductGridContainer').querySelector('.collection').classList.add('loading');
@@ -52,87 +51,31 @@ class FacetFiltersForm extends HTMLElement {
       const filterDataUrl = (element) => element.url === url;
 
       FacetFiltersForm.filterData.some(filterDataUrl)
-        ? FacetFiltersForm.renderSectionFromCache(filterDataUrl, event, updateEvent)
-        : FacetFiltersForm.renderSectionFromFetch(url, event, updateEvent);
+        ? FacetFiltersForm.renderSectionFromCache(filterDataUrl, event)
+        : FacetFiltersForm.renderSectionFromFetch(url, event);
     });
 
     if (updateURLHash) FacetFiltersForm.updateURLHash(searchParams);
   }
 
-  static startUpdateEvent(searchParams) {
-    const { SearchUpdateEvent, CollectionUpdateEvent } = window.StandardEvents || {};
-    if (!SearchUpdateEvent && !CollectionUpdateEvent) return;
-
-    const facetsForm = document.querySelector('facet-filters-form');
-    const facetsContainer = document.querySelector('.facets-container');
-    const collectionId = facetsContainer?.dataset.collectionId || null;
-    const collectionHandle = facetsContainer?.dataset.collectionHandle || '';
-    const currentCount = parseInt(document.getElementById('ProductCount')?.dataset.productCount) || 0;
-    const urlSearchParams = new URLSearchParams(searchParams);
-    const isSearchPage = facetsContainer?.dataset.template === 'search';
-    const isCollectionPage = facetsContainer?.dataset.template === 'collection';
-    const dispatchTarget = facetsForm || document;
-
-    let deferred;
-
-    if (isSearchPage) {
-      deferred = SearchUpdateEvent.createPromise();
-      dispatchTarget.dispatchEvent(
-        new SearchUpdateEvent({
-          search: {
-            query: urlSearchParams.get('q') || '',
-            productFilters: SearchUpdateEvent.parseProductFilters(urlSearchParams),
-            sortKey: SearchUpdateEvent.getSortKey(urlSearchParams),
-          },
-          promise: deferred.promise,
-        }),
-      );
-    } else if (isCollectionPage) {
-      // collectionId is null for auto-generated collections (/collections/all,
-      // /collections/vendors/<x>, etc.) — the SSE schema accepts that.
-      deferred = CollectionUpdateEvent.createPromise();
-      dispatchTarget.dispatchEvent(
-        new CollectionUpdateEvent({
-          collection: { id: collectionId, handle: collectionHandle, productsCount: currentCount },
-          productFilters: CollectionUpdateEvent.parseProductFilters(urlSearchParams),
-          sortKey: CollectionUpdateEvent.getSortKey(urlSearchParams),
-          promise: deferred.promise,
-        }),
-      );
-    }
-
-    if (!deferred) return;
-
-    return {
-      resolve: (filteredCount) => {
-        deferred.resolve({ [isSearchPage ? 'totalCount' : 'productsCount']: filteredCount });
-      },
-      reject: deferred.reject,
-    };
-  }
-
-  static renderSectionFromFetch(url, event, updateEvent) {
+  static renderSectionFromFetch(url, event) {
     fetch(url)
       .then((response) => response.text())
-      .then((html) => {
+      .then((responseText) => {
+        const html = responseText;
         FacetFiltersForm.filterData = [...FacetFiltersForm.filterData, { html, url }];
-        FacetFiltersForm.renderSection(html, event, updateEvent);
-      })
-      .catch((error) => {
-        console.error(error);
-        updateEvent?.reject(error);
+        FacetFiltersForm.renderFilters(html, event);
+        FacetFiltersForm.renderProductGridContainer(html);
+        FacetFiltersForm.renderProductCount(html);
+        if (typeof initializeScrollAnimationTrigger === 'function') initializeScrollAnimationTrigger(html.innerHTML);
       });
   }
 
-  static renderSectionFromCache(filterDataUrl, event, updateEvent) {
+  static renderSectionFromCache(filterDataUrl, event) {
     const html = FacetFiltersForm.filterData.find(filterDataUrl).html;
-    FacetFiltersForm.renderSection(html, event, updateEvent);
-  }
-
-  static renderSection(html, event, updateEvent) {
     FacetFiltersForm.renderFilters(html, event);
     FacetFiltersForm.renderProductGridContainer(html);
-    FacetFiltersForm.renderProductCount(html, updateEvent);
+    FacetFiltersForm.renderProductCount(html);
     if (typeof initializeScrollAnimationTrigger === 'function') initializeScrollAnimationTrigger(html.innerHTML);
   }
 
@@ -149,35 +92,29 @@ class FacetFiltersForm extends HTMLElement {
       });
   }
 
-  static renderProductCount(html, updateEvent) {
-    const parsedHtml = new DOMParser().parseFromString(html, 'text/html');
-    const sourceCount = parsedHtml.getElementById('ProductCount');
-    const count = sourceCount.innerHTML;
+  static renderProductCount(html) {
+    const count = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductCount').innerHTML;
     const container = document.getElementById('ProductCount');
     const containerDesktop = document.getElementById('ProductCountDesktop');
     container.innerHTML = count;
-    container.dataset.productCount = sourceCount.dataset.productCount || '';
-    container.dataset.totalCount = sourceCount.dataset.totalCount || '';
     container.classList.remove('loading');
     if (containerDesktop) {
       containerDesktop.innerHTML = count;
       containerDesktop.classList.remove('loading');
     }
     const loadingSpinners = document.querySelectorAll(
-      '.facets-container .loading__spinner, facet-filters-form .loading__spinner',
+      '.facets-container .loading__spinner, facet-filters-form .loading__spinner'
     );
     loadingSpinners.forEach((spinner) => spinner.classList.add('hidden'));
-
-    updateEvent?.resolve(parseInt(sourceCount.dataset.productCount) || 0);
   }
 
   static renderFilters(html, event) {
     const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
     const facetDetailsElementsFromFetch = parsedHTML.querySelectorAll(
-      '#FacetFiltersForm .js-filter, #FacetFiltersFormMobile .js-filter, #FacetFiltersPillsForm .js-filter',
+      '#FacetFiltersForm .js-filter, #FacetFiltersFormMobile .js-filter, #FacetFiltersPillsForm .js-filter'
     );
     const facetDetailsElementsFromDom = document.querySelectorAll(
-      '#FacetFiltersForm .js-filter, #FacetFiltersFormMobile .js-filter, #FacetFiltersPillsForm .js-filter',
+      '#FacetFiltersForm .js-filter, #FacetFiltersFormMobile .js-filter, #FacetFiltersPillsForm .js-filter'
     );
 
     // Remove facets that are no longer returned from the server
@@ -191,7 +128,6 @@ class FacetFiltersForm extends HTMLElement {
       const jsFilter = event ? event.target.closest('.js-filter') : undefined;
       return jsFilter ? element.id === jsFilter.id : false;
     };
-
     const facetsToRender = Array.from(facetDetailsElementsFromFetch).filter((element) => !matchesId(element));
     const countsToRender = Array.from(facetDetailsElementsFromFetch).find(matchesId);
 
@@ -227,28 +163,11 @@ class FacetFiltersForm extends HTMLElement {
         FacetFiltersForm.renderMobileCounts(countsToRender, document.getElementById(closestJSFilterID));
 
         const newFacetDetailsElement = document.getElementById(closestJSFilterID);
-
-        const isTextInput = event.target.getAttribute('type') === 'text';
-
-        if (!isTextInput) {
-          // Try to return focus to the same checkbox the user just toggled,
-          // re-selecting it from the freshly rendered HTML by its id.
-          const originatingInputId = event.target.id;
-          const matchingInput = originatingInputId
-            ? newFacetDetailsElement.querySelector(`#${CSS.escape(originatingInputId)}`)
-            : null;
-
-          if (matchingInput) {
-            matchingInput.focus();
-          } else {
-            // Fallback to summary/close button if the checkbox can't be found
-            const fallbackSelector = newFacetDetailsElement.classList.contains('mobile-facets__details')
-              ? `.mobile-facets__close-button`
-              : `.facets__summary`;
-            const fallbackElement = newFacetDetailsElement.querySelector(fallbackSelector);
-            if (fallbackElement) fallbackElement.focus();
-          }
-        }
+        const newElementSelector = newFacetDetailsElement.classList.contains('mobile-facets__details')
+          ? `.mobile-facets__close-button`
+          : `.facets__summary`;
+        const newElementToActivate = newFacetDetailsElement.querySelector(newElementSelector);
+        if (newElementToActivate) newElementToActivate.focus();
       }
     }
   }
@@ -349,6 +268,8 @@ class FacetFiltersForm extends HTMLElement {
       sortFilterForms.forEach((form) => {
         if (!isMobile) {
           if (form.id === 'FacetSortForm' || form.id === 'FacetFiltersForm' || form.id === 'FacetSortDrawerForm') {
+            const noJsElements = document.querySelectorAll('.no-js-list');
+            noJsElements.forEach((el) => el.remove());
             forms.push(this.createSearchParams(form));
           }
         } else if (form.id === 'FacetFiltersFormMobile') {
@@ -379,10 +300,9 @@ FacetFiltersForm.setListeners();
 class PriceRange extends HTMLElement {
   constructor() {
     super();
-    this.querySelectorAll('input').forEach((element) => {
-      element.addEventListener('change', this.onRangeChange.bind(this));
-      element.addEventListener('keydown', this.onKeyDown.bind(this));
-    });
+    this.querySelectorAll('input').forEach((element) =>
+      element.addEventListener('change', this.onRangeChange.bind(this))
+    );
     this.setMinAndMaxValues();
   }
 
@@ -391,27 +311,20 @@ class PriceRange extends HTMLElement {
     this.setMinAndMaxValues();
   }
 
-  onKeyDown(event) {
-    if (event.metaKey) return;
-
-    const pattern = /[0-9]|\.|,|'| |Tab|Backspace|Enter|ArrowUp|ArrowDown|ArrowLeft|ArrowRight|Delete|Escape/;
-    if (!event.key.match(pattern)) event.preventDefault();
-  }
-
   setMinAndMaxValues() {
     const inputs = this.querySelectorAll('input');
     const minInput = inputs[0];
     const maxInput = inputs[1];
-    if (maxInput.value) minInput.setAttribute('data-max', maxInput.value);
-    if (minInput.value) maxInput.setAttribute('data-min', minInput.value);
-    if (minInput.value === '') maxInput.setAttribute('data-min', 0);
-    if (maxInput.value === '') minInput.setAttribute('data-max', maxInput.getAttribute('data-max'));
+    if (maxInput.value) minInput.setAttribute('max', maxInput.value);
+    if (minInput.value) maxInput.setAttribute('min', minInput.value);
+    if (minInput.value === '') maxInput.setAttribute('min', 0);
+    if (maxInput.value === '') minInput.setAttribute('max', maxInput.getAttribute('max'));
   }
 
   adjustToValidValues(input) {
     const value = Number(input.value);
-    const min = Number(input.getAttribute('data-min'));
-    const max = Number(input.getAttribute('data-max'));
+    const min = Number(input.getAttribute('min'));
+    const max = Number(input.getAttribute('max'));
 
     if (value < min) input.value = min;
     if (value > max) input.value = max;

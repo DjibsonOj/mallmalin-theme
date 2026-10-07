@@ -13,11 +13,11 @@
     "social": {
       "alt_text": {
         "share_on_facebook": "Sdílet na Facebooku",
-        "share_on_twitter": "Sdílení přes X",
+        "share_on_twitter": "Tweetnout na Twitteru",
         "share_on_pinterest": "Připnout na Pinterestu"
       },
       "links": {
-        "twitter": "X (Twitter)",
+        "twitter": "Twitter",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -66,7 +66,7 @@
     "skip_to_text": "Přejít k obsahu",
     "close": "Zavřít",
     "unit_price_separator": "za",
-    "vendor": "Vendor:",
+    "vendor": "Dodavatel:",
     "error": "Chyba",
     "refresh_page": "Po volbě výběru se obnoví celá stránka.",
     "loading": "Načítání...",
@@ -114,7 +114,7 @@
       "share": "Sdílet tento produkt",
       "sold_out": "Vyprodáno",
       "unavailable": "Není k dispozici",
-      "vendor": "Vendor",
+      "vendor": "Dodavatel",
       "video_exit_message": "{{ title }} otevře ve stejném okně video na celé obrazovce.",
       "xr_button": "Zobrazit ve vašem prostoru",
       "xr_button_label": "Zobrazit ve vašem prostoru: Umožňuje načíst položku v okně rozšířené reality",
@@ -127,10 +127,7 @@
         "maximum_of": "Maximum: {{ quantity }}",
         "multiples_of": "Přírůstky: {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> v košíku",
-        "note": "Zobrazit pravidla množství",
-        "min_of": "Minimum {{ quantity }}",
-        "max_of": "Maximum {{ quantity }}",
-        "in_cart_aria_label": "Množství ({{ quantity }} v košíku)"
+        "note": "Zobrazit pravidla množství"
       },
       "price": {
         "from_price_html": "Od {{ price }}",
@@ -157,8 +154,8 @@
         "load_video": "Přehrát video {{ index }} v zobrazení galerie",
         "image_available": "Obrázek {{ index }} je nyní k dispozici v zobrazení galerie"
       },
-      "nested_label": "{{ title }} pro {{ parent_title }}",
       "view_full_details": "Zobrazit veškeré podrobnosti",
+      "include_taxes": "Včetně daní.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Poštovné</a> se vypočítá na pokladně.",
       "choose_options": "Výběr možností",
       "choose_product_options": "Zvolte možnosti pro: {{ product_name }}",
@@ -175,13 +172,10 @@
         "title": "Ceny s objemovou slevou",
         "note": "Ceny s objemovou slevou k dispozici",
         "minimum": "{{ quantity }} a více",
-        "price_range": "{{ minimum }}–{{ maximum }}",
-        "price_at_each_html": "{{ price }} / ks"
+        "price_at_each": "{{ price }} / ks",
+        "price_range": "{{ minimum }}–{{ maximum }}"
       },
-      "product_variants": "Varianty produktu",
-      "taxes_included": "Včetně daní.",
-      "duties_included": "Včetně cla.",
-      "duties_and_taxes_included": "Včetně cla a daní."
+      "product_variants": "Varianty produktu"
     },
     "modal": {
       "label": "Galerie multimédií"
@@ -302,10 +296,12 @@
       "note": "Zvláštní pokyny k objednávce",
       "checkout": "Pokladna",
       "empty": "Košík je prázdný",
-      "product_disclosure": "Povinná informace o produktu",
-      "product_disclosures": "Povinné informace o produktu",
       "cart_error": "Při aktualizaci vašeho košíku došlo k chybě. Zkuste to prosím znovu.",
       "cart_quantity_error_html": "Do košíku můžete přidat jen následující množství dané položky: {{ quantity }}.",
+      "taxes_and_shipping_policy_at_checkout_html": "Daně, slevy a <a href=\"{{ link }}\">poštovné</a> se vypočítají na pokladně.",
+      "taxes_included_but_shipping_at_checkout": "Příslušná daň, poštovné a slevy se vypočítají na pokladně.",
+      "taxes_included_and_shipping_policy_html": "Včetně daní. <a href=\"{{ link }}\">Poštovné</a> a slevy se vypočítají na pokladně.",
+      "taxes_and_shipping_at_checkout": "Daně, slevy a poštovné se vypočítají na pokladně.",
       "update": "Aktualizovat",
       "headings": {
         "product": "Produkt",
@@ -319,15 +315,7 @@
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Přihlaste se</a>, abyste si urychlili proces pokladny."
       },
       "estimated_total": "Odhadovaný součet",
-      "new_estimated_total": "Nový odhadovaný součet",
-      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Včetně cla a daní. Slevy a <a href=\"{{ link }}\">poštovné</a> se vypočítají na pokladně.",
-      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Včetně cla a daní. Slevy a poštovné se vypočítají na pokladně.",
-      "taxes_included_shipping_at_checkout_with_policy_html": "Včetně daní. Slevy a <a href=\"{{ link }}\">poštovné</a> se vypočítají na pokladně.",
-      "taxes_included_shipping_at_checkout_without_policy": "Včetně daní. Slevy a poštovné se vypočítají na pokladně.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Včetně cla. Daně, slevy a <a href=\"{{ link }}\">poštovné</a> se vypočítají na pokladně.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Včetně cla. Daně, slevy a poštovné se vypočítají na pokladně.",
-      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Daně, slevy a <a href=\"{{ link }}\">poštovné</a> se vypočítají na pokladně.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Daně, slevy a poštovné se vypočítají na pokladně."
+      "new_estimated_total": "Nový odhadovaný součet"
     },
     "footer": {
       "payment": "Platební metody"
@@ -395,10 +383,7 @@
       "remove_all_items_confirmation": "Chcete z košíku odebrat všechny položky ({{ quantity }})?",
       "remove_all": "Odebrat vše",
       "cancel": "Zrušit",
-      "remove_all_single_item_confirmation": "Chcete odebrat 1 položku z košíku?",
-      "min_error": "Tato položka vyžaduje minimum: {{ min }}",
-      "max_error": "Tato položka vyžaduje maximum: {{ max }}",
-      "step_error": "Tuto položku můžete přidat jen v přírůstcích hodnoty: {{ step }}"
+      "remove_all_single_item_confirmation": "Chcete odebrat 1 položku z košíku?"
     }
   },
   "localization": {
@@ -417,6 +402,7 @@
       "view_addresses": "Zobrazit adresy",
       "return": "Vrátit se k podrobnostem účtu"
     },
+    "account_fallback": "Účet",
     "log_in": "Přihlásit se",
     "log_out": "Odhlásit se",
     "activate_account": {
@@ -460,8 +446,7 @@
       "password": "Heslo",
       "title": "Přihlášení",
       "sign_in": "Přihlásit se",
-      "submit": "Odeslat",
-      "alternate_provider_separator": "nebo"
+      "submit": "Odeslat"
     },
     "orders": {
       "title": "Historie objednávek",

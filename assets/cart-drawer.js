@@ -9,8 +9,6 @@ class CartDrawer extends HTMLElement {
 
   setHeaderCartIconAccessibility() {
     const cartLink = document.querySelector('#cart-icon-bubble');
-    if (!cartLink) return;
-
     cartLink.setAttribute('role', 'button');
     cartLink.setAttribute('aria-haspopup', 'dialog');
     cartLink.addEventListener('click', (event) => {
@@ -26,7 +24,6 @@ class CartDrawer extends HTMLElement {
   }
 
   open(triggeredBy) {
-    if (this.classList.contains('active')) return;
     if (triggeredBy) this.setActiveElement(triggeredBy);
     const cartDrawerNote = this.querySelector('[id^="Details-"] summary');
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
@@ -44,15 +41,10 @@ class CartDrawer extends HTMLElement {
         const focusElement = this.querySelector('.drawer__inner') || this.querySelector('.drawer__close');
         trapFocus(containerToTrapFocusOn, focusElement);
       },
-      { once: true },
+      { once: true }
     );
 
     document.body.classList.add('overflow-hidden');
-
-    // cart-drawer-items is a CartItems subclass that extends createViewEventElement.
-    // Its `view-event-trigger="manual"` skips auto-dispatch on connect; we fire
-    // it here when the drawer opens, with `context: 'dialog'` from the payload attribute.
-    this.querySelector('cart-drawer-items')?.dispatchViewEvent();
   }
 
   close() {
@@ -84,8 +76,6 @@ class CartDrawer extends HTMLElement {
       const sectionElement = section.selector
         ? document.querySelector(section.selector)
         : document.getElementById(section.id);
-
-      if (!sectionElement) return;
       sectionElement.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
     });
 

@@ -13,11 +13,11 @@
     "social": {
       "alt_text": {
         "share_on_facebook": "Dela på Facebook",
-        "share_on_twitter": "Dela på X",
+        "share_on_twitter": "Tweet på Twitter",
         "share_on_pinterest": "Spara en pin på Pinterest"
       },
       "links": {
-        "twitter": "X (Twitter)",
+        "twitter": "Twitter",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -118,10 +118,7 @@
         "maximum_of": "Maximum på {{ quantity }}",
         "multiples_of": "Ökningar i steg om {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i varukorg",
-        "note": "Visa kvantitetsregler",
-        "min_of": "Min. {{ quantity }}",
-        "max_of": "Max. {{ quantity }}",
-        "in_cart_aria_label": "Kvantitet ({{ quantity }} i varukorg)"
+        "note": "Visa kvantitetsregler"
       },
       "price": {
         "from_price_html": "Från {{ price }}",
@@ -131,7 +128,7 @@
       },
       "share": "Dela den här produkten",
       "sold_out": "Slutsåld",
-      "unavailable": "Inte tillgängliga",
+      "unavailable": "Ej tillgänglig",
       "vendor": "Säljare",
       "video_exit_message": "{{ title }} öppnar helskärmsvideo i samma fönster.",
       "xr_button": "Visa i ditt utrymme",
@@ -155,8 +152,8 @@
         "load_video": "Spela videon {{ index }} i gallerivisning",
         "image_available": "Bilden {{ index }} är nu tillgänglig i gallerivisning"
       },
-      "nested_label": "{{ title }} för {{ parent_title }}",
       "view_full_details": "Visa alla uppgifter",
+      "include_taxes": "Skatt ingår.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beräknas i kassan.",
       "choose_options": "Välj alternativ",
       "choose_product_options": "Välj alternativ för {{ product_name }}",
@@ -173,13 +170,10 @@
         "title": "Volymprissättning",
         "note": "Volymprissättning är tillgängligt",
         "minimum": "Fler än {{ quantity }}",
-        "price_range": "{{ minimum }}–{{ maximum }}",
-        "price_at_each_html": "för {{ price }}/st"
+        "price_at_each": "för {{ price }}/styck",
+        "price_range": "{{ minimum }}–{{ maximum }}"
       },
-      "product_variants": "Produktvarianter",
-      "taxes_included": "Skatter ingår.",
-      "duties_included": "Tullavgifter ingår.",
-      "duties_and_taxes_included": "Tullavgifter och skatter ingår."
+      "product_variants": "Produktvarianter"
     },
     "modal": {
       "label": "Mediagalleri"
@@ -282,10 +276,12 @@
       "note": "Beställ särskilda instruktioner",
       "checkout": "Gå till kassan",
       "empty": "Din varukorg är tom",
-      "product_disclosure": "Produktupplysning",
-      "product_disclosures": "Produktupplysningar",
       "cart_error": "Ett fel uppstod när du uppdaterade din varukorg. Försök igen.",
       "cart_quantity_error_html": "Du kan endast lägga till {{ quantity }} av denna artikel i din varukorg.",
+      "taxes_and_shipping_policy_at_checkout_html": "Skatter, rabatter och <a href=\"{{ link }}\">leverans</a> beräknas i kassan",
+      "taxes_included_but_shipping_at_checkout": "Skatt ingår och leverans och rabatter beräknas i kassan",
+      "taxes_included_and_shipping_policy_html": "Skatt ingår. <a href=\"{{ link }}\">Leverans</a> och rabatter beräknas i kassan.",
+      "taxes_and_shipping_at_checkout": "Skatter, rabatter och leverans beräknas i kassan",
       "headings": {
         "product": "Produkt",
         "price": "Pris",
@@ -299,15 +295,7 @@
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logga in</a> för att gå till kassan snabbare."
       },
       "estimated_total": "Beräknad totalsumma",
-      "new_estimated_total": "Nytt beräknat totalbelopp",
-      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Tullavgifter och skatter ingår. Rabatter och <a href=\"{{ link }}\">fraktkostnad</a> beräknas i kassan.",
-      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Tullavgifter och skatter ingår. Rabatter och fraktkostnad beräknas i kassan.",
-      "taxes_included_shipping_at_checkout_with_policy_html": "Skatter ingår. Rabatter och <a href=\"{{ link }}\">fraktkostnad</a> beräknas i kassan.",
-      "taxes_included_shipping_at_checkout_without_policy": "Skatter ingår. Rabatter och fraktkostnad beräknas i kassan.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Tullavgifter ingår. Skatter, rabatter och <a href=\"{{ link }}\">fraktkostnad</a> beräknas i kassan.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Tullavgifter ingår. Skatter, rabatter och fraktkostnad beräknas i kassan.",
-      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Skatter, rabatter och <a href=\"{{ link }}\">fraktkostnad</a> beräknas i kassan.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Skatter, rabatter och fraktkostnad beräknas i kassan."
+      "new_estimated_total": "Nytt beräknat totalbelopp"
     },
     "footer": {
       "payment": "Betalningsmetoder"
@@ -371,10 +359,7 @@
       "remove_all_items_confirmation": "Ta bort alla {{ quantity }} artiklar från din varukorg?",
       "remove_all": "Ta bort alla",
       "cancel": "Avbryt",
-      "remove_all_single_item_confirmation": "Vill du ta bort 1 artikel från varukorgen?",
-      "min_error": "Den här artikeln har minst {{ min }}",
-      "max_error": "Den här artikeln har max {{ max }}",
-      "step_error": "Du kan endast lägga till den här artikeln med ökningar om {{ step }}"
+      "remove_all_single_item_confirmation": "Vill du ta bort 1 artikel från varukorgen?"
     }
   },
   "localization": {
@@ -393,6 +378,7 @@
       "view_addresses": "Visa adresser",
       "return": "Återgå till kontouppgifter"
     },
+    "account_fallback": "Konto",
     "activate_account": {
       "title": "Aktivera konto",
       "subtext": "Skapa ditt lösenord för att aktivera ditt konto.",
@@ -436,8 +422,7 @@
       "password": "Lösenord",
       "title": "Inloggning",
       "sign_in": "Logga in",
-      "submit": "Skicka",
-      "alternate_provider_separator": "eller"
+      "submit": "Skicka"
     },
     "orders": {
       "title": "Orderhistorik",
