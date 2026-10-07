@@ -968,22 +968,23 @@ body.static .footer-name .chi { transform: none; }
 /* ── panneau de commande ── */
 html.order-open,html.order-open body{overflow:hidden}
 .dock-price{font-size:12px;font-weight:600;color:var(--ink);padding:0 4px 0 6px;white-space:nowrap}
-.order-panel{position:fixed;inset:0;z-index:300;visibility:hidden;pointer-events:none}
+.order-panel{position:fixed;inset:0;z-index:130;visibility:hidden;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
 .order-panel.is-open{visibility:visible;pointer-events:auto}
 .order-backdrop{position:absolute;inset:0;background:rgba(10,10,8,.62);opacity:0;transition:opacity .35s ease}
 .order-panel.is-open .order-backdrop{opacity:1}
-.order-sheet{position:absolute;left:50%;bottom:0;width:min(640px,100%);max-height:92vh;max-height:92dvh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
-  background:#fff;color:#1a1915;border-radius:18px 18px 0 0;padding:22px clamp(16px,4vw,28px) max(24px,env(safe-area-inset-bottom));
-  transform:translate(-50%,100%);transition:transform .45s cubic-bezier(.22,1,.36,1);outline:none;text-align:left}
-.order-panel.is-open .order-sheet{transform:translate(-50%,0)}
-@media (min-width:760px){.order-sheet{bottom:auto;top:50%;border-radius:18px;max-height:88vh;transform:translate(-50%,-40%);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .3s}
- .order-panel.is-open .order-sheet{transform:translate(-50%,-50%);opacity:1}}
+/* pas de transform sur la feuille une fois ouverte : sinon les pop-ups de l'app COD
+   (position:fixed) sont rognés/décalés par ce conteneur et ne s'affichent pas */
+.order-sheet{position:relative;z-index:1;width:min(640px,100%);max-height:92vh;max-height:92dvh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  background:#fff;color:#1a1915;border-radius:18px 18px 0 0;padding:22px clamp(16px,4vw,28px) max(24px,env(safe-area-inset-bottom));outline:none;text-align:left}
+.order-panel.is-open .order-sheet{animation:mmSheetUp .42s cubic-bezier(.22,1,.36,1) backwards}
+@keyframes mmSheetUp{from{transform:translateY(60px);opacity:0}to{transform:none;opacity:1}}
+@media (min-width:760px){.order-panel{align-items:center}.order-sheet{border-radius:18px;max-height:88vh}}
 .order-close{position:sticky;top:0;float:right;margin:-8px -6px 0 0;width:40px;height:40px;border:0;border-radius:50%;background:#f1efe8;color:#1a1915;font-size:26px;line-height:1;cursor:pointer;z-index:2}
 .order-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:2px 44px 14px 0;margin-bottom:10px;border-bottom:1px solid #eee}
 .order-old{text-decoration:line-through;color:#8a867a;font-size:14px}
 .order-new{font-size:24px;font-weight:700;color:#1a1915}
 .order-note{flex-basis:100%;font-size:10.5px;letter-spacing:.04em;color:#6b675c}
-.order-sheet .cod-box{margin:0;padding:0;max-width:none;background:transparent;border-radius:0;scroll-margin-top:0}
+.order-sheet .cod-box{overflow:visible;margin:0;padding:0;max-width:none;background:transparent;border-radius:0;scroll-margin-top:0}
 .footer-order{margin:18px auto 6px;display:block;min-width:min(320px,86%)}
 @media (max-width:760px){.dock-nav{display:none}.dock-price{margin-left:auto}}
 .cod-box{max-width:600px;margin:0 auto 10px;padding:clamp(18px,4vw,30px);background:#fff;color:#1a1915;border-radius:var(--radius);text-align:left;scroll-margin-top:90px}
