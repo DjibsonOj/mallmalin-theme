@@ -964,6 +964,28 @@ body.static .footer-name .chi { transform: none; }
 .sp-new{font-size:clamp(52px,11vw,150px);line-height:1;letter-spacing:-0.03em;color:var(--lime);white-space:nowrap}
 .sp-new small{font-size:.32em;letter-spacing:0;margin-left:.15em}
 .sp-note{color:var(--ink)}
+
+/* ── panneau de commande ── */
+html.order-open,html.order-open body{overflow:hidden}
+.dock-price{font-size:12px;font-weight:600;color:var(--ink);padding:0 4px 0 6px;white-space:nowrap}
+.order-panel{position:fixed;inset:0;z-index:300;visibility:hidden;pointer-events:none}
+.order-panel.is-open{visibility:visible;pointer-events:auto}
+.order-backdrop{position:absolute;inset:0;background:rgba(10,10,8,.62);opacity:0;transition:opacity .35s ease}
+.order-panel.is-open .order-backdrop{opacity:1}
+.order-sheet{position:absolute;left:50%;bottom:0;width:min(640px,100%);max-height:92vh;max-height:92dvh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  background:#fff;color:#1a1915;border-radius:18px 18px 0 0;padding:22px clamp(16px,4vw,28px) max(24px,env(safe-area-inset-bottom));
+  transform:translate(-50%,100%);transition:transform .45s cubic-bezier(.22,1,.36,1);outline:none;text-align:left}
+.order-panel.is-open .order-sheet{transform:translate(-50%,0)}
+@media (min-width:760px){.order-sheet{bottom:auto;top:50%;border-radius:18px;max-height:88vh;transform:translate(-50%,-40%);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .3s}
+ .order-panel.is-open .order-sheet{transform:translate(-50%,-50%);opacity:1}}
+.order-close{position:sticky;top:0;float:right;margin:-8px -6px 0 0;width:40px;height:40px;border:0;border-radius:50%;background:#f1efe8;color:#1a1915;font-size:26px;line-height:1;cursor:pointer;z-index:2}
+.order-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:2px 44px 14px 0;margin-bottom:10px;border-bottom:1px solid #eee}
+.order-old{text-decoration:line-through;color:#8a867a;font-size:14px}
+.order-new{font-size:24px;font-weight:700;color:#1a1915}
+.order-note{flex-basis:100%;font-size:10.5px;letter-spacing:.04em;color:#6b675c}
+.order-sheet .cod-box{margin:0;padding:0;max-width:none;background:transparent;border-radius:0;scroll-margin-top:0}
+.footer-order{margin:18px auto 6px;display:block;min-width:min(320px,86%)}
+@media (max-width:760px){.dock-nav{display:none}.dock-price{margin-left:auto}}
 .cod-box{max-width:600px;margin:0 auto 10px;padding:clamp(18px,4vw,30px);background:#fff;color:#1a1915;border-radius:var(--radius);text-align:left;scroll-margin-top:90px}
 .cod-box *{color:inherit}
 .cod-box .mm-native label{display:block;font-size:14px;margin:0 0 6px}
@@ -1035,11 +1057,11 @@ body.static .footer-name .chi { transform: none; }
         <p class="mono ash">30 H D’AUTONOMIE — 3 STYLES — CHARGE TYPE-C</p>
       </header>
       <div id="collGrid" class="bento-grid">
-<figure class="card b-big" style="--pos:center 38%"><div class="card-img"><img src="{{ 'mm-famille.jpg' | asset_url }}" alt="Une famille africaine souriante partage les écouteurs d’un boîtier blanc MallMalin" loading="lazy"></div><figcaption>1 achat, 6 écouteurs : toute la famille connectée<span class="mono">PAPA — MAMAN — LES ENFANTS</span></figcaption><p class="card-desc">Chacun son écouteur, tous dans une seule boîte. Fini les disputes pour une paire.</p><p class="card-cta"><a class="btn-order" href="#commander" data-nav>Commander maintenant</a></p></figure>
-<figure class="card b-tall" style="--pos:60% 70%"><div class="card-img"><img src="{{ 'mm-entreprise.jpg' | asset_url }}" alt="Une équipe en réunion avec les écouteurs sans fil MallMalin" loading="lazy"></div><figcaption>Équipez toute votre équipe en un seul achat<span class="mono">RÉUNIONS — FORMATIONS — ENTREPRISE</span></figcaption><p class="card-desc">Six écouteurs prêts à distribuer à vos collaborateurs.</p><p class="card-cta"><a class="btn-order" href="#commander" data-nav>Commander maintenant</a></p></figure>
-<figure class="card b-tall" style="--pos:50% 60%"><div class="card-img"><img src="{{ 'mm-ecole.jpg' | asset_url }}" alt="Des élèves en classe avec un boîtier de six écouteurs" loading="lazy"></div><figcaption>6 élèves, 6 écouteurs, 1 seule commande<span class="mono">LANGUES — ÉCOUTE ACTIVE — E-LEARNING</span></figcaption><p class="card-desc">Équipez toute une classe sans multiplier les commandes.</p><p class="card-cta"><a class="btn-order" href="#commander" data-nav>Commander maintenant</a></p></figure>
-<figure class="card b-big" style="--pos:center 45%"><div class="card-img"><img src="{{ 'mm-cadeau.jpg' | asset_url }}" alt="Boîtiers d’écouteurs blanc, bleu et noir présentés comme un cadeau" loading="lazy"></div><figcaption>Le cadeau qui fait 6 heureux d’un coup<span class="mono">ANNIVERSAIRE — FÊTES — REMERCIEMENTS</span></figcaption><p class="card-desc">Un seul paquet, six écouteurs sans fil premium : parfait à offrir.</p><p class="card-cta"><a class="btn-order" href="#commander" data-nav>Commander maintenant</a></p></figure>
-<figure class="card b-wide" style="--pos:center 40%"><div class="card-img"><img src="{{ 'mm-nuit.jpg' | asset_url }}" alt="Kit de six écouteurs sans fil MallMalin avec ses trois boîtiers" loading="lazy"></div><figcaption>Le premier kit d’écouteurs conçu pour être partagé<span class="mono">VOYAGE — SORTIE ENTRE AMIS — EXCURSION</span></figcaption><p class="card-desc">Chacun son écouteur, une seule boîte : le kit qui voyage avec vous.</p><p class="card-cta"><a class="btn-order" href="#commander" data-nav>Commander maintenant</a></p></figure>
+<figure class="card b-big" style="--pos:center 38%"><div class="card-img"><img src="{{ 'mm-famille.jpg' | asset_url }}" alt="Une famille africaine souriante partage les écouteurs d’un boîtier blanc MallMalin" loading="lazy"></div><figcaption>1 achat, 6 écouteurs : toute la famille connectée<span class="mono">PAPA — MAMAN — LES ENFANTS</span></figcaption><p class="card-desc">Chacun son écouteur, tous dans une seule boîte. Fini les disputes pour une paire.</p><p class="card-cta"><a class="btn-order" href="#commander" data-order>Commander maintenant</a></p></figure>
+<figure class="card b-tall" style="--pos:60% 70%"><div class="card-img"><img src="{{ 'mm-entreprise.jpg' | asset_url }}" alt="Une équipe en réunion avec les écouteurs sans fil MallMalin" loading="lazy"></div><figcaption>Équipez toute votre équipe en un seul achat<span class="mono">RÉUNIONS — FORMATIONS — ENTREPRISE</span></figcaption><p class="card-desc">Six écouteurs prêts à distribuer à vos collaborateurs.</p><p class="card-cta"><a class="btn-order" href="#commander" data-order>Commander maintenant</a></p></figure>
+<figure class="card b-tall" style="--pos:50% 60%"><div class="card-img"><img src="{{ 'mm-ecole.jpg' | asset_url }}" alt="Des élèves en classe avec un boîtier de six écouteurs" loading="lazy"></div><figcaption>6 élèves, 6 écouteurs, 1 seule commande<span class="mono">LANGUES — ÉCOUTE ACTIVE — E-LEARNING</span></figcaption><p class="card-desc">Équipez toute une classe sans multiplier les commandes.</p><p class="card-cta"><a class="btn-order" href="#commander" data-order>Commander maintenant</a></p></figure>
+<figure class="card b-big" style="--pos:center 45%"><div class="card-img"><img src="{{ 'mm-cadeau.jpg' | asset_url }}" alt="Boîtiers d’écouteurs blanc, bleu et noir présentés comme un cadeau" loading="lazy"></div><figcaption>Le cadeau qui fait 6 heureux d’un coup<span class="mono">ANNIVERSAIRE — FÊTES — REMERCIEMENTS</span></figcaption><p class="card-desc">Un seul paquet, six écouteurs sans fil premium : parfait à offrir.</p><p class="card-cta"><a class="btn-order" href="#commander" data-order>Commander maintenant</a></p></figure>
+<figure class="card b-wide" style="--pos:center 40%"><div class="card-img"><img src="{{ 'mm-nuit.jpg' | asset_url }}" alt="Kit de six écouteurs sans fil MallMalin avec ses trois boîtiers" loading="lazy"></div><figcaption>Le premier kit d’écouteurs conçu pour être partagé<span class="mono">VOYAGE — SORTIE ENTRE AMIS — EXCURSION</span></figcaption><p class="card-desc">Chacun son écouteur, une seule boîte : le kit qui voyage avec vous.</p><p class="card-cta"><a class="btn-order" href="#commander" data-order>Commander maintenant</a></p></figure>
       </div>
     </section>
 
@@ -1072,7 +1094,7 @@ body.static .footer-name .chi { transform: none; }
           <div class="pstep"><span class="pstep-meta mono ash">ÉTAPE — 03</span><h3>Recevez et payez</h3><p>Votre boîtier de six écouteurs arrive chez vous. Vous payez à la livraison, {{ mm_new }} {{ mm_cur }}.</p></div>
         </div>
         <p class="steps-cta" id="stepsCta">
-          <a href="#commander" data-nav id="stepsCtaLink">Commander maintenant →<svg class="cta-oval" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path id="ctaOval" d="M50,6 C88,4 98,22 97,50 C96,82 76,96 49,95 C16,94 3,76 4,48 C5,18 20,7 50,6 Z"/></svg></a>
+          <a href="#commander" data-order id="stepsCtaLink">Commander maintenant →<svg class="cta-oval" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path id="ctaOval" d="M50,6 C88,4 98,22 97,50 C96,82 76,96 49,95 C16,94 3,76 4,48 C5,18 20,7 50,6 Z"/></svg></a>
         </p>
         <div class="wipe" id="nightWipe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       </div>
@@ -1142,9 +1164,7 @@ body.static .footer-name .chi { transform: none; }
         <span class="sp-note mono">OFFRE DE LANCEMENT — PAIEMENT À LA LIVRAISON</span>
       </div>
 
-      <div class="cod-box" id="commander">
-        {{ content_for_layout }}
-      </div>
+      <button type="button" class="btn-order footer-order" id="footerOrder" data-order>Commander maintenant</button>
 
       <p class="footer-reassurance mono ash reveal">LIVRAISON À CONAKRY — NOUS VOUS APPELONS POUR CONFIRMER</p>
       <h2 class="footer-name" id="footerName" aria-label="MallMalin">MallMalin</h2>
@@ -1163,12 +1183,30 @@ body.static .footer-name .chi { transform: none; }
       <a class="dock-link mono" href="#travaux" data-nav>AVANTAGES</a>
       <a class="dock-link mono" href="#explorer" data-nav data-landing="0.8">ÉTAPES</a>
     </nav>
-    <a class="dock-cta mono" href="#commander" data-nav>COMMANDER</a>
+    <span class="dock-price mono">{{ mm_new }} {{ mm_cur }}</span>
+    <a class="dock-cta mono" href="#commander" data-order>COMMANDER</a>
   </header>
 
   <!-- ══════════ BOUTON FLOTTANT (BOUNCE) ══════════ -->
   <div class="fab-wrap" id="fabWrap">
-    <a class="fab" href="#commander" data-nav>Acheter maintenant · {{ mm_new }} {{ mm_cur }}</a>
+    <a class="fab" href="#commander" data-order>Acheter maintenant · {{ mm_new }} {{ mm_cur }}</a>
+  </div>
+
+
+  <!-- ══════════ PANNEAU DE COMMANDE (formulaire COD) ══════════ -->
+  <div class="order-panel" id="orderPanel" aria-hidden="true">
+    <div class="order-backdrop" data-close></div>
+    <div class="order-sheet" id="commander" role="dialog" aria-modal="true" aria-label="Commander les écouteurs MallMalin" tabindex="-1">
+      <button type="button" class="order-close" data-close aria-label="Fermer">&times;</button>
+      <div class="order-head">
+        <span class="order-old">{{ mm_old }} {{ mm_cur }}</span>
+        <span class="order-new">{{ mm_new }} {{ mm_cur }}</span>
+        <span class="order-note mono">PAIEMENT À LA LIVRAISON — NOUS VOUS APPELONS POUR CONFIRMER</span>
+      </div>
+      <div class="cod-box">
+        {{ content_for_layout }}
+      </div>
+    </div>
   </div>
 
   <script>
@@ -1851,13 +1889,39 @@ body.static .footer-name .chi { transform: none; }
 
   </script>
   <script>
-  /* MallMalin : phrases de la devise + bouton flottant masqué sur le formulaire */
-  (function(){
-    var fab=document.getElementById('fabWrap'), box=document.getElementById('commander');
-    if(fab&&box&&'IntersectionObserver' in window){
-      new IntersectionObserver(function(es){es.forEach(function(e){fab.classList.toggle('is-hidden',e.isIntersecting&&e.intersectionRatio>0.35);});},{threshold:[0,0.35,0.6]}).observe(box);
-    }
-  })();
-  </script>
+(function(){
+  var panel=document.getElementById('orderPanel'), sheet=document.getElementById('commander'),
+      fab=document.getElementById('fabWrap'), last=null;
+  if(!panel) return;
+  function open(){
+    last=document.activeElement;
+    panel.classList.add('is-open'); panel.setAttribute('aria-hidden','false');
+    document.documentElement.classList.add('order-open');
+    if(fab) fab.classList.add('is-hidden');
+    sheet.scrollTop=0; setTimeout(function(){try{sheet.focus({preventScroll:true});}catch(e){}},60);
+  }
+  function close(){
+    panel.classList.remove('is-open'); panel.setAttribute('aria-hidden','true');
+    document.documentElement.classList.remove('order-open');
+    updateFab();
+    if(last&&last.focus){try{last.focus({preventScroll:true});}catch(e){}}
+  }
+  var footBtn=document.getElementById('footerOrder'), footVis=false;
+  function updateFab(){ if(fab) fab.classList.toggle('is-hidden', footVis||panel.classList.contains('is-open')); }
+  if(footBtn&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){footVis=e.isIntersecting;updateFab();});},{threshold:[0,.2]}).observe(footBtn);
+  }
+  /* phase de capture : passe avant le défilement d'ancre du moteur */
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('[data-order],[data-close]');
+    if(!t) return;
+    e.preventDefault(); e.stopPropagation();
+    if(t.hasAttribute('data-close')) close(); else open();
+  },true);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&panel.classList.contains('is-open')) close(); });
+  if(location.hash==='#commander') setTimeout(open,1200);
+  window.mmOrder={open:open,close:close};
+})();
+</script>
 </body>
 </html>
