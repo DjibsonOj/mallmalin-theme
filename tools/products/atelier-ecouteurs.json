@@ -3,7 +3,9 @@
  "layout": "landing-atelier-ecouteurs",
  "brand": "MallMalin",
  "logo_file": "mm-logo.jpg",
- "accent": "#8c7b65",
+ "accent": "#c9d1b9",
+ "accent_dark": "#2f362b",
+ "heading_font": "sans",
  "price_new": "250 000",
  "price_old": "450 000",
  "currency": "GNF",
@@ -18,69 +20,188 @@
  "ld_name": "Kit 6 écouteurs sans fil dans 1 boîtier",
  "ld_description": "Un boîtier, six écouteurs sans fil : trois styles (clip-on, semi-intra, sommeil), 30 h d’autonomie, charge rapide Type-C. Blanc, bleu ou noir.",
  "img": "mm-",
-
- "hero_kicker": "Nouveau · Édition partage",
- "hero_title_a": "Un boîtier,",
- "hero_title_em": "six",
- "hero_title_b": "écouteurs.",
- "hero_sub": "Trois styles d’écouteurs sans fil réunis dans un seul boîtier de charge. Pour vous, votre famille ou votre équipe — livrés chez vous, payés à la réception.",
- "hero_points": [
-  "30 heures d’autonomie avec le boîtier",
-  "Clip-on, semi-intra et sommeil : un style pour chaque moment",
-  "Charge rapide Type-C · blanc, bleu ou noir"
+ "hero_kicker": "Nouvelle édition · Kit partage",
+ "hero_title_lines": [
+  "Écoutez.",
+  "Partagez.",
+  "*Ensemble.*"
  ],
+ "hero_sub": "Six écouteurs sans fil réunis dans un seul boîtier de charge, pour toute la famille ou toute l’équipe. Livrés chez vous, payés à la réception.",
  "hero_image": "hook",
  "hero_alt": "Boîtier de six écouteurs sans fil MallMalin",
- "hero_tag": "Kit 6 écouteurs",
+ "hero_tag": "6 écouteurs · 1 boîtier",
  "gallery": [
-  {"image": "hook", "alt": "Boîtier de six écouteurs sans fil MallMalin"},
-  {"image": "hero", "alt": "Les trois coloris du boîtier : blanc, bleu et noir"},
-  {"image": "nuit", "alt": "Boîtiers et écouteurs sur fond sombre"},
-  {"image": "cadeau", "alt": "Les boîtiers présentés comme un cadeau"}
+  {
+   "image": "hook",
+   "alt": "Boîtier de six écouteurs sans fil MallMalin"
+  },
+  {
+   "image": "hero",
+   "alt": "Les trois coloris du boîtier : blanc, bleu et noir"
+  },
+  {
+   "image": "nuit",
+   "alt": "Boîtiers et écouteurs sur fond sombre"
+  },
+  {
+   "image": "cadeau",
+   "alt": "Les boîtiers présentés comme un cadeau"
+  }
  ],
-
- "trust": [
-  {"icon": "truck", "title": "Livraison à Conakry", "text": "Directement à votre porte"},
-  {"icon": "cash", "title": "Paiement à la livraison", "text": "Vous payez en recevant le colis"},
-  {"icon": "phone", "title": "Appel de confirmation", "text": "Un conseiller vous contacte"},
-  {"icon": "shield", "title": "Produit vérifié", "text": "Contrôlé avant l’envoi"}
+ "stats": [
+  {
+   "icon": "battery",
+   "value": "30 h",
+   "label": "Autonomie"
+  },
+  {
+   "icon": "headphones",
+   "value": "6 écouteurs",
+   "label": "Dans 1 boîtier"
+  },
+  {
+   "icon": "bolt",
+   "value": "Type-C",
+   "label": "Charge rapide"
+  },
+  {
+   "icon": "bluetooth",
+   "value": "Bluetooth",
+   "label": "Android & iPhone"
+  }
  ],
-
- "intro_kicker": "L’idée",
- "intro_text": "Pourquoi acheter six paires quand un seul boîtier peut équiper toute la maison ?",
-
+ "features_title": "Pensé pour toute la maison",
+ "features": [
+  {
+   "icon": "users",
+   "title": "Pour toute la famille",
+   "text": "Chacun son écouteur, plus de dispute pour une seule paire."
+  },
+  {
+   "icon": "building",
+   "title": "Pour le travail",
+   "text": "Réunions, formations, appels : votre équipe équipée d’un coup."
+  },
+  {
+   "icon": "school",
+   "title": "Pour la classe",
+   "text": "Langues et e-learning : six élèves, une seule commande."
+  },
+  {
+   "icon": "gift",
+   "title": "À offrir",
+   "text": "Un paquet, six heureux : le cadeau qui fait plaisir à tous."
+  }
+ ],
+ "highlight_kicker": "Trois styles en un",
+ "highlight_title": "Un écouteur pour chaque moment.",
+ "highlight_text": "Clip-on pour bouger, semi-intra pour les appels, sommeil pour la nuit. Tout se range et se recharge dans le même boîtier.",
+ "highlight_image": "nuit",
+ "highlight_alt": "Boîtiers et écouteurs sans fil sur fond sombre",
+ "highlight_badges": [
+  {
+   "icon": "feather",
+   "label": "Clip-on<br>léger"
+  },
+  {
+   "icon": "phone",
+   "label": "Semi-intra<br>pour les appels"
+  },
+  {
+   "icon": "moon",
+   "label": "Sommeil<br>tout en douceur"
+  },
+  {
+   "icon": "battery",
+   "label": "30 h<br>avec le boîtier"
+  }
+ ],
  "benefits": [
-  {"image": "famille", "alt": "Une famille partage les écouteurs d’un même boîtier", "kicker": "En famille",
+  {
+   "image": "famille",
+   "alt": "Une famille partage les écouteurs d’un même boîtier",
+   "kicker": "En famille",
    "title": "Chacun son écouteur, une seule commande",
-   "text": "Papa, maman et les enfants écoutent chacun de leur côté. Fini les disputes pour une seule paire : tout le monde est servi."},
-  {"image": "entreprise", "alt": "Une équipe en réunion équipée des écouteurs", "kicker": "Au travail",
+   "text": "Papa, maman et les enfants écoutent chacun de leur côté. Fini les disputes pour une seule paire : tout le monde est servi."
+  },
+  {
+   "image": "entreprise",
+   "alt": "Une équipe en réunion équipée des écouteurs",
+   "kicker": "Au travail",
    "title": "Équipez votre équipe en un geste",
-   "text": "Réunions, formations, appels : six écouteurs prêts à distribuer, rangés et rechargés dans le même boîtier."},
-  {"image": "ecole", "alt": "Des élèves en classe avec le boîtier d’écouteurs", "kicker": "En classe",
+   "text": "Réunions, formations, appels : six écouteurs prêts à distribuer, rangés et rechargés dans le même boîtier."
+  },
+  {
+   "image": "ecole",
+   "alt": "Des élèves en classe avec le boîtier d’écouteurs",
+   "kicker": "En classe",
    "title": "Six élèves, un seul boîtier",
-   "text": "Écoute en langues, e-learning, révisions : une classe entière équipée sans multiplier les achats."}
+   "text": "Écoute en langues, e-learning, révisions : une classe entière équipée sans multiplier les achats."
+  }
  ],
-
+ "incl_title": "Ce que vous recevez",
+ "incl_items": [
+  {
+   "image": "f1",
+   "label": "6 écouteurs sans fil"
+  },
+  {
+   "image": "f5",
+   "label": "Boîtier de charge 30 h"
+  },
+  {
+   "image": "t1",
+   "label": "Câble Type-C"
+  },
+  {
+   "image": "hero",
+   "label": "3 coloris au choix"
+  }
+ ],
  "details_kicker": "En détail",
  "details_title": "Pensé pour durer, conçu pour partager",
  "details_image": "styles",
  "details_alt": "Les trois styles d’écouteurs du kit",
  "specs": [
-  {"label": "Contenu", "value": "6 écouteurs + 1 boîtier"},
-  {"label": "Styles", "value": "Clip-on · semi-intra · sommeil"},
-  {"label": "Autonomie", "value": "Jusqu’à 30 h avec le boîtier"},
-  {"label": "Recharge", "value": "Type-C, charge rapide"},
-  {"label": "Coloris", "value": "Blanc, bleu ou noir"}
+  {
+   "label": "Contenu",
+   "value": "6 écouteurs + 1 boîtier"
+  },
+  {
+   "label": "Styles",
+   "value": "Clip-on · semi-intra · sommeil"
+  },
+  {
+   "label": "Autonomie",
+   "value": "Jusqu’à 30 h avec le boîtier"
+  },
+  {
+   "label": "Recharge",
+   "value": "Type-C, charge rapide"
+  },
+  {
+   "label": "Coloris",
+   "value": "Blanc, bleu ou noir"
+  }
  ],
-
+ "reviews_title": "Ils l’ont reçu chez eux",
+ "reviews": [],
  "steps_kicker": "Comment commander",
  "steps_title": "Trois étapes, aucun paiement en ligne",
  "steps": [
-  {"title": "Commandez", "text": "Indiquez votre nom, votre téléphone et votre adresse à Conakry. Aucune carte bancaire."},
-  {"title": "Confirmez", "text": "Notre équipe vous appelle pour confirmer la livraison. Gardez votre téléphone allumé."},
-  {"title": "Recevez et payez", "text": "Votre boîtier arrive chez vous. Vous payez à la livraison, {{ mm_new }} {{ mm_cur }}."}
+  {
+   "title": "Commandez",
+   "text": "Indiquez votre nom, votre téléphone et votre adresse à Conakry. Aucune carte bancaire."
+  },
+  {
+   "title": "Confirmez",
+   "text": "Notre équipe vous appelle pour confirmer la livraison. Gardez votre téléphone allumé."
+  },
+  {
+   "title": "Recevez et payez",
+   "text": "Votre boîtier arrive chez vous. Vous payez à la livraison, {{ mm_new }} {{ mm_cur }}."
+  }
  ],
-
  "offer_kicker": "Offre de lancement",
  "offer_title": "Le kit complet, à prix doux",
  "offer_text": "Six écouteurs achetés séparément coûteraient bien plus cher. Ici, tout est réuni dans un seul boîtier.",
@@ -93,20 +214,28 @@
   "Livraison à Conakry"
  ],
  "offer_foot": "Stock limité · Paiement à la livraison",
-
- "reviews_title": "Ils l’ont reçu chez eux",
- "reviews": [],
-
  "faq_title": "Tout ce qu’il faut savoir",
  "faq": [
-  {"q": "Comment je paie ?", "a": "Uniquement à la livraison, en espèces ou par mobile money selon le livreur. Rien à payer en ligne."},
-  {"q": "En combien de temps je suis livré ?", "a": "Après l’appel de confirmation, la livraison se fait généralement sous 24 à 72 h à Conakry."},
-  {"q": "Les écouteurs fonctionnent-ils avec mon téléphone ?", "a": "Oui, ils se connectent en Bluetooth à tous les smartphones Android et iPhone."},
-  {"q": "Puis-je choisir la couleur ?", "a": "Oui : blanc, bleu ou noir. Vous la choisissez dans le formulaire de commande."}
+  {
+   "q": "Comment je paie ?",
+   "a": "Uniquement à la livraison, en espèces ou par mobile money selon le livreur. Rien à payer en ligne."
+  },
+  {
+   "q": "En combien de temps je suis livré ?",
+   "a": "Après l’appel de confirmation, la livraison se fait généralement sous 24 à 72 h à Conakry."
+  },
+  {
+   "q": "Les écouteurs fonctionnent-ils avec mon téléphone ?",
+   "a": "Oui, ils se connectent en Bluetooth à tous les smartphones Android et iPhone."
+  },
+  {
+   "q": "Puis-je choisir la couleur ?",
+   "a": "Oui : blanc, bleu ou noir. Vous la choisissez dans le formulaire de commande."
+  }
  ],
-
- "final_title_a": "Équipez toute la maison,",
- "final_title_em": "aujourd’hui.",
- "final_text": "Pas d’avance à payer, pas de carte bancaire, pas de compte à créer. Juste six écouteurs à partager.",
+ "final_title_a": "Prêt à équiper toute la maison ?",
+ "final_title_em": "",
+ "final_text": "Commandez maintenant : pas d’avance, pas de carte bancaire. Vous payez à la livraison.",
+ "final_note": "Livraison à Conakry · paiement à la réception",
  "footer_note": "Livraison à Conakry · Paiement à la livraison"
 }

@@ -35,40 +35,67 @@ ICONS = {
  'star': '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
  'leaf': '<path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19l7-7"/>',
  'heart': '<path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/>',
+ 'battery': '<rect x="2.5" y="7" width="17" height="10" rx="2"/><path d="M21.5 10.5v3M6 10v4M9.5 10v4M13 10v4"/>',
+ 'bolt': '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+ 'bluetooth': '<path d="M7 7l10 10-5 4V3l5 4L7 17"/>',
+ 'music': '<path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+ 'headphones': '<path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/>',
+ 'users': '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/>',
+ 'gift': '<rect x="3" y="9" width="18" height="4" rx="1"/><path d="M5 13v8h14v-8M12 9v12M12 9c-2-4-6-4-6-1.5S10 9 12 9zm0 0c2-4 6-4 6-1.5S14 9 12 9z"/>',
+ 'building': '<path d="M4 21V5l8-2v18M12 8h8v13M2 21h20M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2"/>',
+ 'school': '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/>',
+ 'pin': '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+ 'bag': '<path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 016 0v2"/>',
+ 'sparkle': '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/>',
+ 'moon': '<path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/>',
+ 'feather': '<path d="M20 4c-8 0-14 6-14 14v2"/><path d="M6 14h7M9 10h7"/>',
 }
 TICK = '<span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke-width="2"><path d="M2.5 6.2l2.4 2.3 4.6-5"/></svg></span>'
 
-def jpg(n): return n if n.endswith('.jpg') or n.endswith('.png') or n.endswith('.webp') else n + '.jpg'
+def svg(name): return '<svg viewBox="0 0 24 24" aria-hidden="true">%s</svg>' % ICONS.get(name, ICONS['star'])
+def jpg(n): return n if n.endswith(('.jpg', '.png', '.webp')) else n + '.jpg'
 
 def build_atelier(cfg):
     pref = cfg['img']
     c = dict(cfg)
-    c.setdefault('accent', '#8c7b65')
-    c.setdefault('currency_iso', 'GNF' if c.get('currency') == 'GNF' else c.get('currency', 'XOF'))
-    c['hero_image'] = jpg(c['hero_image'])
-    c['details_image'] = jpg(c['details_image'])
-    c['offer_image'] = jpg(c['offer_image'])
-    c['hero_points_html'] = '\n'.join('            <li>%s<span>%s</span></li>' % (TICK, p) for p in cfg['hero_points'])
-    gal = [g for g in cfg['gallery']]
+    c.setdefault('accent', '#c9d1b9')
+    c.setdefault('accent_dark', '#2f362b')
+    c.setdefault('currency_iso', c.get('currency', 'XOF'))
+    serif = c.get('heading_font') == 'serif'
+    c['font_class'] = 'f-serif' if serif else ''
+    c['font_extra'] = '&family=Cormorant+Garamond:wght@500;600' if serif else ''
+    c['cash_icon'] = svg('cash')
+    for k in ('hero_image', 'details_image', 'offer_image', 'highlight_image'):
+        c[k] = jpg(c[k])
+    # titre du hero : une ligne par élément, *mot* = mis en couleur
+    c['hero_title_html'] = ''.join('<span>%s</span>' % re.sub(r'\*(.+?)\*', r'<em>\1</em>', l) for l in cfg['hero_title_lines'])
     c['thumbs_html'] = '\n'.join(
         '            <button type="button" aria-current="%s" data-src="%s" data-alt="%s" aria-label="Photo %d">'
         '<img src="%s" alt="" loading="lazy" width="200" height="200"></button>'
         % ('true' if i == 0 else 'false', asset(pref + jpg(g['image'])), g['alt'], i + 1, asset(pref + jpg(g['image'])))
-        for i, g in enumerate(gal))
-    c['trust_html'] = '\n'.join(
-        '          <li><svg viewBox="0 0 24 24" aria-hidden="true">%s</svg><div><b>%s</b><span>%s</span></div></li>'
-        % (ICONS.get(t['icon'], ICONS['star']), t['title'], t['text']) for t in cfg['trust'])
+        for i, g in enumerate(cfg['gallery']))
+    c['stats_html'] = '\n'.join(
+        '          <li><span class="ico">%s</span><div><b>%s</b><span>%s</span></div></li>' % (svg(t['icon']), t['value'], t['label'])
+        for t in cfg['stats'])
+    c['features_html'] = '\n'.join(
+        '          <div class="feat rv"><span class="ico">%s</span><h3>%s</h3><p>%s</p></div>' % (svg(f['icon']), f['title'], f['text'])
+        for f in cfg['features'])
+    c['badges_html'] = '\n'.join(
+        '            <li><span class="ico">%s</span>%s</li>' % (svg(b['icon']), b['label']) for b in cfg['highlight_badges'])
     c['benefits_html'] = '\n'.join(
         '        <article class="benefit">\n'
         '          <div class="b-media rv"><img src="%s" alt="%s" loading="lazy"></div>\n'
-        '          <div class="b-copy rv"><span class="b-num">%02d — %s</span><h3 class="serif">%s</h3><p>%s</p>'
+        '          <div class="b-copy rv"><span class="b-num">%02d · %s</span><h3 class="h">%s</h3><p>%s</p>'
         '<a class="btn btn-line" href="#commander" data-order>Commander</a></div>\n'
         '        </article>'
         % (asset(pref + jpg(b['image'])), b['alt'], i + 1, b['kicker'], b['title'], b['text'])
         for i, b in enumerate(cfg['benefits']))
+    c['incl_html'] = '\n'.join(
+        '          <figure class="rv"><div class="im"><img src="%s" alt="%s" loading="lazy"></div><figcaption>%s</figcaption></figure>'
+        % (asset(pref + jpg(x['image'])), x['label'], x['label']) for x in cfg['incl_items'])
     c['specs_html'] = '\n'.join('            <li><span>%s</span><b>%s</b></li>' % (s['label'], s['value']) for s in cfg['specs'])
     c['steps_html'] = '\n'.join(
-        '          <div class="step rv"><span class="step-n">%d</span><h3 class="serif">%s</h3><p>%s</p></div>'
+        '          <div class="step rv"><span class="step-n">%d</span><h3 class="h">%s</h3><p>%s</p></div>'
         % (i + 1, s['title'], s['text']) for i, s in enumerate(cfg['steps']))
     c['included_html'] = '\n'.join('              <li>%s<span>%s</span></li>' % (TICK, x) for x in cfg['included'])
     c['faq_html'] = '\n'.join(
@@ -78,11 +105,11 @@ def build_atelier(cfg):
     revs = [r for r in cfg.get('reviews', []) if r.get('text')]
     if revs:
         c['reviews_section'] = (
-            '    <section class="sec" id="avis" style="padding-top:0">\n      <div class="wrap">\n'
-            '        <div class="sec-head rv"><p class="kicker">Avis clients</p><h2 class="serif h2">%s</h2></div>\n'
-            '        <div class="reviews">\n%s\n        </div>\n      </div>\n    </section>'
-            % (cfg.get('reviews_title', 'Ils l’ont reçu chez eux'),
-               '\n'.join('          <figure class="review rv"><span class="stars" aria-label="%d sur 5">%s</span><p>%s</p><cite>%s</cite></figure>'
+            '    <section class="sec" id="avis" style="padding-top:0">\n      <div class="wrap"><div class="reviews-wrap rv">\n'
+            '        <div class="sec-head"><h2 class="h h2">%s</h2><span class="rule"></span></div>\n'
+            '        <div class="reviews">\n%s\n        </div>\n      </div></div>\n    </section>'
+            % (cfg.get('reviews_title', 'Ce que disent nos clients'),
+               '\n'.join('          <figure class="review"><span class="stars" aria-label="%d sur 5">%s</span><p>%s</p><cite>%s</cite></figure>'
                          % (r.get('stars', 5), '★' * r.get('stars', 5), r['text'], r['name']) for r in revs)))
     else:
         c['reviews_section'] = ''
