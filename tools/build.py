@@ -6,13 +6,15 @@ Usage :  python3 tools/build.py earbuds          (un produit)
 
 Écrit :  layout/<layout>.liquid  et  templates/product.<layout>.json
 
-Design : "template": "atelier" dans le JSON produit → design épuré premium
-         (tools/landing-atelier.template.liquid) ; sinon design Salon Pro.
+Design : "template": "atelier" → épuré premium (tools/landing-atelier.template.liquid)
+         "template": "elan"    → dynamique (tools/landing-elan.template.liquid)
+         sinon design Salon Pro.
 """
 import json, os, re, sys, glob
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TPL = open(os.path.join(ROOT, 'tools', 'landing.template.liquid'), encoding='utf-8').read()
 TPL_ATELIER = open(os.path.join(ROOT, 'tools', 'landing-atelier.template.liquid'), encoding='utf-8').read()
+TPL_ELAN = open(os.path.join(ROOT, 'tools', 'landing-elan.template.liquid'), encoding='utf-8').read()
 
 def asset(name): return "{{ '%s' | asset_url }}" % name
 def esc_js(t): return t.replace('\\', '\\\\').replace("'", "\\'")
@@ -55,7 +57,7 @@ TICK = '<span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke-width="2"
 def svg(name): return '<svg viewBox="0 0 24 24" aria-hidden="true">%s</svg>' % ICONS.get(name, ICONS['star'])
 def jpg(n): return n if n.endswith(('.jpg', '.png', '.webp')) else n + '.jpg'
 
-def build_atelier(cfg):
+def build_atelier(cfg, tpl=None):
     pref = cfg['img']
     c = dict(cfg)
     c.setdefault('accent', '#c9d1b9')
@@ -66,16 +68,20 @@ def build_atelier(cfg):
     c['font_extra'] = '&family=Cormorant+Garamond:wght@500;600' if serif else ''
     c['cash_icon'] = svg('cash')
     for k in ('hero_image', 'details_image', 'offer_image', 'highlight_image'):
-        c[k] = jpg(c[k])
+        if k in c: c[k] = jpg(c[k])
     # titre du hero : une ligne par élément, *mot* = mis en couleur
     c['hero_title_html'] = ''.join('<span>%s</span>' % re.sub(r'\*(.+?)\*', r'<em>\1</em>', l) for l in cfg['hero_title_lines'])
     c['thumbs_html'] = '\n'.join(
         '            <button type="button" aria-current="%s" data-src="%s" data-alt="%s" aria-label="Photo %d">'
         '<img src="%s" alt="" loading="lazy" width="200" height="200"></button>'
         % ('true' if i == 0 else 'false', asset(pref + jpg(g['image'])), g['alt'], i + 1, asset(pref + jpg(g['image'])))
-        for i, g in enumerate(cfg['gallery']))
+        for i, g in enumerate(cfg.get('gallery', [])))
+    def stat_val(v):
+        m = re.match(r'^(\d+(?:[.,]\d+)?)(.*)$', v)
+        if not m: return '<b>%s</b>' % v
+        return '<b><span data-count="%s" data-suffix="%s">%s</span></b>' % (m.group(1), m.group(2).replace('"', '&quot;'), v)
     c['stats_html'] = '\n'.join(
-        '          <li><span class="ico">%s</span><div><b>%s</b><span>%s</span></div></li>' % (svg(t['icon']), t['value'], t['label'])
+        '          <li><span class="ico">%s</span><div>%s<span>%s</span></div></li>' % (svg(t['icon']), stat_val(t['value']), t['label'])
         for t in cfg['stats'])
     c['features_html'] = '\n'.join(
         '          <div class="feat rv"><span class="ico">%s</span><h3>%s</h3><p>%s</p></div>' % (svg(f['icon']), f['title'], f['text'])
@@ -89,15 +95,15 @@ def build_atelier(cfg):
         '<a class="btn btn-line" href="#commander" data-order>Commander</a></div>\n'
         '        </article>'
         % (asset(pref + jpg(b['image'])), b['alt'], i + 1, b['kicker'], b['title'], b['text'])
-        for i, b in enumerate(cfg['benefits']))
+        for i, b in enumerate(cfg.get('benefits', [])))
     c['incl_html'] = '\n'.join(
         '          <figure class="rv"><div class="im"><img src="%s" alt="%s" loading="lazy"></div><figcaption>%s</figcaption></figure>'
         % (asset(pref + jpg(x['image'])), x['label'], x['label']) for x in cfg['incl_items'])
-    c['specs_html'] = '\n'.join('            <li><span>%s</span><b>%s</b></li>' % (s['label'], s['value']) for s in cfg['specs'])
+    c['specs_html'] = '\n'.join('            <li><span>%s</span><b>%s</b></li>' % (s['label'], s['value']) for s in cfg.get('specs', []))
     c['steps_html'] = '\n'.join(
         '          <div class="step rv"><span class="step-n">%d</span><h3 class="h">%s</h3><p>%s</p></div>'
         % (i + 1, s['title'], s['text']) for i, s in enumerate(cfg['steps']))
-    c['included_html'] = '\n'.join('              <li>%s<span>%s</span></li>' % (TICK, x) for x in cfg['included'])
+    c['included_html'] = '\n'.join('              <li>%s<span>%s</span></li>' % (TICK, x) for x in cfg.get('included', []))
     c['faq_html'] = '\n'.join(
         '          <details><summary>%s<i aria-hidden="true"></i></summary><p class="a">%s</p></details>' % (q['q'], q['a'])
         for q in cfg['faq'])
@@ -113,7 +119,26 @@ def build_atelier(cfg):
                          % (r.get('stars', 5), '★' * r.get('stars', 5), r['text'], r['name']) for r in revs)))
     else:
         c['reviews_section'] = ''
-    out = TPL_ATELIER
+    if tpl is TPL_ELAN:
+        for k in ('final_image',):
+            c[k] = jpg(c[k])
+        c.setdefault('hero_cta', 'Commander maintenant')
+        c['hero_title_html'] = ''.join('<span class="ln"><span>%s</span></span>' % re.sub(r'\*(.+?)\*', r'<em>\1</em>', l) for l in cfg['hero_title_lines'])
+        ch = cfg['hero_chip']
+        c['chip1_icon'], c['chip1_title'], c['chip1_text'] = svg(ch['icon']), ch['title'], ch['text']
+        c['marquee_html'] = ''.join('<li>%s</li>' % w for w in cfg['marquee'])
+        c['life_html'] = '\n'.join(
+            '          <figure class="rv"><img data-par="%s" src="%s" alt="%s" loading="lazy"></figure>'
+            % (('-0.05', '0.04', '-0.03')[i % 3], asset(pref + jpg(x['image'])), x['alt']) for i, x in enumerate(cfg['life_images']))
+        v = cfg.get('video_url', '').strip()
+        if v:
+            src = asset(v) if not v.startswith('http') else v
+            c['video_button'] = '            <button type="button" class="play" data-video><i><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></i>%s</button>' % cfg.get('video_label', 'Voir la vidéo')
+            c['video_modal'] = ('  <div class="vmodal" id="vmodal" data-src="%s" role="dialog" aria-label="Vidéo"><button type="button" class="vclose" aria-label="Fermer">&times;</button><div class="slot"></div></div>' % src)
+        else:
+            c['video_button'] = ''
+            c['video_modal'] = ''
+    out = tpl or TPL_ATELIER
     for k, v in c.items():
         if isinstance(v, str):
             out = out.replace('[[%s]]' % k, v)
@@ -123,6 +148,8 @@ def build(name):
     cfg = json.load(open(os.path.join(ROOT, 'tools', 'products', name + '.json'), encoding='utf-8'))
     if cfg.get('template') == 'atelier':
         return finish(name, cfg, build_atelier(cfg))
+    if cfg.get('template') == 'elan':
+        return finish(name, cfg, build_atelier(cfg, TPL_ELAN))
     pref = cfg['img']
     out = TPL
     cfg = dict(cfg)

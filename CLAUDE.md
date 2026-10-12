@@ -22,7 +22,8 @@ Pour changer un prix ou un texte : modifier le JSON du produit puis relancer le 
 - Personnages des visuels de famille/entreprise/école : personnes noires africaines.
 
 ## Contexte technique
-- Deux designs : Salon Pro (par défaut) et **Atelier** (épuré premium, `"template": "atelier"` dans le JSON produit, modèle `tools/products/_modele-atelier.json`, doc `tools/ATELIER.md`). Le design Atelier est une création originale : ne pas le transformer en copie d'un design tiers.
+- Trois designs : Salon Pro (par défaut), **Atelier** (épuré premium, `"template": "atelier"`, modèle `tools/products/_modele-atelier.json`, doc `tools/ATELIER.md`) et **Élan** (dynamique, `"template": "elan"`, modèle `tools/products/_modele-elan.json`, doc `tools/ELAN.md`). Atelier et Élan sont des créations originales : ne pas les transformer en copie d'un design tiers.
+- Avis clients : uniquement de vrais avis fournis par Jibrail ; liste vide = section masquée. Ne jamais inventer d'avis.
 - Aperçu local : `python3 tools/preview.py <layout>` → `preview/` (ignoré par git).
 - `tools/landing.template.liquid` = design Salon Pro (moteur d'animation, barre fixe avec prix, panneau COD). Ne le modifier que pour un changement de design valable pour tous les produits, puis régénérer **tous** les produits (`python3 tools/build.py`) et vérifier que chacun reste correct.
 - Les prix sont écrits dans le JSON (`price_new`, `price_old`, `price_new_num`, `fig_val` = % de réduction).
