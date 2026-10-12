@@ -1,0 +1,179 @@
+{
+ "template": "atelier",
+ "layout": "landing-atelier-NOMDUPRODUIT",
+ "brand": "MallMalin",
+ "logo_file": "mm-logo.jpg",
+ "accent": "#8c7b65",
+ "price_new": "250 000",
+ "price_old": "450 000",
+ "currency": "GNF",
+ "currency_iso": "GNF",
+ "price_new_num": "250000",
+ "save_pct": "44",
+ "announcement": "Livraison à Conakry · Paiement à la livraison · Nous vous appelons pour confirmer",
+ "seo_title": "MallMalin — Kit 6 écouteurs sans fil dans 1 boîtier | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
+ "seo_description": "Un boîtier, six écouteurs sans fil : trois styles, 30 h d’autonomie, charge rapide Type-C. {{ mm_new }} {{ mm_cur }} au lieu de {{ mm_old }}. Livraison à Conakry, paiement à la livraison.",
+ "og_title": "MallMalin — Kit 6 écouteurs sans fil dans 1 boîtier",
+ "og_description": "Six écouteurs, un boîtier, 30 h d’autonomie. {{ mm_new }} {{ mm_cur }} au lieu de {{ mm_old }} — paiement à la livraison.",
+ "ld_name": "Kit 6 écouteurs sans fil dans 1 boîtier",
+ "ld_description": "Un boîtier, six écouteurs sans fil : trois styles (clip-on, semi-intra, sommeil), 30 h d’autonomie, charge rapide Type-C. Blanc, bleu ou noir.",
+ "img": "mm-",
+ "hero_kicker": "Nouveau · Édition partage",
+ "hero_title_a": "Un boîtier,",
+ "hero_title_em": "six",
+ "hero_title_b": "écouteurs.",
+ "hero_sub": "Trois styles d’écouteurs sans fil réunis dans un seul boîtier de charge. Pour vous, votre famille ou votre équipe — livrés chez vous, payés à la réception.",
+ "hero_points": [
+  "30 heures d’autonomie avec le boîtier",
+  "Clip-on, semi-intra et sommeil : un style pour chaque moment",
+  "Charge rapide Type-C · blanc, bleu ou noir"
+ ],
+ "hero_image": "hook",
+ "hero_alt": "Boîtier de six écouteurs sans fil MallMalin",
+ "hero_tag": "Kit 6 écouteurs",
+ "gallery": [
+  {
+   "image": "hook",
+   "alt": "Boîtier de six écouteurs sans fil MallMalin"
+  },
+  {
+   "image": "hero",
+   "alt": "Les trois coloris du boîtier : blanc, bleu et noir"
+  },
+  {
+   "image": "nuit",
+   "alt": "Boîtiers et écouteurs sur fond sombre"
+  },
+  {
+   "image": "cadeau",
+   "alt": "Les boîtiers présentés comme un cadeau"
+  }
+ ],
+ "trust": [
+  {
+   "icon": "truck",
+   "title": "Livraison à Conakry",
+   "text": "Directement à votre porte"
+  },
+  {
+   "icon": "cash",
+   "title": "Paiement à la livraison",
+   "text": "Vous payez en recevant le colis"
+  },
+  {
+   "icon": "phone",
+   "title": "Appel de confirmation",
+   "text": "Un conseiller vous contacte"
+  },
+  {
+   "icon": "shield",
+   "title": "Produit vérifié",
+   "text": "Contrôlé avant l’envoi"
+  }
+ ],
+ "intro_kicker": "L’idée",
+ "intro_text": "Pourquoi acheter six paires quand un seul boîtier peut équiper toute la maison ?",
+ "benefits": [
+  {
+   "image": "famille",
+   "alt": "Une famille partage les écouteurs d’un même boîtier",
+   "kicker": "En famille",
+   "title": "Chacun son écouteur, une seule commande",
+   "text": "Papa, maman et les enfants écoutent chacun de leur côté. Fini les disputes pour une seule paire : tout le monde est servi."
+  },
+  {
+   "image": "entreprise",
+   "alt": "Une équipe en réunion équipée des écouteurs",
+   "kicker": "Au travail",
+   "title": "Équipez votre équipe en un geste",
+   "text": "Réunions, formations, appels : six écouteurs prêts à distribuer, rangés et rechargés dans le même boîtier."
+  },
+  {
+   "image": "ecole",
+   "alt": "Des élèves en classe avec le boîtier d’écouteurs",
+   "kicker": "En classe",
+   "title": "Six élèves, un seul boîtier",
+   "text": "Écoute en langues, e-learning, révisions : une classe entière équipée sans multiplier les achats."
+  }
+ ],
+ "details_kicker": "En détail",
+ "details_title": "Pensé pour durer, conçu pour partager",
+ "details_image": "styles",
+ "details_alt": "Les trois styles d’écouteurs du kit",
+ "specs": [
+  {
+   "label": "Contenu",
+   "value": "6 écouteurs + 1 boîtier"
+  },
+  {
+   "label": "Styles",
+   "value": "Clip-on · semi-intra · sommeil"
+  },
+  {
+   "label": "Autonomie",
+   "value": "Jusqu’à 30 h avec le boîtier"
+  },
+  {
+   "label": "Recharge",
+   "value": "Type-C, charge rapide"
+  },
+  {
+   "label": "Coloris",
+   "value": "Blanc, bleu ou noir"
+  }
+ ],
+ "steps_kicker": "Comment commander",
+ "steps_title": "Trois étapes, aucun paiement en ligne",
+ "steps": [
+  {
+   "title": "Commandez",
+   "text": "Indiquez votre nom, votre téléphone et votre adresse à Conakry. Aucune carte bancaire."
+  },
+  {
+   "title": "Confirmez",
+   "text": "Notre équipe vous appelle pour confirmer la livraison. Gardez votre téléphone allumé."
+  },
+  {
+   "title": "Recevez et payez",
+   "text": "Votre boîtier arrive chez vous. Vous payez à la livraison, {{ mm_new }} {{ mm_cur }}."
+  }
+ ],
+ "offer_kicker": "Offre de lancement",
+ "offer_title": "Le kit complet, à prix doux",
+ "offer_text": "Six écouteurs achetés séparément coûteraient bien plus cher. Ici, tout est réuni dans un seul boîtier.",
+ "offer_image": "cadeau",
+ "offer_alt": "Le kit de six écouteurs prêt à offrir",
+ "included": [
+  "6 écouteurs sans fil (3 styles)",
+  "1 boîtier de charge 30 h",
+  "Câble de recharge Type-C",
+  "Livraison à Conakry"
+ ],
+ "offer_foot": "Stock limité · Paiement à la livraison",
+ "reviews_title": "Ils l’ont reçu chez eux",
+ "reviews": [],
+ "faq_title": "Tout ce qu’il faut savoir",
+ "faq": [
+  {
+   "q": "Comment je paie ?",
+   "a": "Uniquement à la livraison, en espèces ou par mobile money selon le livreur. Rien à payer en ligne."
+  },
+  {
+   "q": "En combien de temps je suis livré ?",
+   "a": "Après l’appel de confirmation, la livraison se fait généralement sous 24 à 72 h à Conakry."
+  },
+  {
+   "q": "Les écouteurs fonctionnent-ils avec mon téléphone ?",
+   "a": "Oui, ils se connectent en Bluetooth à tous les smartphones Android et iPhone."
+  },
+  {
+   "q": "Puis-je choisir la couleur ?",
+   "a": "Oui : blanc, bleu ou noir. Vous la choisissez dans le formulaire de commande."
+  }
+ ],
+ "final_title_a": "Équipez toute la maison,",
+ "final_title_em": "aujourd’hui.",
+ "final_text": "Pas d’avance à payer, pas de carte bancaire, pas de compte à créer. Juste six écouteurs à partager.",
+ "footer_note": "Livraison à Conakry · Paiement à la livraison",
+ "_aide": "Design Atelier (épuré premium). Copie ce fichier en tools/products/<produit>.json, remplace les textes et images, puis : python3 tools/build.py <produit>. Images : noms SANS le préfixe (img ajoute le préfixe). accent = couleur sobre de la boutique. reviews : UNIQUEMENT de vrais avis clients ({\"name\":\"Prénom, ville\",\"text\":\"...\",\"stars\":5}) ; liste vide = section masquée. Icônes trust : truck, cash, shield, phone, box, clock, star, leaf, heart."
+}
