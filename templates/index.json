@@ -33,6 +33,7 @@
         "button"
       ],
       "settings": {
+        "image": "shopify://shop_images/AFRIBAZAAR_1_1.webp",
         "height": "adapt",
         "desktop_image_width": "large",
         "layout": "image_first",
