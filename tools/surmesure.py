@@ -5,6 +5,7 @@ Une section sans données réelles n'est pas affichée (avis, caractéristiques,
 compte à rebours…) : on n'invente jamais d'informations.
 Appelé par tools/build.py quand "template": "surmesure".
 """
+import os
 import re
 
 STYLES = {
@@ -59,6 +60,19 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         'order_note': cfg.get('order_note', 'Paiement à la livraison — nous vous appelons pour confirmer'),
         'announce_html': ('  <div class="announce">%s</div>' % cfg['announcement']) if cfg.get('announcement') else '',
     })
+    # logo facultatif : affiché seulement s'il est présent dans assets/
+    logo = cfg.get('logo_file', '')
+    logo_ok = bool(logo) and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', logo))
+    wide = logo_ok and cfg.get('logo_wide')          # logo horizontal (icône + nom) : remplace le texte
+    if wide:
+        c['logo_img'] = '<img class="logo-wide" src="%s" alt="%s" height="40">' % (asset(logo), cfg['brand'])
+    else:
+        c['logo_img'] = ('<img src="%s" alt="" width="34" height="34">' % asset(logo)) if logo_ok else ''
+    c['brand_text'] = '' if wide else cfg['brand']
+    c['brand_cls'] = (' wide' + (' logo-pill' if cfg.get('logo_pill', style in ('tech', 'sport')) else '')) if wide else ''
+    fav = cfg.get('favicon_file', logo)
+    fav_ok = bool(fav) and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', fav))
+    c['favicon_link'] = ('  <link rel="icon" href="%s">\n' % asset(fav)) if fav_ok else ''
     ov = cfg.get('colors', {})
     c['color_overrides'] = ('html[data-style="%s"]{%s}' % (style, ';'.join('--%s:%s' % (k, v) for k, v in ov.items() if k in COLOR_KEYS))) if ov else ''
 
@@ -83,8 +97,8 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         + '          <div class="hero-actions in-hero"><a class="btn btn-main" href="#commander" data-order id="heroOrder">%s%s</a>'
           '<span class="hero-note">%s%s</span></div>\n' % (hr.get('cta', 'Commander maintenant'), ARROW, tick, note)
         + '        </div>\n'
-        '        <div class="hero-media in-hero"><div class="h-main"><img id="hMain" src="%s" alt="%s" width="1000" height="1000" fetchpriority="high"></div>%s%s</div>\n'
-        % (img(hr['image']), hr.get('alt', ''), thumbs, chips)
+        '        <div class="hero-media in-hero"><div class="h-stage"><div class="h-main"><img id="hMain" src="%s" alt="%s" width="1000" height="1000" fetchpriority="high"></div>%s</div>%s</div>\n'
+        % (img(hr['image']), hr.get('alt', ''), chips, thumbs)
         + '      </div>\n    </section>')
 
     # ───────── SECTIONS ─────────

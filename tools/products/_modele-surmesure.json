@@ -10,6 +10,8 @@
  "layout": "landing-NOMDUPRODUIT",
  "brand": "Afribazaar",
  "logo_file": "ab-logo.png",
+ "logo_wide": true,
+ "favicon_file": "ab-favicon.png",
  "img": "ab-PRODUIT-",
  "price_new": "PRIX PROMO",
  "price_old": "",
