@@ -8,9 +8,9 @@
 {%- if product -%}
   <div class="mm-native">
     {%- form 'product', product, id: 'mm-product-form' -%}
-      <p class="mm-title">Commandez votre kit — vous payez à la livraison</p>
+      <p class="mm-title">Commandez maintenant — vous payez à la livraison</p>
       {%- if product.variants.size > 1 -%}
-        <label for="mm-variant">Choisissez votre couleur</label>
+        <label for="mm-variant">Choisissez votre option</label>
         <select id="mm-variant" name="id">
           {%- for variant in product.variants -%}
             <option value="{{ variant.id }}"{% unless variant.available %} disabled{% endunless %}{% if variant == product.selected_or_first_available_variant %} selected{% endif %}>{{ variant.title }} — {{ variant.price | money }}</option>

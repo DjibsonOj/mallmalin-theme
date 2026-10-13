@@ -1,4 +1,4 @@
-# MallMalin — thème Shopify
+# Afribazaar — thème Shopify (branche `afribazaar`)
 
-Thème actuel de la boutique + landing MallMalin (layout/landing.liquid, templates/product.landing.json, sections/mm-cod.liquid, assets/mm-*).
-Prix : 4 lignes assign en haut de layout/landing.liquid.
+Copie du thème MallMalin sans le contenu propre à MallMalin. Landings produit : designs Atelier et Élan (`tools/`).
+Cette branche est reliée à la boutique Afribazaar ; la branche `main` reste celle de MallMalin.

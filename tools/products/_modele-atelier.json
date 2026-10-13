@@ -1,25 +1,25 @@
 {
  "template": "atelier",
  "layout": "landing-atelier-NOMDUPRODUIT",
- "brand": "MallMalin",
- "logo_file": "mm-logo.jpg",
+ "brand": "Afribazaar",
+ "logo_file": "ab-logo.png",
  "accent": "#c9d1b9",
  "accent_dark": "#2f362b",
  "heading_font": "sans",
  "price_new": "250 000",
  "price_old": "450 000",
- "currency": "GNF",
- "currency_iso": "GNF",
+ "currency": "DEVISE",
+ "currency_iso": "DEVISE",
  "price_new_num": "250000",
  "save_pct": "44",
- "announcement": "Livraison à Conakry · Paiement à la livraison · Nous vous appelons pour confirmer",
- "seo_title": "MallMalin — Kit 6 écouteurs sans fil dans 1 boîtier | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
- "seo_description": "Un boîtier, six écouteurs sans fil : trois styles, 30 h d’autonomie, charge rapide Type-C. {{ mm_new }} {{ mm_cur }} au lieu de {{ mm_old }}. Livraison à Conakry, paiement à la livraison.",
- "og_title": "MallMalin — Kit 6 écouteurs sans fil dans 1 boîtier",
+ "announcement": "Livraison à VOTRE-VILLE · Paiement à la livraison · Nous vous appelons pour confirmer",
+ "seo_title": "Afribazaar — Kit 6 écouteurs sans fil dans 1 boîtier | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
+ "seo_description": "Un boîtier, six écouteurs sans fil : trois styles, 30 h d’autonomie, charge rapide Type-C. {{ mm_new }} {{ mm_cur }} au lieu de {{ mm_old }}. Livraison à VOTRE-VILLE, paiement à la livraison.",
+ "og_title": "Afribazaar — Kit 6 écouteurs sans fil dans 1 boîtier",
  "og_description": "Six écouteurs, un boîtier, 30 h d’autonomie. {{ mm_new }} {{ mm_cur }} au lieu de {{ mm_old }} — paiement à la livraison.",
  "ld_name": "Kit 6 écouteurs sans fil dans 1 boîtier",
  "ld_description": "Un boîtier, six écouteurs sans fil : trois styles (clip-on, semi-intra, sommeil), 30 h d’autonomie, charge rapide Type-C. Blanc, bleu ou noir.",
- "img": "mm-",
+ "img": "ab-PRODUIT-",
  "hero_kicker": "Nouvelle édition · Kit partage",
  "hero_title_lines": [
   "Écoutez.",
@@ -28,7 +28,7 @@
  ],
  "hero_sub": "Six écouteurs sans fil réunis dans un seul boîtier de charge, pour toute la famille ou toute l’équipe. Livrés chez vous, payés à la réception.",
  "hero_image": "hook",
- "hero_alt": "Boîtier de six écouteurs sans fil MallMalin",
+ "hero_alt": "Boîtier de six écouteurs sans fil Afribazaar",
  "hero_tag": "6 écouteurs · 1 boîtier",
  "gallery": [
   {
@@ -191,7 +191,7 @@
  "steps": [
   {
    "title": "Commandez",
-   "text": "Indiquez votre nom, votre téléphone et votre adresse à Conakry. Aucune carte bancaire."
+   "text": "Indiquez votre nom, votre téléphone et votre adresse à VOTRE-VILLE. Aucune carte bancaire."
   },
   {
    "title": "Confirmez",
@@ -211,7 +211,7 @@
   "6 écouteurs sans fil (3 styles)",
   "1 boîtier de charge 30 h",
   "Câble de recharge Type-C",
-  "Livraison à Conakry"
+  "Livraison à VOTRE-VILLE"
  ],
  "offer_foot": "Stock limité · Paiement à la livraison",
  "faq_title": "Tout ce qu’il faut savoir",
@@ -222,7 +222,7 @@
   },
   {
    "q": "En combien de temps je suis livré ?",
-   "a": "Après l’appel de confirmation, la livraison se fait généralement sous 24 à 72 h à Conakry."
+   "a": "Après l’appel de confirmation, la livraison se fait généralement sous 24 à 72 h à VOTRE-VILLE."
   },
   {
    "q": "Les écouteurs fonctionnent-ils avec mon téléphone ?",
@@ -236,7 +236,7 @@
  "final_title_a": "Prêt à équiper toute la maison ?",
  "final_title_em": "",
  "final_text": "Commandez maintenant : pas d’avance, pas de carte bancaire. Vous payez à la livraison.",
- "final_note": "Livraison à Conakry · paiement à la réception",
- "footer_note": "Livraison à Conakry · Paiement à la livraison",
+ "final_note": "Livraison à VOTRE-VILLE · paiement à la réception",
+ "footer_note": "Livraison à VOTRE-VILLE · Paiement à la livraison",
  "_aide": "Design Atelier. Copie ce fichier en tools/products/<produit>.json, remplace textes et images, puis : python3 tools/build.py <produit>. Images : noms SANS le préfixe. accent = couleur douce, accent_dark = couleur des bandes sombres. heading_font : sans ou serif. hero_title_lines : une ligne par élément, *mot* = en couleur. reviews : UNIQUEMENT de vrais avis clients ({\"name\":\"Prénom, ville\",\"text\":\"...\",\"stars\":5}) ; liste vide = section masquée. Icônes : truck cash shield phone box clock star leaf heart battery bolt bluetooth music headphones users gift building school pin bag sparkle moon feather."
 }
