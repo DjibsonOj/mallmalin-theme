@@ -8,6 +8,7 @@ Usage :  python3 tools/build.py earbuds          (un produit)
 
 Design : "template": "atelier" → épuré premium (tools/landing-atelier.template.liquid)
          "template": "elan"    → dynamique (tools/landing-elan.template.liquid)
+         "template": "surmesure" → adapté au produit, 7 styles (tools/surmesure.py)
          sinon design Salon Pro.
 """
 import json, os, re, sys, glob
@@ -15,6 +16,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TPL = open(os.path.join(ROOT, 'tools', 'landing.template.liquid'), encoding='utf-8').read()
 TPL_ATELIER = open(os.path.join(ROOT, 'tools', 'landing-atelier.template.liquid'), encoding='utf-8').read()
 TPL_ELAN = open(os.path.join(ROOT, 'tools', 'landing-elan.template.liquid'), encoding='utf-8').read()
+TPL_SURMESURE = open(os.path.join(ROOT, 'tools', 'landing-surmesure.template.liquid'), encoding='utf-8').read()
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
 
 def asset(name): return "{{ '%s' | asset_url }}" % name
 def esc_js(t): return t.replace('\\', '\\\\').replace("'", "\\'")
@@ -150,6 +153,9 @@ def build(name):
         return finish(name, cfg, build_atelier(cfg))
     if cfg.get('template') == 'elan':
         return finish(name, cfg, build_atelier(cfg, TPL_ELAN))
+    if cfg.get('template') == 'surmesure':
+        import surmesure
+        return finish(name, cfg, surmesure.render(cfg, TPL_SURMESURE, asset, svg, jpg, TICK))
     pref = cfg['img']
     out = TPL
     cfg = dict(cfg)
