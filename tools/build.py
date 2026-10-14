@@ -177,8 +177,12 @@ def finish(name, cfg, out):
     if missing: print('⚠ images absentes de assets/ :', ', '.join(missing))
     lay = cfg['layout']
     open(os.path.join(ROOT, 'layout', lay + '.liquid'), 'w', encoding='utf-8').write(out)
-    tp = {"layout": lay, "sections": {"cod": {"type": "mm-cod", "blocks": {}, "block_order": [], "settings": {}}}, "order": ["cod"]}
-    open(os.path.join(ROOT, 'templates', 'product.%s.json' % lay), 'w', encoding='utf-8').write(json.dumps(tp, indent=2))
+    # Le modèle produit n'est créé qu'une fois : ensuite Shopify y enregistre le bloc de l'app COD
+    # (ajouté dans l'éditeur de thème) et il ne faut jamais l'écraser.
+    tpath = os.path.join(ROOT, 'templates', 'product.%s.json' % lay)
+    if not os.path.exists(tpath):
+        tp = {"layout": lay, "sections": {"cod": {"type": "mm-cod", "blocks": {}, "block_order": [], "settings": {}}}, "order": ["cod"]}
+        open(tpath, 'w', encoding='utf-8').write(json.dumps(tp, indent=2))
     print('OK  layout/%s.liquid  (%d Ko)  +  templates/product.%s.json' % (lay, len(out.encode()) // 1024, lay))
 
 names = sys.argv[1:] or [os.path.basename(p)[:-5] for p in glob.glob(os.path.join(ROOT, 'tools', 'products', '*.json')) if not os.path.basename(p).startswith('_')]
