@@ -121,7 +121,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     def s_trust(s, sid):
         it = s.get('items', [])
         if not it: return ''
-        lis = ''.join('<li><span class="ico">%s</span><div><b>%s</b><span>%s</span></div></li>' % (svg(x.get('icon', 'shield')), x['title'], x.get('text', '')) for x in it)
+        lis = ''.join('<li class="rv" data-icon="%s"><span class="ico">%s</span><div><b>%s</b><span>%s</span></div></li>' % (x.get('icon', 'shield'), svg(x.get('icon', 'shield')), x['title'], x.get('text', '')) for x in it)
         return '    <section class="trust" id="%s"><div class="wrap"><ul style="--n:%d">%s</ul></div></section>' % (sid, min(len(it), 4), lis)
 
     def s_stats(s, sid):

@@ -454,6 +454,50 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
   .sc-media.rv img,.specs-media.rv img,.ps-img img{transform:none;transition:none}
 }
 
+/* ── boutons du haut : pulsation ── */
+#heroOrder,.head .btn-main{animation:ctaPulse 2.2s ease-out infinite}
+@keyframes ctaPulse{
+  0%{transform:scale(1);box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 65%,transparent)}
+  35%{transform:scale(1.045)}
+  70%{transform:scale(1);box-shadow:0 0 0 16px color-mix(in srgb,var(--accent) 0%,transparent)}
+  100%{transform:scale(1);box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 0%,transparent)}
+}
+#heroOrder:active,.head .btn-main:active{animation:none;transform:scale(.97)}
+
+/* ── bandeau des garanties : icônes bien centrées + animées ── */
+.trust .ico{display:grid;place-items:center;position:relative;flex:none}
+.trust .ico svg{display:block;width:52%;height:52%}
+.trust .ico::after{content:'';position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--accent);opacity:0;animation:ring 3.2s ease-out infinite}
+.trust li:nth-child(2) .ico::after{animation-delay:.8s}
+.trust li:nth-child(3) .ico::after{animation-delay:1.6s}
+.trust li:nth-child(4) .ico::after{animation-delay:2.4s}
+@keyframes ring{0%{transform:scale(1);opacity:.7}70%,100%{transform:scale(1.55);opacity:0}}
+.trust [data-icon="truck"] svg{animation:drive 2.6s ease-in-out infinite}
+.trust [data-icon="phone"] svg{animation:ringing 2.8s ease-in-out infinite;transform-origin:50% 60%}
+.trust [data-icon="cash"] svg{animation:flip 3.6s ease-in-out infinite}
+.trust [data-icon="battery"] svg,.trust [data-icon="bolt"] svg{animation:charge 2s ease-in-out infinite}
+.trust [data-icon="shield"] svg,.trust [data-icon="star"] svg,.trust [data-icon="clock"] svg,.trust [data-icon="box"] svg{animation:bobIco 2.8s ease-in-out infinite}
+@keyframes drive{0%,100%{transform:translateX(-2px)}50%{transform:translateX(3px)}}
+@keyframes ringing{0%,60%,100%{transform:rotate(0)}64%{transform:rotate(-14deg)}68%{transform:rotate(12deg)}72%{transform:rotate(-10deg)}76%{transform:rotate(8deg)}80%{transform:rotate(0)}}
+@keyframes flip{0%,70%,100%{transform:rotateY(0)}85%{transform:rotateY(180deg)}}
+@keyframes charge{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.92)}}
+@keyframes bobIco{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+.trust li.rv{transform:translateY(14px) scale(.96)}
+.trust li.rv.in{transform:none}
+.trust li:nth-child(2).rv{transition-delay:.08s}.trust li:nth-child(3).rv{transition-delay:.16s}.trust li:nth-child(4).rv{transition-delay:.24s}
+@media (max-width:899px){
+  .trust .wrap{padding:0 12px}
+  .trust ul{gap:10px;padding:16px 0}
+  .trust li,.trust li:nth-child(even),.trust li:nth-child(-n+2){flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;gap:10px;padding:16px 10px 14px;border:1px solid var(--line);border-radius:calc(var(--r) * .8);background:color-mix(in srgb,var(--accent) 4%,var(--bg))}
+  .trust{border-top:0;border-bottom:0;background:transparent}
+  .trust .ico{width:50px;height:50px}
+  .trust b{font-size:14px}
+  .trust span{font-size:12.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  #heroOrder,.head .btn-main,.trust .ico::after,.trust .ico svg{animation:none}
+}
+
 /* ── panneau de commande (formulaire COD de l'app) ── */
 html.order-open,html.order-open body{overflow:hidden}
 .order-panel{position:fixed;inset:0;z-index:130;visibility:hidden;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
@@ -505,7 +549,7 @@ html.order-open,html.order-open body{overflow:hidden}
       </div>
     </section>
 
-    <section class="trust" id="trust"><div class="wrap"><ul style="--n:4"><li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg></span><div><b>Paiement à la livraison</b><span>vous payez à la réception</span></div></li><li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z"/><circle cx="6" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg></span><div><b>Livraison à domicile</b><span>chez vous ou au travail</span></div></li><li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span><div><b>Appel de confirmation</b><span>avant chaque envoi</span></div></li><li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="17" height="10" rx="2"/><path d="M21.5 10.5v3M6 10v4M9.5 10v4M13 10v4"/></svg></span><div><b>Rechargeable</b><span>câble de charge inclus</span></div></li></ul></div></section>
+    <section class="trust" id="trust"><div class="wrap"><ul style="--n:4"><li class="rv" data-icon="cash"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg></span><div><b>Paiement à la livraison</b><span>vous payez à la réception</span></div></li><li class="rv" data-icon="truck"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z"/><circle cx="6" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg></span><div><b>Livraison à domicile</b><span>chez vous ou au travail</span></div></li><li class="rv" data-icon="phone"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span><div><b>Appel de confirmation</b><span>avant chaque envoi</span></div></li><li class="rv" data-icon="battery"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="17" height="10" rx="2"/><path d="M21.5 10.5v3M6 10v4M9.5 10v4M13 10v4"/></svg></span><div><b>Rechargeable</b><span>câble de charge inclus</span></div></li></ul></div></section>
 
     <section class="sec" id="problem">
       <div class="wrap">
