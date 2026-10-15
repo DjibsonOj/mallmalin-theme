@@ -1,0 +1,377 @@
+{
+ "template": "surmesure",
+ "style": "tech",
+ "hero_layout": "split",
+ "hero_fit": "cover",
+ "colors": {
+  "accent": "#38e07b",
+  "accent-ink": "#04140a",
+  "accent2": "#ff4040"
+ },
+ "layout": "landing-inclinometre",
+ "brand": "MallMalin",
+ "logo_file": "mm-logo.jpg",
+ "logo_wide": false,
+ "favicon_file": "mm-logo.jpg",
+ "img": "mm-inclino-",
+ "price_new": "300 000",
+ "price_old": "450 000",
+ "save_pct": "33",
+ "currency": "GNF",
+ "currency_iso": "GNF",
+ "price_new_num": "300000",
+ "announcement": "Livraison à Conakry · Paiement à la livraison · Nous vous appelons pour confirmer",
+ "seo_title": "Inclinomètre numérique laser magnétique rechargeable | {{ mm_new }} {{ mm_cur }} · Livraison à Conakry, paiement à la livraison",
+ "seo_description": "Inclinomètre numérique avec laser rouge et fixation magnétique : angle en degrés, pente en %, touches HOLD et ZERO, batterie rechargeable. {{ mm_new }} {{ mm_cur }}, housse et câble inclus. Livraison à Conakry, paiement à la livraison.",
+ "og_title": "Inclinomètre numérique laser magnétique",
+ "og_description": "Angles et pentes affichés en chiffres, laser rouge, fixation magnétique. {{ mm_new }} {{ mm_cur }} — paiement à la livraison.",
+ "ld_name": "Inclinomètre numérique laser magnétique rechargeable",
+ "ld_description": "Inclinomètre numérique à écran, avec ligne laser rouge, fixation magnétique, mesure de l'angle en degrés et de la pente en %, fonctions HOLD et ZERO, batterie rechargeable. Livré avec housse et câble de charge.",
+ "footer_note": "Livraison à Conakry · Paiement à la livraison",
+ "order_note": "Paiement à la livraison — nous vous appelons pour confirmer",
+ "hero": {
+  "kicker": "Laser · Aimant · Écran numérique",
+  "title_lines": [
+   "Des angles justes,",
+   "*du premier coup.*"
+  ],
+  "sub": "L'inclinomètre numérique qui affiche l'angle en chiffres, trace une ligne laser rouge et tient seul grâce à son aimant. Fini le niveau à bulle qu'on devine à l'œil.",
+  "image": "hero",
+  "alt": "Inclinomètre numérique noir et aluminium affichant 0,00° avec sa ligne laser rouge",
+  "gallery": [
+   {
+    "image": "hero",
+    "alt": "Inclinomètre numérique avec ligne laser rouge"
+   },
+   {
+    "image": "pose.webp",
+    "alt": "Pose de coulisses de tiroir guidée par la ligne laser"
+   },
+   {
+    "image": "ecran",
+    "alt": "Écran aux grands chiffres verts de l'inclinomètre"
+   },
+   {
+    "image": "angles",
+    "alt": "Mesure à plat, à la verticale et sur un plan incliné"
+   }
+  ],
+  "chips": [
+   {
+    "icon": "bolt",
+    "title": "Laser rouge",
+    "text": "ligne de repère"
+   },
+   {
+    "icon": "pin",
+    "title": "Aimant",
+    "text": "mains libres"
+   }
+  ],
+  "cta": "Commander maintenant",
+  "note": "Paiement à la livraison"
+ },
+ "sections": [
+  {
+   "type": "trust",
+   "items": [
+    {
+     "icon": "cash",
+     "title": "Paiement à la livraison",
+     "text": "vous payez à la réception"
+    },
+    {
+     "icon": "truck",
+     "title": "Livraison à domicile",
+     "text": "partout à Conakry"
+    },
+    {
+     "icon": "phone",
+     "title": "Appel de confirmation",
+     "text": "avant chaque envoi"
+    },
+    {
+     "icon": "battery",
+     "title": "Rechargeable",
+     "text": "câble de charge inclus"
+    }
+   ]
+  },
+  {
+   "type": "problem",
+   "kicker": "Le constat",
+   "title": "Un angle « à peu près », c'est un travail à refaire",
+   "problem_title": "Avec un niveau à bulle",
+   "pains": [
+    "La bulle se lit à l'œil : on devine plus qu'on ne mesure",
+    "Impossible de connaître un angle précis, comme 15° ou 45°",
+    "Une main pour tenir l'outil, une seule pour travailler",
+    "Étagères penchées, tiroirs qui frottent, cadres de travers"
+   ],
+   "solution_title": "Avec l'inclinomètre numérique",
+   "solution": [
+    "L'angle s'affiche en chiffres sur l'écran",
+    "La pente en % d'une simple touche",
+    "L'aimant le tient en place sur le métal",
+    "La ligne laser montre où tracer, percer ou fixer"
+   ],
+   "image": "pose.webp",
+   "alt": "Inclinomètre fixé sur un meuble, ligne laser projetée le long du panneau"
+  },
+  {
+   "type": "benefits",
+   "nav": "Avantages",
+   "kicker": "Ce qu'il change",
+   "title": "Tout ce qu'il faut pour *viser juste*",
+   "columns": 3,
+   "items": [
+    {
+     "icon": "sparkle",
+     "title": "Écran numérique",
+     "text": "De grands chiffres verts bien contrastés, lisibles d'un coup d'œil, avec indicateur de batterie."
+    },
+    {
+     "icon": "bolt",
+     "title": "Ligne laser rouge",
+     "text": "Un trait lumineux projeté sur le côté pour aligner, tracer ou repérer sur toute la longueur."
+    },
+    {
+     "icon": "pin",
+     "title": "Fixation magnétique",
+     "text": "Il tient seul sur les surfaces métalliques : vos deux mains restent libres pour travailler."
+    },
+    {
+     "icon": "star",
+     "title": "Degrés ou pourcentage",
+     "text": "La touche Tilt% passe de l'angle en degrés à la pente en %, utile pour les écoulements et les rampes."
+    },
+    {
+     "icon": "clock",
+     "title": "HOLD et ZERO",
+     "text": "HOLD fige la mesure pour la lire tranquillement ; ZERO prend une surface comme référence."
+    },
+    {
+     "icon": "battery",
+     "title": "Batterie rechargeable",
+     "text": "Pas de piles à racheter : il se recharge avec le câble fourni."
+    }
+   ]
+  },
+  {
+   "type": "marquee",
+   "items": [
+    "Angle en degrés",
+    "Pente en %",
+    "Ligne laser rouge",
+    "Fixation magnétique",
+    "Batterie rechargeable",
+    "Paiement à la livraison"
+   ]
+  },
+  {
+   "type": "showcase",
+   "nav": "En action",
+   "cta": "Je le commande",
+   "items": [
+    {
+     "image": "pose.webp",
+     "alt": "Installation de coulisses de tiroir guidée par la ligne laser",
+     "kicker": "Montage de meubles",
+     "title": "Des coulisses et des étagères *parfaitement alignées*",
+     "text": "Posez l'inclinomètre, lisez 0,00 et suivez la ligne laser pour fixer à la bonne hauteur. Vos tiroirs glissent, vos étagères ne penchent plus."
+    },
+    {
+     "image": "ecran",
+     "alt": "Gros plan sur l'écran à chiffres verts",
+     "kicker": "Lecture immédiate",
+     "title": "Un écran qu'on lit *sans plisser les yeux*",
+     "text": "L'angle s'affiche en grands chiffres verts sur fond sombre. Avec HOLD, la mesure reste figée même quand l'outil est dans un coin difficile à voir."
+    },
+    {
+     "image": "angles",
+     "alt": "Mesures à plat, à la verticale et sur un plan incliné",
+     "kicker": "Dans tous les sens",
+     "title": "À plat, à la verticale *ou en pente*",
+     "text": "Posé sur une table, contre un montant ou sur un plan incliné : l'écran indique l'angle exact, qu'il s'agisse de 0°, de 90° ou de 15°."
+    }
+   ]
+  },
+  {
+   "type": "demo",
+   "nav": "Utilisation",
+   "kicker": "Mode d'emploi",
+   "title": "Prêt à mesurer en *3 gestes*",
+   "steps": [
+    {
+     "title": "Allumez",
+     "text": "Un appui sur ON/OFF : l'écran s'allume et affiche l'angle en temps réel."
+    },
+    {
+     "title": "Posez ou fixez",
+     "text": "Posez-le sur la surface à contrôler, ou laissez l'aimant le tenir sur une pièce métallique."
+    },
+    {
+     "title": "Lisez et ajustez",
+     "text": "Ajustez jusqu'à l'angle voulu. ZERO pour mesurer par rapport à une surface, HOLD pour figer la valeur."
+    }
+   ]
+  },
+  {
+   "type": "specs",
+   "nav": "Détails",
+   "kicker": "En détail",
+   "title": "Caractéristiques",
+   "image": "duo",
+   "alt": "Deux inclinomètres numériques avec ligne laser rouge",
+   "rows": [
+    {
+     "label": "Affichage",
+     "value": "Écran numérique, grands chiffres"
+    },
+    {
+     "label": "Mesures",
+     "value": "Angle en degrés · pente en %"
+    },
+    {
+     "label": "Touches",
+     "value": "ON/OFF · Tilt%/HOLD · ZERO"
+    },
+    {
+     "label": "Laser",
+     "value": "Ligne rouge projetée sur le côté"
+    },
+    {
+     "label": "Fixation",
+     "value": "Magnétique"
+    },
+    {
+     "label": "Alimentation",
+     "value": "Batterie rechargeable"
+    },
+    {
+     "label": "Matériaux",
+     "value": "Plastique et alliage d'aluminium"
+    },
+    {
+     "label": "Plage de mesure",
+     "value": ""
+    },
+    {
+     "label": "Précision",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "type": "included",
+   "title": "Dans le colis",
+   "items": [
+    {
+     "label": "Inclinomètre numérique laser",
+     "image": "hero"
+    },
+    {
+     "label": "Housse de rangement",
+     "icon": "bag"
+    },
+    {
+     "label": "Câble de charge",
+     "icon": "bolt"
+    }
+   ]
+  },
+  {
+   "type": "benefits",
+   "kicker": "Pour qui ?",
+   "title": "Pour les pros comme pour *la maison*",
+   "items": [
+    {
+     "icon": "building",
+     "title": "Menuisiers et poseurs",
+     "text": "Meubles, cuisines, portes, coulisses et plans de travail."
+    },
+    {
+     "icon": "bolt",
+     "title": "Électriciens et installateurs",
+     "text": "Goulottes, boîtiers, supports et écrans bien droits."
+    },
+    {
+     "icon": "box",
+     "title": "Carreleurs et maçons",
+     "text": "Contrôle des pentes et des aplombs sur le chantier."
+    },
+    {
+     "icon": "users",
+     "title": "Bricoleurs à la maison",
+     "text": "Étagères, tableaux, téléviseur : tout est droit du premier coup."
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "title": "Ils l'utilisent",
+   "items": []
+  },
+  {
+   "type": "offer",
+   "nav": "Offre",
+   "kicker": "Offre de lancement",
+   "title": "Votre inclinomètre, *livré chez vous*",
+   "text": "Tout le nécessaire pour mesurer juste dès l'ouverture du colis.",
+   "image": "hero",
+   "alt": "Inclinomètre numérique laser",
+   "items": [
+    "Inclinomètre numérique laser magnétique",
+    "Housse de rangement",
+    "Câble de charge"
+   ],
+   "payment": "à la livraison, quand le colis vous est remis",
+   "delivery": "à domicile à Conakry — nous vous appelons pour confirmer l'adresse",
+   "ends_at": "",
+   "cta": "Commander — payer à la livraison"
+  },
+  {
+   "type": "faq",
+   "nav": "Questions",
+   "title": "Vos questions",
+   "items": [
+    {
+     "q": "Comment se passe le paiement ?",
+     "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez à la livraison, quand le colis vous est remis."
+    },
+    {
+     "q": "Où livrez-vous ?",
+     "a": "Nous livrons à domicile à Conakry. Indiquez votre quartier dans le formulaire : nous vous appelons pour confirmer la livraison."
+    },
+    {
+     "q": "Comment le recharger ?",
+     "a": "Il fonctionne sur batterie rechargeable : branchez-le avec le câble de charge fourni dans le colis."
+    },
+    {
+     "q": "Sur quelles surfaces l'aimant tient-il ?",
+     "a": "L'aimant tient sur les surfaces métalliques magnétiques (acier, fer). Sur le bois, le carrelage ou le plastique, il suffit de le poser ou de le tenir contre la surface."
+    },
+    {
+     "q": "Peut-il mesurer une pente en pourcentage ?",
+     "a": "Oui. La touche Tilt% bascule l'affichage entre l'angle en degrés et la pente en %."
+    },
+    {
+     "q": "À quoi servent les touches ZERO et HOLD ?",
+     "a": "ZERO remet l'affichage à 0 sur une surface de votre choix pour mesurer par rapport à elle. HOLD fige la valeur affichée pour la lire tranquillement."
+    },
+    {
+     "q": "Que contient le colis ?",
+     "a": "L'inclinomètre numérique laser, sa housse de rangement et le câble de charge."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "Mesurez juste,",
+   "em": "dès aujourd'hui.",
+   "text": "Pas de paiement en ligne, pas de carte bancaire : vous payez à la livraison.",
+   "note": "Housse et câble de charge inclus",
+   "button": "Commander maintenant"
+  }
+ ]
+}

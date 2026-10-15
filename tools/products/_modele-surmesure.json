@@ -1,0 +1,191 @@
+{
+ "template": "surmesure",
+ "style": "sante",
+ "_styles": "tech | beaute | sante | maison | mode | sport | enfants",
+ "hero_layout": "",
+ "_hero_layout": "vide = selon le style ; sinon split | centered | overlay",
+ "hero_fit": "cover",
+ "colors": {},
+ "_colors": "facultatif, ex. {\"accent\": \"#1f6feb\"} — clés : bg surface ink muted line accent accent-ink accent2",
+ "layout": "landing-NOMDUPRODUIT",
+ "brand": "MallMalin",
+ "logo_file": "mm-logo.jpg",
+ "logo_wide": false,
+ "favicon_file": "mm-logo.jpg",
+ "img": "mm-PRODUIT-",
+ "price_new": "PRIX PROMO",
+ "price_old": "",
+ "_price_old": "laisser vide s'il n'y a pas de vrai prix barré",
+ "save_pct": "",
+ "currency": "GNF",
+ "currency_iso": "GNF",
+ "price_new_num": "PRIX EN CHIFFRES",
+ "announcement": "Livraison à Conakry · Paiement à la livraison",
+ "seo_title": "NOM DU PRODUIT — bénéfice principal | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
+ "seo_description": "Description courte et vraie du produit. {{ mm_new }} {{ mm_cur }}, livraison à Conakry, paiement à la livraison.",
+ "og_title": "NOM DU PRODUIT",
+ "og_description": "Bénéfice principal. Paiement à la livraison.",
+ "ld_name": "NOM DU PRODUIT",
+ "ld_description": "Description factuelle du produit.",
+ "footer_note": "Livraison à Conakry · Paiement à la livraison",
+ "hero": {
+  "kicker": "Accroche courte",
+  "title_lines": [
+   "Bénéfice",
+   "principal,",
+   "*en clair.*"
+  ],
+  "sub": "À qui s'adresse le produit et ce qu'il change, en une ou deux phrases.",
+  "image": "hero",
+  "alt": "Description de la photo principale",
+  "gallery": [
+   {
+    "image": "hero",
+    "alt": "..."
+   },
+   {
+    "image": "g2",
+    "alt": "..."
+   }
+  ],
+  "chips": [
+   {
+    "icon": "cash",
+    "title": "Paiement",
+    "text": "à la livraison"
+   }
+  ],
+  "cta": "Commander maintenant",
+  "note": "Paiement à la livraison"
+ },
+ "sections": [
+  {
+   "type": "trust",
+   "items": [
+    {
+     "icon": "truck",
+     "title": "Livraison",
+     "text": "à Conakry"
+    },
+    {
+     "icon": "cash",
+     "title": "Paiement",
+     "text": "à la livraison"
+    },
+    {
+     "icon": "phone",
+     "title": "Appel",
+     "text": "de confirmation"
+    },
+    {
+     "icon": "shield",
+     "title": "Produit",
+     "text": "vérifié avant envoi"
+    }
+   ]
+  },
+  {
+   "type": "problem",
+   "kicker": "Le constat",
+   "title": "Pourquoi ce produit ?",
+   "problem_title": "Avant",
+   "pains": [
+    "Frustration 1",
+    "Frustration 2"
+   ],
+   "solution_title": "Avec NOM DU PRODUIT",
+   "solution": [
+    "Bénéfice concret 1",
+    "Bénéfice concret 2"
+   ],
+   "image": ""
+  },
+  {
+   "type": "benefits",
+   "nav": "Avantages",
+   "kicker": "Avantages",
+   "title": "Ce que vous y gagnez",
+   "items": [
+    {
+     "icon": "star",
+     "title": "Bénéfice 1",
+     "text": "Réponse à une question concrète."
+    }
+   ]
+  },
+  {
+   "type": "demo",
+   "nav": "Utilisation",
+   "kicker": "Mode d'emploi",
+   "title": "Simple à utiliser",
+   "steps": [
+    {
+     "title": "Étape 1",
+     "text": "...",
+     "image": ""
+    }
+   ]
+  },
+  {
+   "type": "specs",
+   "nav": "Détails",
+   "title": "Caractéristiques",
+   "image": "",
+   "rows": [
+    {
+     "label": "Caractéristique connue",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "type": "included",
+   "title": "Dans le colis",
+   "items": [
+    {
+     "label": "Élément 1",
+     "icon": "box"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "title": "Ils l'ont reçu",
+   "items": []
+  },
+  {
+   "type": "offer",
+   "nav": "Offre",
+   "kicker": "Votre commande",
+   "title": "L'offre",
+   "items": [
+    "Contenu réel de l'offre"
+   ],
+   "delivery": "",
+   "payment": "À la livraison",
+   "returns": "",
+   "ends_at": "",
+   "image": ""
+  },
+  {
+   "type": "faq",
+   "nav": "Questions",
+   "title": "Vos questions",
+   "items": [
+    {
+     "q": "Comment je paie ?",
+     "a": "À la livraison."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "Prêt à commander ?",
+   "text": "Rappel du bénéfice principal.",
+   "note": "Paiement à la livraison"
+  }
+ ],
+ "_sections_disponibles": "trust, stats, marquee, problem, benefits, showcase, demo, gallery, beforeafter, specs, compare, included, reviews, offer, faq, cta — dans l'ordre voulu, chacune facultative",
+ "_regles": "Ne jamais inventer : une spec sans valeur, une liste d'avis vide, un ends_at vide ou passé, un price_old vide => l'élément ne s'affiche pas. reviews = vrais avis uniquement. ends_at = vraie date de fin (ex. 2026-11-30T23:59:00Z).",
+ "_icones": "truck cash shield phone box clock star leaf heart battery bolt bluetooth music headphones users gift building school pin bag sparkle moon feather"
+}

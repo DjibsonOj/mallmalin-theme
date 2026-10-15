@@ -8,6 +8,7 @@ Usage :  python3 tools/build.py earbuds          (un produit)
 
 Design : "template": "atelier" → épuré premium (tools/landing-atelier.template.liquid)
          "template": "elan"    → dynamique (tools/landing-elan.template.liquid)
+         "template": "surmesure" → adapté au produit, 7 styles (tools/surmesure.py)
          sinon design Salon Pro.
 """
 import json, os, re, sys, glob
@@ -15,6 +16,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TPL = open(os.path.join(ROOT, 'tools', 'landing.template.liquid'), encoding='utf-8').read()
 TPL_ATELIER = open(os.path.join(ROOT, 'tools', 'landing-atelier.template.liquid'), encoding='utf-8').read()
 TPL_ELAN = open(os.path.join(ROOT, 'tools', 'landing-elan.template.liquid'), encoding='utf-8').read()
+TPL_SURMESURE = open(os.path.join(ROOT, 'tools', 'landing-surmesure.template.liquid'), encoding='utf-8').read()
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
 
 def asset(name): return "{{ '%s' | asset_url }}" % name
 def esc_js(t): return t.replace('\\', '\\\\').replace("'", "\\'")
@@ -150,6 +153,9 @@ def build(name):
         return finish(name, cfg, build_atelier(cfg))
     if cfg.get('template') == 'elan':
         return finish(name, cfg, build_atelier(cfg, TPL_ELAN))
+    if cfg.get('template') == 'surmesure':
+        import surmesure
+        return finish(name, cfg, surmesure.render(cfg, TPL_SURMESURE, asset, svg, jpg, TICK))
     pref = cfg['img']
     out = TPL
     cfg = dict(cfg)
@@ -171,8 +177,12 @@ def finish(name, cfg, out):
     if missing: print('⚠ images absentes de assets/ :', ', '.join(missing))
     lay = cfg['layout']
     open(os.path.join(ROOT, 'layout', lay + '.liquid'), 'w', encoding='utf-8').write(out)
-    tp = {"layout": lay, "sections": {"cod": {"type": "mm-cod", "blocks": {}, "block_order": [], "settings": {}}}, "order": ["cod"]}
-    open(os.path.join(ROOT, 'templates', 'product.%s.json' % lay), 'w', encoding='utf-8').write(json.dumps(tp, indent=2))
+    # Le modèle produit n'est créé qu'une fois : ensuite Shopify y enregistre le bloc de l'app COD
+    # (ajouté dans l'éditeur de thème) et il ne faut jamais l'écraser.
+    tpath = os.path.join(ROOT, 'templates', 'product.%s.json' % lay)
+    if not os.path.exists(tpath):
+        tp = {"layout": lay, "sections": {"cod": {"type": "mm-cod", "blocks": {}, "block_order": [], "settings": {}}}, "order": ["cod"]}
+        open(tpath, 'w', encoding='utf-8').write(json.dumps(tp, indent=2))
     print('OK  layout/%s.liquid  (%d Ko)  +  templates/product.%s.json' % (lay, len(out.encode()) // 1024, lay))
 
 names = sys.argv[1:] or [os.path.basename(p)[:-5] for p in glob.glob(os.path.join(ROOT, 'tools', 'products', '*.json')) if not os.path.basename(p).startswith('_')]
