@@ -211,6 +211,17 @@ def render(cfg, tpl, asset, svg, jpg, tick):
                  % (img(b['image']), b.get('label', 'Avant'), img(a['image']), a.get('label', 'Après'), b.get('label', 'Avant'), a.get('label', 'Après')))
         return wrap(s, sid, head(s) + inner)
 
+    def s_video(s, sid):
+        v = s.get('video', '').strip()
+        if not v: return ''
+        src = v if v.startswith(('http://', 'https://', '//')) else asset(pref + (v if v.endswith('.mp4') else v + '.mp4'))
+        poster = (' poster="%s"' % img(s['poster'])) if s.get('poster') else ''
+        inner = ('<figure class="vid rv"><video src="%s"%s muted loop playsinline preload="none" aria-label="%s"></video>'
+                 '<button type="button" class="vid-btn" aria-label="Lecture / pause"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></button>%s</figure>'
+                 % (src, poster, s.get('alt', 'Vidéo du produit'), ('<figcaption>%s</figcaption>' % s['caption']) if s.get('caption') else ''))
+        if s.get('cta'): inner += '<div class="vid-cta rv"><a class="btn btn-main" href="#commander" data-order>%s</a></div>' % s['cta']
+        return wrap(s, sid, head(s) + inner)
+
     def s_specs(s, sid):
         rows = [r for r in s.get('rows', []) if r.get('value')]
         if not rows: return ''
@@ -286,7 +297,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         return '    <section style="padding:0 0 clamp(40px,6vw,72px)" id="%s"><div class="wrap">%s</div></section>' % (sid, inner)
 
     R = {'trust': s_trust, 'stats': s_stats, 'marquee': s_marquee, 'problem': s_problem, 'benefits': s_benefits,
-         'showcase': s_showcase, 'demo': s_demo, 'gallery': s_gallery, 'beforeafter': s_beforeafter, 'specs': s_specs,
+         'showcase': s_showcase, 'video': s_video, 'demo': s_demo, 'gallery': s_gallery, 'beforeafter': s_beforeafter, 'specs': s_specs,
          'compare': s_compare, 'included': s_included, 'reviews': s_reviews, 'offer': s_offer, 'faq': s_faq, 'cta': s_cta}
 
     out_sections, nav, seen = [hero], [], {}

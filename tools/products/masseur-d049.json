@@ -96,6 +96,18 @@
    ]
   },
   {
+   "type": "video",
+   "nav": "En action",
+   "kicker": "En action",
+   "title": "Le D049 *en fonctionnement*",
+   "intro": "Va-et-vient, rotation et commande à distance : voyez-le fonctionner avant de commander.",
+   "video": "action",
+   "poster": "action-poster",
+   "alt": "Démonstration du masseur D049 piloté par sa télécommande",
+   "caption": "Piloté par la télécommande",
+   "cta": "Commander discrètement"
+  },
+  {
    "type": "benefits",
    "nav": "Fonctions",
    "kicker": "Fonctions",

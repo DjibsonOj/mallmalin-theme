@@ -502,6 +502,14 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 
 /* ── écran « réservé aux adultes » (option age_gate) ── */
 html.no-scan .h-main::before{display:none}
+.vid{position:relative;margin:0 auto;max-width:960px;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 24px 60px -24px rgba(0,0,0,.55)}
+.vid video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.vid-btn{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border:0;border-radius:50%;background:var(--accent);color:var(--accent-ink,#fff);display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 10px color-mix(in srgb,var(--accent) 25%,transparent);transition:opacity .3s,transform .3s}
+.vid-btn svg{width:22px;height:22px;fill:currentColor;margin-left:3px}
+.vid.playing .vid-btn{opacity:0;transform:scale(.8);pointer-events:none}
+.vid figcaption{position:absolute;left:12px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;font-weight:600}
+.vid-cta{text-align:center;margin-top:22px}
+@media(max-width:640px){.vid{border-radius:16px}}
 .agegate{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(8,8,10,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
 html.age-ok .agegate,.no-js .agegate{display:none}
 html.age-lock,html.age-lock body{overflow:hidden}
@@ -545,7 +553,7 @@ html.order-open,html.order-open body{overflow:hidden}
   <header class="head" id="head">
     <div class="wrap">
       <a class="brand wide logo-pill" href="#top" aria-label="Afribazaar"><img class="logo-wide" src="{{ 'ab-logo.png' | asset_url }}" alt="Afribazaar" height="40"></a>
-      <nav class="head-nav" aria-label="Sections"><a href="#benefits">Fonctions</a><a href="#showcase">En détail</a><a href="#demo">Utilisation</a><a href="#specs">Caractéristiques</a><a href="#offer">Offre</a></nav>
+      <nav class="head-nav" aria-label="Sections"><a href="#video">En action</a><a href="#benefits">Fonctions</a><a href="#showcase">En détail</a><a href="#demo">Utilisation</a><a href="#specs">Caractéristiques</a></nav>
       <a class="btn btn-main" href="#commander" data-order>Commander</a>
     </div>
   </header>
@@ -565,6 +573,12 @@ html.order-open,html.order-open body{overflow:hidden}
     </section>
 
     <section class="trust" id="trust"><div class="wrap"><ul style="--n:4"><li class="rv" data-icon="box"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/></svg></span><div><b>Colis neutre</b><span>aucune mention du contenu</span></div></li><li class="rv" data-icon="cash"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg></span><div><b>Paiement à la livraison</b><span>rien à payer en ligne</span></div></li><li class="rv" data-icon="phone"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span><div><b>Appel de confirmation</b><span>avant chaque envoi</span></div></li><li class="rv" data-icon="battery"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="17" height="10" rx="2"/><path d="M21.5 10.5v3M6 10v4M9.5 10v4M13 10v4"/></svg></span><div><b>Rechargeable</b><span>par câble USB</span></div></li></ul></div></section>
+
+    <section class="sec" id="video">
+      <div class="wrap">
+<div class="sec-head rv"><span class="kicker">En action</span><h2 class="h h2">Le D049 <em>en fonctionnement</em></h2><p class="lead">Va-et-vient, rotation et commande à distance : voyez-le fonctionner avant de commander.</p></div><figure class="vid rv"><video src="{{ 'ab-d049-action.mp4' | asset_url }}" poster="{{ 'ab-d049-action-poster.jpg' | asset_url }}" muted loop playsinline preload="none" aria-label="Démonstration du masseur D049 piloté par sa télécommande"></video><button type="button" class="vid-btn" aria-label="Lecture / pause"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></button><figcaption>Piloté par la télécommande</figcaption></figure><div class="vid-cta rv"><a class="btn btn-main" href="#commander" data-order>Commander discrètement</a></div>
+      </div>
+    </section>
 
     <section class="sec" id="benefits">
       <div class="wrap">
@@ -776,6 +790,22 @@ html.order-open,html.order-open body{overflow:hidden}
   g.querySelector('[data-age-ok]').addEventListener('click',function(){
     try{ sessionStorage.setItem('ag18','1'); }catch(e){}
     root.classList.add('age-ok'); root.classList.remove('age-lock');
+  });
+})();
+  </script>
+  <script>
+(function(){
+  document.querySelectorAll('.vid').forEach(function(f){
+    var v=f.querySelector('video'), held=false;
+    function sync(){ f.classList.toggle('playing',!v.paused); }
+    v.addEventListener('play',sync); v.addEventListener('pause',sync);
+    function play(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+    f.addEventListener('click',function(){ if(v.paused){ held=false; play(); } else { held=true; v.pause(); } });
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ es.forEach(function(e){
+        if(e.isIntersecting){ if(!held) play(); } else if(!v.paused){ v.pause(); }
+      }); },{threshold:.45}).observe(f);
+    }
   });
 })();
   </script>
