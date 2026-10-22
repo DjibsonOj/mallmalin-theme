@@ -58,6 +58,8 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         'bar_old': '<s>{{ mm_old }} {{ mm_cur }}</s>' if old else '',
         'order_old': '<span class="order-old">{{ mm_old }} {{ mm_cur }}</span>' if old else '',
         'order_note': cfg.get('order_note', 'Paiement à la livraison — nous vous appelons pour confirmer'),
+        'html_class': ' '.join(x for x in (('no-scan' if cfg.get('fx_scan') is False else ''),) if x),
+        'robots_meta': '  <meta name="robots" content="noindex, nofollow">\n' if cfg.get('noindex') else '',
         'announce_html': ('  <div class="announce">%s</div>' % cfg['announcement']) if cfg.get('announcement') else '',
     })
     # logo facultatif : affiché seulement s'il est présent dans assets/
@@ -73,6 +75,20 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     fav = cfg.get('favicon_file', logo)
     fav_ok = bool(fav) and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', fav))
     c['favicon_link'] = ('  <link rel="icon" href="%s">\n' % asset(fav)) if fav_ok else ''
+    # écran « réservé aux adultes » (produits 18+)
+    ag = cfg.get('age_gate')
+    if ag:
+        ag = ag if isinstance(ag, dict) else {}
+        c['age_gate_head'] = "  <script>try{if(sessionStorage.getItem('ag18')==='1')document.documentElement.classList.add('age-ok')}catch(e){}</script>\n"
+        c['age_gate_html'] = ('  <div class="agegate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="agTitle"><div class="ag-box">'
+            '<span class="ag-badge">18+</span><h2 id="agTitle">%s</h2><p>%s</p>'
+            '<button type="button" class="btn btn-main" data-age-ok>%s</button><a class="ag-exit" href="%s">%s</a></div></div>\n'
+            % (ag.get('title', 'Contenu réservé aux adultes'),
+               ag.get('text', 'Cette page présente un produit destiné aux personnes majeures. Confirmez que vous avez 18 ans ou plus pour continuer.'),
+               ag.get('confirm', "J'ai 18 ans ou plus"), ag.get('exit_url', '/'), ag.get('exit', 'Quitter')))
+    else:
+        c['age_gate_head'] = ''
+        c['age_gate_html'] = ''
     ov = cfg.get('colors', {})
     c['color_overrides'] = ('html[data-style="%s"]{%s}' % (style, ';'.join('--%s:%s' % (k, v) for k, v in ov.items() if k in COLOR_KEYS))) if ov else ''
 
