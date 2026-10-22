@@ -500,6 +500,14 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 
 /* ── écran « réservé aux adultes » (option age_gate) ── */
 html.no-scan .h-main::before{display:none}
+.vid{position:relative;margin:0 auto;max-width:960px;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 24px 60px -24px rgba(0,0,0,.55)}
+.vid video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.vid-btn{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border:0;border-radius:50%;background:var(--accent);color:var(--accent-ink,#fff);display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 10px color-mix(in srgb,var(--accent) 25%,transparent);transition:opacity .3s,transform .3s}
+.vid-btn svg{width:22px;height:22px;fill:currentColor;margin-left:3px}
+.vid.playing .vid-btn{opacity:0;transform:scale(.8);pointer-events:none}
+.vid figcaption{position:absolute;left:12px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;font-weight:600}
+.vid-cta{text-align:center;margin-top:22px}
+@media(max-width:640px){.vid{border-radius:16px}}
 .agegate{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(8,8,10,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
 html.age-ok .agegate,.no-js .agegate{display:none}
 html.age-lock,html.age-lock body{overflow:hidden}
@@ -787,6 +795,22 @@ html.order-open,html.order-open body{overflow:hidden}
   g.querySelector('[data-age-ok]').addEventListener('click',function(){
     try{ sessionStorage.setItem('ag18','1'); }catch(e){}
     root.classList.add('age-ok'); root.classList.remove('age-lock');
+  });
+})();
+  </script>
+  <script>
+(function(){
+  document.querySelectorAll('.vid').forEach(function(f){
+    var v=f.querySelector('video'), held=false;
+    function sync(){ f.classList.toggle('playing',!v.paused); }
+    v.addEventListener('play',sync); v.addEventListener('pause',sync);
+    function play(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+    f.addEventListener('click',function(){ if(v.paused){ held=false; play(); } else { held=true; v.pause(); } });
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ es.forEach(function(e){
+        if(e.isIntersecting){ if(!held) play(); } else if(!v.paused){ v.pause(); }
+      }); },{threshold:.45}).observe(f);
+    }
   });
 })();
   </script>
