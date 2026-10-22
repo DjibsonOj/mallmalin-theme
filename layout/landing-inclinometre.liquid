@@ -10,7 +10,7 @@
 {%- assign mm_cur = 'FCFA' -%}
 {%- assign mm_new_num = '14900' -%}
 <!DOCTYPE html>
-<html lang="fr" data-style="tech" data-hero="split">
+<html lang="fr" class="" data-style="tech" data-hero="split">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -498,6 +498,18 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
   #heroOrder,.head .btn-main,.trust .ico::after,.trust .ico svg{animation:none}
 }
 
+/* ── écran « réservé aux adultes » (option age_gate) ── */
+html.no-scan .h-main::before{display:none}
+.agegate{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(8,8,10,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+html.age-ok .agegate,.no-js .agegate{display:none}
+html.age-lock,html.age-lock body{overflow:hidden}
+.ag-box{width:min(440px,100%);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:calc(var(--r) + 6px);padding:30px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.ag-badge{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:22px}
+.ag-box h2{font-family:var(--fh);font-size:24px;line-height:1.2}
+.ag-box p{color:var(--muted);font-size:15px}
+.ag-box .btn{width:100%}
+.ag-exit{font-size:14px;font-weight:600;color:var(--muted);text-decoration:underline}
+
 /* ── panneau de commande (formulaire COD de l'app) ── */
 html.order-open,html.order-open body{overflow:hidden}
 .order-panel{position:fixed;inset:0;z-index:130;visibility:hidden;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
@@ -764,6 +776,17 @@ html.order-open,html.order-open body{overflow:hidden}
       var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && mob()){ io.disconnect(); setTimeout(function(){ nudging=true; row.scrollBy({left:70,behavior:'smooth'}); setTimeout(function(){ row.scrollBy({left:-70,behavior:'smooth'}); setTimeout(function(){ nudging=false; },600); },550); },400); } }); },{threshold:.6});
       io.observe(row);
     }
+  });
+})();
+  </script>
+  <script>
+(function(){
+  var g=document.getElementById('ageGate'); if(!g) return;
+  var root=document.documentElement;
+  if(!root.classList.contains('age-ok')) root.classList.add('age-lock');
+  g.querySelector('[data-age-ok]').addEventListener('click',function(){
+    try{ sessionStorage.setItem('ag18','1'); }catch(e){}
+    root.classList.add('age-ok'); root.classList.remove('age-lock');
   });
 })();
   </script>
