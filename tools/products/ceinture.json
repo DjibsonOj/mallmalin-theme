@@ -397,5 +397,11 @@
   "icon": "gift",
   "title": "1 ceinture achetée = 1 ceinture offerte",
   "text": "Vous recevez 2 ceintures pour {{ mm_new }} {{ mm_cur }} seulement"
+ },
+ "sticker": {
+  "big": "1+1",
+  "small": "OFFERTE",
+  "icon": "gift",
+  "label": "Offre : 1 ceinture achetée = 1 ceinture offerte. Commander"
  }
 }

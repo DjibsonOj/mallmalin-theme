@@ -34,6 +34,15 @@ def announce(cfg):
             '<div>%s</div><div>%s</div></div></div>' % (' · '.join(items), seq, seq))
 
 
+def sticker(cfg, svg):
+    """Badge rond flottant (ex. « 1+1 OFFERTE ») qui ouvre le formulaire de commande."""
+    st = cfg.get('sticker') or {}
+    if not st.get('big'): return ''
+    return ('  <a class="sticker" id="sticker" href="#commander" data-order aria-label="%s">'
+            '<span class="st-ico" aria-hidden="true">%s</span><b>%s</b><small>%s</small></a>\n'
+            % (st.get('label', st['big']), svg(st.get('icon', 'gift')), st['big'], st.get('small', '')))
+
+
 def render(cfg, tpl, asset, svg, jpg, tick):
     pref = cfg['img']
     style = cfg.get('style', 'sante')
@@ -88,6 +97,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         'html_class': ' '.join(x for x in (('no-scan' if cfg.get('fx_scan') is False else ''),) if x),
         'robots_meta': '  <meta name="robots" content="noindex, nofollow">\n' if cfg.get('noindex') else '',
         'announce_html': announce(cfg),
+        'sticker_html': sticker(cfg, svg),
         'order_deal': ('<span class="order-deal">%s</span>' % dl['title']) if dl.get('title') else '',
     })
     # logo facultatif : affiché seulement s'il est présent dans assets/
