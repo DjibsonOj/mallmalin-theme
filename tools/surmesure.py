@@ -178,13 +178,16 @@ def render(cfg, tpl, asset, svg, jpg, tick):
 
     def s_problem(s, sid):
         if not (s.get('pains') and (s.get('solution') or s.get('solution_text'))): return ''
-        bad = '<div class="ps-box bad card rv"><h3 class="h">%s</h3><ul>%s</ul></div>' % (
-            em(s.get('problem_title', 'Le problème')), ''.join('<li>%s</li>' % p for p in s['pains']))
+        pr = s.get('image_ratio', '').strip()       # ex. "4/5" pour des photos verticales
+        pst = (' style="aspect-ratio:%s"' % pr) if pr else ''
+        bad = '<div class="ps-box bad card rv"><h3 class="h">%s</h3><ul>%s</ul>%s</div>' % (
+            em(s.get('problem_title', 'Le problème')), ''.join('<li>%s</li>' % p for p in s['pains']),
+            ('<div class="ps-img"%s><img src="%s" alt="%s" loading="lazy"></div>' % (pst, img(s['problem_image']), s.get('problem_alt', ''))) if s.get('problem_image') else '')
         good = '<div class="ps-box good card rv"><h3 class="h">%s</h3>%s%s%s</div>' % (
             em(s.get('solution_title', 'La solution')),
             ('<p>%s</p>' % s['solution_text']) if s.get('solution_text') else '',
             ('<ul>%s</ul>' % ''.join('<li>%s</li>' % p for p in s['solution'])) if s.get('solution') else '',
-            ('<div class="ps-img"><img src="%s" alt="%s" loading="lazy"></div>' % (img(s['image']), s.get('alt', ''))) if s.get('image') else '')
+            ('<div class="ps-img"%s><img src="%s" alt="%s" loading="lazy"></div>' % (pst, img(s['image']), s.get('alt', ''))) if s.get('image') else '')
         return wrap(s, sid, head(s) + '<div class="ps">%s%s</div>' % (bad, good))
 
     def s_benefits(s, sid):
