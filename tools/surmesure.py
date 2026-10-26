@@ -65,6 +65,13 @@ def render(cfg, tpl, asset, svg, jpg, tick):
                 h += '<span class="badge">−%s %%</span>' % save
         return h
 
+    dl = cfg.get('deal') or {}
+    def deal(cls=''):
+        """Offre spéciale bien visible (ex. 1 achetée = 1 offerte), affichée sous chaque prix."""
+        if not dl.get('title'): return ''
+        return ('<div class="deal%s"><span class="deal-ico" aria-hidden="true">%s</span><div><b>%s</b>%s</div></div>'
+                % (cls, svg(dl.get('icon', 'gift')), dl['title'], ('<span>%s</span>' % dl['text']) if dl.get('text') else ''))
+
     c = {k: v for k, v in cfg.items() if isinstance(v, str)}
     c.update({
         'style': style,
@@ -81,6 +88,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         'html_class': ' '.join(x for x in (('no-scan' if cfg.get('fx_scan') is False else ''),) if x),
         'robots_meta': '  <meta name="robots" content="noindex, nofollow">\n' if cfg.get('noindex') else '',
         'announce_html': announce(cfg),
+        'order_deal': ('<span class="order-deal">%s</span>' % dl['title']) if dl.get('title') else '',
     })
     # logo facultatif : affiché seulement s'il est présent dans assets/
     logo = cfg.get('logo_file', '')
@@ -134,6 +142,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         + '          <h1 class="h in-hero">%s</h1>\n' % ''.join('<span class="ln">%s</span>' % em(l) for l in hr['title_lines'])
         + ('          <p class="hero-sub in-hero">%s</p>\n' % hr['sub'] if hr.get('sub') else '')
         + '          <div class="price-row in-hero">%s</div>\n' % price_row()
+        + (('          %s\n' % deal(' in-hero')) if dl.get('title') else '')
         + '          <div class="hero-actions in-hero"><a class="btn btn-main" href="#commander" data-order id="heroOrder">%s%s</a>'
           '<span class="hero-note">%s%s</span></div>\n' % (hr.get('cta', 'Commander maintenant'), ARROW, tick, note)
         + '        </div>\n'
@@ -304,12 +313,12 @@ def render(cfg, tpl, asset, svg, jpg, tick):
             cd = ('<div class="countdown" data-ends="%s">%s<div class="cd">%s</div></div>'
                   % (s['ends_at'], s.get('ends_label', 'L’offre se termine dans'),
                      ''.join('<span data-u>00<small>%s</small></span>' % u for u in ('jours', 'h', 'min', 's'))))
-        body = ('<div class="offer-body">%s%s%s%s<div class="offer-price">%s</div>%s%s<a class="btn btn-main" href="#commander" data-order>%s</a></div>'
+        body = ('<div class="offer-body">%s%s%s%s<div class="offer-price">%s</div>%s%s%s<a class="btn btn-main" href="#commander" data-order>%s</a></div>'
                 % (('<span class="pill">%s</span>' % s['kicker']) if s.get('kicker') else '',
                    '<h2 class="h">%s</h2>' % em(s.get('title', 'Votre commande')),
                    ('<p>%s</p>' % s['text']) if s.get('text') else '',
                    ('<ul class="offer-list">%s</ul>' % ''.join('<li>%s<span>%s</span></li>' % (tick, x) for x in s['items'])) if s.get('items') else '',
-                   price_row(), cd,
+                   price_row(), deal(), cd,
                    ('<div class="offer-terms">%s</div>' % terms) if terms else '',
                    s.get('cta', 'Commander — payer à la livraison')))
         media = ('<div class="offer-media"><img src="%s" alt="%s" loading="lazy"></div>' % (img(s['image']), s.get('alt', ''))) if s.get('image') else ''
@@ -323,10 +332,10 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         return wrap(s2, sid, head(s2) + '<div class="faq rv">%s</div>' % det)
 
     def s_cta(s, sid):
-        inner = ('<div class="cta rv"><div><h2 class="h">%s%s</h2>%s</div><div class="cta-card"><div class="price-row" style="justify-content:center">%s</div>'
+        inner = ('<div class="cta rv"><div><h2 class="h">%s%s</h2>%s</div><div class="cta-card"><div class="price-row" style="justify-content:center">%s</div>%s'
                  '<span class="note">%s</span><a class="btn btn-main" href="#commander" data-order id="finalOrder">%s%s</a></div></div>'
                  % (em(s.get('title', 'Prêt à commander ?')), (' <em>%s</em>' % s['em']) if s.get('em') else '',
-                    ('<p>%s</p>' % s['text']) if s.get('text') else '', price_row(False),
+                    ('<p>%s</p>' % s['text']) if s.get('text') else '', price_row(False), deal(' center'),
                     s.get('note', 'Paiement à la livraison'), s.get('button', 'Commander maintenant'), ARROW))
         return '    <section style="padding:0 0 clamp(40px,6vw,72px)" id="%s"><div class="wrap">%s</div></section>' % (sid, inner)
 

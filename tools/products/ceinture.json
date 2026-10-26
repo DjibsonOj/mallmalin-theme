@@ -15,24 +15,24 @@
  "logo_wide": false,
  "favicon_file": "kc-favicon.png",
  "img": "kc-ceinture-",
- "price_new": "20",
+ "price_new": "15",
  "price_old": "35",
- "save_pct": "43",
+ "save_pct": "57",
  "currency": "$",
  "currency_iso": "USD",
- "price_new_num": "20",
- "announcement": "Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison · Appel de confirmation avant chaque envoi",
+ "price_new_num": "15",
+ "announcement": "OFFRE : 1 ceinture achetée = 1 ceinture OFFERTE · Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison",
  "announcement_scroll": true,
- "seo_title": "Ceinture élastique sans boucle homme & femme | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Kinshasa",
+ "seo_title": "Ceinture élastique sans boucle : 1 achetée = 1 offerte | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Kinshasa",
  "seo_description": "Ceinture élastique sans boucle, unisexe : elle suit vos mouvements, ne serre pas le ventre et ne se voit pas sous la chemise. Noir ou marron. {{ mm_new }} {{ mm_cur }}, livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
  "og_title": "Ceinture élastique sans boucle — homme & femme",
- "og_description": "Confortable toute la journée, invisible sous les vêtements. Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
+ "og_description": "1 ceinture achetée = 1 ceinture offerte. Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
  "ld_name": "Ceinture élastique sans boucle unisexe",
  "ld_description": "Ceinture élastique sans boucle pour hommes et femmes, qui se fixe aux passants latéraux du pantalon. Coloris noir ou marron.",
  "footer_note": "Livraison gratuite à Kinshasa et Lubumbashi · Paiement à la livraison · Appel de confirmation",
- "order_note": "Paiement à la livraison — précisez le coloris (noir ou marron) lors de l'appel de confirmation",
+ "order_note": "Vous recevez 2 ceintures (1 achetée + 1 offerte) — paiement à la livraison. Précisez vos 2 coloris lors de l'appel de confirmation.",
  "hero": {
-  "kicker": "Homme & femme · Noir ou marron",
+  "kicker": "Offre : 1 achetée = 1 offerte",
   "title_lines": [
    "La ceinture qui",
    "*ne serre plus.*"
@@ -314,7 +314,7 @@
   },
   {
    "type": "included",
-   "title": "Choisissez votre coloris",
+   "title": "Choisissez vos 2 coloris",
    "items": [
     {
      "label": "Noir",
@@ -335,12 +335,12 @@
    "type": "offer",
    "nav": "Offre",
    "kicker": "Offre",
-   "title": "Votre ceinture, *livrée gratuitement*",
-   "text": "Choisissez le noir ou le marron : nous vous appelons pour confirmer le coloris et l'adresse.",
+   "title": "2 ceintures pour le prix *d’une seule*",
+   "text": "1 ceinture achetée = 1 ceinture offerte. Choisissez vos coloris : nous vous appelons pour les confirmer avec votre adresse.",
    "image": "hero",
    "alt": "Ceinture élastique sans boucle",
    "items": [
-    "1 ceinture élastique sans boucle",
+    "2 ceintures élastiques sans boucle (1 achetée + 1 offerte)",
     "Coloris au choix : noir ou marron",
     "Livraison gratuite à Kinshasa et Lubumbashi"
    ],
@@ -355,6 +355,10 @@
    "title": "Vos questions",
    "items": [
     {
+     "q": "Comment fonctionne l'offre ?",
+     "a": "Pour {{ mm_new }} {{ mm_cur }}, vous recevez 2 ceintures : 1 achetée + 1 offerte. Vous pouvez prendre 2 noires, 2 marron, ou 1 de chaque."
+    },
+    {
      "q": "Comment la mettre ?",
      "a": "Accrochez une extrémité au passant de côté, faites passer la ceinture par les passants, puis accrochez l'autre extrémité de l'autre côté. Réglez-la une fois, c'est fait."
     },
@@ -364,7 +368,7 @@
     },
     {
      "q": "Quels coloris ?",
-     "a": "Noir ou marron. Indiquez votre choix dans le formulaire, ou lors de l'appel de confirmation."
+     "a": "Noir ou marron. Avec l'offre, vous choisissez vos 2 coloris : indiquez-les dans le formulaire ou lors de l'appel de confirmation."
     },
     {
      "q": "Dois-je l'enlever pour aller aux toilettes ?",
@@ -384,9 +388,14 @@
    "type": "cta",
    "title": "Oubliez votre ceinture,",
    "em": "pas votre style.",
-   "text": "Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
+   "text": "1 achetée = 1 offerte. Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
    "note": "Noir ou marron · Homme & femme",
    "button": "Je commande la mienne"
   }
- ]
+ ],
+ "deal": {
+  "icon": "gift",
+  "title": "1 ceinture achetée = 1 ceinture offerte",
+  "text": "Vous recevez 2 ceintures pour {{ mm_new }} {{ mm_cur }} seulement"
+ }
 }
