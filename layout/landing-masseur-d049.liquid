@@ -502,6 +502,14 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 
 /* ── écran « réservé aux adultes » (option age_gate) ── */
 html.no-scan .h-main::before{display:none}
+.announce.scroll{padding:0;overflow:hidden;white-space:nowrap}
+.ann-track{display:flex;width:max-content;animation:annRun 28s linear infinite}
+.ann-track>div{display:flex;align-items:center;flex:none}
+.ann-track span{padding:10px 0;font-size:13px;letter-spacing:.01em}
+.ann-track i{font-style:normal;opacity:.75;margin:0 18px;font-size:11px}
+.announce.scroll:hover .ann-track{animation-play-state:paused}
+@keyframes annRun{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ann-track{animation-duration:80s}}
 .vid{position:relative;margin:0 auto;max-width:960px;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 24px 60px -24px rgba(0,0,0,.55)}
 .vid video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
 .vid-btn{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border:0;border-radius:50%;background:var(--accent);color:var(--accent-ink,#fff);display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 10px color-mix(in srgb,var(--accent) 25%,transparent);transition:opacity .3s,transform .3s}
@@ -549,7 +557,7 @@ html.order-open,html.order-open body{overflow:hidden}
   <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="agegate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="agTitle"><div class="ag-box"><span class="ag-badge">18+</span><h2 id="agTitle">Contenu réservé aux adultes</h2><p>Cette page présente un produit de bien-être intime destiné aux personnes majeures. Confirmez que vous avez 18 ans ou plus pour continuer.</p><button type="button" class="btn btn-main" data-age-ok>J'ai 18 ans ou plus</button><a class="ag-exit" href="/">Quitter la page</a></div></div>
 
-  <div class="announce">Colis neutre et discret · Paiement à la livraison</div>
+  <div class="announce scroll" role="note" aria-label="Colis neutre et discret · Paiement à la livraison"><div class="ann-track" aria-hidden="true"><div><span>Colis neutre et discret</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Colis neutre et discret</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Colis neutre et discret</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i></div><div><span>Colis neutre et discret</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Colis neutre et discret</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Colis neutre et discret</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i></div></div></div>
   <header class="head" id="head">
     <div class="wrap">
       <a class="brand wide logo-pill" href="#top" aria-label="Afribazaar"><img class="logo-wide" src="{{ 'ab-logo.png' | asset_url }}" alt="Afribazaar" height="40"></a>

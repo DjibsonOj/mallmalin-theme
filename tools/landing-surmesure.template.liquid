@@ -499,6 +499,14 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 
 /* ── écran « réservé aux adultes » (option age_gate) ── */
 html.no-scan .h-main::before{display:none}
+.announce.scroll{padding:0;overflow:hidden;white-space:nowrap}
+.ann-track{display:flex;width:max-content;animation:annRun 28s linear infinite}
+.ann-track>div{display:flex;align-items:center;flex:none}
+.ann-track span{padding:10px 0;font-size:13px;letter-spacing:.01em}
+.ann-track i{font-style:normal;opacity:.75;margin:0 18px;font-size:11px}
+.announce.scroll:hover .ann-track{animation-play-state:paused}
+@keyframes annRun{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ann-track{animation-duration:80s}}
 .vid{position:relative;margin:0 auto;max-width:960px;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 24px 60px -24px rgba(0,0,0,.55)}
 .vid video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
 .vid-btn{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border:0;border-radius:50%;background:var(--accent);color:var(--accent-ink,#fff);display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 10px color-mix(in srgb,var(--accent) 25%,transparent);transition:opacity .3s,transform .3s}

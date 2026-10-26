@@ -324,5 +324,6 @@
    "note": "Réservé aux adultes · Colis neutre",
    "button": "Commander discrètement"
   }
- ]
+ ],
+ "announcement_scroll": true
 }
