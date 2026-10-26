@@ -13,9 +13,9 @@
   "exit_url": "/"
  },
  "colors": {
-  "accent": "#c2185b",
+  "accent": "#d63384",
   "accent-ink": "#ffffff",
-  "accent2": "#7b2ff7"
+  "accent2": "#e8a33a"
  },
  "layout": "landing-bullet",
  "brand": "KINSHACHAP",
@@ -32,11 +32,11 @@
  "announcement": "Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison · Réservé aux adultes",
  "announcement_scroll": true,
  "seo_title": "Bulletzir, mini masseur vibrant 10 modes | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Kinshasa",
- "seo_description": "Mini masseur vibrant étanche à 10 modes de vibration, format de poche. {{ mm_new }} {{ mm_cur }}, livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison. Réservé aux adultes.",
+ "seo_description": "Mini masseur vibrant rechargeable par USB, étanche, silencieux (moins de 40 dB), 10 modes de vibration. {{ mm_new }} {{ mm_cur }}, livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison. Réservé aux adultes.",
  "og_title": "Bulletzir, mini masseur vibrant 10 modes",
  "og_description": "Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison. Réservé aux adultes.",
  "ld_name": "Bulletzir, mini masseur vibrant 10 modes",
- "ld_description": "Mini masseur vibrant étanche, au format de poche, avec 10 modes de vibration. Réservé aux adultes.",
+ "ld_description": "Mini masseur vibrant arc-en-ciel métallisé, rechargeable par USB, étanche, silencieux (moins de 40 dB), 10 modes de vibration. Réservé aux adultes.",
  "footer_note": "Livraison gratuite à Kinshasa et Lubumbashi · Paiement à la livraison · Réservé aux adultes",
  "order_note": "Paiement à la livraison — nous vous appelons pour confirmer",
  "hero": {
@@ -45,18 +45,38 @@
    "Petit format,",
    "*grandes sensations.*"
   ],
-  "sub": "Bulletzir est un mini masseur vibrant au format de poche : 10 modes de vibration, étanche, et assez petit pour se glisser dans un sac. Livré gratuitement, payé à la livraison.",
-  "image": "couleurs",
-  "alt": "Mini masseurs vibrants Bulletzir de plusieurs couleurs",
+  "sub": "Bulletzir est un mini masseur vibrant au format de poche : 10 modes de vibration, rechargeable par USB, étanche et silencieux. Livré gratuitement, payé à la livraison.",
+  "image": "duo",
+  "alt": "Mini masseur vibrant Bulletzir arc-en-ciel métallisé",
   "gallery": [
-   {"image": "couleurs", "alt": "Mini masseurs vibrants de plusieurs couleurs"},
-   {"image": "modes", "alt": "Les 10 modes de vibration"},
-   {"image": "metal", "alt": "Mini masseurs à finition métallisée"},
-   {"image": "roue", "alt": "Toutes les couleurs du mini masseur"}
+   {
+    "image": "duo",
+    "alt": "Mini masseur vibrant Bulletzir"
+   },
+   {
+    "image": "modes",
+    "alt": "Les 10 modes de vibration"
+   },
+   {
+    "image": "recharge",
+    "alt": "Recharge USB"
+   },
+   {
+    "image": "etanche",
+    "alt": "Mini masseur étanche"
+   }
   ],
   "chips": [
-   {"icon": "music", "title": "10 modes", "text": "de vibration"},
-   {"icon": "shield", "title": "Étanche", "text": "même sous la douche"}
+   {
+    "icon": "music",
+    "title": "10 modes",
+    "text": "de vibration"
+   },
+   {
+    "icon": "battery",
+    "title": "Rechargeable",
+    "text": "par USB"
+   }
   ],
   "cta": "Commander discrètement",
   "note": "Paiement à la livraison"
@@ -65,10 +85,26 @@
   {
    "type": "trust",
    "items": [
-    {"icon": "truck", "title": "Livraison gratuite", "text": "Kinshasa et Lubumbashi"},
-    {"icon": "cash", "title": "Paiement à la livraison", "text": "rien à payer en ligne"},
-    {"icon": "phone", "title": "Appel de confirmation", "text": "avant chaque envoi"},
-    {"icon": "shield", "title": "Réservé aux adultes", "text": "18 ans et plus"}
+    {
+     "icon": "truck",
+     "title": "Livraison gratuite",
+     "text": "Kinshasa et Lubumbashi"
+    },
+    {
+     "icon": "cash",
+     "title": "Paiement à la livraison",
+     "text": "rien à payer en ligne"
+    },
+    {
+     "icon": "phone",
+     "title": "Appel de confirmation",
+     "text": "avant chaque envoi"
+    },
+    {
+     "icon": "shield",
+     "title": "Réservé aux adultes",
+     "text": "18 ans et plus"
+    }
    ]
   },
   {
@@ -78,12 +114,36 @@
    "title": "Tout ce qu'il faut, *en tout petit*",
    "columns": 3,
    "items": [
-    {"icon": "music", "title": "10 modes de vibration", "text": "Des rythmes doux aux plus intenses : vous choisissez celui qui vous convient."},
-    {"icon": "shield", "title": "Étanche", "text": "Il s'utilise aussi sous la douche ou dans le bain."},
-    {"icon": "bag", "title": "Format de poche", "text": "Petit et léger, il se glisse dans un sac ou une trousse."},
-    {"icon": "leaf", "title": "Facile à nettoyer", "text": "À l'eau tiède avec un savon doux, avant et après chaque utilisation."},
-    {"icon": "heart", "title": "Seul ou à deux", "text": "Pour prendre soin de vous ou pour pimenter les moments à deux."},
-    {"icon": "sparkle", "title": "Plusieurs couleurs", "text": "Une gamme de couleurs vives ou métallisées."}
+    {
+     "icon": "music",
+     "title": "10 modes de vibration",
+     "text": "Du plus doux au plus intense : vous choisissez le rythme qui vous convient."
+    },
+    {
+     "icon": "battery",
+     "title": "Rechargeable par USB",
+     "text": "Plus besoin de piles : il se recharge sur un ordinateur, un chargeur de téléphone ou une batterie externe."
+    },
+    {
+     "icon": "shield",
+     "title": "100 % étanche",
+     "text": "Il s'utilise aussi sous la douche ou dans le bain."
+    },
+    {
+     "icon": "moon",
+     "title": "Silencieux",
+     "text": "Moins de 40 dB : plus discret qu'une conversation à voix basse."
+    },
+    {
+     "icon": "bag",
+     "title": "Format de poche",
+     "text": "Petit et léger, il se glisse dans un sac ou une trousse."
+    },
+    {
+     "icon": "leaf",
+     "title": "Facile à nettoyer",
+     "text": "À l'eau tiède avec un savon doux, avant et après chaque utilisation."
+    }
    ]
   },
   {
@@ -91,9 +151,34 @@
    "nav": "En détail",
    "cta": "Commander discrètement",
    "items": [
-    {"image": "modes", "alt": "Les 10 modes de vibration du mini masseur", "kicker": "Sensations", "title": "10 modes, *à votre rythme*", "text": "Passez d'un mode à l'autre pour trouver la vibration qui vous plaît : lente, rapide, par impulsions ou en vagues."},
-    {"image": "poche", "alt": "Mini masseur au format de poche", "kicker": "Format", "title": "Discret et *facile à emporter*", "text": "Sa petite taille le rend facile à ranger, et à emporter en voyage."},
-    {"image": "metal", "alt": "Mini masseurs à finition métallisée", "kicker": "Style", "title": "Des couleurs *qui donnent envie*", "text": "Couleurs vives ou finitions métallisées : un objet élégant, loin des clichés."}
+    {
+     "image": "modes",
+     "alt": "Les 10 modes de vibration",
+     "kicker": "Sensations",
+     "title": "10 modes, *à votre rythme*",
+     "text": "Passez d'un mode à l'autre pour trouver la vibration qui vous plaît, du plus doux au plus intense."
+    },
+    {
+     "image": "recharge",
+     "alt": "Recharge USB sur ordinateur, voiture, prise ou batterie externe",
+     "kicker": "Recharge",
+     "title": "Rechargeable *partout*",
+     "text": "Branchez-le sur un ordinateur, un chargeur de voiture, une prise USB ou une batterie externe."
+    },
+    {
+     "image": "etanche",
+     "alt": "Mini masseur plongé dans l'eau",
+     "kicker": "Étanche",
+     "title": "Même *sous la douche*",
+     "text": "Entièrement étanche : il s'utilise dans l'eau et se rince sans souci."
+    },
+    {
+     "image": "silence",
+     "alt": "Moins de 40 décibels",
+     "kicker": "Discrétion",
+     "title": "Moins de *40 dB*",
+     "text": "Un fonctionnement silencieux, pour profiter en toute tranquillité."
+    }
    ]
   },
   {
@@ -101,14 +186,37 @@
    "nav": "Caractéristiques",
    "kicker": "En détail",
    "title": "Caractéristiques",
-   "image": "roue",
-   "alt": "Les couleurs du mini masseur",
+   "image": "matiere",
+   "alt": "Matière du mini masseur",
    "rows": [
-    {"label": "Type", "value": "Mini masseur vibrant (bullet)"},
-    {"label": "Vibration", "value": "10 modes"},
-    {"label": "Étanchéité", "value": "Étanche"},
-    {"label": "Format", "value": "De poche"},
-    {"label": "Coloris", "value": "Selon disponibilité"}
+    {
+     "label": "Type",
+     "value": "Mini masseur vibrant (bullet)"
+    },
+    {
+     "label": "Vibration",
+     "value": "10 modes"
+    },
+    {
+     "label": "Recharge",
+     "value": "Par câble USB"
+    },
+    {
+     "label": "Étanchéité",
+     "value": "100 % étanche"
+    },
+    {
+     "label": "Bruit",
+     "value": "Moins de 40 dB"
+    },
+    {
+     "label": "Coloris",
+     "value": "Arc-en-ciel métallisé"
+    },
+    {
+     "label": "Format",
+     "value": "De poche"
+    }
    ]
   },
   {
@@ -122,11 +230,11 @@
    "kicker": "Offre",
    "title": "Votre Bulletzir, *livré gratuitement*",
    "text": "Commandez en quelques secondes : nous vous appelons pour confirmer votre adresse, puis vous payez à la livraison.",
-   "image": "couleurs",
+   "image": "produit",
    "alt": "Mini masseur vibrant Bulletzir",
    "items": [
     "1 mini masseur vibrant Bulletzir",
-    "10 modes de vibration, étanche",
+    "10 modes, rechargeable USB, étanche",
     "Livraison gratuite à Kinshasa et Lubumbashi"
    ],
    "payment": "à la livraison, quand le colis vous est remis",
@@ -139,12 +247,38 @@
    "nav": "Questions",
    "title": "Vos questions",
    "items": [
-    {"q": "Comment se passe le paiement ?", "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez quand le colis vous est remis."},
-    {"q": "Combien coûte la livraison ?", "a": "Elle est gratuite à Kinshasa et à Lubumbashi."},
-    {"q": "Peut-on l'utiliser sous l'eau ?", "a": "Oui, il est étanche : vous pouvez l'utiliser sous la douche ou dans le bain."},
-    {"q": "Comment le nettoyer ?", "a": "À l'eau tiède avec un savon doux, avant et après chaque utilisation. Séchez-le bien avant de le ranger."},
-    {"q": "Quel lubrifiant utiliser ?", "a": "Choisissez un lubrifiant à base d'eau, le plus doux pour la peau et pour le produit."},
-    {"q": "Qui peut commander ?", "a": "Ce produit est réservé aux personnes majeures (18 ans et plus)."}
+    {
+     "q": "Comment se passe le paiement ?",
+     "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez quand le colis vous est remis."
+    },
+    {
+     "q": "Combien coûte la livraison ?",
+     "a": "Elle est gratuite à Kinshasa et à Lubumbashi."
+    },
+    {
+     "q": "Comment le recharger ?",
+     "a": "Avec son câble USB : branchez-le sur un ordinateur, un chargeur de téléphone, un chargeur de voiture ou une batterie externe."
+    },
+    {
+     "q": "Est-il bruyant ?",
+     "a": "Non, il fonctionne à moins de 40 dB : il reste très discret."
+    },
+    {
+     "q": "Peut-on l'utiliser sous l'eau ?",
+     "a": "Oui, il est étanche : vous pouvez l'utiliser sous la douche ou dans le bain."
+    },
+    {
+     "q": "Comment le nettoyer ?",
+     "a": "À l'eau tiède avec un savon doux, avant et après chaque utilisation. Séchez-le bien avant de le ranger."
+    },
+    {
+     "q": "Quel lubrifiant utiliser ?",
+     "a": "Choisissez un lubrifiant à base d'eau, le plus doux pour la peau et pour le produit."
+    },
+    {
+     "q": "Qui peut commander ?",
+     "a": "Ce produit est réservé aux personnes majeures (18 ans et plus)."
+    }
    ]
   },
   {
