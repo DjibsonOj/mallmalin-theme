@@ -9,25 +9,25 @@
   "accent2": "#ff4040"
  },
  "layout": "landing-inclinometre",
- "brand": "Afribazaar",
- "logo_file": "ab-logo.png",
- "logo_wide": true,
- "favicon_file": "ab-favicon.png",
- "img": "ab-inclino-",
- "price_new": "14 900",
- "price_old": "24 900",
+ "brand": "KINSHACHAP",
+ "logo_file": "kc-favicon.png",
+ "logo_wide": false,
+ "favicon_file": "kc-favicon.png",
+ "img": "kc-inclino-",
+ "price_new": "30",
+ "price_old": "50",
  "save_pct": "40",
- "currency": "FCFA",
- "currency_iso": "XOF",
- "price_new_num": "14900",
- "announcement": "Paiement à la livraison · Nous vous appelons pour confirmer votre commande",
+ "currency": "$",
+ "currency_iso": "USD",
+ "price_new_num": "30",
+ "announcement": "Livraison à Kinshasa et Lubumbashi · Paiement à la livraison",
  "seo_title": "Inclinomètre numérique laser magnétique rechargeable | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
  "seo_description": "Inclinomètre numérique avec laser rouge et fixation magnétique : angle en degrés, pente en %, touches HOLD et ZERO, batterie rechargeable. {{ mm_new }} {{ mm_cur }}, housse et câble inclus, paiement à la livraison.",
  "og_title": "Inclinomètre numérique laser magnétique",
  "og_description": "Angles et pentes affichés en chiffres, laser rouge, fixation magnétique. {{ mm_new }} {{ mm_cur }} — paiement à la livraison.",
  "ld_name": "Inclinomètre numérique laser magnétique rechargeable",
  "ld_description": "Inclinomètre numérique à écran, avec ligne laser rouge, fixation magnétique, mesure de l'angle en degrés et de la pente en %, fonctions HOLD et ZERO, batterie rechargeable. Livré avec housse et câble de charge.",
- "footer_note": "Paiement à la livraison · Appel de confirmation",
+ "footer_note": "Livraison à Kinshasa et Lubumbashi · Paiement à la livraison · Appel de confirmation",
  "order_note": "Paiement à la livraison — nous vous appelons pour confirmer",
  "hero": {
   "kicker": "Laser · Aimant · Écran numérique",
@@ -83,7 +83,7 @@
     {
      "icon": "truck",
      "title": "Livraison à domicile",
-     "text": "chez vous ou au travail"
+     "text": "Kinshasa et Lubumbashi"
     },
     {
      "icon": "phone",
@@ -326,7 +326,7 @@
     "Câble de charge"
    ],
    "payment": "à la livraison, quand le colis vous est remis",
-   "delivery": "à domicile — nous vous appelons pour confirmer l'adresse",
+   "delivery": "à domicile à Kinshasa et à Lubumbashi — nous vous appelons pour confirmer l'adresse",
    "ends_at": "",
    "cta": "Commander — payer à la livraison"
   },
@@ -340,8 +340,8 @@
      "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez à la livraison, quand le colis vous est remis."
     },
     {
-     "q": "Livrez-vous dans mon pays ?",
-     "a": "Nous livrons dans plusieurs pays. Indiquez votre pays et votre ville dans le formulaire : nous vous appelons pour confirmer la livraison."
+     "q": "Où livrez-vous ?",
+     "a": "Nous livrons à domicile à Kinshasa et à Lubumbashi. Indiquez votre ville et votre adresse dans le formulaire : nous vous appelons pour confirmer la livraison."
     },
     {
      "q": "Comment le recharger ?",
