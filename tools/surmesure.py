@@ -40,6 +40,10 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     if style not in STYLES:
         raise SystemExit('Style inconnu « %s ». Choix : %s' % (style, ', '.join(STYLES)))
     fonts, hero_default, theme_color = STYLES[style]
+    # police imposée pour toute la page, ex. "font": "Poppins" (Google Fonts)
+    font = (cfg.get('font') or '').strip()
+    if font:
+        fonts = '%s:wght@400;500;600;700;800' % font.replace(' ', '+')
 
     def img(name): return asset(pref + jpg(name))
     def em(t): return re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
@@ -103,6 +107,8 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         c['age_gate_html'] = ''
     ov = cfg.get('colors', {})
     c['color_overrides'] = ('html[data-style="%s"]{%s}' % (style, ';'.join('--%s:%s' % (k, v) for k, v in ov.items() if k in COLOR_KEYS))) if ov else ''
+    if font:
+        c['color_overrides'] += 'html[data-style="%s"]{--fh:\'%s\',sans-serif;--fb:\'%s\',sans-serif}' % (style, font, font)
 
     # ───────── HERO ─────────
     hr = cfg['hero']

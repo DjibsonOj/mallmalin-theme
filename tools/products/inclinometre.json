@@ -374,5 +374,6 @@
    "button": "Commander maintenant"
   }
  ],
- "announcement_scroll": true
+ "announcement_scroll": true,
+ "font": "Poppins"
 }
