@@ -1,0 +1,14 @@
+{
+  "layout": "landing-bullet",
+  "sections": {
+    "cod": {
+      "type": "mm-cod",
+      "blocks": {},
+      "block_order": [],
+      "settings": {}
+    }
+  },
+  "order": [
+    "cod"
+  ]
+}
