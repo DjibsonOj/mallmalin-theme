@@ -44,6 +44,10 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     font = (cfg.get('font') or '').strip()
     if font:
         fonts = '%s:wght@400;500;600;700;800' % font.replace(' ', '+')
+    # police du texte seulement (les titres gardent celle du style), ex. "font_body": "Poppins"
+    font_body = (cfg.get('font_body') or '').strip()
+    if font_body and not font:
+        fonts += '&family=%s:wght@400;500;600;700' % font_body.replace(' ', '+')
 
     def img(name): return asset(pref + jpg(name))
     def em(t): return re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
@@ -107,6 +111,8 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         c['age_gate_html'] = ''
     ov = cfg.get('colors', {})
     c['color_overrides'] = ('html[data-style="%s"]{%s}' % (style, ';'.join('--%s:%s' % (k, v) for k, v in ov.items() if k in COLOR_KEYS))) if ov else ''
+    if font_body and not font:
+        c['color_overrides'] += 'html[data-style="%s"]{--fb:\'%s\',sans-serif}' % (style, font_body)
     if font:
         c['color_overrides'] += 'html[data-style="%s"]{--fh:\'%s\',sans-serif;--fb:\'%s\',sans-serif}' % (style, font, font)
 
@@ -234,9 +240,16 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         if not v: return ''
         src = v if v.startswith(('http://', 'https://', '//')) else asset(pref + (v if v.endswith('.mp4') else v + '.mp4'))
         poster = (' poster="%s"' % img(s['poster'])) if s.get('poster') else ''
-        inner = ('<figure class="vid rv"><video src="%s"%s muted loop playsinline preload="none" aria-label="%s"></video>'
+        ratio = s.get('ratio', '').strip()          # ex. "3/4" pour une vidéo verticale
+        try:
+            rw, rh = (float(x) for x in ratio.split('/'))
+            vertical = rw < rh
+        except ValueError:
+            vertical = False
+        vstyle = ' style="max-width:min(440px,100%)"' if vertical else ''
+        inner = ('<figure class="vid rv"%s><video src="%s"%s muted loop playsinline preload="none" aria-label="%s"%s></video>'
                  '<button type="button" class="vid-btn" aria-label="Lecture / pause"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></button>%s</figure>'
-                 % (src, poster, s.get('alt', 'Vidéo du produit'), ('<figcaption>%s</figcaption>' % s['caption']) if s.get('caption') else ''))
+                 % (vstyle, src, poster, s.get('alt', 'Vidéo du produit'), (' style="aspect-ratio:%s"' % ratio) if ratio else '', ('<figcaption>%s</figcaption>' % s['caption']) if s.get('caption') else ''))
         if s.get('cta'): inner += '<div class="vid-cta rv"><a class="btn btn-main" href="#commander" data-order>%s</a></div>' % s['cta']
         return wrap(s, sid, head(s) + inner)
 
@@ -262,7 +275,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
             return '<td%s>%s</td>' % (cls, v)
         th = '<tr><th></th>%s</tr>' % ''.join('<th%s>%s</th>' % (' class="hl"' if j + 1 == hl else '', x) for j, x in enumerate(cols))
         trs = ''.join('<tr><td>%s</td>%s</tr>' % (r['label'], ''.join(cell(v, j + 1) for j, v in enumerate(r['values']))) for r in rows)
-        return wrap(s, sid, head(s) + '<div class="cmp-wrap rv"><table class="cmp">%s%s</table></div>' % (th, trs))
+        return wrap(s, sid, head(s) + '<div class="cmp-wrap rv"><table class="cmp%s">%s%s</table></div>' % (' cmp-2' if len(cols) <= 2 else '', th, trs))
 
     def s_included(s, sid):
         it = s.get('items', [])

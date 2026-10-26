@@ -1,0 +1,221 @@
+{
+ "template": "surmesure",
+ "style": "mode",
+ "hero_layout": "split",
+ "hero_fit": "cover",
+ "font_body": "Poppins",
+ "colors": {
+  "accent": "#1a1512",
+  "accent-ink": "#ffffff",
+  "accent2": "#a8743f"
+ },
+ "layout": "landing-ceinture",
+ "brand": "KINSHACHAP",
+ "logo_file": "kc-favicon.png",
+ "logo_wide": false,
+ "favicon_file": "kc-favicon.png",
+ "img": "kc-ceinture-",
+ "price_new": "20",
+ "price_old": "35",
+ "save_pct": "43",
+ "currency": "$",
+ "currency_iso": "USD",
+ "price_new_num": "20",
+ "announcement": "Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison · Appel de confirmation avant chaque envoi",
+ "announcement_scroll": true,
+ "seo_title": "Ceinture élastique sans boucle homme & femme | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Kinshasa",
+ "seo_description": "Ceinture élastique sans boucle, unisexe : elle suit vos mouvements, ne serre pas le ventre et ne se voit pas sous la chemise. Noir ou marron. {{ mm_new }} {{ mm_cur }}, livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
+ "og_title": "Ceinture élastique sans boucle — homme & femme",
+ "og_description": "Confortable toute la journée, invisible sous les vêtements. Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
+ "ld_name": "Ceinture élastique sans boucle unisexe",
+ "ld_description": "Ceinture élastique sans boucle pour hommes et femmes, qui se fixe aux passants latéraux du pantalon. Coloris noir ou marron.",
+ "footer_note": "Livraison gratuite à Kinshasa et Lubumbashi · Paiement à la livraison · Appel de confirmation",
+ "order_note": "Paiement à la livraison — précisez le coloris (noir ou marron) lors de l'appel de confirmation",
+ "hero": {
+  "kicker": "Homme & femme · Noir ou marron",
+  "title_lines": [
+   "La ceinture qui",
+   "*ne serre plus.*"
+  ],
+  "sub": "Une ceinture élastique sans boucle : elle tient votre pantalon, suit chacun de vos mouvements et disparaît sous la chemise. Assis, debout, au volant ou à table, vous l'oubliez.",
+  "image": "hero",
+  "alt": "Ceinture élastique sans boucle noire portée sur un jean",
+  "gallery": [
+   {"image": "hero", "alt": "Ceinture noire portée sur un jean"},
+   {"image": "detail", "alt": "Détail de la ceinture : élastique et attaches métalliques"},
+   {"image": "marron", "alt": "Ceinture marron fixée aux passants d'un jean"},
+   {"image": "noir", "alt": "Ceinture noire fixée sur un jean"}
+  ],
+  "chips": [
+   {"icon": "feather", "title": "Sans boucle", "text": "rien qui dépasse"},
+   {"icon": "heart", "title": "Élastique", "text": "suit vos mouvements"}
+  ],
+  "cta": "Je commande la mienne",
+  "note": "Paiement à la livraison"
+ },
+ "sections": [
+  {
+   "type": "trust",
+   "items": [
+    {"icon": "truck", "title": "Livraison gratuite", "text": "Kinshasa et Lubumbashi"},
+    {"icon": "cash", "title": "Paiement à la livraison", "text": "rien à payer en ligne"},
+    {"icon": "phone", "title": "Appel de confirmation", "text": "avant chaque envoi"},
+    {"icon": "users", "title": "Homme & femme", "text": "noir ou marron"}
+   ]
+  },
+  {
+   "type": "problem",
+   "nav": "Pourquoi",
+   "kicker": "Le problème",
+   "title": "Votre ceinture vous *gêne* ?",
+   "problem_title": "Avec une ceinture classique",
+   "pains": [
+    "Elle serre le ventre dès que vous vous asseyez",
+    "La boucle fait une bosse sous la chemise",
+    "Il faut la desserrer après le repas",
+    "Elle se défait à chaque passage aux toilettes"
+   ],
+   "solution_title": "Avec la ceinture sans boucle",
+   "solution": [
+    "L'élastique suit le corps, assis comme debout",
+    "Rien ne dépasse : elle est invisible sous les vêtements",
+    "Réglée une fois, elle n'a plus besoin d'être retouchée",
+    "Rien à défaire : on baisse simplement le pantalon"
+   ],
+   "image": "avant-apres",
+   "alt": "Ceinture classique qui serre le ventre comparée à la ceinture élastique"
+  },
+  {
+   "type": "benefits",
+   "nav": "Avantages",
+   "kicker": "Avantages",
+   "title": "Pensée pour *votre confort*",
+   "columns": 3,
+   "items": [
+    {"icon": "heart", "title": "Confort toute la journée", "text": "L'élastique s'étire quand vous bougez, mangez ou vous asseyez, puis reprend sa place."},
+    {"icon": "feather", "title": "Invisible sous la chemise", "text": "Pas de boucle, pas de bosse : votre tenue reste nette, rentrée ou non."},
+    {"icon": "bolt", "title": "Tient bien en place", "text": "Les attaches métalliques se fixent aux passants et ne se détachent pas facilement."},
+    {"icon": "users", "title": "Homme et femme", "text": "Un modèle unisexe, pour le jean comme pour le pantalon de ville ou le short."},
+    {"icon": "sparkle", "title": "Bords rembourrés", "text": "Des bords doux qui ne marquent pas la peau."},
+    {"icon": "bag", "title": "Porte-outils pratique", "text": "Elle peut aussi tenir un mètre, une pince ou un étui à la taille."}
+   ]
+  },
+  {
+   "type": "video",
+   "nav": "En vidéo",
+   "kicker": "En vidéo",
+   "title": "Elle se met *en 10 secondes*",
+   "intro": "On accroche un côté, on fait le tour, on accroche l'autre. C'est tout.",
+   "video": "pose",
+   "poster": "pose-poster",
+   "ratio": "540/700",
+   "alt": "Mise en place de la ceinture élastique noire sur un jean",
+   "caption": "Mise en place de la ceinture",
+   "cta": "Je commande la mienne"
+  },
+  {
+   "type": "demo",
+   "nav": "Mode d'emploi",
+   "kicker": "Mode d'emploi",
+   "title": "Simple comme *1, 2, 3*",
+   "steps": [
+    {"title": "Fixez", "text": "Accrochez les extrémités de la ceinture aux passants sur les côtés de votre pantalon.", "image": "etape1", "alt": "Fixer la ceinture aux passants"},
+    {"title": "Ajustez", "text": "Réglez-la une fois pour votre tenue, puis vous n'y touchez plus.", "image": "etape2", "alt": "Ajuster la ceinture"},
+    {"title": "Profitez", "text": "Confort toute la journée, sans avoir à la réajuster.", "image": "etape3", "alt": "Ceinture en place sur le jean"}
+   ]
+  },
+  {
+   "type": "showcase",
+   "nav": "En détail",
+   "cta": "Je commande la mienne",
+   "items": [
+    {"image": "detail", "alt": "Gros plan sur l'élastique et l'attache métallique", "kicker": "Finition", "title": "Élastique solide, *attaches métalliques*", "text": "Une matière élastique résistante et des attaches en métal qui tiennent fermement aux passants."},
+    {"image": "partout", "alt": "Ceinture portée au travail, en voyage et en ville", "kicker": "Partout", "title": "Au bureau, en voyage, *en ville*", "text": "Au volant, au travail ou en déplacement : elle reste confortable dans toutes les positions."},
+    {"image": "outils", "alt": "Pince et mètre accrochés à la ceinture", "kicker": "Pratique", "title": "Aussi un *porte-outils*", "text": "Elle peut tenir à la taille un mètre ruban, une pince ou un étui, à portée de main."}
+   ]
+  },
+  {
+   "type": "compare",
+   "nav": "Comparatif",
+   "kicker": "Comparatif",
+   "title": "Pourquoi *sans boucle* ?",
+   "columns": ["Ceinture classique", "Ceinture sans boucle"],
+   "highlight": 2,
+   "rows": [
+    {"label": "Sur le ventre", "values": ["Pression désagréable", "Aucune pression"]},
+    {"label": "Sous la chemise", "values": ["Boucle visible", "Invisible"]},
+    {"label": "Réglage", "values": ["À refaire souvent", "Une fois pour toutes"]},
+    {"label": "Assis ou au volant", "values": ["Elle pince", "Elle suit le corps"]},
+    {"label": "Aux toilettes", "values": ["À défaire", "Rien à défaire"]}
+   ]
+  },
+  {
+   "type": "specs",
+   "nav": "Caractéristiques",
+   "kicker": "En détail",
+   "title": "Caractéristiques",
+   "image": "points",
+   "alt": "Les points forts de la ceinture élastique",
+   "rows": [
+    {"label": "Type", "value": "Ceinture élastique sans boucle"},
+    {"label": "Pour", "value": "Hommes et femmes"},
+    {"label": "Coloris", "value": "Noir ou marron"},
+    {"label": "Fixation", "value": "Attaches métalliques aux passants latéraux"},
+    {"label": "Compatible", "value": "Pantalons et shorts à passants jusqu'à 1,5 pouce (environ 3,8 cm)"},
+    {"label": "Bords", "value": "Rembourrés"}
+   ]
+  },
+  {
+   "type": "included",
+   "title": "Choisissez votre coloris",
+   "items": [
+    {"label": "Noir", "image": "noir"},
+    {"label": "Marron", "image": "marron"}
+   ]
+  },
+  {
+   "type": "reviews",
+   "title": "Avis",
+   "items": []
+  },
+  {
+   "type": "offer",
+   "nav": "Offre",
+   "kicker": "Offre",
+   "title": "Votre ceinture, *livrée gratuitement*",
+   "text": "Choisissez le noir ou le marron : nous vous appelons pour confirmer le coloris et l'adresse.",
+   "image": "hero",
+   "alt": "Ceinture élastique sans boucle",
+   "items": [
+    "1 ceinture élastique sans boucle",
+    "Coloris au choix : noir ou marron",
+    "Livraison gratuite à Kinshasa et Lubumbashi"
+   ],
+   "payment": "à la livraison, quand le colis vous est remis",
+   "delivery": "gratuite, à domicile à Kinshasa et à Lubumbashi",
+   "ends_at": "",
+   "cta": "Commander — payer à la livraison"
+  },
+  {
+   "type": "faq",
+   "nav": "Questions",
+   "title": "Vos questions",
+   "items": [
+    {"q": "Comment la mettre ?", "a": "Accrochez une extrémité au passant de côté, faites passer la ceinture par les passants, puis accrochez l'autre extrémité de l'autre côté. Réglez-la une fois, c'est fait."},
+    {"q": "Avec quels pantalons ?", "a": "Jeans, pantalons de ville et shorts, pour hommes et femmes, du moment qu'ils ont des passants jusqu'à 1,5 pouce (environ 3,8 cm)."},
+    {"q": "Quels coloris ?", "a": "Noir ou marron. Indiquez votre choix dans le formulaire, ou lors de l'appel de confirmation."},
+    {"q": "Dois-je l'enlever pour aller aux toilettes ?", "a": "Non. Il n'y a pas de boucle à défaire : vous baissez simplement le pantalon."},
+    {"q": "Combien coûte la livraison ?", "a": "Elle est gratuite à Kinshasa et à Lubumbashi. Vous payez seulement la ceinture, à la livraison."},
+    {"q": "Comment se passe le paiement ?", "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez quand le colis vous est remis."}
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "Oubliez votre ceinture,",
+   "em": "pas votre style.",
+   "text": "Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
+   "note": "Noir ou marron · Homme & femme",
+   "button": "Je commande la mienne"
+  }
+ ]
+}
