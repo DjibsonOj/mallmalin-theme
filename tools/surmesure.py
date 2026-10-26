@@ -22,6 +22,18 @@ COLOR_KEYS = ('bg', 'surface', 'ink', 'muted', 'line', 'accent', 'accent-ink', '
 ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>'
 
 
+def announce(cfg):
+    """Bandeau du haut. "announcement_scroll": true = texte défilant (bande passante)."""
+    t = cfg.get('announcement')
+    if not t: return ''
+    if not cfg.get('announcement_scroll'):
+        return '  <div class="announce">%s</div>' % t
+    items = [x.strip() for x in t.split('·') if x.strip()]
+    seq = ''.join('<span>%s</span><i aria-hidden="true">✦</i>' % x for x in items * 3)
+    return ('  <div class="announce scroll" role="note" aria-label="%s"><div class="ann-track" aria-hidden="true">'
+            '<div>%s</div><div>%s</div></div></div>' % (' · '.join(items), seq, seq))
+
+
 def render(cfg, tpl, asset, svg, jpg, tick):
     pref = cfg['img']
     style = cfg.get('style', 'sante')
@@ -60,7 +72,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         'order_note': cfg.get('order_note', 'Paiement à la livraison — nous vous appelons pour confirmer'),
         'html_class': ' '.join(x for x in (('no-scan' if cfg.get('fx_scan') is False else ''),) if x),
         'robots_meta': '  <meta name="robots" content="noindex, nofollow">\n' if cfg.get('noindex') else '',
-        'announce_html': ('  <div class="announce">%s</div>' % cfg['announcement']) if cfg.get('announcement') else '',
+        'announce_html': announce(cfg),
     })
     # logo facultatif : affiché seulement s'il est présent dans assets/
     logo = cfg.get('logo_file', '')

@@ -20,14 +20,14 @@
  "currency": "$",
  "currency_iso": "USD",
  "price_new_num": "30",
- "announcement": "Livraison à Kinshasa et Lubumbashi · Paiement à la livraison",
+ "announcement": "Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison · Appel de confirmation avant chaque envoi",
  "seo_title": "Inclinomètre numérique laser magnétique rechargeable | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
  "seo_description": "Inclinomètre numérique avec laser rouge et fixation magnétique : angle en degrés, pente en %, touches HOLD et ZERO, batterie rechargeable. {{ mm_new }} {{ mm_cur }}, housse et câble inclus, paiement à la livraison.",
  "og_title": "Inclinomètre numérique laser magnétique",
  "og_description": "Angles et pentes affichés en chiffres, laser rouge, fixation magnétique. {{ mm_new }} {{ mm_cur }} — paiement à la livraison.",
  "ld_name": "Inclinomètre numérique laser magnétique rechargeable",
  "ld_description": "Inclinomètre numérique à écran, avec ligne laser rouge, fixation magnétique, mesure de l'angle en degrés et de la pente en %, fonctions HOLD et ZERO, batterie rechargeable. Livré avec housse et câble de charge.",
- "footer_note": "Livraison à Kinshasa et Lubumbashi · Paiement à la livraison · Appel de confirmation",
+ "footer_note": "Livraison gratuite à Kinshasa et Lubumbashi · Paiement à la livraison · Appel de confirmation",
  "order_note": "Paiement à la livraison — nous vous appelons pour confirmer",
  "hero": {
   "kicker": "Laser · Aimant · Écran numérique",
@@ -82,7 +82,7 @@
     },
     {
      "icon": "truck",
-     "title": "Livraison à domicile",
+     "title": "Livraison gratuite",
      "text": "Kinshasa et Lubumbashi"
     },
     {
@@ -326,7 +326,7 @@
     "Câble de charge"
    ],
    "payment": "à la livraison, quand le colis vous est remis",
-   "delivery": "à domicile à Kinshasa et à Lubumbashi — nous vous appelons pour confirmer l'adresse",
+   "delivery": "gratuite, à domicile à Kinshasa et à Lubumbashi — nous vous appelons pour confirmer l'adresse",
    "ends_at": "",
    "cta": "Commander — payer à la livraison"
   },
@@ -341,7 +341,7 @@
     },
     {
      "q": "Où livrez-vous ?",
-     "a": "Nous livrons à domicile à Kinshasa et à Lubumbashi. Indiquez votre ville et votre adresse dans le formulaire : nous vous appelons pour confirmer la livraison."
+     "a": "Nous livrons gratuitement à domicile à Kinshasa et à Lubumbashi. Indiquez votre ville et votre adresse dans le formulaire : nous vous appelons pour confirmer la livraison."
     },
     {
      "q": "Comment le recharger ?",
@@ -373,5 +373,6 @@
    "note": "Housse et câble de charge inclus",
    "button": "Commander maintenant"
   }
- ]
+ ],
+ "announcement_scroll": true
 }
