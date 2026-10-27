@@ -153,6 +153,11 @@
         "type": "shopify://apps/nudgify-social-proof-sales-pop/blocks/nudgify-pixel-app-embed/3491acd6-0406-49d3-bc7f-2dcfc24bb07b",
         "disabled": false,
         "settings": {}
+      },
+      "6697489376809789821": {
+        "type": "shopify://apps/nudgify-social-proof-sales-pop/blocks/nudgify-push-app-embed/3491acd6-0406-49d3-bc7f-2dcfc24bb07b",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
