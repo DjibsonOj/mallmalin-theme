@@ -1,12 +1,17 @@
 {
  "template": "surmesure",
- "style": "tech",
+ "style": "sport",
  "hero_layout": "split",
- "hero_fit": "contain",
+ "hero_fit": "cover",
  "colors": {
-  "accent": "#ffb020",
-  "accent-ink": "#1a1200",
-  "accent2": "#6aa8ff"
+  "bg": "#0e1013",
+  "surface": "#181b20",
+  "ink": "#f2f4f7",
+  "muted": "#9aa3ad",
+  "line": "rgba(255,255,255,.09)",
+  "accent": "#ffc400",
+  "accent-ink": "#111111",
+  "accent2": "#4da3ff"
  },
  "layout": "landing-pare-soleil",
  "brand": "MallMalin",
@@ -33,13 +38,17 @@
  "hero": {
   "kicker": "Jour & nuit · Pour toutes les voitures",
   "title_lines": [
-   "Conduisez sans être",
-   "*ébloui.*"
+   "Plus jamais",
+   "*ébloui au volant.*"
   ],
   "sub": "Un pare-soleil 2-en-1 qui se clipse sur le vôtre : l'écran fumé coupe le soleil de face le jour, l'écran jaune atténue les phares en face la nuit. Vous le rabattez d'un geste, sans quitter la route des yeux.",
-  "image": "produit",
-  "alt": "Pare-soleil 2-en-1 avec écran fumé et écran jaune",
+  "image": "jour-nuit",
+  "alt": "Pare-soleil 2-en-1 sur la route, de jour et de nuit",
   "gallery": [
+   {
+    "image": "jour-nuit",
+    "alt": "Écran jour et écran nuit sur la route"
+   },
    {
     "image": "produit",
     "alt": "Pare-soleil 2-en-1 jour et nuit"
@@ -51,10 +60,6 @@
    {
     "image": "avant-apres",
     "alt": "Avant et après, de jour et de nuit"
-   },
-   {
-    "image": "jour-nuit",
-    "alt": "Écran jour et écran nuit sur la route"
    }
   ],
   "chips": [

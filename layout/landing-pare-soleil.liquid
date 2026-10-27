@@ -10,33 +10,33 @@
 {%- assign mm_cur = 'GNF' -%}
 {%- assign mm_new_num = '300000' -%}
 <!DOCTYPE html>
-<html lang="fr" class="" data-style="tech" data-hero="split">
+<html lang="fr" class="" data-style="sport" data-hero="split">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Pare-soleil 2-en-1 jour et nuit anti-éblouissement pour voiture | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison</title>
   <meta name="description" content="Pare-soleil 2-en-1 qui se clipse sur le pare-soleil de votre voiture : écran fumé contre le soleil le jour, écran jaune contre l'éblouissement des phares la nuit. {{ mm_new }} {{ mm_cur }}, paiement à la livraison.">
-  <meta name="theme-color" content="#0c0e12">
+  <meta name="theme-color" content="#0e1013">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta property="og:type" content="product">
   <meta property="og:title" content="Pare-soleil 2-en-1 jour et nuit pour voiture">
   <meta property="og:description" content="Écran jour contre le soleil, écran nuit contre les phares. {{ mm_new }} {{ mm_cur }} — paiement à la livraison.">
-  <meta property="og:image" content="https:{{ 'mm-visiere-produit.jpg' | asset_url }}">
+  <meta property="og:image" content="https:{{ 'mm-visiere-jour-nuit.jpg' | asset_url }}">
   <meta property="og:url" content="{{ canonical_url }}">
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="{{ 'mm-logo.jpg' | asset_url }}">
-  <link rel="preload" as="image" href="{{ 'mm-visiere-produit.jpg' | asset_url }}">
+  <link rel="preload" as="image" href="{{ 'mm-visiere-jour-nuit.jpg' | asset_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Pare-soleil anti-éblouissement 2-en-1 jour et nuit (version extensible)",
     "description": "Pare-soleil 2-en-1 pour voiture, version extensible : écran fumé pour le jour, écran jaune pour la nuit, se fixe sur le pare-soleil d'origine, pliable, en polycarbonate.",
-    "image": "https:{{ 'mm-visiere-produit.jpg' | asset_url }}",
+    "image": "https:{{ 'mm-visiere-jour-nuit.jpg' | asset_url }}",
     "brand": { "@type": "Brand", "name": "MallMalin" },
     "offers": {
       "@type": "Offer",
@@ -71,7 +71,7 @@ html[data-style="maison"]{--bg:#f7f2ea;--surface:#fffdf9;--ink:#2d241c;--muted:#
 html[data-style="mode"]{--bg:#fff;--surface:#f3f3f2;--ink:#0a0a0a;--muted:#6b6b6b;--line:#e3e3e3;--accent:#0a0a0a;--accent-ink:#fff;--accent2:#b08d57;--r:0px;--btn-r:0px;--fh:'Bodoni Moda',serif;--fb:'Jost',sans-serif;--hw:500;--hls:-.02em;--hlh:1}
 html[data-style="sport"]{--bg:#0b0b0b;--surface:#161616;--ink:#f5f5f5;--muted:#9c9c9c;--line:rgba(255,255,255,.1);--accent:#c6ff3d;--accent-ink:#0b0b0b;--accent2:#ff4d2e;--r:10px;--btn-r:10px;--fh:'Barlow Condensed',sans-serif;--fb:'Barlow',sans-serif;--hw:800;--ht:uppercase;--hls:-.01em;--hlh:.92;--shadow:0 30px 60px -30px rgba(0,0,0,.8)}
 html[data-style="enfants"]{--bg:#fffaf0;--surface:#fff;--ink:#2a2a3c;--muted:#6b6b80;--line:#f1e5cf;--accent:#ff7a59;--accent-ink:#fff;--accent2:#3dbf9f;--r:26px;--fh:'Baloo 2',sans-serif;--fb:'Nunito',sans-serif;--hw:800;--hls:-.01em;--hlh:1}
-html[data-style="tech"]{--accent:#ffb020;--accent-ink:#1a1200;--accent2:#6aa8ff}
+html[data-style="sport"]{--bg:#0e1013;--surface:#181b20;--ink:#f2f4f7;--muted:#9aa3ad;--line:rgba(255,255,255,.09);--accent:#ffc400;--accent-ink:#111111;--accent2:#4da3ff}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -144,7 +144,7 @@ html[data-style="sport"] .announce,html[data-style="tech"] .announce{background:
 .hero-media{position:relative}
 .h-stage{position:relative}
 .h-main{position:relative;aspect-ratio:1/1;border-radius:calc(var(--r) + 8px);overflow:hidden;background:var(--pale)}
-.h-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .4s}
+.h-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s}
 .h-main img.fade{opacity:0}
 .h-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
 .h-thumbs button{aspect-ratio:1;border-radius:calc(var(--r) * .6);overflow:hidden;border:2px solid transparent;background:var(--surface);cursor:pointer;padding:0;opacity:.65;transition:opacity .2s,border-color .2s}
@@ -568,12 +568,12 @@ html.order-open,html.order-open body{overflow:hidden}
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <span class="pill in-hero">Jour & nuit · Pour toutes les voitures</span>
-          <h1 class="h in-hero"><span class="ln">Conduisez sans être</span><span class="ln"><em>ébloui.</em></span></h1>
+          <h1 class="h in-hero"><span class="ln">Plus jamais</span><span class="ln"><em>ébloui au volant.</em></span></h1>
           <p class="hero-sub in-hero">Un pare-soleil 2-en-1 qui se clipse sur le vôtre : l'écran fumé coupe le soleil de face le jour, l'écran jaune atténue les phares en face la nuit. Vous le rabattez d'un geste, sans quitter la route des yeux.</p>
           <div class="price-row in-hero"><span class="price-new">{{ mm_new }}<small>{{ mm_cur }}</small></span><span class="price-old">{{ mm_old }} {{ mm_cur }}</span><span class="badge">−33 %</span></div>
           <div class="hero-actions in-hero"><a class="btn btn-main" href="#commander" data-order id="heroOrder">Je commande le mien<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><span class="hero-note"><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke-width="2"><path d="M2.5 6.2l2.4 2.3 4.6-5"/></svg></span>Paiement à la livraison</span></div>
         </div>
-        <div class="hero-media in-hero"><div class="h-stage"><div class="h-main"><img id="hMain" src="{{ 'mm-visiere-produit.jpg' | asset_url }}" alt="Pare-soleil 2-en-1 avec écran fumé et écran jaune" width="1000" height="1000" fetchpriority="high"></div><div class="chip c1"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></svg></span><div><b>Écran jour</b><span>contre le soleil</span></div></div><div class="chip c2"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></svg></span><div><b>Écran nuit</b><span>contre les phares</span></div></div></div><div class="h-thumbs" role="group" aria-label="Photos du produit"><button type="button" aria-current="true" data-src="{{ 'mm-visiere-produit.jpg' | asset_url }}" data-alt="Pare-soleil 2-en-1 jour et nuit" aria-label="Photo 1"><img src="{{ 'mm-visiere-produit.jpg' | asset_url }}" alt="" loading="lazy" width="200" height="200"></button><button type="button" aria-current="false" data-src="{{ 'mm-visiere-pose.jpg' | asset_url }}" data-alt="Pare-soleil fixé sur le pare-soleil de la voiture" aria-label="Photo 2"><img src="{{ 'mm-visiere-pose.jpg' | asset_url }}" alt="" loading="lazy" width="200" height="200"></button><button type="button" aria-current="false" data-src="{{ 'mm-visiere-avant-apres.jpg' | asset_url }}" data-alt="Avant et après, de jour et de nuit" aria-label="Photo 3"><img src="{{ 'mm-visiere-avant-apres.jpg' | asset_url }}" alt="" loading="lazy" width="200" height="200"></button><button type="button" aria-current="false" data-src="{{ 'mm-visiere-jour-nuit.jpg' | asset_url }}" data-alt="Écran jour et écran nuit sur la route" aria-label="Photo 4"><img src="{{ 'mm-visiere-jour-nuit.jpg' | asset_url }}" alt="" loading="lazy" width="200" height="200"></button></div></div>
+        <div class="hero-media in-hero"><div class="h-stage"><div class="h-main"><img id="hMain" src="{{ 'mm-visiere-jour-nuit.jpg' | asset_url }}" alt="Pare-soleil 2-en-1 sur la route, de jour et de nuit" width="1000" height="1000" fetchpriority="high"></div><div class="chip c1"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></svg></span><div><b>Écran jour</b><span>contre le soleil</span></div></div><div class="chip c2"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></svg></span><div><b>Écran nuit</b><span>contre les phares</span></div></div></div><div class="h-thumbs" role="group" aria-label="Photos du produit"><button type="button" aria-current="true" data-src="{{ 'mm-visiere-jour-nuit.jpg' | asset_url }}" data-alt="Écran jour et écran nuit sur la route" aria-label="Photo 1"><img src="{{ 'mm-visiere-jour-nuit.jpg' | asset_url }}" alt="" loading="lazy" width="200" height="200"></button><button type="button" aria-current="false" data-src="{{ 'mm-visiere-produit.jpg' | asset_url }}" data-alt="Pare-soleil 2-en-1 jour et nuit" aria-label="Photo 2"><img src="{{ 'mm-visiere-produit.jpg' | asset_url }}" alt="" loading="lazy" width="200" height="200"></button><button type="button" aria-current="false" data-src="{{ 'mm-visiere-pose.jpg' | asset_url }}" data-alt="Pare-soleil fixé sur le pare-soleil de la voiture" aria-label="Photo 3"><img src="{{ 'mm-visiere-pose.jpg' | asset_url }}" alt="" loading="lazy" width="200" height="200"></button><button type="button" aria-current="false" data-src="{{ 'mm-visiere-avant-apres.jpg' | asset_url }}" data-alt="Avant et après, de jour et de nuit" aria-label="Photo 4"><img src="{{ 'mm-visiere-avant-apres.jpg' | asset_url }}" alt="" loading="lazy" width="200" height="200"></button></div></div>
       </div>
     </section>
 
