@@ -1,0 +1,368 @@
+{
+ "template": "surmesure",
+ "style": "tech",
+ "hero_layout": "split",
+ "hero_fit": "contain",
+ "colors": {
+  "accent": "#ffb020",
+  "accent-ink": "#1a1200",
+  "accent2": "#6aa8ff"
+ },
+ "layout": "landing-pare-soleil",
+ "brand": "Afribazaar",
+ "logo_file": "ab-logo.png",
+ "logo_wide": true,
+ "favicon_file": "ab-favicon.png",
+ "img": "ab-visiere-",
+ "price_new": "15 000",
+ "price_old": "25 000",
+ "save_pct": "40",
+ "currency": "FCFA",
+ "currency_iso": "XOF",
+ "price_new_num": "15000",
+ "announcement": "Paiement à la livraison · Nous vous appelons pour confirmer votre commande · Pour toutes les voitures",
+ "announcement_scroll": true,
+ "seo_title": "Pare-soleil 2-en-1 jour et nuit anti-éblouissement pour voiture | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
+ "seo_description": "Pare-soleil 2-en-1 qui se clipse sur le pare-soleil de votre voiture : écran fumé contre le soleil le jour, écran jaune contre l'éblouissement des phares la nuit. {{ mm_new }} {{ mm_cur }}, paiement à la livraison.",
+ "og_title": "Pare-soleil 2-en-1 jour et nuit pour voiture",
+ "og_description": "Écran jour contre le soleil, écran nuit contre les phares. {{ mm_new }} {{ mm_cur }} — paiement à la livraison.",
+ "ld_name": "Pare-soleil anti-éblouissement 2-en-1 jour et nuit (version extensible)",
+ "ld_description": "Pare-soleil 2-en-1 pour voiture, version extensible : écran fumé pour le jour, écran jaune pour la nuit, se fixe sur le pare-soleil d'origine, pliable, en polycarbonate.",
+ "footer_note": "Paiement à la livraison · Appel de confirmation",
+ "order_note": "Paiement à la livraison — nous vous appelons pour confirmer",
+ "hero": {
+  "kicker": "Jour & nuit · Pour toutes les voitures",
+  "title_lines": [
+   "Conduisez sans être",
+   "*ébloui.*"
+  ],
+  "sub": "Un pare-soleil 2-en-1 qui se clipse sur le vôtre : l'écran fumé coupe le soleil de face le jour, l'écran jaune atténue les phares en face la nuit. Vous le rabattez d'un geste, sans quitter la route des yeux.",
+  "image": "produit",
+  "alt": "Pare-soleil 2-en-1 avec écran fumé et écran jaune",
+  "gallery": [
+   {
+    "image": "produit",
+    "alt": "Pare-soleil 2-en-1 jour et nuit"
+   },
+   {
+    "image": "pose",
+    "alt": "Pare-soleil fixé sur le pare-soleil de la voiture"
+   },
+   {
+    "image": "avant-apres",
+    "alt": "Avant et après, de jour et de nuit"
+   },
+   {
+    "image": "jour-nuit",
+    "alt": "Écran jour et écran nuit sur la route"
+   }
+  ],
+  "chips": [
+   {
+    "icon": "sparkle",
+    "title": "Écran jour",
+    "text": "contre le soleil"
+   },
+   {
+    "icon": "moon",
+    "title": "Écran nuit",
+    "text": "contre les phares"
+   }
+  ],
+  "cta": "Je commande le mien",
+  "note": "Paiement à la livraison"
+ },
+ "sections": [
+  {
+   "type": "trust",
+   "items": [
+    {
+     "icon": "cash",
+     "title": "Paiement à la livraison",
+     "text": "vous payez à la réception"
+    },
+    {
+     "icon": "truck",
+     "title": "Livraison à domicile",
+     "text": "chez vous ou au travail"
+    },
+    {
+     "icon": "phone",
+     "title": "Appel de confirmation",
+     "text": "avant chaque envoi"
+    },
+    {
+     "icon": "shield",
+     "title": "Montage universel",
+     "text": "pour la plupart des voitures"
+    }
+   ]
+  },
+  {
+   "type": "problem",
+   "nav": "Pourquoi",
+   "kicker": "Au volant",
+   "title": "Le soleil de face, les phares en pleine *figure*…",
+   "problem_title": "Sans pare-soleil 2-en-1",
+   "pains": [
+    "Le soleil rasant vous oblige à plisser les yeux",
+    "La nuit, les phares en face vous éblouissent",
+    "Les lunettes de soleil ne servent à rien après 18 h",
+    "Le pare-soleil d'origine cache une partie de la route"
+   ],
+   "solution_title": "Avec le pare-soleil 2-en-1",
+   "solution": [
+    "Écran fumé : le soleil de face est atténué",
+    "Écran jaune : l'éblouissement des phares est réduit",
+    "Un seul accessoire, de jour comme de nuit",
+    "Vous voyez la route à travers l'écran"
+   ],
+   "image": "jour-nuit",
+   "alt": "Écran jour et écran nuit"
+  },
+  {
+   "type": "beforeafter",
+   "nav": "Avant / après",
+   "kicker": "De jour",
+   "title": "Le soleil de face, *maîtrisé*",
+   "intro": "Glissez le curseur pour comparer.",
+   "before": {
+    "image": "jour-avant",
+    "label": "Avant"
+   },
+   "after": {
+    "image": "jour-apres",
+    "label": "Avec l'écran fumé"
+   }
+  },
+  {
+   "type": "beforeafter",
+   "kicker": "De nuit",
+   "title": "Les phares en face, *atténués*",
+   "intro": "Glissez le curseur pour comparer.",
+   "before": {
+    "image": "nuit-avant",
+    "label": "Avant"
+   },
+   "after": {
+    "image": "nuit-apres",
+    "label": "Avec l'écran jaune"
+   }
+  },
+  {
+   "type": "benefits",
+   "nav": "Pour qui",
+   "kicker": "Pour qui ?",
+   "title": "Pensé pour *tous ceux qui conduisent*",
+   "columns": 3,
+   "items": [
+    {
+     "icon": "pin",
+     "title": "Chauffeurs de taxi et VTC",
+     "text": "Des heures au volant, de jour comme de nuit : vos yeux sont moins agressés par le soleil et les phares."
+    },
+    {
+     "icon": "moon",
+     "title": "Ceux qui roulent la nuit",
+     "text": "Les phares en pleine figure sur une route sans éclairage ? L'écran jaune atténue l'éblouissement."
+    },
+    {
+     "icon": "users",
+     "title": "Parents sur la route de l'école",
+     "text": "Le soleil rasant du matin, les enfants à bord : vous gardez les yeux ouverts sur la route."
+    },
+    {
+     "icon": "clock",
+     "title": "Longs trajets",
+     "text": "Soleil de face l'après-midi, phares le soir, entre deux villes : un seul accessoire pour tout le voyage."
+    },
+    {
+     "icon": "bag",
+     "title": "Pros de la route",
+     "text": "Commerciaux, chauffeurs de direction, livreurs en voiture : un équipement simple pour travailler plus sereinement."
+    },
+    {
+     "icon": "sparkle",
+     "title": "Porteurs de lunettes",
+     "text": "Plus besoin de lunettes de soleil par-dessus vos lunettes de vue : l'écran se rabat devant vos yeux."
+    }
+   ]
+  },
+  {
+   "type": "demo",
+   "nav": "Installation",
+   "kicker": "Installation",
+   "title": "Prêt en *30 secondes*",
+   "steps": [
+    {
+     "title": "Clipsez",
+     "text": "Fixez la pince sur le pare-soleil d'origine de votre voiture. Aucun outil, aucune vis.",
+     "image": "pose",
+     "alt": "Fixation sur le pare-soleil"
+    },
+    {
+     "title": "Choisissez l'écran",
+     "text": "Le jour, abaissez l'écran fumé. La nuit, abaissez l'écran jaune.",
+     "image": "ecrans",
+     "alt": "Écran fumé et écran jaune"
+    },
+    {
+     "title": "Roulez",
+     "text": "Réglez la hauteur devant vos yeux, puis remontez l'écran quand vous n'en avez plus besoin.",
+     "image": "jour-nuit",
+     "alt": "Sur la route"
+    }
+   ]
+  },
+  {
+   "type": "showcase",
+   "nav": "En détail",
+   "cta": "Je commande le mien",
+   "items": [
+    {
+     "image": "produit",
+     "alt": "Les deux écrans",
+     "kicker": "2-en-1",
+     "title": "Deux écrans, *un seul accessoire*",
+     "text": "Un écran fumé pour le soleil, un écran jaune pour la nuit : vous passez de l'un à l'autre d'un geste."
+    },
+    {
+     "image": "reel",
+     "alt": "Photo réelle du produit",
+     "kicker": "Robuste",
+     "title": "Polycarbonate *résistant aux chocs*",
+     "text": "Une matière solide qui supporte les secousses de la route et la chaleur de l'habitacle au quotidien."
+    },
+    {
+     "image": "pose",
+     "alt": "Montage sur le pare-soleil",
+     "kicker": "Universel",
+     "title": "Se fixe sur *votre pare-soleil*",
+     "text": "La pince s'accroche au pare-soleil d'origine : il convient à la plupart des voitures, 4x4 et pick-up."
+    }
+   ]
+  },
+  {
+   "type": "specs",
+   "nav": "Caractéristiques",
+   "kicker": "En détail",
+   "title": "Caractéristiques",
+   "image": "ecrans",
+   "alt": "Pare-soleil 2-en-1",
+   "rows": [
+    {
+     "label": "Modèle",
+     "value": "Version extensible"
+    },
+    {
+     "label": "Écrans",
+     "value": "2 : fumé (jour) et jaune (nuit)"
+    },
+    {
+     "label": "Matière",
+     "value": "Polycarbonate (PC)"
+    },
+    {
+     "label": "Fixation",
+     "value": "Pince sur le pare-soleil d'origine"
+    },
+    {
+     "label": "Compatibilité",
+     "value": "La plupart des voitures"
+    },
+    {
+     "label": "Pliable",
+     "value": "Oui"
+    },
+    {
+     "label": "Dimensions",
+     "value": "32 × 12 × 2 cm"
+    },
+    {
+     "label": "Emballage",
+     "value": "Boîte"
+    }
+   ]
+  },
+  {
+   "type": "included",
+   "title": "Dans la boîte",
+   "items": [
+    {
+     "label": "Pare-soleil 2-en-1 jour et nuit",
+     "image": "produit"
+    },
+    {
+     "label": "Pince de fixation intégrée",
+     "icon": "shield"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "title": "Avis",
+   "items": []
+  },
+  {
+   "type": "offer",
+   "nav": "Offre",
+   "kicker": "Offre",
+   "title": "Votre pare-soleil, *livré chez vous*",
+   "text": "Commandez en quelques secondes : nous vous appelons pour confirmer, puis vous payez à la livraison.",
+   "image": "produit",
+   "alt": "Pare-soleil 2-en-1",
+   "items": [
+    "Pare-soleil 2-en-1 jour et nuit",
+    "Version extensible, montage sans outil",
+    "Paiement à la livraison"
+   ],
+   "payment": "à la livraison, quand le colis vous est remis",
+   "delivery": "à domicile — nous vous appelons pour confirmer l'adresse",
+   "ends_at": "",
+   "cta": "Commander — payer à la livraison"
+  },
+  {
+   "type": "faq",
+   "nav": "Questions",
+   "title": "Vos questions",
+   "items": [
+    {
+     "q": "Est-ce qu'il s'adapte à ma voiture ?",
+     "a": "Il se fixe par une pince sur le pare-soleil d'origine : il convient à la plupart des voitures, 4x4 et pick-up. En cas de doute, demandez-nous lors de l'appel de confirmation."
+    },
+    {
+     "q": "Que veut dire « version extensible » ?",
+     "a": "L'écran se règle en hauteur pour se placer devant vos yeux, puis se replie contre le pare-soleil quand vous n'en avez pas besoin."
+    },
+    {
+     "q": "Je porte des lunettes de vue, ça marche ?",
+     "a": "Oui : l'écran se place devant le pare-brise, vous gardez vos lunettes habituelles."
+    },
+    {
+     "q": "Il ne gêne pas la vue ?",
+     "a": "Vous voyez la route à travers l'écran. Abaissez-le seulement quand le soleil ou les phares vous gênent, et remontez-le ensuite."
+    },
+    {
+     "q": "Comment le nettoyer ?",
+     "a": "Avec un chiffon doux, de préférence en microfibre, sans produit abrasif pour ne pas rayer l'écran."
+    },
+    {
+     "q": "Comment se passe le paiement ?",
+     "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez à la livraison, quand le colis vous est remis."
+    },
+    {
+     "q": "Livrez-vous dans mon pays ?",
+     "a": "Nous livrons dans plusieurs pays. Indiquez votre pays et votre ville dans le formulaire : nous vous appelons pour confirmer la livraison."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "De jour comme de nuit,",
+   "em": "gardez les yeux sur la route.",
+   "text": "Pare-soleil 2-en-1, paiement à la livraison.",
+   "note": "Paiement à la livraison",
+   "button": "Je commande le mien"
+  }
+ ]
+}
