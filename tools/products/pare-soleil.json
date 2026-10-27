@@ -197,25 +197,32 @@
    "type": "demo",
    "nav": "Installation",
    "kicker": "Installation",
-   "title": "Prêt en *30 secondes*",
+   "title": "Installé en *4 gestes*",
+   "intro": "Aucun outil, aucune vis : 30 secondes suffisent.",
    "steps": [
     {
-     "title": "Clipsez",
-     "text": "Fixez la pince sur le pare-soleil d'origine de votre voiture. Aucun outil, aucune vis.",
-     "image": "pose",
-     "alt": "Fixation sur le pare-soleil"
+     "title": "Dépliez la pince",
+     "text": "Ouvrez la pince de fixation à l'arrière du pare-soleil 2-en-1.",
+     "image": "inst-1",
+     "alt": "Déplier la pince"
     },
     {
-     "title": "Choisissez l'écran",
-     "text": "Le jour, abaissez l'écran fumé. La nuit, abaissez l'écran jaune.",
-     "image": "ecrans",
-     "alt": "Écran fumé et écran jaune"
+     "title": "Clipsez-le",
+     "text": "Glissez la pince sur le pare-soleil d'origine de votre voiture.",
+     "image": "inst-2",
+     "alt": "Clipser sur le pare-soleil"
     },
     {
-     "title": "Roulez",
-     "text": "Réglez la hauteur devant vos yeux, puis remontez l'écran quand vous n'en avez plus besoin.",
-     "image": "jour-nuit",
-     "alt": "Sur la route"
+     "title": "Le jour : écran gris",
+     "text": "Abaissez l'écran fumé devant vos yeux quand le soleil vous gêne.",
+     "image": "inst-3",
+     "alt": "Écran gris le jour"
+    },
+    {
+     "title": "La nuit : écran jaune",
+     "text": "Abaissez l'écran jaune pour atténuer l'éblouissement des phares.",
+     "image": "inst-4",
+     "alt": "Écran jaune la nuit"
     }
    ]
   },
@@ -239,8 +246,8 @@
      "text": "Une matière solide qui supporte les secousses de la route et la chaleur de l'habitacle au quotidien."
     },
     {
-     "image": "pose",
-     "alt": "Montage sur le pare-soleil",
+     "image": "installation",
+     "alt": "Installation en 4 étapes",
      "kicker": "Universel",
      "title": "Se fixe sur *votre pare-soleil*",
      "text": "La pince s'accroche au pare-soleil d'origine : il convient à la plupart des voitures, 4x4 et pick-up."
