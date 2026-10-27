@@ -29,7 +29,7 @@
  "currency": "$",
  "currency_iso": "USD",
  "price_new_num": "35",
- "announcement": "Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison · Réservé aux adultes",
+ "announcement": "Colis neutre et discret · Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison · Réservé aux adultes",
  "announcement_scroll": true,
  "seo_title": "Bulletzir, mini masseur vibrant 10 modes | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Kinshasa",
  "seo_description": "Mini masseur vibrant rechargeable par USB, étanche, silencieux (moins de 40 dB), 10 modes de vibration. {{ mm_new }} {{ mm_cur }}, livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison. Réservé aux adultes.",
@@ -37,10 +37,10 @@
  "og_description": "Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison. Réservé aux adultes.",
  "ld_name": "Bulletzir, mini masseur vibrant 10 modes",
  "ld_description": "Mini masseur vibrant arc-en-ciel métallisé, rechargeable par USB, étanche, silencieux (moins de 40 dB), 10 modes de vibration. Réservé aux adultes.",
- "footer_note": "Livraison gratuite à Kinshasa et Lubumbashi · Paiement à la livraison · Réservé aux adultes",
- "order_note": "Paiement à la livraison — nous vous appelons pour confirmer",
+ "footer_note": "Colis neutre · Livraison gratuite à Kinshasa et Lubumbashi · Paiement à la livraison · Réservé aux adultes",
+ "order_note": "Colis neutre et discret — paiement à la livraison",
  "hero": {
-  "kicker": "Réservé aux adultes · Bien-être intime",
+  "kicker": "Réservé aux adultes · Colis neutre",
   "title_lines": [
    "Petit format,",
    "*grandes sensations.*"
@@ -101,9 +101,9 @@
      "text": "avant chaque envoi"
     },
     {
-     "icon": "shield",
-     "title": "Réservé aux adultes",
-     "text": "18 ans et plus"
+     "icon": "box",
+     "title": "Colis neutre",
+     "text": "aucune mention du contenu"
     }
    ]
   },
@@ -216,6 +216,10 @@
     {
      "label": "Format",
      "value": "De poche"
+    },
+    {
+     "label": "Expédition",
+     "value": "Colis neutre, sans mention du contenu"
     }
    ]
   },
@@ -229,7 +233,7 @@
    "nav": "Offre",
    "kicker": "Offre",
    "title": "Votre Bulletzir, *livré gratuitement*",
-   "text": "Commandez en quelques secondes : nous vous appelons pour confirmer votre adresse, puis vous payez à la livraison.",
+   "text": "Votre colis arrive dans un emballage neutre, sans aucune mention de son contenu. Nous vous appelons pour confirmer l'adresse, puis vous payez à la livraison.",
    "image": "produit",
    "alt": "Mini masseur vibrant Bulletzir",
    "items": [
@@ -238,7 +242,7 @@
     "Livraison gratuite à Kinshasa et Lubumbashi"
    ],
    "payment": "à la livraison, quand le colis vous est remis",
-   "delivery": "gratuite, à domicile à Kinshasa et à Lubumbashi",
+   "delivery": "gratuite, à domicile à Kinshasa et à Lubumbashi, dans un colis neutre",
    "ends_at": "",
    "cta": "Commander — payer à la livraison"
   },
@@ -247,6 +251,10 @@
    "nav": "Questions",
    "title": "Vos questions",
    "items": [
+    {
+     "q": "Le colis est-il discret ?",
+     "a": "Oui. Votre commande est livrée dans un emballage neutre, sans aucune mention du produit ni de son contenu."
+    },
     {
      "q": "Comment se passe le paiement ?",
      "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez quand le colis vous est remis."
@@ -285,8 +293,8 @@
    "type": "cta",
    "title": "Faites-vous plaisir,",
    "em": "en toute simplicité.",
-   "text": "Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
-   "note": "Réservé aux adultes",
+   "text": "Colis neutre, livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
+   "note": "Réservé aux adultes · Colis neutre",
    "button": "Commander discrètement"
   }
  ]
