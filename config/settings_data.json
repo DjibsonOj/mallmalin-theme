@@ -148,6 +148,11 @@
         "type": "shopify://apps/easysell-cod-form/blocks/app-embed/7bfd0a95-6839-4f02-b2ee-896832dbe67e",
         "disabled": false,
         "settings": {}
+      },
+      "8504176592808321533": {
+        "type": "shopify://apps/nudgify-social-proof-sales-pop/blocks/nudgify-pixel-app-embed/3491acd6-0406-49d3-bc7f-2dcfc24bb07b",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
