@@ -34,12 +34,29 @@ def announce(cfg):
             '<div>%s</div><div>%s</div></div></div>' % (' · '.join(items), seq, seq))
 
 
+def sticker(cfg, svg):
+    """Badge rond flottant (ex. « 1+1 OFFERTE ») qui ouvre le formulaire de commande."""
+    st = cfg.get('sticker') or {}
+    if not st.get('big'): return ''
+    return ('  <a class="sticker" id="sticker" href="#commander" data-order aria-label="%s">'
+            '<span class="st-ico" aria-hidden="true">%s</span><b>%s</b><small>%s</small></a>\n'
+            % (st.get('label', st['big']), svg(st.get('icon', 'gift')), st['big'], st.get('small', '')))
+
+
 def render(cfg, tpl, asset, svg, jpg, tick):
     pref = cfg['img']
     style = cfg.get('style', 'sante')
     if style not in STYLES:
         raise SystemExit('Style inconnu « %s ». Choix : %s' % (style, ', '.join(STYLES)))
     fonts, hero_default, theme_color = STYLES[style]
+    # police imposée pour toute la page, ex. "font": "Poppins" (Google Fonts)
+    font = (cfg.get('font') or '').strip()
+    if font:
+        fonts = '%s:wght@400;500;600;700;800' % font.replace(' ', '+')
+    # police du texte seulement (les titres gardent celle du style), ex. "font_body": "Poppins"
+    font_body = (cfg.get('font_body') or '').strip()
+    if font_body and not font:
+        fonts += '&family=%s:wght@400;500;600;700' % font_body.replace(' ', '+')
 
     def img(name): return asset(pref + jpg(name))
     def em(t): return re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
@@ -57,6 +74,13 @@ def render(cfg, tpl, asset, svg, jpg, tick):
                 h += '<span class="badge">−%s %%</span>' % save
         return h
 
+    dl = cfg.get('deal') or {}
+    def deal(cls=''):
+        """Offre spéciale bien visible (ex. 1 achetée = 1 offerte), affichée sous chaque prix."""
+        if not dl.get('title'): return ''
+        return ('<div class="deal%s"><span class="deal-ico" aria-hidden="true">%s</span><div><b>%s</b>%s</div></div>'
+                % (cls, svg(dl.get('icon', 'gift')), dl['title'], ('<span>%s</span>' % dl['text']) if dl.get('text') else ''))
+
     c = {k: v for k, v in cfg.items() if isinstance(v, str)}
     c.update({
         'style': style,
@@ -73,6 +97,8 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         'html_class': ' '.join(x for x in (('no-scan' if cfg.get('fx_scan') is False else ''),) if x),
         'robots_meta': '  <meta name="robots" content="noindex, nofollow">\n' if cfg.get('noindex') else '',
         'announce_html': announce(cfg),
+        'sticker_html': sticker(cfg, svg),
+        'order_deal': ('<span class="order-deal">%s</span>' % dl['title']) if dl.get('title') else '',
     })
     # logo facultatif : affiché seulement s'il est présent dans assets/
     logo = cfg.get('logo_file', '')
@@ -103,6 +129,10 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         c['age_gate_html'] = ''
     ov = cfg.get('colors', {})
     c['color_overrides'] = ('html[data-style="%s"]{%s}' % (style, ';'.join('--%s:%s' % (k, v) for k, v in ov.items() if k in COLOR_KEYS))) if ov else ''
+    if font_body and not font:
+        c['color_overrides'] += 'html[data-style="%s"]{--fb:\'%s\',sans-serif}' % (style, font_body)
+    if font:
+        c['color_overrides'] += 'html[data-style="%s"]{--fh:\'%s\',sans-serif;--fb:\'%s\',sans-serif}' % (style, font, font)
 
     # ───────── HERO ─────────
     hr = cfg['hero']
@@ -122,6 +152,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         + '          <h1 class="h in-hero">%s</h1>\n' % ''.join('<span class="ln">%s</span>' % em(l) for l in hr['title_lines'])
         + ('          <p class="hero-sub in-hero">%s</p>\n' % hr['sub'] if hr.get('sub') else '')
         + '          <div class="price-row in-hero">%s</div>\n' % price_row()
+        + (('          %s\n' % deal(' in-hero')) if dl.get('title') else '')
         + '          <div class="hero-actions in-hero"><a class="btn btn-main" href="#commander" data-order id="heroOrder">%s%s</a>'
           '<span class="hero-note">%s%s</span></div>\n' % (hr.get('cta', 'Commander maintenant'), ARROW, tick, note)
         + '        </div>\n'
@@ -166,13 +197,16 @@ def render(cfg, tpl, asset, svg, jpg, tick):
 
     def s_problem(s, sid):
         if not (s.get('pains') and (s.get('solution') or s.get('solution_text'))): return ''
-        bad = '<div class="ps-box bad card rv"><h3 class="h">%s</h3><ul>%s</ul></div>' % (
-            em(s.get('problem_title', 'Le problème')), ''.join('<li>%s</li>' % p for p in s['pains']))
+        pr = s.get('image_ratio', '').strip()       # ex. "4/5" pour des photos verticales
+        pst = (' style="aspect-ratio:%s"' % pr) if pr else ''
+        bad = '<div class="ps-box bad card rv"><h3 class="h">%s</h3><ul>%s</ul>%s</div>' % (
+            em(s.get('problem_title', 'Le problème')), ''.join('<li>%s</li>' % p for p in s['pains']),
+            ('<div class="ps-img"%s><img src="%s" alt="%s" loading="lazy"></div>' % (pst, img(s['problem_image']), s.get('problem_alt', ''))) if s.get('problem_image') else '')
         good = '<div class="ps-box good card rv"><h3 class="h">%s</h3>%s%s%s</div>' % (
             em(s.get('solution_title', 'La solution')),
             ('<p>%s</p>' % s['solution_text']) if s.get('solution_text') else '',
             ('<ul>%s</ul>' % ''.join('<li>%s</li>' % p for p in s['solution'])) if s.get('solution') else '',
-            ('<div class="ps-img"><img src="%s" alt="%s" loading="lazy"></div>' % (img(s['image']), s.get('alt', ''))) if s.get('image') else '')
+            ('<div class="ps-img"%s><img src="%s" alt="%s" loading="lazy"></div>' % (pst, img(s['image']), s.get('alt', ''))) if s.get('image') else '')
         return wrap(s, sid, head(s) + '<div class="ps">%s%s</div>' % (bad, good))
 
     def s_benefits(s, sid):
@@ -228,9 +262,16 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         if not v: return ''
         src = v if v.startswith(('http://', 'https://', '//')) else asset(pref + (v if v.endswith('.mp4') else v + '.mp4'))
         poster = (' poster="%s"' % img(s['poster'])) if s.get('poster') else ''
-        inner = ('<figure class="vid rv"><video src="%s"%s muted loop playsinline preload="none" aria-label="%s"></video>'
+        ratio = s.get('ratio', '').strip()          # ex. "3/4" pour une vidéo verticale
+        try:
+            rw, rh = (float(x) for x in ratio.split('/'))
+            vertical = rw < rh
+        except ValueError:
+            vertical = False
+        vstyle = ' style="max-width:min(440px,100%)"' if vertical else ''
+        inner = ('<figure class="vid rv"%s><video src="%s"%s muted loop playsinline preload="none" aria-label="%s"%s></video>'
                  '<button type="button" class="vid-btn" aria-label="Lecture / pause"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></button>%s</figure>'
-                 % (src, poster, s.get('alt', 'Vidéo du produit'), ('<figcaption>%s</figcaption>' % s['caption']) if s.get('caption') else ''))
+                 % (vstyle, src, poster, s.get('alt', 'Vidéo du produit'), (' style="aspect-ratio:%s"' % ratio) if ratio else '', ('<figcaption>%s</figcaption>' % s['caption']) if s.get('caption') else ''))
         if s.get('cta'): inner += '<div class="vid-cta rv"><a class="btn btn-main" href="#commander" data-order>%s</a></div>' % s['cta']
         return wrap(s, sid, head(s) + inner)
 
@@ -256,7 +297,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
             return '<td%s>%s</td>' % (cls, v)
         th = '<tr><th></th>%s</tr>' % ''.join('<th%s>%s</th>' % (' class="hl"' if j + 1 == hl else '', x) for j, x in enumerate(cols))
         trs = ''.join('<tr><td>%s</td>%s</tr>' % (r['label'], ''.join(cell(v, j + 1) for j, v in enumerate(r['values']))) for r in rows)
-        return wrap(s, sid, head(s) + '<div class="cmp-wrap rv"><table class="cmp">%s%s</table></div>' % (th, trs))
+        return wrap(s, sid, head(s) + '<div class="cmp-wrap rv"><table class="cmp%s">%s%s</table></div>' % (' cmp-2' if len(cols) <= 2 else '', th, trs))
 
     def s_included(s, sid):
         it = s.get('items', [])
@@ -282,12 +323,12 @@ def render(cfg, tpl, asset, svg, jpg, tick):
             cd = ('<div class="countdown" data-ends="%s">%s<div class="cd">%s</div></div>'
                   % (s['ends_at'], s.get('ends_label', 'L’offre se termine dans'),
                      ''.join('<span data-u>00<small>%s</small></span>' % u for u in ('jours', 'h', 'min', 's'))))
-        body = ('<div class="offer-body">%s%s%s%s<div class="offer-price">%s</div>%s%s<a class="btn btn-main" href="#commander" data-order>%s</a></div>'
+        body = ('<div class="offer-body">%s%s%s%s<div class="offer-price">%s</div>%s%s%s<a class="btn btn-main" href="#commander" data-order>%s</a></div>'
                 % (('<span class="pill">%s</span>' % s['kicker']) if s.get('kicker') else '',
                    '<h2 class="h">%s</h2>' % em(s.get('title', 'Votre commande')),
                    ('<p>%s</p>' % s['text']) if s.get('text') else '',
                    ('<ul class="offer-list">%s</ul>' % ''.join('<li>%s<span>%s</span></li>' % (tick, x) for x in s['items'])) if s.get('items') else '',
-                   price_row(), cd,
+                   price_row(), deal(), cd,
                    ('<div class="offer-terms">%s</div>' % terms) if terms else '',
                    s.get('cta', 'Commander — payer à la livraison')))
         media = ('<div class="offer-media"><img src="%s" alt="%s" loading="lazy"></div>' % (img(s['image']), s.get('alt', ''))) if s.get('image') else ''
@@ -301,10 +342,10 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         return wrap(s2, sid, head(s2) + '<div class="faq rv">%s</div>' % det)
 
     def s_cta(s, sid):
-        inner = ('<div class="cta rv"><div><h2 class="h">%s%s</h2>%s</div><div class="cta-card"><div class="price-row" style="justify-content:center">%s</div>'
+        inner = ('<div class="cta rv"><div><h2 class="h">%s%s</h2>%s</div><div class="cta-card"><div class="price-row" style="justify-content:center">%s</div>%s'
                  '<span class="note">%s</span><a class="btn btn-main" href="#commander" data-order id="finalOrder">%s%s</a></div></div>'
                  % (em(s.get('title', 'Prêt à commander ?')), (' <em>%s</em>' % s['em']) if s.get('em') else '',
-                    ('<p>%s</p>' % s['text']) if s.get('text') else '', price_row(False),
+                    ('<p>%s</p>' % s['text']) if s.get('text') else '', price_row(False), deal(' center'),
                     s.get('note', 'Paiement à la livraison'), s.get('button', 'Commander maintenant'), ARROW))
         return '    <section style="padding:0 0 clamp(40px,6vw,72px)" id="%s"><div class="wrap">%s</div></section>' % (sid, inner)
 

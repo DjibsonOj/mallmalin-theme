@@ -291,6 +291,7 @@ html[data-style="mode"] .step-n{border-radius:0}
 .cmp th{font-family:var(--fh);font-weight:var(--hw);font-size:17px;text-transform:var(--ht)}
 .cmp td:first-child,.cmp th:first-child{text-align:left;color:var(--muted)}
 .cmp .hl{background:var(--soft)}
+@media(max-width:640px){.cmp.cmp-2{min-width:0;font-size:13.5px}.cmp.cmp-2 th,.cmp.cmp-2 td{padding:12px 9px}.cmp.cmp-2 th{font-size:14.5px;line-height:1.2}.cmp.cmp-2 td:first-child{width:30%}}
 .cmp .yes{color:var(--accent);font-weight:800}
 html[data-style="sante"] .cmp .yes,html[data-style="maison"] .cmp .yes,html[data-style="beaute"] .cmp .yes,html[data-style="mode"] .cmp .yes{color:var(--ink)}
 
@@ -500,6 +501,30 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 
 /* ── écran « réservé aux adultes » (option age_gate) ── */
 html.no-scan .h-main::before{display:none}
+.sticker{position:fixed;right:14px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:61;width:82px;height:82px;border-radius:50%;background:var(--accent2);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;text-decoration:none;line-height:1;box-shadow:0 0 0 4px rgba(255,255,255,.9),0 14px 30px -10px rgba(0,0,0,.55);animation:stPulse 2.4s ease-in-out infinite;transition:bottom .4s var(--ease),opacity .3s,visibility .3s;-webkit-tap-highlight-color:transparent}
+.sticker::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.55);animation:stSpin 14s linear infinite}
+.sticker .st-ico{position:relative;display:grid;place-items:center;width:30px;height:30px;margin-bottom:1px}
+.sticker .st-ico svg{position:relative;z-index:1;width:16px;height:16px;color:#fff;stroke:#fff;fill:none}
+.sticker .st-ico::before{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(#e11d2e 0 9deg,transparent 9deg 30deg);-webkit-mask:radial-gradient(circle,transparent 0 9px,#000 10px 14px,transparent 15px);mask:radial-gradient(circle,transparent 0 9px,#000 10px 14px,transparent 15px);animation:stRays 1.6s ease-in-out infinite}
+@keyframes stRays{0%,100%{transform:scale(.9) rotate(0);opacity:.85}50%{transform:scale(1.08) rotate(15deg);opacity:1}}
+.sticker b{font-size:21px;font-weight:800;letter-spacing:-.02em;font-family:var(--fb)}
+.sticker small{font-size:10.5px;font-weight:800;letter-spacing:.06em;margin-top:2px;font-family:var(--fb)}
+html.bar-up .sticker{bottom:calc(86px + env(safe-area-inset-bottom))}
+html.order-open .sticker,html.st-hide .sticker,html.age-lock .sticker{opacity:0;visibility:hidden;pointer-events:none}
+@keyframes stPulse{0%,100%{transform:scale(1) rotate(-8deg)}50%{transform:scale(1.08) rotate(-8deg)}}
+@keyframes stSpin{to{transform:rotate(360deg)}}
+@media (min-width:900px){.sticker{width:100px;height:100px;right:28px;bottom:28px}.sticker b{font-size:26px}.sticker .st-ico{width:36px;height:36px}.sticker .st-ico svg{width:19px;height:19px}.sticker small{font-size:12px}html.bar-up .sticker{bottom:28px}}
+@media (prefers-reduced-motion:reduce){.sticker,.sticker::before,.sticker .st-ico::before{animation:none}}
+.deal{display:flex;align-items:center;gap:12px;margin:14px 0 4px;padding:12px 16px;border-radius:var(--btn-r,14px);background:var(--accent2);color:#fff;box-shadow:0 12px 28px -14px var(--accent2);animation:dealPulse 2.2s ease-in-out infinite}
+.deal-ico{flex:none;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center}
+.deal-ico svg{width:20px;height:20px}
+.deal b{display:block;font-size:clamp(16px,2vw,19px);font-weight:800;letter-spacing:-.01em;line-height:1.2;text-transform:uppercase}
+.deal span:not(.deal-ico){display:block;font-size:14px;opacity:.95;margin-top:2px}
+.deal.center{justify-content:center;text-align:left;margin:12px auto 6px}
+.order-deal{display:inline-block;margin:6px 0 2px;padding:5px 10px;border-radius:8px;background:var(--accent2);color:#fff;font-size:13px;font-weight:800;text-transform:uppercase}
+@keyframes dealPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.deal.in-hero{animation:heroIn .9s var(--ease) .3s forwards,dealPulse 2.2s ease-in-out 1.4s infinite}
+@media (prefers-reduced-motion:reduce){.deal,.deal.in-hero{animation:none;opacity:1;transform:none}}
 .announce.scroll{padding:0;overflow:hidden;white-space:nowrap}
 .ann-track{display:flex;width:max-content;animation:annRun 28s linear infinite}
 .ann-track>div{display:flex;align-items:center;flex:none}
@@ -659,6 +684,7 @@ html.order-open,html.order-open body{overflow:hidden}
         <span class="order-title">Inclinomètre numérique laser magnétique rechargeable</span>
         <span class="order-new">{{ mm_new }} {{ mm_cur }}</span>
         <span class="order-old">{{ mm_old }} {{ mm_cur }}</span>
+        
         <span class="order-note">Paiement à la livraison — nous vous appelons pour confirmer</span>
       </div>
       <div class="cod-box">
@@ -804,6 +830,15 @@ html.order-open,html.order-open body{overflow:hidden}
     try{ sessionStorage.setItem('ag18','1'); }catch(e){}
     root.classList.add('age-ok'); root.classList.remove('age-lock');
   });
+})();
+  </script>
+  <script>
+(function(){
+  var st=document.getElementById('sticker'); if(!st) return;
+  var root=document.documentElement, bar=document.getElementById('bar');
+  if(bar){ var sync=function(){ root.classList.toggle('bar-up', bar.classList.contains('is-on')); }; new MutationObserver(sync).observe(bar,{attributes:true,attributeFilter:['class']}); sync(); }
+  var off=document.querySelector('#offer .offer');
+  if(off&&'IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ root.classList.toggle('st-hide', e.isIntersecting); }); },{threshold:.25}).observe(off); }
 })();
   </script>
   <script>
