@@ -37,3 +37,10 @@ Une section ou un élément sans donnée réelle ne s'affiche pas :
 3. Images dans `assets/` avec le préfixe `img` (ex. `ab-tensio-hero.jpg`).
 4. `python3 tools/build.py <produit>` puis `python3 tools/preview.py landing-<produit>`.
 5. Commit + push sur `afribazaar`, puis choisir le modèle `landing-<produit>` sur la fiche produit.
+
+## Logo adapté aux couleurs de la page (automatique)
+Avec un logo horizontal (`"logo_wide": true`), le build retire le fond blanc du logo, garde l'icône
+d'origine et recolore le nom de la marque avec la couleur d'accent de la page (ou la couleur du texte
+si l'accent se lit mal sur le fond). Fichiers créés : `assets/<logo>-icone.png` et `assets/<img>logo-texte.png`.
+- `"logo_color": "#ffc400"` : imposer la couleur du nom.
+- `"logo_adapt": false` : garder le logo d'origine (sur fond blanc).
