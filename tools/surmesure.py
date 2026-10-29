@@ -327,8 +327,9 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     def s_reviews(s, sid):
         it = [r for r in s.get('items', []) if r.get('text') and r.get('name')]
         if not it: return ''   # uniquement de vrais avis fournis par le marchand
-        cards = ''.join('<figure class="review card rv"><span class="stars" aria-label="%d sur 5">%s</span><p>%s</p><cite>%s</cite></figure>'
-                        % (r.get('stars', 5), '★' * r.get('stars', 5), r['text'], r['name']) for r in it)
+        cards = ''.join('<figure class="review card rv">%s<p>%s</p><cite>%s</cite></figure>'
+                        % (('<span class="stars" aria-label="%d sur 5">%s</span>' % (r.get('stars', 5), '★' * r.get('stars', 5))) if r.get('stars', 5) else '',
+                           r['text'], r['name']) for r in it)
         return wrap(s, sid, head(s) + '<div class="reviews">%s</div>' % cards)
 
     def s_offer(s, sid):
@@ -349,6 +350,26 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         media = ('<div class="offer-media"><img src="%s" alt="%s" loading="lazy"></div>' % (img(s['image']), s.get('alt', ''))) if s.get('image') else ''
         return wrap(s, sid, '<div class="offer card %s rv">%s%s</div>' % ('' if media else 'solo', media, body))
 
+    def s_packs(s, sid):
+        """Offres au choix (ex. 1 flacon / 2 flacons). Chaque bouton ouvre le formulaire de commande."""
+        it = s.get('items', [])
+        if not it: return ''
+        cards = ''.join(
+            '<article class="pack card%s rv">%s%s<div class="pack-body"><span class="pack-name">%s</span><h3 class="h">%s</h3>'
+            '<div class="pack-price"><b>%s<small>%s</small></b>%s</div>%s%s'
+            '<a class="btn %s" href="#commander" data-order data-pack="%s">%s%s</a></div></article>'
+            % (' best' if x.get('best') else '',
+               ('<span class="pack-flag">%s</span>' % x['flag']) if x.get('flag') else '',
+               ('<div class="pack-img"><img src="%s" alt="%s" loading="lazy"></div>' % (img(x['image']), x.get('alt', x['title']))) if x.get('image') else '',
+               x.get('name', ''), em(x['title']), x['price'], cfg.get('currency', ''),
+               ('<s>%s %s</s>' % (x['old'], cfg.get('currency', ''))) if x.get('old') else '',
+               ('<span class="pack-note">%s</span>' % x['note']) if x.get('note') else '',
+               ('<ul class="offer-list">%s</ul>' % ''.join('<li>%s<span>%s</span></li>' % (tick, y) for y in x['points'])) if x.get('points') else '',
+               'btn-main' if x.get('best') else 'btn-line', x.get('name', x['title']), x.get('cta', 'Je choisis cette offre'), ARROW)
+            for x in it)
+        foot = ('<p class="pack-foot rv">%s</p>' % s['note']) if s.get('note') else ''
+        return wrap(s, sid, head(s) + '<div class="packs" style="--n:%d">%s</div>%s' % (min(len(it), 3), cards, foot))
+
     def s_faq(s, sid):
         it = s.get('items', [])
         if not it: return ''
@@ -366,7 +387,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
 
     R = {'trust': s_trust, 'stats': s_stats, 'marquee': s_marquee, 'problem': s_problem, 'benefits': s_benefits,
          'showcase': s_showcase, 'video': s_video, 'demo': s_demo, 'gallery': s_gallery, 'beforeafter': s_beforeafter, 'specs': s_specs,
-         'compare': s_compare, 'included': s_included, 'reviews': s_reviews, 'offer': s_offer, 'faq': s_faq, 'cta': s_cta}
+         'compare': s_compare, 'included': s_included, 'reviews': s_reviews, 'offer': s_offer, 'packs': s_packs, 'faq': s_faq, 'cta': s_cta}
 
     out_sections, nav, seen = [hero], [], {}
     for s in cfg.get('sections', []):

@@ -1,0 +1,358 @@
+{
+ "template": "surmesure",
+ "style": "maison",
+ "hero_layout": "split",
+ "hero_fit": "cover",
+ "noindex": true,
+ "age_gate": {
+  "title": "Contenu réservé aux adultes",
+  "text": "Cette page présente un produit de bien-être intime destiné aux hommes majeurs. Confirmez que vous avez 18 ans ou plus pour continuer.",
+  "confirm": "J'ai 18 ans ou plus",
+  "exit": "Quitter la page",
+  "exit_url": "/"
+ },
+ "colors": {
+  "bg": "#17110c",
+  "surface": "#211912",
+  "ink": "#f3eadb",
+  "muted": "#b5a48d",
+  "line": "rgba(243,234,219,.12)",
+  "accent": "#c9a24a",
+  "accent-ink": "#17110c",
+  "accent2": "#6b8f5e"
+ },
+ "layout": "landing-poutoulou",
+ "brand": "POUTOULOU ATASSA",
+ "logo_file": "pa-logo.png",
+ "logo_wide": true,
+ "favicon_file": "pa-favicon.png",
+ "img": "pa-poutoulou-",
+ "price_new": "9 900",
+ "price_old": "",
+ "save_pct": "",
+ "currency": "FCFA",
+ "currency_iso": "XOF",
+ "price_new_num": "9900",
+ "deal": {
+  "icon": "gift",
+  "title": "Premium : 2 flacons à 14 900 FCFA",
+  "text": "4 900 FCFA d'économie"
+ },
+ "announcement": "Livraison GRATUITE partout à Niamey · Paiement à la livraison · Colis neutre et discret · Réservé aux adultes",
+ "announcement_scroll": true,
+ "seo_title": "Poutoulou, poudre naturelle d'écorce d'Ankoro | {{ mm_new }} {{ mm_cur }} · Livraison gratuite à Niamey",
+ "seo_description": "Poutoulou : poudre 100 % naturelle d'écorce d'Ankoro, sans additif ni conservateur, utilisée traditionnellement pour l'endurance intime masculine. Livraison gratuite à Niamey, paiement à la livraison, colis neutre. Réservé aux adultes.",
+ "og_title": "Poutoulou, poudre naturelle d'écorce d'Ankoro",
+ "og_description": "Livraison gratuite partout à Niamey, paiement à la livraison, colis neutre. Réservé aux adultes.",
+ "ld_name": "Poutoulou, poudre naturelle d'écorce d'Ankoro",
+ "ld_description": "Poudre 100 % naturelle d'écorce d'Ankoro séchée au soleil et finement broyée, sans additif ni conservateur. Usage externe, réservé aux adultes.",
+ "footer_note": "Livraison gratuite partout à Niamey · Paiement à la livraison · Colis neutre · Réservé aux adultes",
+ "order_note": "Colis neutre et discret — paiement à la livraison",
+ "hero": {
+  "kicker": "Tradition africaine · 100 % naturel",
+  "title_lines": [
+   "La force tranquille",
+   "*de la nature.*"
+  ],
+  "sub": "Poutoulou est une poudre 100 % naturelle d'écorce d'Ankoro, utilisée depuis des générations pour prolonger l'endurance intime. Sans additif, sans conservateur. Livrée gratuitement à Niamey dans un colis neutre, payée à la livraison.",
+  "image": "flacon",
+  "alt": "Flacon de Poutoulou, poudre naturelle d'écorce d'Ankoro",
+  "gallery": [
+   {
+    "image": "flacon",
+    "alt": "Flacon de Poutoulou"
+   },
+   {
+    "image": "pack-1",
+    "alt": "1 flacon de Poutoulou"
+   },
+   {
+    "image": "pack-2",
+    "alt": "2 flacons de Poutoulou"
+   },
+   {
+    "image": "poudre",
+    "alt": "Poudre d'écorce d'Ankoro"
+   }
+  ],
+  "chips": [
+   {
+    "icon": "leaf",
+    "title": "100 % naturel",
+    "text": "écorce d'Ankoro"
+   },
+   {
+    "icon": "box",
+    "title": "Colis neutre",
+    "text": "aucune mention"
+   }
+  ],
+  "cta": "Commander discrètement",
+  "note": "Paiement à la livraison"
+ },
+ "sections": [
+  {
+   "type": "trust",
+   "items": [
+    {
+     "icon": "truck",
+     "title": "Livraison gratuite",
+     "text": "partout à Niamey"
+    },
+    {
+     "icon": "cash",
+     "title": "Paiement à la livraison",
+     "text": "rien à payer en ligne"
+    },
+    {
+     "icon": "phone",
+     "title": "Appel de confirmation",
+     "text": "avant chaque envoi"
+    },
+    {
+     "icon": "box",
+     "title": "Colis neutre",
+     "text": "sans nom ni logo"
+    }
+   ]
+  },
+  {
+   "type": "benefits",
+   "nav": "Pourquoi",
+   "kicker": "Pourquoi Poutoulou",
+   "title": "Le savoir des anciens, *dans un flacon*",
+   "columns": 3,
+   "items": [
+    {
+     "icon": "leaf",
+     "title": "100 % naturel",
+     "text": "Juste de l'écorce d'Ankoro séchée au soleil puis finement broyée. Sans additif, sans conservateur."
+    },
+    {
+     "icon": "clock",
+     "title": "Plus d'endurance",
+     "text": "Utilisée traditionnellement pour prolonger les rapports, grâce aux tanins naturels de l'écorce."
+    },
+    {
+     "icon": "shield",
+     "title": "Sans comprimé",
+     "text": "Une poudre d'usage externe, qui s'applique localement : rien à avaler."
+    },
+    {
+     "icon": "star",
+     "title": "Tradition ancestrale",
+     "text": "Un remède transmis de génération en génération en Afrique centrale."
+    },
+    {
+     "icon": "moon",
+     "title": "Discret",
+     "text": "Un petit flacon qui se range partout, livré dans un colis sans nom ni logo."
+    },
+    {
+     "icon": "cash",
+     "title": "Économique",
+     "text": "Une petite pincée suffit à chaque utilisation : un flacon vous accompagne longtemps."
+    }
+   ]
+  },
+  {
+   "type": "showcase",
+   "nav": "Le produit",
+   "cta": "Commander discrètement",
+   "items": [
+    {
+     "image": "poudre",
+     "alt": "Poudre d'écorce d'Ankoro",
+     "kicker": "Fabrication",
+     "title": "L'écorce, *rien que l'écorce*",
+     "text": "L'écorce d'Ankoro est récoltée, séchée au soleil, puis finement broyée en poudre selon la technique ancestrale. Aucun additif chimique, aucun conservateur."
+    },
+    {
+     "image": "gamme",
+     "alt": "Flacons de Poutoulou",
+     "kicker": "Discrétion",
+     "title": "Petit flacon, *grande tranquillité*",
+     "text": "Votre commande arrive dans un emballage neutre, sans nom de produit ni logo. Personne ne sait ce que vous avez commandé."
+    }
+   ]
+  },
+  {
+   "type": "demo",
+   "nav": "Mode d'emploi",
+   "kicker": "Mode d'emploi",
+   "title": "Simple *et discret*",
+   "steps": [
+    {
+     "title": "Humidifiez",
+     "text": "Humidifiez légèrement le gland avec un peu d'eau ou de salive. Une petite quantité suffit."
+    },
+    {
+     "title": "Appliquez",
+     "text": "Prenez une petite pincée de poudre et massez doucement. Laissez sécher 1 à 2 minutes, puis patientez 40 à 120 minutes."
+    },
+    {
+     "title": "Rincez",
+     "text": "Rincez abondamment à l'eau claire avant le rapport. Vous êtes prêt."
+    }
+   ]
+  },
+  {
+   "type": "packs",
+   "nav": "Offres",
+   "kicker": "Nos offres",
+   "title": "Choisissez *votre offre*",
+   "note": "Livraison gratuite partout à Niamey · Vous payez à la livraison, quand le colis vous est remis.",
+   "items": [
+    {
+     "name": "Standard",
+     "title": "1 flacon",
+     "image": "pack-1",
+     "alt": "1 flacon de Poutoulou",
+     "price": "9 900",
+     "points": [
+      "1 flacon de Poutoulou",
+      "Idéal pour découvrir",
+      "Livraison gratuite et colis neutre"
+     ],
+     "cta": "Je prends 1 flacon"
+    },
+    {
+     "name": "Premium",
+     "title": "2 flacons",
+     "image": "pack-2",
+     "alt": "2 flacons de Poutoulou",
+     "price": "14 900",
+     "flag": "Meilleure offre",
+     "best": true,
+     "note": "4 900 FCFA d'économie",
+     "points": [
+      "2 flacons de Poutoulou",
+      "Soit 7 450 FCFA le flacon",
+      "Livraison gratuite et colis neutre"
+     ],
+     "cta": "Je prends 2 flacons"
+    }
+   ]
+  },
+  {
+   "type": "specs",
+   "nav": "Détails",
+   "kicker": "En détail",
+   "title": "Ce qu'il faut savoir",
+   "image": "flacon",
+   "alt": "Flacon de Poutoulou",
+   "rows": [
+    {
+     "label": "Composition",
+     "value": "Poudre d'écorce d'Ankoro"
+    },
+    {
+     "label": "Additifs",
+     "value": "Aucun additif, aucun conservateur"
+    },
+    {
+     "label": "Usage",
+     "value": "Externe, application locale"
+    },
+    {
+     "label": "Fréquence conseillée",
+     "value": "1 à 2 fois par semaine"
+    },
+    {
+     "label": "Durée d'effet",
+     "value": "Généralement 20 à 60 minutes, selon les personnes"
+    },
+    {
+     "label": "Expédition",
+     "value": "Colis neutre, sans mention du contenu"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "title": "Ils ont *essayé*",
+   "items": [
+    {
+     "name": "K. Marcel · Calavi, Bénin",
+     "text": "J'avais des doutes au début… Mais après utilisation ma vie intime a complètement changé. Ma femme est ravie et moi je me sens à nouveau comme à 25 ans. Merci Poutoulou !",
+     "stars": 0
+    },
+    {
+     "name": "T. Emmanuel · Cotonou, Bénin",
+     "text": "Mince, j'avais perdu confiance… le Poutoulou m'a ramené mon endurance. Produit incroyable et livraison très discrète.",
+     "stars": 0
+    },
+    {
+     "name": "A. Franck · Paris, France",
+     "text": "J'ai découvert le Poutoulou via un ami. C'est impressionnant ! Enfin une alternative naturelle qui fonctionne vraiment.",
+     "stars": 0
+    }
+   ]
+  },
+  {
+   "type": "offer",
+   "nav": "Commander",
+   "kicker": "Commande",
+   "title": "Votre Poutoulou, *livré gratuitement*",
+   "text": "Remplissez le formulaire : nous vous appelons pour confirmer l'adresse, puis vous payez à la livraison. Le colis arrive dans un emballage neutre.",
+   "image": "pack-2",
+   "alt": "2 flacons de Poutoulou",
+   "items": [
+    "Standard : 1 flacon à 9 900 FCFA",
+    "Premium : 2 flacons à 14 900 FCFA",
+    "Livraison gratuite partout à Niamey"
+   ],
+   "payment": "à la livraison, quand le colis vous est remis",
+   "delivery": "gratuite, à domicile partout à Niamey, dans un colis neutre",
+   "ends_at": "",
+   "cta": "Commander — payer à la livraison"
+  },
+  {
+   "type": "faq",
+   "nav": "Questions",
+   "title": "Vos questions",
+   "items": [
+    {
+     "q": "Qu'est-ce que le Poutoulou exactement ?",
+     "a": "C'est une poudre 100 % naturelle d'écorce d'Ankoro. Elle est utilisée depuis des générations pour prolonger l'endurance intime : selon l'usage traditionnel, ses tanins naturels réduisent légèrement la sensibilité."
+    },
+    {
+     "q": "Comment est-il fabriqué ?",
+     "a": "L'écorce est récoltée, séchée au soleil puis finement broyée en poudre. Aucun additif chimique, aucun conservateur."
+    },
+    {
+     "q": "Puis-je l'utiliser tous les jours ?",
+     "a": "Nous conseillons 1 à 2 utilisations par semaine."
+    },
+    {
+     "q": "Combien de temps durent les effets ?",
+     "a": "Généralement entre 20 et 60 minutes. Les résultats varient selon les personnes."
+    },
+    {
+     "q": "Y a-t-il des précautions à prendre ?",
+     "a": "C'est un produit d'usage externe. La première fois, faites un essai sur une petite zone de peau. En cas d'irritation, rincez à l'eau claire et arrêtez l'utilisation. Si vous avez un problème de santé, demandez conseil à un médecin."
+    },
+    {
+     "q": "Quelle est la différence entre les deux offres ?",
+     "a": "L'offre Standard contient 1 flacon à 9 900 FCFA. L'offre Premium contient 2 flacons à 14 900 FCFA, soit 4 900 FCFA d'économie. Vous choisissez votre offre dans le formulaire de commande."
+    },
+    {
+     "q": "Comment se passe la livraison ?",
+     "a": "La livraison est gratuite partout à Niamey. Nous vous appelons pour confirmer, puis le colis vous est livré dans un emballage neutre, sans nom de produit ni logo. Vous payez à la livraison."
+    },
+    {
+     "q": "Qui peut commander ?",
+     "a": "Ce produit est réservé aux personnes majeures (18 ans et plus)."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "Reprenez confiance,",
+   "em": "naturellement.",
+   "text": "Livraison gratuite partout à Niamey, colis neutre, paiement à la livraison.",
+   "note": "Réservé aux adultes · Colis neutre",
+   "button": "Commander discrètement"
+  }
+ ]
+}

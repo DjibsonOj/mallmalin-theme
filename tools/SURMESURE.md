@@ -44,3 +44,10 @@ d'origine et recolore le nom de la marque avec la couleur d'accent de la page (o
 si l'accent se lit mal sur le fond). Fichiers créés : `assets/<logo>-icone.png` et `assets/<img>logo-texte.png`.
 - `"logo_color": "#ffc400"` : imposer la couleur du nom.
 - `"logo_adapt": false` : garder le logo d'origine (sur fond blanc).
+
+## Section « packs » (plusieurs offres au choix)
+`{"type": "packs", "kicker": "Nos offres", "title": "Choisissez *votre offre*", "note": "texte sous les cartes", "items": [
+  {"name": "Standard", "title": "1 flacon", "image": "pack-1", "price": "9 900", "old": "", "points": ["..."], "cta": "Je prends 1 flacon"},
+  {"name": "Premium", "title": "2 flacons", "image": "pack-2", "price": "14 900", "flag": "Meilleure offre", "best": true, "note": "4 900 FCFA d'économie", "points": ["..."]}]}`
+Chaque bouton ouvre le formulaire de commande ; le client choisit la quantité dans EasySell (offres de quantité à régler dans l'app).
+Avis : `"stars": 0` pour afficher un témoignage sans étoiles.
