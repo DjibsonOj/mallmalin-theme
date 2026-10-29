@@ -104,12 +104,27 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     logo = cfg.get('logo_file', '')
     logo_ok = bool(logo) and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', logo))
     wide = logo_ok and cfg.get('logo_wide')          # logo horizontal (icône + nom) : remplace le texte
-    if wide:
+    # logo adapté (par défaut) : fond retiré, nom de marque colorié aux couleurs de la page
+    # "logo_adapt": false pour garder le logo d'origine ; "logo_color": "#hex" pour imposer la couleur du nom
+    ad = None
+    if wide and cfg.get('logo_adapt', True):
+        import logo_adapt
+        ad = logo_adapt.adapt(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets'), logo)
+    if ad:
+        ico, txt, tw, th = ad
+        adir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets')
+        tpl = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'landing-surmesure.template.liquid'), encoding='utf-8').read()
+        col = logo_adapt.pick_color(logo_adapt.page_colors(tpl, style, cfg.get('colors')), cfg.get('logo_color'))
+        tname = logo_adapt.colorize(adir, txt, col, pref + 'logo-texte.png')
+        c['logo_img'] = ('<img class="logo-ico" src="%s" alt="" height="40">'
+                         '<img class="logo-txt" src="%s" alt="%s" width="%d" height="%d">'
+                         % (asset(ico), asset(tname), cfg['brand'], tw, th))
+    elif wide:
         c['logo_img'] = '<img class="logo-wide" src="%s" alt="%s" height="40">' % (asset(logo), cfg['brand'])
     else:
         c['logo_img'] = ('<img src="%s" alt="" width="34" height="34">' % asset(logo)) if logo_ok else ''
     c['brand_text'] = '' if wide else cfg['brand']
-    c['brand_cls'] = (' wide' + (' logo-pill' if cfg.get('logo_pill', style in ('tech', 'sport')) else '')) if wide else ''
+    c['brand_cls'] = (' wide logo-adapt' if ad else (' wide' + (' logo-pill' if cfg.get('logo_pill', style in ('tech', 'sport')) else ''))) if wide else ''
     fav = cfg.get('favicon_file', logo)
     fav_ok = bool(fav) and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', fav))
     c['favicon_link'] = ('  <link rel="icon" href="%s">\n' % asset(fav)) if fav_ok else ''

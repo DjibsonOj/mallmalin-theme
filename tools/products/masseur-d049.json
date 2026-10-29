@@ -21,6 +21,7 @@
  "brand": "Afribazaar",
  "logo_file": "ab-logo.png",
  "logo_wide": true,
+ "logo_adapt": false,
  "favicon_file": "ab-favicon.png",
  "img": "ab-d049-",
  "price_new": "14 900",
