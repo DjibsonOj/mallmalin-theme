@@ -17,6 +17,7 @@ Pour changer un prix ou un texte : modifier le JSON du produit puis relancer le 
 - Ne pas toucher au reste du thème ni aux autres produits : seuls `layout/landing*.liquid`, `templates/product.landing*.json`, `assets/<préfixe>-*`, `tools/` changent.
 - Pour Afribazaar, utiliser les designs **Atelier** ou **Élan** (le design Salon Pro contient encore le nom MallMalin en dur).
 - Marque `Afribazaar`, logo `assets/ab-logo.png`, préfixe d'images `ab-<produit>-`. Ville et devise : à confirmer avec Jibrail avant le premier produit.
+- Logo : toujours adapté aux couleurs de la page produit (automatique dans Sur-Mesure avec un logo horizontal, voir `tools/SURMESURE.md`).
 - Aucun pixel Facebook ni Formspree dans les fichiers : le pixel vient de la boutique via `{{ content_for_header }}`.
 - Le formulaire COD (app EasySell, bloc d'app) s'affiche dans le panneau `#commander` ouvert par tous les boutons `data-order` ; le panneau ne doit jamais avoir de `transform` ouvert (sinon les pop-ups de l'app disparaissent).
 - Bouton flottant « Acheter maintenant · {prix promo} » = prix promo uniquement. Mobile d'abord. Textes en français.
