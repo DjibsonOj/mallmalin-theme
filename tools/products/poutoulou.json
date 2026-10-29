@@ -33,11 +33,6 @@
  "currency": "FCFA",
  "currency_iso": "XOF",
  "price_new_num": "9900",
- "deal": {
-  "icon": "gift",
-  "title": "Premium : 2 flacons à 14 900 FCFA",
-  "text": "4 900 FCFA d'économie"
- },
  "announcement": "Livraison GRATUITE partout à Niamey · Paiement à la livraison · Colis neutre et discret · Réservé aux adultes",
  "announcement_scroll": true,
  "seo_title": "Poutoulou, poudre naturelle d'écorce d'Ankoro | {{ mm_new }} {{ mm_cur }} · Livraison gratuite à Niamey",
