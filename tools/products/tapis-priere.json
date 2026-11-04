@@ -1,0 +1,494 @@
+{
+ "template": "surmesure",
+ "style": "maison",
+ "hero_layout": "split",
+ "hero_fit": "cover",
+ "font_body": "Poppins",
+ "colors": {
+  "bg": "#f7f2e8",
+  "surface": "#fffbf3",
+  "ink": "#16271f",
+  "muted": "#5d6a62",
+  "line": "rgba(22,39,31,.12)",
+  "accent": "#0e5b45",
+  "accent-ink": "#ffffff",
+  "accent2": "#b8892f"
+ },
+ "layout": "landing-tapis-priere",
+ "brand": "Afribazaar",
+ "logo_file": "ab-logo.png",
+ "logo_wide": true,
+ "favicon_file": "ab-favicon.png",
+ "img": "ab-tapis-",
+ "price_new": "9 900",
+ "price_old": "15 000",
+ "save_pct": "34",
+ "currency": "FCFA",
+ "currency_iso": "XOF",
+ "price_new_num": "9900",
+ "announcement": "Paiement à la livraison · Nous vous appelons pour confirmer · Livré roulé, prêt à emporter",
+ "announcement_scroll": true,
+ "seo_title": "Tapis de prière de voyage pliable, 90 × 50 cm, roulé 14 cm | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
+ "seo_description": "Tapis de prière de voyage ultra-compact : 90 × 50 cm déplié, 14 cm une fois roulé, mousqueton pour l'accrocher au sac ou aux clés, dessous antidérapant. Priez partout : bureau, voyage, école, plein air. Paiement à la livraison.",
+ "og_title": "Tapis de prière de voyage : priez partout, à tout moment",
+ "og_description": "90 × 50 cm déplié, 14 cm roulé, accroché à votre sac. Paiement à la livraison.",
+ "ld_name": "Tapis de prière de voyage pliable 90 × 50 cm",
+ "ld_description": "Tapis de prière portable en polyester, 90 × 50 cm, roulé environ 14 × 5 cm, mousqueton et fermeture scratch, dessous antidérapant, lavable. Coloris vert, bleu, marron.",
+ "footer_note": "Paiement à la livraison · Appel de confirmation",
+ "order_note": "Paiement à la livraison — nous vous appelons pour confirmer",
+ "hero": {
+  "kicker": "Tapis de prière de voyage",
+  "title_lines": [
+   "Priez partout,",
+   "*à chaque instant.*"
+  ],
+  "sub": "Au bureau, en voyage, à l'école ou en pleine nature : votre tapis de prière tient dans la main et s'accroche à votre sac. L'heure de la prière arrive, vous êtes prêt.",
+  "image": "voyage",
+  "alt": "Voyageur avec son tapis de prière roulé accroché au sac",
+  "gallery": [
+   {
+    "image": "voyage",
+    "alt": "Tapis de prière roulé, accroché au sac à dos"
+   },
+   {
+    "image": "vert",
+    "alt": "Tapis de prière de voyage vert"
+   },
+   {
+    "image": "bleu",
+    "alt": "Tapis de prière de voyage bleu"
+   },
+   {
+    "image": "marron",
+    "alt": "Tapis de prière de voyage marron"
+   },
+   {
+    "image": "compact-fr",
+    "alt": "Environ 14 cm une fois roulé"
+   },
+   {
+    "image": "roule-dim-fr",
+    "alt": "Roulé : 14 cm de long, environ 5 cm de diamètre"
+   }
+  ],
+  "chips": [
+   {
+    "icon": "bag",
+    "title": "14 cm roulé",
+    "text": "tient dans la main"
+   },
+   {
+    "icon": "moon",
+    "title": "90 × 50 cm",
+    "text": "déplié pour prier"
+   }
+  ],
+  "cta": "Je commande mon tapis",
+  "note": "Paiement à la livraison"
+ },
+ "sections": [
+  {
+   "type": "trust",
+   "items": [
+    {
+     "icon": "cash",
+     "title": "Paiement à la livraison",
+     "text": "vous payez à la réception"
+    },
+    {
+     "icon": "truck",
+     "title": "Livraison à domicile",
+     "text": "chez vous ou au travail"
+    },
+    {
+     "icon": "phone",
+     "title": "Appel de confirmation",
+     "text": "avant chaque envoi"
+    },
+    {
+     "icon": "bag",
+     "title": "Ultra-compact",
+     "text": "14 cm une fois roulé"
+    }
+   ]
+  },
+  {
+   "type": "problem",
+   "nav": "Pourquoi",
+   "kicker": "Le constat",
+   "title": "L'heure de la prière ne vous attend pas. *Votre tapis, si.*",
+   "problem_title": "Sans tapis de voyage",
+   "pains": [
+    "Au bureau, en voyage ou chez des amis, vous cherchez un endroit propre pour prier",
+    "Vous priez sur un carton, un journal ou un vêtement posé par terre",
+    "Vous repoussez la prière en attendant de rentrer chez vous",
+    "Le tapis de la maison est trop grand et trop lourd pour l'emporter"
+   ],
+   "solution_title": "Avec votre tapis de voyage",
+   "solution": [
+    "Il vous suit partout, accroché à votre sac ou à vos clés",
+    "Vous savez toujours sur quoi vous priez : votre propre tapis",
+    "Déroulé en un geste, vous priez à l'heure, où que vous soyez",
+    "Roulé, il ne mesure que 14 cm : il ne prend aucune place"
+   ],
+   "image": "roule",
+   "alt": "Tapis de prière roulé, tenu dans la main",
+   "image_ratio": "1/1"
+  },
+  {
+   "type": "benefits",
+   "nav": "Avantages",
+   "kicker": "Pensé pour le croyant en mouvement",
+   "title": "Toujours prêt pour *la prière*",
+   "columns": 3,
+   "items": [
+    {
+     "icon": "pin",
+     "title": "Priez où vous êtes",
+     "text": "Bureau, école, mosquée bondée, aéroport, chantier, champ ou bord de route : vous avez toujours votre tapis."
+    },
+    {
+     "icon": "bag",
+     "title": "Tient dans la main",
+     "text": "Roulé, il mesure environ 14 cm sur 5 cm. Il se glisse dans un sac, une boîte à gants ou une poche."
+    },
+    {
+     "icon": "feather",
+     "title": "Accroché à vos affaires",
+     "text": "Son mousqueton s'accroche au sac, à la ceinture ou au trousseau de clés. Impossible de l'oublier."
+    },
+    {
+     "icon": "shield",
+     "title": "Ne glisse pas",
+     "text": "Des centaines de petits points antidérapants au dos le gardent bien en place, même sur le carrelage."
+    },
+    {
+     "icon": "leaf",
+     "title": "Doux et lavable",
+     "text": "Tissu polyester doux sous les genoux et le front, bords renforcés, et il se lave facilement."
+    },
+    {
+     "icon": "moon",
+     "title": "Un design qui inspire",
+     "text": "Une arche de mihrab et un croissant de lune, en vert, bleu ou marron : sobre et élégant."
+    }
+   ]
+  },
+  {
+   "type": "video",
+   "nav": "En vidéo",
+   "kicker": "Rangé en quelques secondes",
+   "title": "Plié, roulé, *rangé*",
+   "intro": "Pas besoin de place ni de temps : votre tapis se plie et se roule en quelques secondes.",
+   "video": "pliage",
+   "poster": "pliage-poster",
+   "ratio": "9/16",
+   "alt": "Démonstration du pliage rapide d'un tapis de prière de voyage",
+   "caption": "Plié et roulé en quelques secondes",
+   "cta": "Je veux le mien"
+  },
+  {
+   "type": "showcase",
+   "nav": "En détail",
+   "cta": "Commander",
+   "items": [
+    {
+     "image": "compact-fr",
+     "alt": "Tapis roulé : environ 14 cm de long et 5 cm de diamètre",
+     "kicker": "Ultra-compact",
+     "title": "14 cm roulé, *90 cm pour prier*",
+     "text": "Une fois roulé, votre tapis tient dans la main. Déroulé, il vous offre 90 × 50 cm pour vous tenir debout, vous incliner et vous prosterner."
+    },
+    {
+     "image": "mousqueton-fr",
+     "alt": "Mousqueton pour accrocher le tapis au sac",
+     "kicker": "Toujours avec vous",
+     "title": "Accrochez-le, *partez l'esprit tranquille*",
+     "text": "Le mousqueton intégré se fixe à votre sac à dos, votre sacoche, votre ceinture ou vos clés. Votre tapis vous accompagne sans que vous y pensiez."
+    },
+    {
+     "image": "antiderapant-fr",
+     "alt": "Points antidérapants au dos du tapis",
+     "kicker": "Stable",
+     "title": "Il reste en place, *vous restez concentré*",
+     "text": "Le dos est couvert de petits points antidérapants. Sur le carrelage, le parquet ou la moquette, le tapis ne bouge pas pendant la prière."
+    },
+    {
+     "image": "scratch-fr",
+     "alt": "Fermeture scratch et boucle de suspension",
+     "kicker": "Pratique",
+     "title": "Il se ferme et *s'accroche*",
+     "text": "Une bande scratch garde le tapis bien roulé dans votre sac, et la boucle permet aussi de l'accrocher au mur ou à une patère."
+    },
+    {
+     "image": "tissu-fr",
+     "alt": "Tissu doux et bords renforcés",
+     "kicker": "Qualité",
+     "title": "Doux sous le front, *solide dans le temps*",
+     "text": "Un tissu polyester doux, léger et résistant aux taches, avec des bords renforcés pour durer. Il se lave facilement après vos voyages."
+    }
+   ]
+  },
+  {
+   "type": "video",
+   "nav": "Partout",
+   "kicker": "Une prière, n'importe où",
+   "title": "Au milieu des champs, *face à l'horizon*",
+   "intro": "L'heure de la prière vous surprend loin de chez vous ? Déroulez votre tapis et priez sereinement, où que vous soyez.",
+   "video": "priere-nature",
+   "poster": "priere-nature-poster",
+   "ratio": "9/16",
+   "alt": "Prière sur un tapis de voyage en pleine nature au coucher du soleil",
+   "caption": "Prier en pleine nature, au coucher du soleil"
+  },
+  {
+   "type": "compare",
+   "nav": "Comparatif",
+   "kicker": "Comparatif",
+   "title": "Tapis de voyage *ou tapis classique ?*",
+   "columns": [
+    "Tapis de voyage",
+    "Tapis classique"
+   ],
+   "highlight": 1,
+   "rows": [
+    {
+     "label": "Tient dans un sac ou une poche",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    },
+    {
+     "label": "S'accroche au sac ou aux clés",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    },
+    {
+     "label": "Rangé en quelques secondes",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    },
+    {
+     "label": "Dos antidérapant",
+     "values": [
+      "Oui",
+      "Selon le modèle"
+     ]
+    },
+    {
+     "label": "Idéal en voyage et au travail",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "demo",
+   "nav": "Utilisation",
+   "kicker": "Mode d'emploi",
+   "title": "Prêt en *3 gestes*",
+   "steps": [
+    {
+     "title": "Décrochez-le",
+     "text": "Détachez le mousqueton de votre sac et ouvrez la fermeture scratch.",
+     "image": "roule"
+    },
+    {
+     "title": "Déroulez et priez",
+     "text": "Dépliez le tapis au sol, l'arche vers la qibla. Le dos antidérapant le garde en place.",
+     "image": "vert"
+    },
+    {
+     "title": "Roulez et repartez",
+     "text": "Pliez-le, roulez-le, refermez le scratch : il retrouve sa place à votre sac.",
+     "image": "mousqueton-fr"
+    }
+   ]
+  },
+  {
+   "type": "packs",
+   "nav": "Couleurs",
+   "kicker": "3 coloris",
+   "title": "Choisissez *votre couleur*",
+   "note": "Vous indiquez votre couleur dans le formulaire · Paiement à la livraison",
+   "items": [
+    {
+     "name": "Vert",
+     "title": "Vert émeraude",
+     "image": "vert",
+     "alt": "Tapis de prière de voyage vert",
+     "price": "9 900",
+     "points": [
+      "Le vert, couleur de la sérénité",
+      "Arche et croissant de lune",
+      "90 × 50 cm, 14 cm roulé"
+     ],
+     "cta": "Je choisis le vert"
+    },
+    {
+     "name": "Bleu",
+     "title": "Bleu ciel",
+     "image": "bleu",
+     "alt": "Tapis de prière de voyage bleu",
+     "price": "9 900",
+     "points": [
+      "Des bleus apaisants",
+      "Arche et croissant de lune",
+      "90 × 50 cm, 14 cm roulé"
+     ],
+     "cta": "Je choisis le bleu"
+    },
+    {
+     "name": "Marron",
+     "title": "Marron terre",
+     "image": "marron",
+     "alt": "Tapis de prière de voyage marron",
+     "price": "9 900",
+     "points": [
+      "Sobre et discret",
+      "Croissant de lune doré",
+      "90 × 50 cm, 14 cm roulé"
+     ],
+     "cta": "Je choisis le marron"
+    }
+   ]
+  },
+  {
+   "type": "specs",
+   "nav": "Détails",
+   "kicker": "En détail",
+   "title": "Caractéristiques",
+   "image": "dimensions",
+   "alt": "Dimensions du tapis : 90 × 50 cm",
+   "rows": [
+    {
+     "label": "Dimensions déplié",
+     "value": "90 × 50 cm"
+    },
+    {
+     "label": "Dimensions roulé",
+     "value": "Environ 14 cm × 5 cm"
+    },
+    {
+     "label": "Matière",
+     "value": "Polyester"
+    },
+    {
+     "label": "Dos",
+     "value": "Points antidérapants"
+    },
+    {
+     "label": "Fixation",
+     "value": "Mousqueton + fermeture scratch"
+    },
+    {
+     "label": "Entretien",
+     "value": "Lavable, résistant aux taches"
+    },
+    {
+     "label": "Coloris",
+     "value": "Vert, bleu, marron"
+    }
+   ]
+  },
+  {
+   "type": "included",
+   "title": "Dans le colis",
+   "items": [
+    {
+     "label": "1 tapis de prière de voyage 90 × 50 cm",
+     "icon": "moon"
+    },
+    {
+     "label": "Mousqueton d'accroche intégré",
+     "icon": "feather"
+    },
+    {
+     "label": "Fermeture scratch intégrée",
+     "icon": "shield"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "title": "Ils l'ont reçu",
+   "items": []
+  },
+  {
+   "type": "offer",
+   "nav": "Offre",
+   "kicker": "Votre commande",
+   "title": "Votre tapis de prière, *livré chez vous*",
+   "text": "Commandez en quelques secondes : nous vous appelons pour confirmer votre couleur et votre adresse, puis vous payez à la livraison.",
+   "image": "voyage",
+   "alt": "Tapis de prière de voyage roulé, accroché au sac",
+   "items": [
+    "1 tapis de prière de voyage 90 × 50 cm",
+    "Mousqueton et fermeture scratch intégrés",
+    "Au choix : vert, bleu ou marron"
+   ],
+   "payment": "à la livraison, quand le colis vous est remis",
+   "delivery": "à domicile — nous vous appelons pour confirmer l'adresse",
+   "ends_at": "",
+   "cta": "Commander — payer à la livraison"
+  },
+  {
+   "type": "faq",
+   "nav": "Questions",
+   "title": "Vos questions",
+   "items": [
+    {
+     "q": "Est-il assez grand pour prier ?",
+     "a": "Il mesure 90 × 50 cm une fois déplié. C'est un tapis de voyage : plus compact qu'un tapis de mosquée, il offre la place pour vos pieds, vos genoux, vos mains et votre front."
+    },
+    {
+     "q": "Quelle taille fait-il une fois roulé ?",
+     "a": "Environ 14 cm de long et 5 cm de diamètre : il tient dans la main, dans un sac ou dans la boîte à gants."
+    },
+    {
+     "q": "Comment l'emporter partout ?",
+     "a": "Accrochez son mousqueton à votre sac, votre sacoche, votre ceinture ou votre trousseau de clés. La fermeture scratch le garde bien roulé."
+    },
+    {
+     "q": "Glisse-t-il sur le carrelage ?",
+     "a": "Non : son dos est couvert de petits points antidérapants qui le maintiennent en place sur les sols lisses."
+    },
+    {
+     "q": "Comment l'entretenir ?",
+     "a": "Il est lavable et résiste aux taches. Lavez-le à l'eau avec un peu de savon, puis laissez-le sécher avant de le rouler."
+    },
+    {
+     "q": "Quelles couleurs sont disponibles ?",
+     "a": "Vert, bleu et marron. Vous choisissez votre couleur dans le formulaire de commande."
+    },
+    {
+     "q": "C'est une bonne idée de cadeau ?",
+     "a": "Oui : pour un proche qui voyage, un étudiant, un chauffeur ou avant le Ramadan, l'Omra ou le Hajj, c'est un cadeau utile au quotidien."
+    },
+    {
+     "q": "Comment se passe le paiement ?",
+     "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez à la livraison, quand le colis vous est remis."
+    },
+    {
+     "q": "Livrez-vous dans mon pays ?",
+     "a": "Nous livrons dans plusieurs pays. Indiquez votre pays et votre ville dans le formulaire : nous vous appelons pour confirmer la livraison."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "Restez proche d'Allah,",
+   "em": "où que vous soyez.",
+   "text": "Votre tapis de prière vous suit partout : au travail, en voyage, en pleine nature.",
+   "note": "Paiement à la livraison",
+   "button": "Je commande mon tapis"
+  }
+ ]
+}
