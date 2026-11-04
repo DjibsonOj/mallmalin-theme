@@ -313,6 +313,24 @@ html[data-style="sante"] .cmp .yes,html[data-style="maison"] .cmp .yes,html[data
 .stars{color:#f2a51a;letter-spacing:2px}
 
 /* ── OFFRE ── */
+.packs{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:clamp(16px,2.4vw,28px);max-width:980px;margin:0 auto;align-items:stretch}
+.pack{position:relative;display:flex;flex-direction:column;overflow:hidden;border-radius:calc(var(--r) + 6px)}
+.pack.best{border:2px solid var(--accent);box-shadow:0 26px 60px -34px var(--accent)}
+.pack-flag{position:absolute;top:14px;left:14px;z-index:2;padding:6px 12px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.pack-img{aspect-ratio:4/3;background:var(--pale);overflow:hidden}
+.pack-img img{width:100%;height:100%;object-fit:cover}
+.pack-body{display:flex;flex-direction:column;gap:12px;padding:clamp(20px,3vw,30px);flex:1}
+.pack-name{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.pack-body h3{font-size:clamp(22px,2.4vw,28px)}
+.pack-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 12px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pack-price b{font-family:var(--fh);font-size:clamp(32px,4vw,42px);line-height:1;letter-spacing:-.02em}
+.pack-price b small{font-size:.45em;margin-left:5px;font-weight:700}
+.pack-price s{color:var(--muted);font-size:15px}
+.pack-note{display:inline-block;align-self:flex-start;padding:5px 10px;border-radius:8px;background:var(--accent2);color:#fff;font-size:13px;font-weight:700}
+.pack .offer-list{flex:1}
+.pack .btn{width:100%;margin-top:auto}
+.pack-foot{text-align:center;color:var(--muted);font-size:14px;margin-top:18px}
+@media (max-width:719px){.packs{grid-template-columns:1fr}}
 .offer{display:grid;grid-template-columns:1.05fr 1fr;overflow:hidden;border-radius:calc(var(--r) + 6px)}
 .offer.solo{grid-template-columns:1fr;max-width:640px;margin:0 auto}
 .offer-media{background:var(--pale);min-height:100%}
