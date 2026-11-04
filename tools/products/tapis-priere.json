@@ -16,9 +16,9 @@
  },
  "layout": "landing-tapis-priere",
  "brand": "MallMalin",
- "logo_file": "mm-logo.jpg",
- "logo_wide": false,
- "favicon_file": "mm-logo.jpg",
+ "logo_file": "mm-tapis-logo.png",
+ "logo_wide": true,
+ "favicon_file": "mm-tapis-favicon.png",
  "img": "mm-tapis-",
  "price_new": "250 000",
  "price_old": "350 000",
@@ -26,7 +26,7 @@
  "currency": "GNF",
  "currency_iso": "GNF",
  "price_new_num": "250000",
- "announcement": "Livraison à Conakry · Paiement à la livraison · Nous vous appelons pour confirmer",
+ "announcement": "Livraison GRATUITE partout à Conakry · Paiement à la livraison · Nous vous appelons pour confirmer",
  "announcement_scroll": true,
  "seo_title": "Tapis de prière de voyage pliable, 90 × 50 cm, roulé 14 cm | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
  "seo_description": "Tapis de prière de voyage ultra-compact : 90 × 50 cm déplié, 14 cm une fois roulé, mousqueton pour l'accrocher au sac ou aux clés, dessous antidérapant. Priez partout : bureau, voyage, école, plein air. Paiement à la livraison.",
@@ -34,7 +34,7 @@
  "og_description": "90 × 50 cm déplié, 14 cm roulé, accroché à votre sac. Paiement à la livraison.",
  "ld_name": "Tapis de prière de voyage pliable 90 × 50 cm",
  "ld_description": "Tapis de prière portable en polyester, 90 × 50 cm, roulé environ 14 × 5 cm, mousqueton et fermeture scratch, dessous antidérapant, lavable. Coloris vert, bleu, marron.",
- "footer_note": "Livraison à Conakry · Paiement à la livraison",
+ "footer_note": "Livraison gratuite à Conakry · Paiement à la livraison",
  "order_note": "Paiement à la livraison — nous vous appelons pour confirmer",
  "hero": {
   "kicker": "Tapis de prière de voyage",
@@ -97,7 +97,7 @@
     },
     {
      "icon": "truck",
-     "title": "Livraison à domicile",
+     "title": "Livraison gratuite",
      "text": "partout à Conakry"
     },
     {
@@ -435,7 +435,7 @@
     "Au choix : vert, bleu ou marron"
    ],
    "payment": "à la livraison, quand le colis vous est remis",
-   "delivery": "à domicile à Conakry — nous vous appelons pour confirmer l'adresse",
+   "delivery": "gratuite, à domicile partout à Conakry — nous vous appelons pour confirmer l'adresse",
    "ends_at": "",
    "cta": "Commander — payer à la livraison"
   },
@@ -478,7 +478,7 @@
     },
     {
      "q": "Où livrez-vous ?",
-     "a": "Nous livrons à domicile à Conakry. Indiquez votre quartier dans le formulaire : nous vous appelons pour confirmer la livraison."
+     "a": "La livraison est gratuite, à domicile, partout à Conakry. Indiquez votre quartier dans le formulaire : nous vous appelons pour confirmer la livraison."
     }
    ]
   },
