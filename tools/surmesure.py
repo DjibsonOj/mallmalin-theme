@@ -116,9 +116,12 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         tpl = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'landing-surmesure.template.liquid'), encoding='utf-8').read()
         col = logo_adapt.pick_color(logo_adapt.page_colors(tpl, style, cfg.get('colors')), cfg.get('logo_color'))
         tname = logo_adapt.colorize(adir, txt, col, pref + 'logo-texte.png')
-        c['logo_img'] = ('<img class="logo-ico" src="%s" alt="" height="40">'
-                         '<img class="logo-txt" src="%s" alt="%s" width="%d" height="%d">'
-                         % (asset(ico), asset(tname), cfg['brand'], tw, th))
+        # "logo_icon_svg" : icône en SVG (remplace l'image), "logo_anim" : animation prédéfinie (ex. "etoile")
+        ico_html = ('<span class="logo-ico logo-svg%s" aria-hidden="true">%s</span>'
+                    % ((' logo-anim-%s' % cfg['logo_anim']) if cfg.get('logo_anim') else '', cfg['logo_icon_svg'])
+                    if cfg.get('logo_icon_svg') else '<img class="logo-ico" src="%s" alt="" height="40">' % asset(ico))
+        c['logo_img'] = (ico_html + '<img class="logo-txt" src="%s" alt="%s" width="%d" height="%d">'
+                         % (asset(tname), cfg['brand'], tw, th))
     elif wide:
         c['logo_img'] = '<img class="logo-wide" src="%s" alt="%s" height="40">' % (asset(logo), cfg['brand'])
     else:

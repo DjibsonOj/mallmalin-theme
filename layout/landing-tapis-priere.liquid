@@ -126,6 +126,19 @@ html[data-style="sport"] .announce,html[data-style="tech"] .announce{background:
 .brand.logo-adapt{gap:2px}
 .brand .logo-ico,.brand .logo-txt{width:auto;height:50px;border-radius:0;object-fit:contain}
 @media (max-width:899px){.brand .logo-ico,.brand .logo-txt{height:44px}}
+.brand .logo-svg{display:inline-block;aspect-ratio:1;position:relative;perspective:300px}
+.brand .logo-svg svg{width:100%;height:100%;display:block;overflow:visible}
+/* animation « etoile » : l'étoile arrive comme une étoile filante, puis éclair + tour complet (toutes les 9 s) */
+.logo-anim-etoile{animation:lgFlip 9s cubic-bezier(.45,.05,.3,1) infinite;transform-style:preserve-3d}
+.logo-anim-etoile .lg-star{animation:lgStar 9s ease-out infinite}
+.logo-anim-etoile .lg-trail{animation:lgTrail 9s ease-out infinite}
+.logo-anim-etoile::after{content:'';position:absolute;inset:-10%;border-radius:50%;pointer-events:none;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.95) 50%,transparent 65%);mix-blend-mode:screen;opacity:0;animation:lgShine 9s linear infinite}
+@keyframes lgStar{0%{transform:translate(52px,-52px) scale(.35);opacity:0}3%{opacity:1}14%,100%{transform:translate(0,0) scale(1);opacity:1}}
+@keyframes lgTrail{0%,2%{opacity:0}5%,13%{opacity:.95}20%,100%{opacity:0}}
+@keyframes lgShine{0%,15%{opacity:0;transform:translateX(-90%)}16%{opacity:1}24%{opacity:1;transform:translateX(90%)}25%,100%{opacity:0;transform:translateX(90%)}}
+@keyframes lgFlip{0%,15%{transform:rotateY(0);filter:none}17%{filter:brightness(1.9) drop-shadow(0 0 10px rgba(140,255,200,.95))}22%{filter:brightness(1.25) drop-shadow(0 0 6px rgba(140,255,200,.6))}20%{transform:rotateY(0)}36%{transform:rotateY(360deg);filter:none}100%{transform:rotateY(360deg);filter:none}}
+@media (prefers-reduced-motion:reduce){.logo-anim-etoile,.logo-anim-etoile .lg-star,.logo-anim-etoile .lg-trail,.logo-anim-etoile::after{animation:none}.logo-anim-etoile .lg-trail{opacity:0}}
 .head-nav{display:flex;gap:28px;font-size:14px;font-weight:600;color:var(--muted)}
 .head-nav a:hover{color:var(--ink)}
 .head .btn{min-height:44px;padding:0 20px;font-size:14px}
@@ -603,7 +616,7 @@ html.order-open,html.order-open body{overflow:hidden}
   <div class="announce scroll" role="note" aria-label="Livraison GRATUITE partout à Conakry · Paiement à la livraison · Nous vous appelons pour confirmer"><div class="ann-track" aria-hidden="true"><div><span>Livraison GRATUITE partout à Conakry</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Nous vous appelons pour confirmer</span><i aria-hidden="true">✦</i><span>Livraison GRATUITE partout à Conakry</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Nous vous appelons pour confirmer</span><i aria-hidden="true">✦</i><span>Livraison GRATUITE partout à Conakry</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Nous vous appelons pour confirmer</span><i aria-hidden="true">✦</i></div><div><span>Livraison GRATUITE partout à Conakry</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Nous vous appelons pour confirmer</span><i aria-hidden="true">✦</i><span>Livraison GRATUITE partout à Conakry</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Nous vous appelons pour confirmer</span><i aria-hidden="true">✦</i><span>Livraison GRATUITE partout à Conakry</span><i aria-hidden="true">✦</i><span>Paiement à la livraison</span><i aria-hidden="true">✦</i><span>Nous vous appelons pour confirmer</span><i aria-hidden="true">✦</i></div></div></div>
   <header class="head" id="head">
     <div class="wrap">
-      <a class="brand wide logo-adapt" href="#top" aria-label="MallMalin"><img class="logo-ico" src="{{ 'mm-tapis-logo-icone.png' | asset_url }}" alt="" height="40"><img class="logo-txt" src="{{ 'mm-tapis-logo-texte.png' | asset_url }}" alt="MallMalin" width="556" height="240"></a>
+      <a class="brand wide logo-adapt" href="#top" aria-label="MallMalin"><span class="logo-ico logo-svg logo-anim-etoile" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><linearGradient id="lgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#188c62"/><stop offset="1" stop-color="#0a5b45"/></linearGradient><linearGradient id="lgT" x1="60" y1="50" x2="112" y2="-2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3fe0a0"/><stop offset="1" stop-color="#3fe0a0" stop-opacity="0"/></linearGradient><mask id="lgM"><rect width="100" height="100" fill="#fff"/><circle cx="76" cy="42" r="40" fill="#000"/></mask></defs><circle cx="50" cy="50" r="44" fill="url(#lgG)" mask="url(#lgM)"/><g class="lg-star"><line class="lg-trail" x1="60" y1="50" x2="112" y2="-2" stroke="url(#lgT)" stroke-width="6" stroke-linecap="round"/><polygon points="60.0,33.0 64.2,44.2 76.2,44.7 66.8,52.2 70.0,63.8 60.0,57.1 50.0,63.8 53.2,52.2 43.8,44.7 55.8,44.2" fill="url(#lgG)"/></g></svg></span><img class="logo-txt" src="{{ 'mm-tapis-logo-texte.png' | asset_url }}" alt="MallMalin" width="556" height="240"></a>
       <nav class="head-nav" aria-label="Sections"><a href="#problem">Pourquoi</a><a href="#benefits">Avantages</a><a href="#video">En vidéo</a><a href="#showcase">En détail</a><a href="#video-2">Partout</a></nav>
       <a class="btn btn-main" href="#commander" data-order>Commander</a>
     </div>

@@ -490,5 +490,7 @@
    "note": "Paiement à la livraison",
    "button": "Je commande mon tapis"
   }
- ]
+ ],
+ "logo_icon_svg": "<svg viewBox=\"0 0 100 100\"><defs><linearGradient id=\"lgG\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#188c62\"/><stop offset=\"1\" stop-color=\"#0a5b45\"/></linearGradient><linearGradient id=\"lgT\" x1=\"60\" y1=\"50\" x2=\"112\" y2=\"-2\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#3fe0a0\"/><stop offset=\"1\" stop-color=\"#3fe0a0\" stop-opacity=\"0\"/></linearGradient><mask id=\"lgM\"><rect width=\"100\" height=\"100\" fill=\"#fff\"/><circle cx=\"76\" cy=\"42\" r=\"40\" fill=\"#000\"/></mask></defs><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"url(#lgG)\" mask=\"url(#lgM)\"/><g class=\"lg-star\"><line class=\"lg-trail\" x1=\"60\" y1=\"50\" x2=\"112\" y2=\"-2\" stroke=\"url(#lgT)\" stroke-width=\"6\" stroke-linecap=\"round\"/><polygon points=\"60.0,33.0 64.2,44.2 76.2,44.7 66.8,52.2 70.0,63.8 60.0,57.1 50.0,63.8 53.2,52.2 43.8,44.7 55.8,44.2\" fill=\"url(#lgG)\"/></g></svg>",
+ "logo_anim": "etoile"
 }
