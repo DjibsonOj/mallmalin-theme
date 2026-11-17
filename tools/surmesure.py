@@ -116,9 +116,12 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         tpl = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'landing-surmesure.template.liquid'), encoding='utf-8').read()
         col = logo_adapt.pick_color(logo_adapt.page_colors(tpl, style, cfg.get('colors')), cfg.get('logo_color'))
         tname = logo_adapt.colorize(adir, txt, col, pref + 'logo-texte.png')
-        c['logo_img'] = ('<img class="logo-ico" src="%s" alt="" height="40">'
-                         '<img class="logo-txt" src="%s" alt="%s" width="%d" height="%d">'
-                         % (asset(ico), asset(tname), cfg['brand'], tw, th))
+        # "logo_icon_svg" : icône en SVG (remplace l'image), "logo_anim" : animation prédéfinie (ex. "etoile")
+        ico_html = ('<span class="logo-ico logo-svg%s" aria-hidden="true">%s</span>'
+                    % ((' logo-anim-%s' % cfg['logo_anim']) if cfg.get('logo_anim') else '', cfg['logo_icon_svg'])
+                    if cfg.get('logo_icon_svg') else '<img class="logo-ico" src="%s" alt="" height="40">' % asset(ico))
+        c['logo_img'] = (ico_html + '<img class="logo-txt" src="%s" alt="%s" width="%d" height="%d">'
+                         % (asset(tname), cfg['brand'], tw, th))
     elif wide:
         c['logo_img'] = '<img class="logo-wide" src="%s" alt="%s" height="40">' % (asset(logo), cfg['brand'])
     else:
@@ -146,6 +149,20 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     c['color_overrides'] = ('html[data-style="%s"]{%s}' % (style, ';'.join('--%s:%s' % (k, v) for k, v in ov.items() if k in COLOR_KEYS))) if ov else ''
     if font_body and not font:
         c['color_overrides'] += 'html[data-style="%s"]{--fb:\'%s\',sans-serif}' % (style, font_body)
+    # "round_buttons": true -> tous les boutons (et le bouton flottant) à bords arrondis
+    if cfg.get('round_buttons'):
+        c['color_overrides'] += 'html[data-style="%s"] .btn{--btn-r:999px}html[data-style="%s"] .btn,html[data-style="%s"] #bar a,html[data-style="%s"] #bar button{border-radius:999px}html[data-style="%s"] .deal{border-radius:18px}' % (style, style, style, style, style)
+    # bloc final (fond = couleur du texte) : si l'accent s'y lit mal, le mot en couleur passe en accent2 ou en clair
+    if style not in ('tech', 'sport'):
+        try:
+            import logo_adapt
+            tpl_txt = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'landing-surmesure.template.liquid'), encoding='utf-8').read()
+            pc = logo_adapt.page_colors(tpl_txt, style, ov)
+            if pc.get('accent') and pc.get('ink') and logo_adapt.contrast(pc['accent'], pc['ink']) < 3:
+                alt = pc.get('accent2') if pc.get('accent2') and logo_adapt.contrast(pc['accent2'], pc['ink']) >= 3 else pc.get('bg', '#ffffff')
+                c['color_overrides'] += 'html[data-style="%s"] .cta .h em{color:%s}' % (style, alt)
+        except Exception:
+            pass
     if font:
         c['color_overrides'] += 'html[data-style="%s"]{--fh:\'%s\',sans-serif;--fb:\'%s\',sans-serif}' % (style, font, font)
 
@@ -195,8 +212,16 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     def s_trust(s, sid):
         it = s.get('items', [])
         if not it: return ''
-        lis = ''.join('<li class="rv" data-icon="%s"><span class="ico">%s</span><div><b>%s</b><span>%s</span></div></li>' % (x.get('icon', 'shield'), svg(x.get('icon', 'shield')), x['title'], x.get('text', '')) for x in it)
-        return '    <section class="trust" id="%s"><div class="wrap"><ul style="--n:%d">%s</ul></div></section>' % (sid, min(len(it), 4), lis)
+        # "swatches": ["#000", ...] remplace l'icône par des pastilles de couleur animées
+        def ico(x):
+            if x.get('swatches'):
+                return '<span class="ico ico-sw">%s</span>' % ''.join('<i style="--c:%s;--i:%d"></i>' % (c, i) for i, c in enumerate(x['swatches'][:6]))
+            if x.get('svg'):
+                return '<span class="ico">%s</span>' % x['svg']
+            return '<span class="ico">%s</span>' % svg(x.get('icon', 'shield'))
+        lis = ''.join('<li class="rv" data-icon="%s">%s<div><b>%s</b><span>%s</span></div></li>' % ('swatches' if x.get('swatches') else x.get('icon', 'shield'), ico(x), x['title'], x.get('text', '')) for x in it)
+        # "round": true -> icônes dans des cercles transparents
+        return '    <section class="trust%s" id="%s"><div class="wrap"><ul style="--n:%d">%s</ul></div></section>' % ((' trust-round' if s.get('round') else '') + (' trust-card' if s.get('card') else ''), sid, min(len(it), 4), lis)
 
     def s_stats(s, sid):
         it = s.get('items', [])
@@ -249,7 +274,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
             '<div class="step card rv">%s<div class="step-body"><span class="step-n">%d</span><h3 class="h">%s</h3><p>%s</p></div></div>'
             % (('<div class="step-img"><img src="%s" alt="%s" loading="lazy"></div>' % (img(x['image']), x.get('alt', x['title']))) if x.get('image') else '',
                i + 1, x['title'], x.get('text', '')) for i, x in enumerate(it))
-        return wrap(s, sid, head(s) + '<div class="demo" style="--n:%d">%s</div>' % (min(len(it), 4), cards))
+        return wrap(s, sid, head(s) + '<div class="demo" style="--n:%d">%s</div>' % (min(len(it), 5), cards))
 
     def s_gallery(s, sid):
         it = s.get('images', [])
@@ -327,8 +352,9 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     def s_reviews(s, sid):
         it = [r for r in s.get('items', []) if r.get('text') and r.get('name')]
         if not it: return ''   # uniquement de vrais avis fournis par le marchand
-        cards = ''.join('<figure class="review card rv"><span class="stars" aria-label="%d sur 5">%s</span><p>%s</p><cite>%s</cite></figure>'
-                        % (r.get('stars', 5), '★' * r.get('stars', 5), r['text'], r['name']) for r in it)
+        cards = ''.join('<figure class="review card rv">%s<p>%s</p><cite>%s</cite></figure>'
+                        % (('<span class="stars" aria-label="%d sur 5">%s</span>' % (r.get('stars', 5), '★' * r.get('stars', 5))) if r.get('stars', 5) else '',
+                           r['text'], r['name']) for r in it)
         return wrap(s, sid, head(s) + '<div class="reviews">%s</div>' % cards)
 
     def s_offer(s, sid):
@@ -349,6 +375,26 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         media = ('<div class="offer-media"><img src="%s" alt="%s" loading="lazy"></div>' % (img(s['image']), s.get('alt', ''))) if s.get('image') else ''
         return wrap(s, sid, '<div class="offer card %s rv">%s%s</div>' % ('' if media else 'solo', media, body))
 
+    def s_packs(s, sid):
+        """Offres au choix (ex. 1 flacon / 2 flacons). Chaque bouton ouvre le formulaire de commande."""
+        it = s.get('items', [])
+        if not it: return ''
+        cards = ''.join(
+            '<article class="pack card%s rv">%s%s<div class="pack-body"><span class="pack-name">%s</span><h3 class="h">%s</h3>'
+            '<div class="pack-price"><b>%s<small>%s</small></b>%s</div>%s%s'
+            '<a class="btn %s" href="#commander" data-order data-pack="%s">%s%s</a></div></article>'
+            % (' best' if x.get('best') else '',
+               ('<span class="pack-flag">%s</span>' % x['flag']) if x.get('flag') else '',
+               ('<div class="pack-img"><img src="%s" alt="%s" loading="lazy"></div>' % (img(x['image']), x.get('alt', x['title']))) if x.get('image') else '',
+               x.get('name', ''), em(x['title']), x['price'], cfg.get('currency', ''),
+               ('<s>%s %s</s>' % (x['old'], cfg.get('currency', ''))) if x.get('old') else '',
+               ('<span class="pack-note">%s</span>' % x['note']) if x.get('note') else '',
+               ('<ul class="offer-list">%s</ul>' % ''.join('<li>%s<span>%s</span></li>' % (tick, y) for y in x['points'])) if x.get('points') else '',
+               'btn-main' if x.get('best') else 'btn-line', x.get('name', x['title']), x.get('cta', 'Je choisis cette offre'), ARROW)
+            for x in it)
+        foot = ('<p class="pack-foot rv">%s</p>' % s['note']) if s.get('note') else ''
+        return wrap(s, sid, head(s) + '<div class="packs" style="--n:%d">%s</div>%s' % (min(len(it), 3), cards, foot))
+
     def s_faq(s, sid):
         it = s.get('items', [])
         if not it: return ''
@@ -366,7 +412,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
 
     R = {'trust': s_trust, 'stats': s_stats, 'marquee': s_marquee, 'problem': s_problem, 'benefits': s_benefits,
          'showcase': s_showcase, 'video': s_video, 'demo': s_demo, 'gallery': s_gallery, 'beforeafter': s_beforeafter, 'specs': s_specs,
-         'compare': s_compare, 'included': s_included, 'reviews': s_reviews, 'offer': s_offer, 'faq': s_faq, 'cta': s_cta}
+         'compare': s_compare, 'included': s_included, 'reviews': s_reviews, 'offer': s_offer, 'packs': s_packs, 'faq': s_faq, 'cta': s_cta}
 
     out_sections, nav, seen = [hero], [], {}
     for s in cfg.get('sections', []):
