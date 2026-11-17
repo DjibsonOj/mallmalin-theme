@@ -122,6 +122,11 @@ def render(cfg, tpl, asset, svg, jpg, tick):
                     if cfg.get('logo_icon_svg') else '<img class="logo-ico" src="%s" alt="" height="40">' % asset(ico))
         c['logo_img'] = (ico_html + '<img class="logo-txt" src="%s" alt="%s" width="%d" height="%d">'
                          % (asset(tname), cfg['brand'], tw, th))
+    elif wide and cfg.get('logo_spin'):
+        # "logo_spin": {"ico": "<icône seule>", "txt": "<nom seul>"} -> l'icône fait un tour complet sur elle-même (360°)
+        sp = cfg['logo_spin']
+        c['logo_img'] = ('<span class="lg-spin" aria-hidden="true"><img src="%s" alt=""></span><img class="lg-txt" src="%s" alt="%s">'
+                         % (asset(sp['ico']), asset(sp['txt']), cfg['brand']))
     elif wide:
         c['logo_img'] = '<img class="logo-wide" src="%s" alt="%s" height="40">' % (asset(logo), cfg['brand'])
     else:
@@ -156,6 +161,17 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     if cfg.get('logo_h'):
         lh = cfg['logo_h']; lh = lh if isinstance(lh, list) else [lh, lh]
         c['color_overrides'] += 'html .brand .logo-wide{height:%dpx}@media (max-width:899px){html .brand .logo-wide{height:%dpx}}' % (lh[0], lh[1])
+    # icône du logo qui tourne sur elle-même (voir "logo_spin")
+    if cfg.get('logo_spin') and cfg.get('logo_wide'):
+        sh = cfg['logo_spin'].get('h', [56, 50]); tr = cfg['logo_spin'].get('txt_ratio', .4)
+        c['color_overrides'] += ('html .brand.wide{gap:8px}html .brand .lg-spin{display:inline-flex;perspective:500px}'
+            'html .brand .lg-spin img{width:auto;height:%dpx;border-radius:0;object-fit:contain;backface-visibility:visible;'
+            'animation:lgSpin 7s cubic-bezier(.55,0,.25,1) infinite;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}'
+            'html .brand .lg-txt{width:auto;height:%dpx;border-radius:0;object-fit:contain}'
+            '@media (max-width:899px){html .brand .lg-spin img{height:%dpx}html .brand .lg-txt{height:%dpx}}'
+            '@keyframes lgSpin{0%%,62%%{transform:rotateY(0)}100%%{transform:rotateY(360deg)}}'
+            '@media (prefers-reduced-motion:reduce){html .brand .lg-spin img{animation:none}}'
+            % (sh[0], round(sh[0]*tr), sh[1], round(sh[1]*tr)))
     # bloc final (fond = couleur du texte) : si l'accent s'y lit mal, le mot en couleur passe en accent2 ou en clair
     if style not in ('tech', 'sport'):
         try:

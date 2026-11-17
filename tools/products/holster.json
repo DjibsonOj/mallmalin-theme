@@ -425,8 +425,13 @@
   ],
   "logo_adapt": false,
   "logo_pill": false,
-  "logo_h": [
-    62,
-    58
-  ]
+  "logo_spin": {
+    "ico": "kc-holster-hp-logo-ico.png",
+    "txt": "kc-holster-hp-logo-txt.png",
+    "h": [
+      58,
+      52
+    ],
+    "txt_ratio": 0.38
+  }
 }
