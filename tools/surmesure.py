@@ -149,6 +149,9 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     c['color_overrides'] = ('html[data-style="%s"]{%s}' % (style, ';'.join('--%s:%s' % (k, v) for k, v in ov.items() if k in COLOR_KEYS))) if ov else ''
     if font_body and not font:
         c['color_overrides'] += 'html[data-style="%s"]{--fb:\'%s\',sans-serif}' % (style, font_body)
+    # "round_buttons": true -> tous les boutons (et le bouton flottant) à bords arrondis
+    if cfg.get('round_buttons'):
+        c['color_overrides'] += 'html[data-style="%s"] .btn{--btn-r:999px}html[data-style="%s"] .btn,html[data-style="%s"] #bar a,html[data-style="%s"] #bar button{border-radius:999px}html[data-style="%s"] .deal{border-radius:18px}' % (style, style, style, style, style)
     # bloc final (fond = couleur du texte) : si l'accent s'y lit mal, le mot en couleur passe en accent2 ou en clair
     if style not in ('tech', 'sport'):
         try:

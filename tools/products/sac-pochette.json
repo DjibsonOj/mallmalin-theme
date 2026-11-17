@@ -464,5 +464,6 @@
   }
  ],
  "logo_adapt": false,
- "logo_pill": false
+ "logo_pill": false,
+ "round_buttons": true
 }
