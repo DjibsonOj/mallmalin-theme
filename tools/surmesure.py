@@ -152,6 +152,10 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     # "round_buttons": true -> tous les boutons (et le bouton flottant) à bords arrondis
     if cfg.get('round_buttons'):
         c['color_overrides'] += 'html[data-style="%s"] .btn{--btn-r:999px}html[data-style="%s"] .btn,html[data-style="%s"] #bar a,html[data-style="%s"] #bar button{border-radius:999px}html[data-style="%s"] .deal{border-radius:18px}' % (style, style, style, style, style)
+    # "logo_h": [bureau, mobile] -> hauteur (px) du logo horizontal dans l'en-tête
+    if cfg.get('logo_h'):
+        lh = cfg['logo_h']; lh = lh if isinstance(lh, list) else [lh, lh]
+        c['color_overrides'] += 'html .brand .logo-wide{height:%dpx}@media (max-width:899px){html .brand .logo-wide{height:%dpx}}' % (lh[0], lh[1])
     # bloc final (fond = couleur du texte) : si l'accent s'y lit mal, le mot en couleur passe en accent2 ou en clair
     if style not in ('tech', 'sport'):
         try:
