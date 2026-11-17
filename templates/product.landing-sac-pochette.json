@@ -1,0 +1,14 @@
+{
+  "layout": "landing-sac-pochette",
+  "sections": {
+    "cod": {
+      "type": "mm-cod",
+      "blocks": {},
+      "block_order": [],
+      "settings": {}
+    }
+  },
+  "order": [
+    "cod"
+  ]
+}

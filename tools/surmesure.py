@@ -263,7 +263,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
             '<div class="step card rv">%s<div class="step-body"><span class="step-n">%d</span><h3 class="h">%s</h3><p>%s</p></div></div>'
             % (('<div class="step-img"><img src="%s" alt="%s" loading="lazy"></div>' % (img(x['image']), x.get('alt', x['title']))) if x.get('image') else '',
                i + 1, x['title'], x.get('text', '')) for i, x in enumerate(it))
-        return wrap(s, sid, head(s) + '<div class="demo" style="--n:%d">%s</div>' % (min(len(it), 4), cards))
+        return wrap(s, sid, head(s) + '<div class="demo" style="--n:%d">%s</div>' % (min(len(it), 5), cards))
 
     def s_gallery(s, sid):
         it = s.get('images', [])
