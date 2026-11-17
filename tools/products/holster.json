@@ -16,10 +16,10 @@
   "accent2": "#3fb68b"
  },
  "layout": "landing-holster",
- "brand": "KINSHACHAP",
- "logo_file": "kc-logo.png",
+ "brand": "HolsterPro",
+ "logo_file": "kc-holster-hp-logo.png",
  "logo_wide": true,
- "favicon_file": "kc-favicon.png",
+ "favicon_file": "kc-holster-hp-icone.png",
  "img": "kc-holster-",
  "price_new": "35",
  "price_old": "50",
@@ -29,21 +29,21 @@
  "price_new_num": "35",
  "announcement": "Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison · 8 couleurs au choix",
  "announcement_scroll": true,
- "seo_title": "Sac holster double, téléphone et argent en sécurité | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Kinshasa",
- "seo_description": "Sac holster double en cuir synthétique : 2 pochettes plaquées au corps, sangles croisées réglables, poches zippées et poche téléphone. Mains libres et objets à l'abri des voleurs. Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
- "og_title": "Le sac holster qui garde votre téléphone et votre argent contre vous",
+ "seo_title": "HolsterPro, le sac holster double : téléphone et argent en sécurité | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Kinshasa",
+ "seo_description": "HolsterPro : sac holster double en cuir synthétique : 2 pochettes plaquées au corps, sangles croisées réglables, poches zippées et poche téléphone. Mains libres et objets à l'abri des voleurs. Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
+ "og_title": "HolsterPro — Le sac holster qui garde votre téléphone et votre argent contre vous",
  "og_description": "Mains libres, objets à l'abri. Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
- "ld_name": "Sac holster double à sangles croisées",
+ "ld_name": "HolsterPro — Sac holster double à sangles croisées",
  "ld_description": "Sac holster double en cuir synthétique (PU), deux pochettes latérales, sangles croisées réglables, poches zippées, poche téléphone à pression. 8 coloris.",
  "footer_note": "Livraison gratuite à Kinshasa et Lubumbashi · Paiement à la livraison",
  "order_note": "Paiement à la livraison — précisez votre couleur lors de l'appel",
  "hero": {
-  "kicker": "Sac holster double · mains libres",
+  "kicker": "HolsterPro · les mains libres, l'esprit tranquille",
   "title_lines": [
    "Votre téléphone,",
    "*collé à vous.*"
   ],
-  "sub": "Deux pochettes plaquées contre le corps, sous une chemise ou par-dessus un t-shirt : téléphone, argent, clés et papiers restent sur vous, à l'abri des pickpockets. Les mains libres, partout dans la ville.",
+  "sub": "HolsterPro, c'est deux pochettes plaquées contre le corps, sous une chemise ou par-dessus un t-shirt : téléphone, argent, clés et papiers restent sur vous, à l'abri des pickpockets. Les mains libres, partout dans la ville.",
   "image": "ville",
   "alt": "Homme à Kinshasa portant le sac holster double noir",
   "gallery": [
@@ -84,7 +84,7 @@
     "text": "2 pochettes"
    }
   ],
-  "cta": "Je commande mon holster",
+  "cta": "Je commande mon HolsterPro",
   "note": "Paiement à la livraison"
  },
  "sections": [
@@ -126,7 +126,7 @@
   {
    "type": "video",
    "nav": "En vidéo",
-   "kicker": "Le holster en action",
+   "kicker": "HolsterPro en action",
    "title": "Il s'enfile *en 10 secondes*",
    "intro": "Les sangles se croisent dans le dos, les deux pochettes tombent sur les côtés : vous rangez téléphone, portefeuille, cartes et batterie, et vous gardez les mains libres.",
    "video": "action",
@@ -134,7 +134,7 @@
    "ratio": "540/720",
    "alt": "Démonstration du sac holster porté et rempli",
    "caption": "Porté, réglé, rempli : tout tient",
-   "cta": "Je veux le mien"
+   "cta": "Je veux mon HolsterPro"
   },
   {
    "type": "problem",
@@ -148,7 +148,7 @@
     "Un sac à dos qu'on ne surveille pas, dans le bus ou le taxi",
     "Les mains toujours occupées, à moto ou au travail"
    ],
-   "solution_title": "Avec le holster",
+   "solution_title": "Avec HolsterPro",
    "solution": [
     "Tout est plaqué contre vous, sous le bras",
     "Des poches zippées et une poche à pression",
@@ -224,9 +224,9 @@
    "type": "compare",
    "nav": "Comparatif",
    "kicker": "Comparatif",
-   "title": "Holster *ou poches classiques ?*",
+   "title": "HolsterPro *ou poches classiques ?*",
    "columns": [
-    "Sac holster",
+    "HolsterPro",
     "Poches / sac à dos"
    ],
    "highlight": 1,
@@ -365,12 +365,12 @@
    "type": "offer",
    "nav": "Commander",
    "kicker": "Votre commande",
-   "title": "Votre holster, *livré gratuitement*",
+   "title": "Votre HolsterPro, *livré gratuitement*",
    "text": "Commandez en quelques secondes : nous vous appelons pour confirmer votre couleur et votre adresse, puis vous payez à la livraison.",
    "image": "ville",
    "alt": "Sac holster porté",
    "items": [
-    "1 sac holster double",
+    "1 sac HolsterPro double",
     "Couleur au choix parmi 8",
     "Livraison gratuite à Kinshasa et Lubumbashi"
    ],
@@ -418,9 +418,11 @@
    "type": "cta",
    "title": "Gardez l'essentiel",
    "em": "contre vous.",
-   "text": "Téléphone et argent en sécurité, mains libres. Livraison gratuite à Kinshasa et Lubumbashi.",
+   "text": "HolsterPro : les mains libres, l'esprit tranquille. Livraison gratuite à Kinshasa et Lubumbashi.",
    "note": "8 couleurs · Paiement à la livraison",
-   "button": "Je commande mon holster"
+   "button": "Je commande mon HolsterPro"
   }
- ]
+ ],
+ "logo_adapt": false,
+ "logo_pill": false
 }
