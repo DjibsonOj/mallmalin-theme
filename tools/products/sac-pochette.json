@@ -5,14 +5,14 @@
  "hero_fit": "cover",
  "font_body": "Poppins",
  "colors": {
-  "bg": "#f6f1ea",
-  "surface": "#fffaf3",
-  "ink": "#1d1714",
-  "muted": "#6b625a",
-  "line": "rgba(29,23,20,.12)",
-  "accent": "#1d1714",
+  "bg": "#fff1cf",
+  "surface": "#fffaea",
+  "ink": "#1f2a24",
+  "muted": "#5d6158",
+  "line": "rgba(31,42,36,.14)",
+  "accent": "#e2601d",
   "accent-ink": "#ffffff",
-  "accent2": "#a8823f"
+  "accent2": "#1f6f5c"
  },
  "layout": "landing-sac-pochette",
  "brand": "Pochéo",
@@ -124,6 +124,19 @@
    ]
   },
   {
+   "type": "video",
+   "nav": "En vidéo",
+   "kicker": "Pochéo en action",
+   "title": "Déplié, replié… *en quelques secondes*",
+   "intro": "Ouvrez la pochette : un grand sac apparaît. Les courses terminées, il se replie et retrouve sa place à vos clés.",
+   "video": "pliage",
+   "poster": "pliage-poster",
+   "ratio": "720/704",
+   "alt": "Pochéo se déplie en grand sac puis se replie en pochette porte-clés",
+   "caption": "Du porte-clés au grand sac, et retour",
+   "cta": "Je veux mon Pochéo"
+  },
+  {
    "type": "problem",
    "nav": "Pourquoi",
    "kicker": "Le constat",
@@ -173,19 +186,6 @@
      "text": "Longue anse confortable à l'épaule, finitions dorées, couleurs élégantes : il se porte aussi bien en ville qu'au bureau. Pratique au quotidien, joli à porter."
     }
    ]
-  },
-  {
-   "type": "video",
-   "nav": "En vidéo",
-   "kicker": "Pochéo en action",
-   "title": "Déplié, replié… *en quelques secondes*",
-   "intro": "Ouvrez la pochette : un grand sac apparaît. Les courses terminées, il se replie et retrouve sa place à vos clés.",
-   "video": "pliage",
-   "poster": "pliage-poster",
-   "ratio": "720/704",
-   "alt": "Pochéo se déplie en grand sac puis se replie en pochette porte-clés",
-   "caption": "Du porte-clés au grand sac, et retour",
-   "cta": "Je veux mon Pochéo"
   },
   {
    "type": "demo",
