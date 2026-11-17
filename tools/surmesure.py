@@ -213,9 +213,12 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         def ico(x):
             if x.get('swatches'):
                 return '<span class="ico ico-sw">%s</span>' % ''.join('<i style="--c:%s;--i:%d"></i>' % (c, i) for i, c in enumerate(x['swatches'][:6]))
+            if x.get('svg'):
+                return '<span class="ico">%s</span>' % x['svg']
             return '<span class="ico">%s</span>' % svg(x.get('icon', 'shield'))
         lis = ''.join('<li class="rv" data-icon="%s">%s<div><b>%s</b><span>%s</span></div></li>' % ('swatches' if x.get('swatches') else x.get('icon', 'shield'), ico(x), x['title'], x.get('text', '')) for x in it)
-        return '    <section class="trust" id="%s"><div class="wrap"><ul style="--n:%d">%s</ul></div></section>' % (sid, min(len(it), 4), lis)
+        # "round": true -> icônes dans des cercles transparents
+        return '    <section class="trust%s" id="%s"><div class="wrap"><ul style="--n:%d">%s</ul></div></section>' % (' trust-round' if s.get('round') else '', sid, min(len(it), 4), lis)
 
     def s_stats(s, sid):
         it = s.get('items', [])

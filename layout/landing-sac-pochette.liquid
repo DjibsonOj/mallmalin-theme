@@ -511,6 +511,29 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 .trust .ico-sw i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px var(--surface),0 1px 3px rgba(0,0,0,.25);animation:swHop 2.4s ease-in-out infinite;animation-delay:calc(var(--i)*.18s)}
 @keyframes swHop{0%,55%,100%{transform:translateY(0) scale(1)}20%{transform:translateY(-6px) scale(1.18)}38%{transform:translateY(0) scale(.92)}}
 @media (prefers-reduced-motion:reduce){.trust .ico-sw i{animation:none}}
+.trust-round .ico,html[data-style] .trust-round .ico{border-radius:50%;background:transparent;border:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);color:var(--ink)}
+.trust-round .ico svg{width:78%;height:78%;overflow:visible}
+.trust-round .ico-sw{background:transparent}
+.trust.trust-round{background:transparent;border:0}
+.trust.trust-round li{border:0!important;background:transparent!important;box-shadow:none!important}
+.trust [data-icon="moto"] .i-ride{animation:moRide .6s ease-in-out infinite}
+.trust [data-icon="moto"] .i-wheel{transform-box:fill-box;transform-origin:center;animation:moWheel .7s linear infinite}
+.trust [data-icon="moto"] .i-speed path{stroke-dasharray:6;animation:moSpeed .7s linear infinite}
+@keyframes moRide{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
+@keyframes moWheel{to{transform:rotate(360deg)}}
+@keyframes moSpeed{0%{stroke-dashoffset:0;opacity:.2}50%{opacity:1}100%{stroke-dashoffset:-12;opacity:.2}}
+.trust [data-icon="cashhand"] .i-note{animation:caNote 3s ease-in-out infinite}
+.trust [data-icon="cashhand"] .i-give{animation:caGive 3s ease-in-out infinite}
+.trust [data-icon="cashhand"] .i-take{animation:caTake 3s ease-in-out infinite}
+@keyframes caNote{0%,15%{transform:translate(-5px,5px)}50%,70%{transform:translate(4px,-4px)}100%{transform:translate(-5px,5px)}}
+@keyframes caGive{0%,15%{transform:translateX(1px)}45%,100%{transform:translateX(-2px)}}
+@keyframes caTake{0%,40%{transform:translateX(3px)}60%,80%{transform:translateX(0)}100%{transform:translateX(3px)}}
+.trust [data-icon="agent"] .i-head{transform-box:fill-box;transform-origin:50% 100%;animation:agNod 2.8s ease-in-out infinite}
+.trust [data-icon="agent"] .i-wave path{animation:agWave 1.4s ease-out infinite}
+.trust [data-icon="agent"] .i-wave path:nth-child(2){animation-delay:.25s}
+@keyframes agNod{0%,100%{transform:rotate(0)}30%{transform:rotate(-4deg)}60%{transform:rotate(2deg)}}
+@keyframes agWave{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.trust [data-icon] .i-ride,.trust [data-icon] .i-wheel,.trust [data-icon] .i-speed path,.trust [data-icon] .i-note,.trust [data-icon] .i-give,.trust [data-icon] .i-take,.trust [data-icon] .i-head,.trust [data-icon] .i-wave path{animation:none}}
 .trust [data-icon="truck"] svg{animation:drive 2.6s ease-in-out infinite}
 .trust [data-icon="phone"] svg{animation:ringing 2.8s ease-in-out infinite;transform-origin:50% 60%}
 .trust [data-icon="cash"] svg{animation:flip 3.6s ease-in-out infinite}
@@ -641,7 +664,33 @@ html.order-open,html.order-open body{overflow:hidden}
       </div>
     </section>
 
-    <section class="trust" id="trust"><div class="wrap"><ul style="--n:4"><li class="rv" data-icon="truck"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z"/><circle cx="6" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg></span><div><b>Livraison gratuite</b><span>chez vous ou au travail</span></div></li><li class="rv" data-icon="cash"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg></span><div><b>Paiement à la livraison</b><span>rien à payer en ligne</span></div></li><li class="rv" data-icon="phone"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span><div><b>Appel de confirmation</b><span>avant chaque envoi</span></div></li><li class="rv" data-icon="swatches"><span class="ico ico-sw"><i style="--c:#141414;--i:0"></i><i style="--c:#4d5a2c;--i:1"></i><i style="--c:#a3232a;--i:2"></i><i style="--c:#4a2c22;--i:3"></i></span><div><b>4 couleurs</b><span>noir, vert, rouge, marron</span></div></li></ul></div></section>
+    <section class="trust trust-round" id="trust"><div class="wrap"><ul style="--n:4"><li class="rv" data-icon="moto"><span class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<g class="i-speed" stroke-width="1.6"><path d="M1 21h6"/><path d="M0 26h5"/><path d="M2 31h4"/></g>
+<g class="i-ride">
+<rect x="8" y="12" width="11" height="11" rx="1.6" fill="var(--accent)" stroke="currentColor"/><path d="M10.5 16.5h6"/>
+<path d="M24 14.5l-3 8.5 6 3 2 6" stroke-width="2.4"/><path d="M24 16.5l7 3.5" stroke-width="2.2"/>
+<circle cx="25" cy="9.8" r="4" fill="currentColor" stroke="none"/><path d="M25.5 9.5h4.5" stroke="var(--surface)" stroke-width="1.6"/>
+<path d="M14 30h14l4-8h4"/><path d="M33 22l4 14"/><path d="M15 26.5h9"/>
+<g class="i-wheel"><circle cx="12" cy="36" r="5.5"/><path d="M12 31.5v9M7.5 36h9"/></g>
+<g class="i-wheel"><circle cx="37" cy="36" r="5.5"/><path d="M37 31.5v9M32.5 36h9"/></g>
+</g></svg></span><div><b>Livraison gratuite</b><span>chez vous ou au travail</span></div></li><li class="rv" data-icon="cashhand"><span class="ico"><svg viewBox="0 0 48 48" stroke-linejoin="round">
+<g class="i-take"><path d="M48 9v11h-6V9z" fill="var(--accent2)"/><path d="M42 10h-8.5c-3.5 0-6 2-6 4.5S30 19 33.5 19H42z" fill="#7a4a2e"/><path d="M33 13h-5.5M33 16h-6" stroke="#5a3420" stroke-width="1.2" stroke-linecap="round" fill="none"/></g>
+<g class="i-note"><g transform="rotate(-12 24 24)"><rect x="14" y="18" width="20" height="12" rx="1.6" fill="#2f8f5b" stroke="#1f2a24" stroke-width="1.4"/><circle cx="24" cy="24" r="3" fill="none" stroke="#e9f5ec" stroke-width="1.4"/><path d="M16.5 20.5h2M29.5 27.5h2" stroke="#e9f5ec" stroke-width="1.4" stroke-linecap="round"/></g></g>
+<g class="i-give"><path d="M0 28v11h6V28z" fill="currentColor"/><path d="M6 29h9c3.5 0 6 2 6 4.5S18.5 38 15 38H6z" fill="#7a4a2e"/><path d="M14 32.5c2-1.8 4-1.6 5.5-.3" stroke="#5a3420" stroke-width="1.3" stroke-linecap="round" fill="none"/></g>
+</svg></span><div><b>Paiement à la livraison</b><span>rien à payer en ligne</span></div></li><li class="rv" data-icon="agent"><span class="ico"><svg viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round">
+<path d="M9 47c0-9.5 6.5-14.5 15-14.5S39 37.5 39 47z" fill="var(--accent2)"/>
+<path d="M21 28h6v6h-6z" fill="#7a4a2e"/>
+<g class="i-head">
+<ellipse cx="24" cy="20" rx="7" ry="8" fill="#7a4a2e"/>
+<path d="M16.6 20c-.6-7 2.8-11.5 7.4-11.5s8 4.5 7.4 11.5c-1.2-3.6-3.8-5.8-7.4-5.8s-6.2 2.2-7.4 5.8z" fill="#1f1714"/>
+<circle cx="24" cy="6.5" r="3.6" fill="#1f1714"/>
+<path d="M21.3 23.6c1.6 1.3 3.8 1.3 5.4 0" stroke="#3a2016" stroke-width="1.3" fill="none"/>
+<circle cx="17.2" cy="23" r="1.1" fill="#e2b04a"/>
+<g transform="rotate(14 32 19)"><rect x="29.4" y="12.5" width="5.4" height="12" rx="1.6" fill="currentColor"/><rect x="30.4" y="14" width="3.4" height="7.5" rx=".6" fill="var(--accent)"/></g>
+<path d="M36 34c1-3 1.3-6 .2-9.5" stroke="#7a4a2e" stroke-width="3.2" fill="none"/>
+</g>
+<g class="i-wave" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M39.5 13a7 7 0 0 1 0 10"/><path d="M43 10a11 11 0 0 1 0 16"/></g>
+</svg></span><div><b>Appel de confirmation</b><span>avant chaque envoi</span></div></li><li class="rv" data-icon="swatches"><span class="ico ico-sw"><i style="--c:#141414;--i:0"></i><i style="--c:#4d5a2c;--i:1"></i><i style="--c:#a3232a;--i:2"></i><i style="--c:#4a2c22;--i:3"></i></span><div><b>4 couleurs</b><span>noir, vert, rouge, marron</span></div></li></ul></div></section>
 
     <section class="sec" id="video">
       <div class="wrap">

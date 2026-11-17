@@ -510,6 +510,29 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 .trust .ico-sw i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px var(--surface),0 1px 3px rgba(0,0,0,.25);animation:swHop 2.4s ease-in-out infinite;animation-delay:calc(var(--i)*.18s)}
 @keyframes swHop{0%,55%,100%{transform:translateY(0) scale(1)}20%{transform:translateY(-6px) scale(1.18)}38%{transform:translateY(0) scale(.92)}}
 @media (prefers-reduced-motion:reduce){.trust .ico-sw i{animation:none}}
+.trust-round .ico,html[data-style] .trust-round .ico{border-radius:50%;background:transparent;border:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);color:var(--ink)}
+.trust-round .ico svg{width:78%;height:78%;overflow:visible}
+.trust-round .ico-sw{background:transparent}
+.trust.trust-round{background:transparent;border:0}
+.trust.trust-round li{border:0!important;background:transparent!important;box-shadow:none!important}
+.trust [data-icon="moto"] .i-ride{animation:moRide .6s ease-in-out infinite}
+.trust [data-icon="moto"] .i-wheel{transform-box:fill-box;transform-origin:center;animation:moWheel .7s linear infinite}
+.trust [data-icon="moto"] .i-speed path{stroke-dasharray:6;animation:moSpeed .7s linear infinite}
+@keyframes moRide{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
+@keyframes moWheel{to{transform:rotate(360deg)}}
+@keyframes moSpeed{0%{stroke-dashoffset:0;opacity:.2}50%{opacity:1}100%{stroke-dashoffset:-12;opacity:.2}}
+.trust [data-icon="cashhand"] .i-note{animation:caNote 3s ease-in-out infinite}
+.trust [data-icon="cashhand"] .i-give{animation:caGive 3s ease-in-out infinite}
+.trust [data-icon="cashhand"] .i-take{animation:caTake 3s ease-in-out infinite}
+@keyframes caNote{0%,15%{transform:translate(-5px,5px)}50%,70%{transform:translate(4px,-4px)}100%{transform:translate(-5px,5px)}}
+@keyframes caGive{0%,15%{transform:translateX(1px)}45%,100%{transform:translateX(-2px)}}
+@keyframes caTake{0%,40%{transform:translateX(3px)}60%,80%{transform:translateX(0)}100%{transform:translateX(3px)}}
+.trust [data-icon="agent"] .i-head{transform-box:fill-box;transform-origin:50% 100%;animation:agNod 2.8s ease-in-out infinite}
+.trust [data-icon="agent"] .i-wave path{animation:agWave 1.4s ease-out infinite}
+.trust [data-icon="agent"] .i-wave path:nth-child(2){animation-delay:.25s}
+@keyframes agNod{0%,100%{transform:rotate(0)}30%{transform:rotate(-4deg)}60%{transform:rotate(2deg)}}
+@keyframes agWave{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.trust [data-icon] .i-ride,.trust [data-icon] .i-wheel,.trust [data-icon] .i-speed path,.trust [data-icon] .i-note,.trust [data-icon] .i-give,.trust [data-icon] .i-take,.trust [data-icon] .i-head,.trust [data-icon] .i-wave path{animation:none}}
 .trust [data-icon="truck"] svg{animation:drive 2.6s ease-in-out infinite}
 .trust [data-icon="phone"] svg{animation:ringing 2.8s ease-in-out infinite;transform-origin:50% 60%}
 .trust [data-icon="cash"] svg{animation:flip 3.6s ease-in-out infinite}
