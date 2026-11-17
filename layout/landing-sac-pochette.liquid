@@ -507,6 +507,10 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 .trust li:nth-child(3) .ico::after{animation-delay:1.6s}
 .trust li:nth-child(4) .ico::after{animation-delay:2.4s}
 @keyframes ring{0%{transform:scale(1);opacity:.7}70%,100%{transform:scale(1.55);opacity:0}}
+.trust .ico-sw{display:flex;align-items:center;justify-content:center;gap:2px;background:var(--soft)}
+.trust .ico-sw i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px var(--surface),0 1px 3px rgba(0,0,0,.25);animation:swHop 2.4s ease-in-out infinite;animation-delay:calc(var(--i)*.18s)}
+@keyframes swHop{0%,55%,100%{transform:translateY(0) scale(1)}20%{transform:translateY(-6px) scale(1.18)}38%{transform:translateY(0) scale(.92)}}
+@media (prefers-reduced-motion:reduce){.trust .ico-sw i{animation:none}}
 .trust [data-icon="truck"] svg{animation:drive 2.6s ease-in-out infinite}
 .trust [data-icon="phone"] svg{animation:ringing 2.8s ease-in-out infinite;transform-origin:50% 60%}
 .trust [data-icon="cash"] svg{animation:flip 3.6s ease-in-out infinite}
@@ -637,7 +641,7 @@ html.order-open,html.order-open body{overflow:hidden}
       </div>
     </section>
 
-    <section class="trust" id="trust"><div class="wrap"><ul style="--n:4"><li class="rv" data-icon="truck"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z"/><circle cx="6" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg></span><div><b>Livraison gratuite</b><span>chez vous ou au travail</span></div></li><li class="rv" data-icon="cash"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg></span><div><b>Paiement à la livraison</b><span>rien à payer en ligne</span></div></li><li class="rv" data-icon="phone"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span><div><b>Appel de confirmation</b><span>avant chaque envoi</span></div></li><li class="rv" data-icon="bag"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></span><div><b>4 couleurs</b><span>noir, vert, rouge, marron</span></div></li></ul></div></section>
+    <section class="trust" id="trust"><div class="wrap"><ul style="--n:4"><li class="rv" data-icon="truck"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z"/><circle cx="6" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg></span><div><b>Livraison gratuite</b><span>chez vous ou au travail</span></div></li><li class="rv" data-icon="cash"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg></span><div><b>Paiement à la livraison</b><span>rien à payer en ligne</span></div></li><li class="rv" data-icon="phone"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span><div><b>Appel de confirmation</b><span>avant chaque envoi</span></div></li><li class="rv" data-icon="swatches"><span class="ico ico-sw"><i style="--c:#141414;--i:0"></i><i style="--c:#4d5a2c;--i:1"></i><i style="--c:#a3232a;--i:2"></i><i style="--c:#4a2c22;--i:3"></i></span><div><b>4 couleurs</b><span>noir, vert, rouge, marron</span></div></li></ul></div></section>
 
     <section class="sec" id="video">
       <div class="wrap">

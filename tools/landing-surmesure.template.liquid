@@ -506,6 +506,10 @@ html[data-style="tech"] .h-main::before{content:'';position:absolute;left:0;righ
 .trust li:nth-child(3) .ico::after{animation-delay:1.6s}
 .trust li:nth-child(4) .ico::after{animation-delay:2.4s}
 @keyframes ring{0%{transform:scale(1);opacity:.7}70%,100%{transform:scale(1.55);opacity:0}}
+.trust .ico-sw{display:flex;align-items:center;justify-content:center;gap:2px;background:var(--soft)}
+.trust .ico-sw i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px var(--surface),0 1px 3px rgba(0,0,0,.25);animation:swHop 2.4s ease-in-out infinite;animation-delay:calc(var(--i)*.18s)}
+@keyframes swHop{0%,55%,100%{transform:translateY(0) scale(1)}20%{transform:translateY(-6px) scale(1.18)}38%{transform:translateY(0) scale(.92)}}
+@media (prefers-reduced-motion:reduce){.trust .ico-sw i{animation:none}}
 .trust [data-icon="truck"] svg{animation:drive 2.6s ease-in-out infinite}
 .trust [data-icon="phone"] svg{animation:ringing 2.8s ease-in-out infinite;transform-origin:50% 60%}
 .trust [data-icon="cash"] svg{animation:flip 3.6s ease-in-out infinite}
