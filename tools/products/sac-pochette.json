@@ -4,12 +4,21 @@
  "hero_layout": "split",
  "hero_fit": "cover",
  "font_body": "Poppins",
- "colors": {"bg": "#f6f1ea", "surface": "#fffaf3", "ink": "#1d1714", "muted": "#6b625a", "line": "rgba(29,23,20,.12)", "accent": "#1d1714", "accent-ink": "#ffffff", "accent2": "#a8823f"},
+ "colors": {
+  "bg": "#f6f1ea",
+  "surface": "#fffaf3",
+  "ink": "#1d1714",
+  "muted": "#6b625a",
+  "line": "rgba(29,23,20,.12)",
+  "accent": "#1d1714",
+  "accent-ink": "#ffffff",
+  "accent2": "#a8823f"
+ },
  "layout": "landing-sac-pochette",
- "brand": "Afribazaar",
- "logo_file": "ab-logo.png",
+ "brand": "Pochéo",
+ "logo_file": "ab-sac-pocheo-logo.png",
  "logo_wide": true,
- "favicon_file": "ab-favicon.png",
+ "favicon_file": "ab-sac-pocheo-icone.png",
  "img": "ab-sac-",
  "price_new": "11 900",
  "price_old": "19 900",
@@ -17,8 +26,17 @@
  "currency": "FCFA",
  "currency_iso": "XOF",
  "price_new_num": "11900",
- "deal": {"icon": "gift", "title": "Offre duo : 2 sacs pour 19 800 FCFA", "text": "Soit 9 900 FCFA le sac au lieu de 19 900 (−50 %) — mélangez les couleurs"},
- "sticker": {"big": "−50%", "small": "DÈS 2 SACS", "icon": "gift", "label": "Offre duo : 2 sacs pour 19 800 FCFA. Commander"},
+ "deal": {
+  "icon": "gift",
+  "title": "Offre duo : 2 sacs pour 19 800 FCFA",
+  "text": "Soit 9 900 FCFA le sac au lieu de 19 900 (−50 %) — mélangez les couleurs"
+ },
+ "sticker": {
+  "big": "−50%",
+  "small": "DÈS 2 SACS",
+  "icon": "gift",
+  "label": "Offre duo : 2 sacs pour 19 800 FCFA. Commander"
+ },
  "announcement": "Livraison GRATUITE · Paiement à la livraison · Offre duo : 2 sacs pour 19 800 FCFA",
  "announcement_scroll": true,
  "seo_title": "Pochéo, le sac cabas pliable porte-clés : le grand sac qui tient dans votre poche | {{ mm_new }} {{ mm_cur }} · Livraison gratuite",
@@ -31,102 +49,397 @@
  "order_note": "Paiement à la livraison — précisez vos couleurs lors de l'appel de confirmation",
  "hero": {
   "kicker": "Pochéo · le sac qui vous suit partout",
-  "title_lines": ["Un grand sac", "*dans votre poche.*"],
+  "title_lines": [
+   "Un grand sac",
+   "*dans votre poche.*"
+  ],
   "sub": "Pochéo, c'est le sac malin : plié, il devient une petite pochette accrochée à vos clés. Déplié en quelques secondes, c'est un grand sac solide pour le marché, les courses ou la journée. Vous ne serez plus jamais pris sans sac.",
   "image": "ville",
   "alt": "Femme africaine en ville avec le sac cabas noir à l'épaule",
   "gallery": [
-   {"image": "ville", "alt": "Sac cabas noir porté à l'épaule en ville"},
-   {"image": "noir", "alt": "Sac pliable noir et sa pochette"},
-   {"image": "vert", "alt": "Sac pliable vert et sa pochette"},
-   {"image": "rouge", "alt": "Sac pliable rouge et sa pochette"},
-   {"image": "marron", "alt": "Sac pliable marron et sa pochette"},
-   {"image": "cles", "alt": "Pochette rouge accrochée aux clés"}
+   {
+    "image": "ville",
+    "alt": "Sac cabas noir porté à l'épaule en ville"
+   },
+   {
+    "image": "noir",
+    "alt": "Sac pliable noir et sa pochette"
+   },
+   {
+    "image": "vert",
+    "alt": "Sac pliable vert et sa pochette"
+   },
+   {
+    "image": "rouge",
+    "alt": "Sac pliable rouge et sa pochette"
+   },
+   {
+    "image": "marron",
+    "alt": "Sac pliable marron et sa pochette"
+   },
+   {
+    "image": "cles",
+    "alt": "Pochette rouge accrochée aux clés"
+   }
   ],
   "chips": [
-   {"icon": "bag", "title": "Grand sac", "text": "pour toutes vos courses"},
-   {"icon": "feather", "title": "Porte-clés", "text": "une fois plié"}
+   {
+    "icon": "bag",
+    "title": "Grand sac",
+    "text": "pour toutes vos courses"
+   },
+   {
+    "icon": "feather",
+    "title": "Porte-clés",
+    "text": "une fois plié"
+   }
   ],
   "cta": "Je commande mon Pochéo",
   "note": "Paiement à la livraison"
  },
  "sections": [
-  {"type": "trust", "items": [
-   {"icon": "truck", "title": "Livraison gratuite", "text": "chez vous ou au travail"},
-   {"icon": "cash", "title": "Paiement à la livraison", "text": "rien à payer en ligne"},
-   {"icon": "phone", "title": "Appel de confirmation", "text": "avant chaque envoi"},
-   {"icon": "bag", "title": "4 couleurs", "text": "noir, vert, rouge, marron"}]},
-  {"type": "problem", "nav": "Pourquoi", "kicker": "Le constat", "title": "Encore pris *sans sac* ?",
+  {
+   "type": "trust",
+   "items": [
+    {
+     "icon": "truck",
+     "title": "Livraison gratuite",
+     "text": "chez vous ou au travail"
+    },
+    {
+     "icon": "cash",
+     "title": "Paiement à la livraison",
+     "text": "rien à payer en ligne"
+    },
+    {
+     "icon": "phone",
+     "title": "Appel de confirmation",
+     "text": "avant chaque envoi"
+    },
+    {
+     "icon": "bag",
+     "title": "4 couleurs",
+     "text": "noir, vert, rouge, marron"
+    }
+   ]
+  },
+  {
+   "type": "problem",
+   "nav": "Pourquoi",
+   "kicker": "Le constat",
+   "title": "Encore pris *sans sac* ?",
    "problem_title": "Sans sac de poche",
-   "pains": ["Au marché, vous repartez les bras chargés de sachets",
-             "Le sachet plastique craque avant d'arriver à la maison",
-             "Le vrai sac est resté à la maison, comme d'habitude",
-             "Un grand cabas prend trop de place dans le sac à main"],
+   "pains": [
+    "Au marché, vous repartez les bras chargés de sachets",
+    "Le sachet plastique craque avant d'arriver à la maison",
+    "Le vrai sac est resté à la maison, comme d'habitude",
+    "Un grand cabas prend trop de place dans le sac à main"
+   ],
    "solution_title": "Avec votre Pochéo",
-   "solution": ["Il est toujours là, accroché à vos clés",
-                "Un tissu nylon solide, qui ne craque pas",
-                "Déplié en quelques secondes, au moment où il faut",
-                "Plié, il tient dans le creux de la main"],
-   "image": "marche", "alt": "Femme au marché remplissant le sac vert de légumes", "image_ratio": "1/1"},
-  {"type": "showcase", "nav": "Avantages", "cta": "Je veux mon Pochéo", "items": [
-   {"image": "cles", "alt": "Pochette rouge accrochée à un trousseau de clés", "kicker": "Toujours sur vous",
-    "title": "Accroché à vos clés, *jamais oublié*",
-    "text": "Grâce à son mousqueton doré, la pochette s'accroche à vos clés, à votre sac à main ou à la ceinture. Là où vont vos clés, votre sac vous suit : au marché, au supermarché, au bureau ou en voyage."},
-   {"image": "supermarche", "alt": "Homme rangeant ses courses dans le sac marron", "kicker": "Solide et réutilisable",
-    "title": "Fini les sachets *qui se déchirent*",
-    "text": "Son nylon épais et résistant à l'eau porte l'équivalent de 4 à 5 sachets de courses. Riz, lait, fruits, pain : tout tient, et vous le réutilisez des centaines de fois. Moins de sachets plastiques, plus de tranquillité."},
-   {"image": "ville", "alt": "Femme élégante portant le sac noir à l'épaule", "kicker": "Pratique et élégant",
-    "title": "Un vrai sac, *pas un simple sachet*",
-    "text": "Longue anse confortable à l'épaule, finitions dorées, couleurs élégantes : il se porte aussi bien en ville qu'au bureau. Pratique au quotidien, joli à porter."}]},
-  {"type": "demo", "nav": "Pliage", "kicker": "Comment le plier ?", "title": "Pochéo plié *en 5 gestes*", "steps": [
-   {"title": "Posez-le à plat", "text": "Étalez le sac, l'anse vers le haut.", "image": "etape1", "alt": "Sac posé à plat"},
-   {"title": "Rabattez les côtés", "text": "Pliez les deux côtés vers le centre, le long des pointillés.", "image": "etape2", "alt": "Côtés rabattus vers le centre"},
-   {"title": "Roulez vers le haut", "text": "Roulez le sac depuis le bas jusqu'à la pochette.", "image": "etape3", "alt": "Sac roulé vers le haut"},
-   {"title": "Fermez les pressions", "text": "Rabattez la pochette sur le rouleau et clipsez les deux boutons.", "image": "etape4", "alt": "Fermeture des boutons pression"},
-   {"title": "C'est prêt !", "text": "Accrochez-le à vos clés avec le mousqueton : il vous suit partout.", "image": "etape5", "alt": "Pochette fermée avec mousqueton"}]},
-  {"type": "compare", "nav": "Comparatif", "kicker": "Comparatif", "title": "Pourquoi *Pochéo* ?",
-   "columns": ["Pochéo", "Sachets plastiques"], "highlight": 1,
+   "solution": [
+    "Il est toujours là, accroché à vos clés",
+    "Un tissu nylon solide, qui ne craque pas",
+    "Déplié en quelques secondes, au moment où il faut",
+    "Plié, il tient dans le creux de la main"
+   ],
+   "image": "marche",
+   "alt": "Femme au marché remplissant le sac vert de légumes",
+   "image_ratio": "1/1"
+  },
+  {
+   "type": "showcase",
+   "nav": "Avantages",
+   "cta": "Je veux mon Pochéo",
+   "items": [
+    {
+     "image": "cles",
+     "alt": "Pochette rouge accrochée à un trousseau de clés",
+     "kicker": "Toujours sur vous",
+     "title": "Accroché à vos clés, *jamais oublié*",
+     "text": "Grâce à son mousqueton doré, la pochette s'accroche à vos clés, à votre sac à main ou à la ceinture. Là où vont vos clés, votre sac vous suit : au marché, au supermarché, au bureau ou en voyage."
+    },
+    {
+     "image": "supermarche",
+     "alt": "Homme rangeant ses courses dans le sac marron",
+     "kicker": "Solide et réutilisable",
+     "title": "Fini les sachets *qui se déchirent*",
+     "text": "Son nylon épais et résistant à l'eau porte l'équivalent de 4 à 5 sachets de courses. Riz, lait, fruits, pain : tout tient, et vous le réutilisez des centaines de fois. Moins de sachets plastiques, plus de tranquillité."
+    },
+    {
+     "image": "ville",
+     "alt": "Femme élégante portant le sac noir à l'épaule",
+     "kicker": "Pratique et élégant",
+     "title": "Un vrai sac, *pas un simple sachet*",
+     "text": "Longue anse confortable à l'épaule, finitions dorées, couleurs élégantes : il se porte aussi bien en ville qu'au bureau. Pratique au quotidien, joli à porter."
+    }
+   ]
+  },
+  {
+   "type": "demo",
+   "nav": "Pliage",
+   "kicker": "Comment le plier ?",
+   "title": "Pochéo plié *en 5 gestes*",
+   "steps": [
+    {
+     "title": "Posez-le à plat",
+     "text": "Étalez le sac, l'anse vers le haut.",
+     "image": "etape1",
+     "alt": "Sac posé à plat"
+    },
+    {
+     "title": "Rabattez les côtés",
+     "text": "Pliez les deux côtés vers le centre, le long des pointillés.",
+     "image": "etape2",
+     "alt": "Côtés rabattus vers le centre"
+    },
+    {
+     "title": "Roulez vers le haut",
+     "text": "Roulez le sac depuis le bas jusqu'à la pochette.",
+     "image": "etape3",
+     "alt": "Sac roulé vers le haut"
+    },
+    {
+     "title": "Fermez les pressions",
+     "text": "Rabattez la pochette sur le rouleau et clipsez les deux boutons.",
+     "image": "etape4",
+     "alt": "Fermeture des boutons pression"
+    },
+    {
+     "title": "C'est prêt !",
+     "text": "Accrochez-le à vos clés avec le mousqueton : il vous suit partout.",
+     "image": "etape5",
+     "alt": "Pochette fermée avec mousqueton"
+    }
+   ]
+  },
+  {
+   "type": "compare",
+   "nav": "Comparatif",
+   "kicker": "Comparatif",
+   "title": "Pourquoi *Pochéo* ?",
+   "columns": [
+    "Pochéo",
+    "Sachets plastiques"
+   ],
+   "highlight": 1,
    "rows": [
-    {"label": "Réutilisable", "values": ["Oui", "Non"]},
-    {"label": "Toujours à portée de main", "values": ["Oui", "Non"]},
-    {"label": "Se transforme en porte-clés", "values": ["Oui", "Non"]},
-    {"label": "Ne craque pas sous le poids", "values": ["Oui", "Non"]},
-    {"label": "Résistant à l'eau", "values": ["Oui", "Non"]},
-    {"label": "Pratique et élégant", "values": ["Oui", "Non"]}]},
-  {"type": "included", "nav": "Couleurs", "title": "4 couleurs au choix", "items": [
-   {"label": "Noir", "image": "noir"}, {"label": "Vert", "image": "vert"},
-   {"label": "Rouge", "image": "rouge"}, {"label": "Marron", "image": "marron"}]},
-  {"type": "packs", "nav": "Offres", "kicker": "Nos offres", "title": "Choisissez *votre offre*",
+    {
+     "label": "Réutilisable",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    },
+    {
+     "label": "Toujours à portée de main",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    },
+    {
+     "label": "Se transforme en porte-clés",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    },
+    {
+     "label": "Ne craque pas sous le poids",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    },
+    {
+     "label": "Résistant à l'eau",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    },
+    {
+     "label": "Pratique et élégant",
+     "values": [
+      "Oui",
+      "Non"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "included",
+   "nav": "Couleurs",
+   "title": "4 couleurs au choix",
+   "items": [
+    {
+     "label": "Noir",
+     "image": "noir"
+    },
+    {
+     "label": "Vert",
+     "image": "vert"
+    },
+    {
+     "label": "Rouge",
+     "image": "rouge"
+    },
+    {
+     "label": "Marron",
+     "image": "marron"
+    }
+   ]
+  },
+  {
+   "type": "packs",
+   "nav": "Offres",
+   "kicker": "Nos offres",
+   "title": "Choisissez *votre offre*",
    "note": "Livraison gratuite · Vous payez à la livraison · Couleurs au choix, même différentes",
    "items": [
-    {"name": "Solo", "title": "1 sac", "image": "noir", "alt": "1 sac pliable", "price": "11 900", "old": "19 900", "note": "−40 %",
-     "points": ["1 Pochéo, couleur au choix", "Mousqueton doré inclus", "Livraison gratuite"], "cta": "Je prends 1 sac"},
-    {"name": "Duo", "title": "2 sacs", "image": "marche", "alt": "2 sacs pliables", "price": "19 800", "old": "39 800", "note": "−50 % · 9 900 FCFA le sac",
-     "flag": "Meilleure offre", "best": true,
-     "points": ["2 Pochéo, couleurs au choix", "Un pour vous, un à offrir", "Livraison gratuite"], "cta": "Je prends 2 sacs"}]},
-  {"type": "specs", "nav": "Détails", "kicker": "En détail", "title": "Caractéristiques", "image": "etape5", "alt": "Sac plié en pochette porte-clés", "rows": [
-   {"label": "Matière", "value": "Nylon / polyester résistant à l'eau"},
-   {"label": "Plié", "value": "Pochette porte-clés, tient dans la main"},
-   {"label": "Fermeture", "value": "Boutons pression"},
-   {"label": "Accroche", "value": "Mousqueton doré"},
-   {"label": "Anse", "value": "Longue, se porte à l'épaule"},
-   {"label": "Contenance", "value": "Environ 4 à 5 sachets de courses"},
-   {"label": "Coloris", "value": "Noir, vert, rouge, marron"}]},
-  {"type": "reviews", "title": "Avis", "items": []},
-  {"type": "offer", "nav": "Commander", "kicker": "Votre commande", "title": "Votre Pochéo, *livré gratuitement*",
+    {
+     "name": "Solo",
+     "title": "1 sac",
+     "image": "noir",
+     "alt": "1 sac pliable",
+     "price": "11 900",
+     "old": "19 900",
+     "note": "−40 %",
+     "points": [
+      "1 Pochéo, couleur au choix",
+      "Mousqueton doré inclus",
+      "Livraison gratuite"
+     ],
+     "cta": "Je prends 1 sac"
+    },
+    {
+     "name": "Duo",
+     "title": "2 sacs",
+     "image": "marche",
+     "alt": "2 sacs pliables",
+     "price": "19 800",
+     "old": "39 800",
+     "note": "−50 % · 9 900 FCFA le sac",
+     "flag": "Meilleure offre",
+     "best": true,
+     "points": [
+      "2 Pochéo, couleurs au choix",
+      "Un pour vous, un à offrir",
+      "Livraison gratuite"
+     ],
+     "cta": "Je prends 2 sacs"
+    }
+   ]
+  },
+  {
+   "type": "specs",
+   "nav": "Détails",
+   "kicker": "En détail",
+   "title": "Caractéristiques",
+   "image": "etape5",
+   "alt": "Sac plié en pochette porte-clés",
+   "rows": [
+    {
+     "label": "Matière",
+     "value": "Nylon / polyester résistant à l'eau"
+    },
+    {
+     "label": "Plié",
+     "value": "Pochette porte-clés, tient dans la main"
+    },
+    {
+     "label": "Fermeture",
+     "value": "Boutons pression"
+    },
+    {
+     "label": "Accroche",
+     "value": "Mousqueton doré"
+    },
+    {
+     "label": "Anse",
+     "value": "Longue, se porte à l'épaule"
+    },
+    {
+     "label": "Contenance",
+     "value": "Environ 4 à 5 sachets de courses"
+    },
+    {
+     "label": "Coloris",
+     "value": "Noir, vert, rouge, marron"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "title": "Avis",
+   "items": []
+  },
+  {
+   "type": "offer",
+   "nav": "Commander",
+   "kicker": "Votre commande",
+   "title": "Votre Pochéo, *livré gratuitement*",
    "text": "Commandez en quelques secondes : nous vous appelons pour confirmer vos couleurs et votre adresse, puis vous payez à la livraison.",
-   "image": "cles", "alt": "Pochette accrochée aux clés",
-   "items": ["1 sac : 11 900 FCFA au lieu de 19 900", "2 sacs : 19 800 FCFA au lieu de 39 800", "Livraison gratuite, couleurs au choix"],
-   "payment": "à la livraison, quand le colis vous est remis", "delivery": "gratuite, à domicile", "ends_at": "", "cta": "Commander — payer à la livraison"},
-  {"type": "faq", "nav": "Questions", "title": "Vos questions", "items": [
-   {"q": "Comment ça marche ?", "a": "Plié, le sac est une petite pochette fermée par deux boutons pression, avec un mousqueton pour l'accrocher à vos clés ou à votre sac à main. Ouvrez la pochette, déroulez : vous avez un grand sac cabas."},
-   {"q": "Il porte combien ?", "a": "L'équivalent de 4 à 5 sachets de courses. Son nylon épais ne craque pas comme un sachet plastique."},
-   {"q": "Est-il étanche ?", "a": "Son tissu en nylon résiste à l'eau : une petite pluie ou une éclaboussure ne traverse pas."},
-   {"q": "Comment le replier ?", "a": "Posez-le à plat, rabattez les côtés, roulez-le vers le haut et refermez la pochette avec les deux boutons pression. Suivez les 5 étapes illustrées plus haut."},
-   {"q": "Comment le laver ?", "a": "À l'eau tiède avec un peu de savon, puis laissez sécher à l'air avant de le replier."},
-   {"q": "Puis-je prendre 2 couleurs différentes ?", "a": "Oui. Avec l'offre duo (2 sacs pour 19 800 FCFA), vous choisissez librement vos 2 couleurs."},
-   {"q": "Combien coûte la livraison ?", "a": "Elle est gratuite. Vous payez seulement vos sacs, à la livraison."},
-   {"q": "Comment se passe le paiement ?", "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez quand le colis vous est remis."}]},
-  {"type": "cta", "title": "Pochéo : ne soyez plus jamais", "em": "pris sans sac.", "text": "Le grand sac qui tient dans votre poche, accroché à vos clés. Livraison gratuite, paiement à la livraison.", "note": "Noir · Vert · Rouge · Marron", "button": "Je commande mon Pochéo"}
- ]
+   "image": "cles",
+   "alt": "Pochette accrochée aux clés",
+   "items": [
+    "1 sac : 11 900 FCFA au lieu de 19 900",
+    "2 sacs : 19 800 FCFA au lieu de 39 800",
+    "Livraison gratuite, couleurs au choix"
+   ],
+   "payment": "à la livraison, quand le colis vous est remis",
+   "delivery": "gratuite, à domicile",
+   "ends_at": "",
+   "cta": "Commander — payer à la livraison"
+  },
+  {
+   "type": "faq",
+   "nav": "Questions",
+   "title": "Vos questions",
+   "items": [
+    {
+     "q": "Comment ça marche ?",
+     "a": "Plié, le sac est une petite pochette fermée par deux boutons pression, avec un mousqueton pour l'accrocher à vos clés ou à votre sac à main. Ouvrez la pochette, déroulez : vous avez un grand sac cabas."
+    },
+    {
+     "q": "Il porte combien ?",
+     "a": "L'équivalent de 4 à 5 sachets de courses. Son nylon épais ne craque pas comme un sachet plastique."
+    },
+    {
+     "q": "Est-il étanche ?",
+     "a": "Son tissu en nylon résiste à l'eau : une petite pluie ou une éclaboussure ne traverse pas."
+    },
+    {
+     "q": "Comment le replier ?",
+     "a": "Posez-le à plat, rabattez les côtés, roulez-le vers le haut et refermez la pochette avec les deux boutons pression. Suivez les 5 étapes illustrées plus haut."
+    },
+    {
+     "q": "Comment le laver ?",
+     "a": "À l'eau tiède avec un peu de savon, puis laissez sécher à l'air avant de le replier."
+    },
+    {
+     "q": "Puis-je prendre 2 couleurs différentes ?",
+     "a": "Oui. Avec l'offre duo (2 sacs pour 19 800 FCFA), vous choisissez librement vos 2 couleurs."
+    },
+    {
+     "q": "Combien coûte la livraison ?",
+     "a": "Elle est gratuite. Vous payez seulement vos sacs, à la livraison."
+    },
+    {
+     "q": "Comment se passe le paiement ?",
+     "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez quand le colis vous est remis."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "Pochéo : ne soyez plus jamais",
+   "em": "pris sans sac.",
+   "text": "Le grand sac qui tient dans votre poche, accroché à vos clés. Livraison gratuite, paiement à la livraison.",
+   "note": "Noir · Vert · Rouge · Marron",
+   "button": "Je commande mon Pochéo"
+  }
+ ],
+ "logo_adapt": false,
+ "logo_pill": false
 }
