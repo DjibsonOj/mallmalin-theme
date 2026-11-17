@@ -3,7 +3,6 @@
   "style": "tech",
   "hero_layout": "split",
   "hero_fit": "cover",
-  "font_body": "Poppins",
   "round_buttons": true,
   "colors": {
     "bg": "#0f1114",
@@ -433,5 +432,6 @@
       52
     ],
     "txt_ratio": 0.38
-  }
+  },
+  "font": "Poppins"
 }
