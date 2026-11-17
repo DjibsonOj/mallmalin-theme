@@ -175,6 +175,19 @@
    ]
   },
   {
+   "type": "video",
+   "nav": "En vidéo",
+   "kicker": "Pochéo en action",
+   "title": "Déplié, replié… *en quelques secondes*",
+   "intro": "Ouvrez la pochette : un grand sac apparaît. Les courses terminées, il se replie et retrouve sa place à vos clés.",
+   "video": "pliage",
+   "poster": "pliage-poster",
+   "ratio": "720/704",
+   "alt": "Pochéo se déplie en grand sac puis se replie en pochette porte-clés",
+   "caption": "Du porte-clés au grand sac, et retour",
+   "cta": "Je veux mon Pochéo"
+  },
+  {
    "type": "demo",
    "nav": "Pliage",
    "kicker": "Comment le plier ?",
