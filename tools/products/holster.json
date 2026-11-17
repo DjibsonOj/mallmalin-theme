@@ -5,14 +5,14 @@
   "hero_fit": "cover",
   "round_buttons": true,
   "colors": {
-    "bg": "#16181b",
-    "surface": "#212429",
-    "ink": "#f1f3f5",
-    "muted": "#a0a6ad",
-    "line": "rgba(241,243,245,.12)",
-    "accent": "#2fd0c2",
-    "accent-ink": "#071615",
-    "accent2": "#e0a73c"
+    "bg": "#0b1324",
+    "surface": "#14213b",
+    "ink": "#eef3fb",
+    "muted": "#9aa8c0",
+    "line": "rgba(238,243,251,.12)",
+    "accent": "#ff7a1a",
+    "accent-ink": "#111111",
+    "accent2": "#3fa9f5"
   },
   "layout": "landing-holster",
   "brand": "HolsterPro",
