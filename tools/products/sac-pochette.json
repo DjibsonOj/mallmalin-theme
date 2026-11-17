@@ -131,7 +131,8 @@
      ]
     }
    ],
-   "round": true
+   "round": true,
+   "card": true
   },
   {
    "type": "video",
