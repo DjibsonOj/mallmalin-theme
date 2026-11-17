@@ -236,6 +236,12 @@ def render(cfg, tpl, asset, svg, jpg, tick):
         def ico(x):
             if x.get('swatches'):
                 return '<span class="ico ico-sw">%s</span>' % ''.join('<i style="--c:%s;--i:%d"></i>' % (c, i) for i, c in enumerate(x['swatches'][:6]))
+            # "wheel": ["#000", ...] -> petite roue de couleurs simple et fixe (une part par couleur)
+            if x.get('wheel'):
+                w = x['wheel']; n = len(w)
+                g = ','.join('%s %.2fturn %.2fturn' % (c, i / n, (i + 1) / n) for i, c in enumerate(w))
+                return ('<span class="ico"><i style="display:block;width:26px;height:26px;border-radius:50%%;background:conic-gradient(%s);'
+                        'box-shadow:0 0 0 2px var(--surface),0 0 0 3.5px var(--accent)"></i></span>' % g)
             if x.get('svg'):
                 return '<span class="ico">%s</span>' % x['svg']
             return '<span class="ico">%s</span>' % svg(x.get('icon', 'shield'))
