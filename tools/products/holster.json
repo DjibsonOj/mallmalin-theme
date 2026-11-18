@@ -1,0 +1,439 @@
+{
+  "template": "surmesure",
+  "style": "tech",
+  "hero_layout": "split",
+  "hero_fit": "cover",
+  "round_buttons": true,
+  "colors": {
+    "bg": "#0b1324",
+    "surface": "#14213b",
+    "ink": "#eef3fb",
+    "muted": "#9aa8c0",
+    "line": "rgba(238,243,251,.12)",
+    "accent": "#ff7a1a",
+    "accent-ink": "#111111",
+    "accent2": "#3fa9f5"
+  },
+  "layout": "landing-holster",
+  "brand": "HolsterPro",
+  "logo_file": "ab-holster-hp-logo.png",
+  "logo_wide": true,
+  "favicon_file": "ab-holster-hp-icone.png",
+  "img": "ab-holster-",
+  "price_new": "14 900",
+  "price_old": "24 000",
+  "save_pct": "38",
+  "currency": "FCFA",
+  "currency_iso": "XOF",
+  "price_new_num": "14900",
+  "announcement": "Livraison GRATUITE · Paiement à la livraison · 8 couleurs au choix",
+  "announcement_scroll": true,
+  "seo_title": "HolsterPro, le sac holster double : téléphone et argent en sécurité | {{ mm_new }} {{ mm_cur }} · Livraison gratuite",
+  "seo_description": "HolsterPro : sac holster double en cuir synthétique : 2 pochettes plaquées au corps, sangles croisées réglables, poches zippées et poche téléphone. Mains libres et objets à l'abri des voleurs. Livraison gratuite, paiement à la livraison.",
+  "og_title": "HolsterPro — Le sac holster qui garde votre téléphone et votre argent contre vous",
+  "og_description": "Mains libres, objets à l'abri. Livraison gratuite, paiement à la livraison.",
+  "ld_name": "HolsterPro — Sac holster double à sangles croisées",
+  "ld_description": "Sac holster double en cuir synthétique (PU), deux pochettes latérales, sangles croisées réglables, poches zippées, poche téléphone à pression. 8 coloris.",
+  "footer_note": "Livraison gratuite · Paiement à la livraison",
+  "order_note": "Paiement à la livraison — précisez votre couleur lors de l'appel",
+  "hero": {
+    "kicker": "HolsterPro · les mains libres, l'esprit tranquille",
+    "title_lines": [
+      "Votre téléphone,",
+      "*collé à vous.*"
+    ],
+    "sub": "HolsterPro, c'est deux pochettes plaquées contre le corps, sous une chemise ou par-dessus un t-shirt : téléphone, argent, clés et papiers restent sur vous, à l'abri des pickpockets. Les mains libres, partout dans la ville.",
+    "image": "ville",
+    "alt": "Homme portant le sac holster double noir",
+    "gallery": [
+      {
+        "image": "ville",
+        "alt": "Sac holster porté en ville"
+      },
+      {
+        "image": "porte",
+        "alt": "Sac holster porté de face"
+      },
+      {
+        "image": "plat",
+        "alt": "Sac holster posé à plat"
+      },
+      {
+        "image": "poche",
+        "alt": "Grande poche zippée avec téléphone et batterie"
+      },
+      {
+        "image": "moto",
+        "alt": "Sac holster porté à moto"
+      },
+      {
+        "image": "couleurs",
+        "alt": "Les 8 couleurs disponibles"
+      }
+    ],
+    "chips": [
+      {
+        "icon": "shield",
+        "title": "Anti-pickpocket",
+        "text": "plaqué au corps"
+      },
+      {
+        "icon": "bag",
+        "title": "Mains libres",
+        "text": "2 pochettes"
+      }
+    ],
+    "cta": "Je commande mon HolsterPro",
+    "note": "Paiement à la livraison"
+  },
+  "sections": [
+    {
+      "type": "trust",
+      "round": true,
+      "card": true,
+      "items": [
+        {
+          "icon": "truck",
+          "title": "Livraison gratuite",
+          "text": "chez vous ou au travail"
+        },
+        {
+          "icon": "cash",
+          "title": "Paiement à la livraison",
+          "text": "rien à payer en ligne"
+        },
+        {
+          "icon": "phone",
+          "title": "Appel de confirmation",
+          "text": "avant chaque envoi"
+        },
+        {
+          "icon": "bag",
+          "title": "8 couleurs",
+          "text": "au choix",
+          "wheel": [
+            "#141414",
+            "#6b4430",
+            "#3b2418",
+            "#4a5a2e",
+            "#7a1e2a",
+            "#d98aa0",
+            "#d6a21e",
+            "#1aa597"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "nav": "En vidéo",
+      "kicker": "HolsterPro en action",
+      "title": "Il s'enfile *en 10 secondes*",
+      "intro": "Les sangles se croisent dans le dos, les deux pochettes tombent sur les côtés : vous rangez téléphone, portefeuille, cartes et batterie, et vous gardez les mains libres.",
+      "video": "action",
+      "poster": "action-poster",
+      "ratio": "540/720",
+      "alt": "Démonstration du sac holster porté et rempli",
+      "caption": "Porté, réglé, rempli : tout tient",
+      "cta": "Je veux mon HolsterPro"
+    },
+    {
+      "type": "problem",
+      "nav": "Pourquoi",
+      "kicker": "Le constat",
+      "title": "Dans la foule, *vos poches vous trahissent*",
+      "problem_title": "Sans holster",
+      "pains": [
+        "Le téléphone dans la poche arrière, une cible facile au marché",
+        "Les poches du pantalon déformées par le portefeuille et les clés",
+        "Un sac à dos qu'on ne surveille pas, dans le bus ou le taxi",
+        "Les mains toujours occupées, à moto ou au travail"
+      ],
+      "solution_title": "Avec HolsterPro",
+      "solution": [
+        "Tout est plaqué contre vous, sous le bras",
+        "Des poches zippées et une poche à pression",
+        "Discret sous une chemise ouverte ou une veste",
+        "Les deux mains libres, toute la journée"
+      ],
+      "image": "marche",
+      "alt": "Homme rangeant son téléphone dans le holster au marché",
+      "image_ratio": "1/1"
+    },
+    {
+      "type": "showcase",
+      "nav": "Avantages",
+      "cta": "Je commande",
+      "items": [
+        {
+          "image": "marche",
+          "alt": "Homme dans la foule avec le holster",
+          "kicker": "Sécurité",
+          "title": "À l'abri *des pickpockets*",
+          "text": "Les pochettes sont plaquées sous les bras, contre le corps, avec fermetures éclair et rabat à pression. Au Grand Marché, dans un bus ou dans la foule d'un match, personne ne glisse la main dans votre poche."
+        },
+        {
+          "image": "moto",
+          "alt": "Homme à moto portant le holster",
+          "kicker": "Mains libres",
+          "title": "À moto, au boulot, *en déplacement*",
+          "text": "Rien dans les mains, rien qui ballotte : vous conduisez, vous travaillez, vous portez vos courses. Téléphone et argent restent à portée de main, juste sous le bras."
+        },
+        {
+          "image": "poches-avant",
+          "alt": "Poches avant du holster avec téléphone et cartes",
+          "kicker": "Rangement malin",
+          "title": "Une place *pour chaque chose*",
+          "text": "À droite, une poche téléphone à pression et un grand compartiment zippé. À gauche, une poche zippée verticale et des passants pour stylos. Cartes, clés, portefeuille, batterie externe : tout a sa place."
+        },
+        {
+          "image": "porte",
+          "alt": "Holster porté avec style",
+          "kicker": "Style",
+          "title": "Un look *urbain et soigné*",
+          "text": "Cuir synthétique au toucher doux, boucles argentées, coupe ajustée : il se porte aussi bien sur un t-shirt que sous une chemise ouverte. Unisexe, en 8 couleurs."
+        }
+      ]
+    },
+    {
+      "type": "demo",
+      "nav": "Utilisation",
+      "kicker": "Mode d'emploi",
+      "title": "Prêt *en 3 gestes*",
+      "steps": [
+        {
+          "title": "Enfilez-le",
+          "text": "Passez les bras dans les sangles, comme une veste : elles se croisent dans le dos.",
+          "image": "plat",
+          "alt": "Holster posé à plat"
+        },
+        {
+          "title": "Réglez",
+          "text": "Ajustez la longueur avec les boucles pour que les pochettes tombent sous les bras.",
+          "image": "profil",
+          "alt": "Holster vu de profil"
+        },
+        {
+          "title": "Rangez",
+          "text": "Téléphone, argent, clés, cartes : fermez les zips et la pression, c'est parti.",
+          "image": "poche",
+          "alt": "Téléphone rangé dans la poche zippée"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "nav": "Comparatif",
+      "kicker": "Comparatif",
+      "title": "HolsterPro *ou poches classiques ?*",
+      "columns": [
+        "HolsterPro",
+        "Poches / sac à dos"
+      ],
+      "highlight": 1,
+      "rows": [
+        {
+          "label": "Objets plaqués contre le corps",
+          "values": [
+            "Oui",
+            "Non"
+          ]
+        },
+        {
+          "label": "Difficile à voler dans la foule",
+          "values": [
+            "Oui",
+            "Non"
+          ]
+        },
+        {
+          "label": "Mains libres",
+          "values": [
+            "Oui",
+            "Selon le sac"
+          ]
+        },
+        {
+          "label": "Accès rapide au téléphone",
+          "values": [
+            "Oui",
+            "Non"
+          ]
+        },
+        {
+          "label": "Discret sous une chemise",
+          "values": [
+            "Oui",
+            "Non"
+          ]
+        },
+        {
+          "label": "Poids réparti sur les 2 épaules",
+          "values": [
+            "Oui",
+            "Non"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "included",
+      "nav": "Couleurs",
+      "title": "8 couleurs au choix",
+      "items": [
+        {
+          "label": "Noir",
+          "image": "c-noir"
+        },
+        {
+          "label": "Marron",
+          "image": "c-marron"
+        },
+        {
+          "label": "Chocolat",
+          "image": "c-marron-fonce"
+        },
+        {
+          "label": "Vert kaki",
+          "image": "c-vert"
+        },
+        {
+          "label": "Bordeaux",
+          "image": "c-bordeaux"
+        },
+        {
+          "label": "Rose",
+          "image": "c-rose"
+        },
+        {
+          "label": "Moutarde",
+          "image": "c-jaune"
+        },
+        {
+          "label": "Turquoise",
+          "image": "c-turquoise"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "nav": "Détails",
+      "kicker": "En détail",
+      "title": "Caractéristiques",
+      "image": "a4",
+      "alt": "Dimensions du holster comparées à un format A4",
+      "rows": [
+        {
+          "label": "Matière",
+          "value": "Cuir synthétique (PU)"
+        },
+        {
+          "label": "Largeur totale",
+          "value": "Environ 43 cm"
+        },
+        {
+          "label": "Hauteur des pochettes",
+          "value": "Environ 28 cm"
+        },
+        {
+          "label": "Épaisseur",
+          "value": "Environ 3 cm"
+        },
+        {
+          "label": "Poids",
+          "value": "Environ 340 g"
+        },
+        {
+          "label": "Port",
+          "value": "Double épaule, sangles croisées dans le dos, réglables"
+        },
+        {
+          "label": "Rangements",
+          "value": "Poches zippées, poche téléphone à pression, passants stylos"
+        },
+        {
+          "label": "Coloris",
+          "value": "Noir, marron, chocolat, vert kaki, bordeaux, rose, moutarde, turquoise"
+        }
+      ]
+    },
+    {
+      "type": "reviews",
+      "title": "Avis",
+      "items": []
+    },
+    {
+      "type": "offer",
+      "nav": "Commander",
+      "kicker": "Votre commande",
+      "title": "Votre HolsterPro, *livré gratuitement*",
+      "text": "Commandez en quelques secondes : nous vous appelons pour confirmer votre couleur et votre adresse, puis vous payez à la livraison.",
+      "image": "ville",
+      "alt": "Sac holster porté",
+      "items": [
+        "1 sac HolsterPro double",
+        "Couleur au choix parmi 8",
+        "Livraison gratuite"
+      ],
+      "payment": "à la livraison, quand le colis vous est remis",
+      "delivery": "gratuite, à domicile",
+      "ends_at": "",
+      "cta": "Commander — payer à la livraison"
+    },
+    {
+      "type": "faq",
+      "nav": "Questions",
+      "title": "Vos questions",
+      "items": [
+        {
+          "q": "Quel téléphone rentre dedans ?",
+          "a": "La poche zippée accueille les grands smartphones actuels, même avec une batterie externe, comme sur la photo."
+        },
+        {
+          "q": "Est-ce qu'il se voit sous les vêtements ?",
+          "a": "Il est plat (environ 3 cm) et se porte très bien sous une chemise ouverte, une veste ou un blouson. Par-dessus un t-shirt, il donne un look urbain."
+        },
+        {
+          "q": "Est-il réglable ?",
+          "a": "Oui : les sangles se règlent avec des boucles métalliques pour s'adapter à toutes les tailles."
+        },
+        {
+          "q": "C'est pour homme ou pour femme ?",
+          "a": "Il est unisexe. Les couleurs vives (rose, moutarde, turquoise) plaisent beaucoup aux femmes."
+        },
+        {
+          "q": "En quelle matière est-il ?",
+          "a": "En cuir synthétique (PU), doux au toucher et facile à essuyer."
+        },
+        {
+          "q": "Combien coûte la livraison ?",
+          "a": "Elle est gratuite, à domicile. Vous payez seulement le sac, à la livraison."
+        },
+        {
+          "q": "Comment se passe le paiement ?",
+          "a": "Vous ne payez rien en ligne. Vous remplissez le formulaire, nous vous appelons pour confirmer, puis vous payez quand le colis vous est remis."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Gardez l'essentiel",
+      "em": "contre vous.",
+      "text": "HolsterPro : les mains libres, l'esprit tranquille. Livraison gratuite.",
+      "note": "8 couleurs · Paiement à la livraison",
+      "button": "Je commande mon HolsterPro"
+    }
+  ],
+  "logo_adapt": false,
+  "logo_pill": false,
+  "logo_spin": {
+    "ico": "ab-holster-hp-logo-ico.png",
+    "txt": "ab-holster-hp-logo-txt.png",
+    "h": [
+      58,
+      52
+    ],
+    "txt_ratio": 0.38
+  },
+  "font": "Poppins"
+}
