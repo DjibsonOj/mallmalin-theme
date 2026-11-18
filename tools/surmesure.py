@@ -122,6 +122,11 @@ def render(cfg, tpl, asset, svg, jpg, tick):
                     if cfg.get('logo_icon_svg') else '<img class="logo-ico" src="%s" alt="" height="40">' % asset(ico))
         c['logo_img'] = (ico_html + '<img class="logo-txt" src="%s" alt="%s" width="%d" height="%d">'
                          % (asset(tname), cfg['brand'], tw, th))
+    elif wide and cfg.get('logo_spin'):
+        # "logo_spin": {"ico": "<icône seule>", "txt": "<nom seul>"} -> l'icône fait un tour complet sur elle-même (360°)
+        sp = cfg['logo_spin']
+        c['logo_img'] = ('<span class="lg-spin" aria-hidden="true"><img src="%s" alt=""></span><img class="lg-txt" src="%s" alt="%s">'
+                         % (asset(sp['ico']), asset(sp['txt']), cfg['brand']))
     elif wide:
         c['logo_img'] = '<img class="logo-wide" src="%s" alt="%s" height="40">' % (asset(logo), cfg['brand'])
     else:
@@ -149,6 +154,24 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     c['color_overrides'] = ('html[data-style="%s"]{%s}' % (style, ';'.join('--%s:%s' % (k, v) for k, v in ov.items() if k in COLOR_KEYS))) if ov else ''
     if font_body and not font:
         c['color_overrides'] += 'html[data-style="%s"]{--fb:\'%s\',sans-serif}' % (style, font_body)
+    # "round_buttons": true -> tous les boutons (et le bouton flottant) à bords arrondis
+    if cfg.get('round_buttons'):
+        c['color_overrides'] += 'html[data-style="%s"] .btn{--btn-r:999px}html[data-style="%s"] .btn,html[data-style="%s"] #bar a,html[data-style="%s"] #bar button{border-radius:999px}html[data-style="%s"] .deal{border-radius:18px}' % (style, style, style, style, style)
+    # "logo_h": [bureau, mobile] -> hauteur (px) du logo horizontal dans l'en-tête
+    if cfg.get('logo_h'):
+        lh = cfg['logo_h']; lh = lh if isinstance(lh, list) else [lh, lh]
+        c['color_overrides'] += 'html .brand .logo-wide{height:%dpx}@media (max-width:899px){html .brand .logo-wide{height:%dpx}}' % (lh[0], lh[1])
+    # icône du logo qui tourne sur elle-même (voir "logo_spin")
+    if cfg.get('logo_spin') and cfg.get('logo_wide'):
+        sh = cfg['logo_spin'].get('h', [56, 50]); tr = cfg['logo_spin'].get('txt_ratio', .4)
+        c['color_overrides'] += ('html .brand.wide{gap:8px}html .brand .lg-spin{display:inline-flex;perspective:500px}'
+            'html .brand .lg-spin img{width:auto;height:%dpx;border-radius:0;object-fit:contain;backface-visibility:visible;'
+            'animation:lgSpin 7s cubic-bezier(.55,0,.25,1) infinite;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}'
+            'html .brand .lg-txt{width:auto;height:%dpx;border-radius:0;object-fit:contain}'
+            '@media (max-width:899px){html .brand .lg-spin img{height:%dpx}html .brand .lg-txt{height:%dpx}}'
+            '@keyframes lgSpin{0%%,62%%{transform:rotateY(0)}100%%{transform:rotateY(360deg)}}'
+            '@media (prefers-reduced-motion:reduce){html .brand .lg-spin img{animation:none}}'
+            % (sh[0], round(sh[0]*tr), sh[1], round(sh[1]*tr)))
     # bloc final (fond = couleur du texte) : si l'accent s'y lit mal, le mot en couleur passe en accent2 ou en clair
     if style not in ('tech', 'sport'):
         try:
@@ -209,8 +232,22 @@ def render(cfg, tpl, asset, svg, jpg, tick):
     def s_trust(s, sid):
         it = s.get('items', [])
         if not it: return ''
-        lis = ''.join('<li class="rv" data-icon="%s"><span class="ico">%s</span><div><b>%s</b><span>%s</span></div></li>' % (x.get('icon', 'shield'), svg(x.get('icon', 'shield')), x['title'], x.get('text', '')) for x in it)
-        return '    <section class="trust" id="%s"><div class="wrap"><ul style="--n:%d">%s</ul></div></section>' % (sid, min(len(it), 4), lis)
+        # "swatches": ["#000", ...] remplace l'icône par des pastilles de couleur animées
+        def ico(x):
+            if x.get('swatches'):
+                return '<span class="ico ico-sw">%s</span>' % ''.join('<i style="--c:%s;--i:%d"></i>' % (c, i) for i, c in enumerate(x['swatches'][:6]))
+            # "wheel": ["#000", ...] -> petite roue de couleurs simple et fixe (une part par couleur)
+            if x.get('wheel'):
+                w = x['wheel']; n = len(w)
+                g = ','.join('%s %.2fturn %.2fturn' % (c, i / n, (i + 1) / n) for i, c in enumerate(w))
+                return ('<span class="ico"><i style="display:block;width:26px;height:26px;border-radius:50%%;background:conic-gradient(%s);'
+                        'box-shadow:0 0 0 2px var(--surface),0 0 0 3.5px var(--accent)"></i></span>' % g)
+            if x.get('svg'):
+                return '<span class="ico">%s</span>' % x['svg']
+            return '<span class="ico">%s</span>' % svg(x.get('icon', 'shield'))
+        lis = ''.join('<li class="rv" data-icon="%s">%s<div><b>%s</b><span>%s</span></div></li>' % ('swatches' if x.get('swatches') else x.get('icon', 'shield'), ico(x), x['title'], x.get('text', '')) for x in it)
+        # "round": true -> icônes dans des cercles transparents
+        return '    <section class="trust%s" id="%s"><div class="wrap"><ul style="--n:%d">%s</ul></div></section>' % ((' trust-round' if s.get('round') else '') + (' trust-card' if s.get('card') else ''), sid, min(len(it), 4), lis)
 
     def s_stats(s, sid):
         it = s.get('items', [])
@@ -263,7 +300,7 @@ def render(cfg, tpl, asset, svg, jpg, tick):
             '<div class="step card rv">%s<div class="step-body"><span class="step-n">%d</span><h3 class="h">%s</h3><p>%s</p></div></div>'
             % (('<div class="step-img"><img src="%s" alt="%s" loading="lazy"></div>' % (img(x['image']), x.get('alt', x['title']))) if x.get('image') else '',
                i + 1, x['title'], x.get('text', '')) for i, x in enumerate(it))
-        return wrap(s, sid, head(s) + '<div class="demo" style="--n:%d">%s</div>' % (min(len(it), 4), cards))
+        return wrap(s, sid, head(s) + '<div class="demo" style="--n:%d">%s</div>' % (min(len(it), 5), cards))
 
     def s_gallery(s, sid):
         it = s.get('images', [])
