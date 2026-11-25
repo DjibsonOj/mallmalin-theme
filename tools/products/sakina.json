@@ -1,0 +1,379 @@
+{
+ "template": "surmesure",
+ "style": "maison",
+ "hero_layout": "split",
+ "hero_fit": "cover",
+ "font_body": "Poppins",
+ "colors": {
+  "bg": "#0f1d1a",
+  "surface": "#162a25",
+  "ink": "#f4ecd8",
+  "muted": "#b9b29e",
+  "line": "rgba(244,236,216,.12)",
+  "accent": "#d6a943",
+  "accent-ink": "#1a1405",
+  "accent2": "#3fbf8a"
+ },
+ "round_buttons": true,
+ "layout": "landing-sakina",
+ "brand": "Sakina",
+ "logo_file": "mm-sakina-logo.png",
+ "logo_wide": true,
+ "logo_color": "#e8c068",
+ "logo_icon_svg": "<svg viewBox=\"0 0 100 100\"><defs><linearGradient id=\"skG\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f3d27a\"/><stop offset=\"1\" stop-color=\"#b8862b\"/></linearGradient><linearGradient id=\"skT\" x1=\"60\" y1=\"50\" x2=\"112\" y2=\"-2\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#ffe7a3\"/><stop offset=\"1\" stop-color=\"#ffe7a3\" stop-opacity=\"0\"/></linearGradient><mask id=\"skM\"><rect width=\"100\" height=\"100\" fill=\"#fff\"/><circle cx=\"76\" cy=\"42\" r=\"40\" fill=\"#000\"/></mask></defs><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"url(#skG)\" mask=\"url(#skM)\"/><g class=\"lg-star\"><line class=\"lg-trail\" x1=\"60\" y1=\"50\" x2=\"112\" y2=\"-2\" stroke=\"url(#skT)\" stroke-width=\"6\" stroke-linecap=\"round\"/><polygon points=\"60.0,33.0 64.2,44.2 76.2,44.7 66.8,52.2 70.0,63.8 60.0,57.1 50.0,63.8 53.2,52.2 43.8,44.7 55.8,44.2\" fill=\"url(#skG)\"/></g></svg>",
+ "logo_anim": "etoile",
+ "favicon_file": "mm-sakina-favicon.png",
+ "img": "mm-sakina-",
+ "price_new": "250 000",
+ "price_old": "350 000",
+ "save_pct": "29",
+ "currency": "GNF",
+ "currency_iso": "GNF",
+ "price_new_num": "250000",
+ "announcement": "Livraison GRATUITE partout à Conakry · Paiement à la livraison · Coran, roqya et zikr 24h/24 dans votre maison",
+ "announcement_scroll": true,
+ "seo_title": "Sakina, veilleuse Coran 24h/24 : 64 sourates, roqya et zikr | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Conakry",
+ "seo_description": "Sakina se branche sur une prise et diffuse le Coran 24h/24 : 64 sourates, 3 listes de roqya, 25 versets du rizq et 8 zikr, avec veilleuse LED réglable sur 5 niveaux. 5 couleurs. {{ mm_new }} {{ mm_cur }}, livraison gratuite, paiement à la livraison.",
+ "og_title": "Sakina : le Coran et le zikr chez vous, jour et nuit",
+ "og_description": "Veilleuse-haut-parleur islamique à brancher : Coran, roqya et zikr 24h/24. Livraison gratuite à Conakry, paiement à la livraison.",
+ "ld_name": "Sakina, veilleuse-haut-parleur Coran 24h/24",
+ "ld_description": "Haut-parleur coranique à brancher sur une prise murale : 64 sourates, 3 listes de roqya, 25 versets du rizq, 8 zikr et des invocations, lecture continue 24h/24, veilleuse LED réglable sur 5 niveaux, 4 boutons. 12 × 6,7 cm. Coloris vert, bleu, violet, rose et jaune.",
+ "footer_note": "Livraison gratuite · Paiement à la livraison · Appel de confirmation",
+ "order_note": "Livraison gratuite à Conakry — paiement à la livraison, nous vous appelons pour confirmer",
+ "hero": {
+  "kicker": "Veilleuse Coran 24h/24",
+  "title_lines": [
+   "Le Coran et le zikr",
+   "*chez vous, jour et nuit.*"
+  ],
+  "sub": "Branchez Sakina sur une prise : votre maison s'emplit de Coran, de roqya et de zikr, sans interruption. Une douce lumière en plus, pour les nuits paisibles.",
+  "image": "hero",
+  "alt": "Veilleuse Coran Sakina branchée au mur, allumée le soir",
+  "gallery": [
+   {
+    "image": "hero",
+    "alt": "Sakina branchée au mur, le soir"
+   },
+   {
+    "image": "produit",
+    "alt": "Veilleuse Coran Sakina verte"
+   },
+   {
+    "image": "couleurs",
+    "alt": "Sakina en 5 couleurs"
+   },
+   {
+    "image": "bouton",
+    "alt": "Les 4 boutons de Sakina"
+   },
+   {
+    "image": "nuit",
+    "alt": "Sakina en veilleuse dans une chambre d'enfant"
+   },
+   {
+    "image": "aine",
+    "alt": "Un ancien écoute le Coran grâce à Sakina"
+   }
+  ],
+  "chips": [
+   {
+    "icon": "clock",
+    "title": "24h/24",
+    "text": "sans interruption"
+   },
+   {
+    "icon": "music",
+    "title": "64 sourates",
+    "text": "+ roqya et zikr"
+   }
+  ],
+  "cta": "Je commande ma Sakina",
+  "note": "Livraison gratuite · paiement à la livraison"
+ },
+ "sections": [
+  {
+   "type": "video",
+   "nav": "En vidéo",
+   "kicker": "Sakina en action",
+   "title": "Branchez, appuyez, *écoutez*",
+   "intro": "Voyez comment Sakina s'allume et lance le Coran, le zikr ou la roqya d'un simple appui.",
+   "video": "action",
+   "poster": "action-poster",
+   "ratio": "9/16",
+   "alt": "Démonstration de la veilleuse Coran Sakina : lumière, Coran, zikr et roqya",
+   "cta": "Je commande ma Sakina",
+   "sound": true
+  },
+  {
+   "type": "trust",
+   "round": true,
+   "card": true,
+   "items": [
+    {
+     "icon": "truck",
+     "title": "Livraison gratuite",
+     "text": "partout à Conakry"
+    },
+    {
+     "icon": "cash",
+     "title": "Paiement à la livraison",
+     "text": "rien à payer en ligne"
+    },
+    {
+     "icon": "phone",
+     "title": "Appel de confirmation",
+     "text": "avant chaque envoi"
+    },
+    {
+     "wheel": [
+      "#8e5bd0",
+      "#e64f9a",
+      "#3fb6e8",
+      "#2fae4a",
+      "#e8c23a"
+     ],
+     "title": "5 couleurs",
+     "text": "au choix"
+    }
+   ]
+  },
+  {
+   "type": "problem",
+   "nav": "Pourquoi",
+   "kicker": "Le constat",
+   "title": "Votre maison mérite *la baraka du Coran, toute la journée.*",
+   "problem_title": "Sans Sakina",
+   "pains": [
+    "Avec le travail et les enfants, on n'a pas toujours le temps d'écouter le Coran",
+    "Le téléphone sert à tout, il se décharge et finit sur les réseaux sociaux",
+    "La maison reste silencieuse la nuit, les petits ont parfois peur du noir",
+    "Les anciens peinent à manier un téléphone pour lancer une sourate"
+   ],
+   "solution_title": "Avec Sakina",
+   "solution": [
+    "Le Coran, la roqya et le zikr tournent seuls, 24h/24",
+    "Un appareil dédié : branché une fois, il ne sert qu'à ça",
+    "Une douce veilleuse rassure les enfants toute la nuit",
+    "4 gros boutons, simples pour tous, des petits aux anciens"
+   ],
+   "image": "famille",
+   "alt": "Famille réunie au salon, Sakina branchée au mur",
+   "image_ratio": "16/9"
+  },
+  {
+   "type": "benefits",
+   "nav": "Avantages",
+   "kicker": "Tout en un",
+   "title": "Un petit appareil, *beaucoup de baraka*",
+   "columns": 3,
+   "items": [
+    {
+     "icon": "music",
+     "title": "64 sourates du Coran",
+     "text": "Une récitation claire du Coran, dont les sourates courtes du Juz 'Amma, pour remplir la maison de la parole d'Allah."
+    },
+    {
+     "icon": "shield",
+     "title": "3 listes de roqya",
+     "text": "Des listes de roqya à écouter en boucle, pour la maison et toute la famille."
+    },
+    {
+     "icon": "sparkle",
+     "title": "25 versets du rizq",
+     "text": "Les versets de la subsistance, à écouter chaque jour pour la baraka du foyer."
+    },
+    {
+     "icon": "star",
+     "title": "8 zikr et des invocations",
+     "text": "Les zikr du quotidien et des dou'a intégrés, à écouter en continu."
+    },
+    {
+     "icon": "clock",
+     "title": "24h/24 sans arrêt",
+     "text": "Un appui long et la lecture continue jour et nuit. Rien à recharger, rien à relancer."
+    },
+    {
+     "icon": "moon",
+     "title": "Veilleuse douce",
+     "text": "Une lumière LED réglable sur 5 niveaux, de très douce à très lumineuse, pour la nuit ou la prière."
+    }
+   ]
+  },
+  {
+   "type": "showcase",
+   "nav": "En détail",
+   "cta": "Commander",
+   "items": [
+    {
+     "image": "bouton",
+     "alt": "Main qui appuie sur un bouton de Sakina",
+     "kicker": "Simple pour tous",
+     "title": "4 boutons, *rien de compliqué*",
+     "text": "Un bouton pour la lumière, un pour le zikr, un pour le Coran, un pour la roqya. Un appui long lance la lecture en continu, un appui court passe à la piste suivante ou règle le volume."
+    },
+    {
+     "image": "nuit",
+     "alt": "Enfant qui dort, Sakina allumée en veilleuse",
+     "kicker": "La nuit",
+     "title": "Des nuits *paisibles pour les petits*",
+     "text": "Dans la chambre des enfants, Sakina diffuse une lumière douce et le Coran à faible volume. Les petits s'endorment rassurés."
+    },
+    {
+     "image": "aine",
+     "alt": "Un ancien écoute le Coran, assis sur son tapis",
+     "kicker": "Pour les anciens",
+     "title": "Le Coran *sans téléphone*",
+     "text": "Pas d'écran ni d'application : vos parents et grands-parents appuient sur un bouton et écoutent le Coran, le zikr ou la roqya quand ils le souhaitent."
+    },
+    {
+     "image": "couleurs",
+     "alt": "Sakina en vert, bleu, violet, rose et jaune",
+     "kicker": "5 couleurs",
+     "title": "Une couleur *pour chaque pièce*",
+     "text": "Vert, bleu, violet, rose ou jaune : choisissez la couleur qui vous plaît, ou une par chambre pour toute la famille."
+    }
+   ]
+  },
+  {
+   "type": "demo",
+   "nav": "Utilisation",
+   "kicker": "Mode d'emploi",
+   "title": "Prête en *3 gestes*",
+   "steps": [
+    {
+     "title": "Branchez-la",
+     "text": "Branchez Sakina sur une prise murale, dans le salon, la chambre ou le couloir.",
+     "image": "hero"
+    },
+    {
+     "title": "Choisissez",
+     "text": "Appuyez longuement sur Coran, Zikr ou Roqya : la lecture démarre en continu, 24h/24.",
+     "image": "bouton"
+    },
+    {
+     "title": "Allumez la lumière",
+     "text": "Le bouton lumière règle la veilleuse sur 5 niveaux, pour la nuit ou la prière.",
+     "image": "nuit"
+    }
+   ]
+  },
+  {
+   "type": "specs",
+   "nav": "Détails",
+   "kicker": "En détail",
+   "title": "Caractéristiques",
+   "image": "produit",
+   "alt": "Veilleuse Coran Sakina, vue de trois quarts",
+   "rows": [
+    {
+     "label": "Contenu",
+     "value": "64 sourates, 3 listes de roqya, 25 versets du rizq, 8 zikr, invocations"
+    },
+    {
+     "label": "Lecture",
+     "value": "En continu, 24h/24"
+    },
+    {
+     "label": "Boutons",
+     "value": "Lumière · Zikr · Coran · Roqya"
+    },
+    {
+     "label": "Veilleuse",
+     "value": "LED, 5 niveaux de luminosité"
+    },
+    {
+     "label": "Alimentation",
+     "value": "Se branche directement sur une prise murale (2 broches rondes)"
+    },
+    {
+     "label": "Dimensions",
+     "value": "12 × 6,7 cm"
+    },
+    {
+     "label": "Coloris",
+     "value": "Vert, bleu, violet, rose, jaune"
+    }
+   ]
+  },
+  {
+   "type": "included",
+   "title": "Dans le colis",
+   "items": [
+    {
+     "label": "1 veilleuse-haut-parleur Coran Sakina",
+     "icon": "music"
+    },
+    {
+     "label": "Contenu audio déjà intégré, prêt à l'emploi",
+     "icon": "sparkle"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "title": "Ils l'ont reçue",
+   "items": []
+  },
+  {
+   "type": "offer",
+   "nav": "Offre",
+   "kicker": "Votre commande",
+   "title": "Votre Sakina, *livrée gratuitement*",
+   "text": "Commandez en quelques secondes : nous vous appelons pour confirmer votre couleur et votre adresse, puis vous payez à la livraison.",
+   "image": "produit",
+   "alt": "Veilleuse Coran Sakina",
+   "items": [
+    "1 veilleuse-haut-parleur Coran Sakina",
+    "64 sourates, roqya et zikr 24h/24",
+    "Au choix : vert, bleu, violet, rose ou jaune"
+   ],
+   "payment": "à la livraison, quand le colis vous est remis",
+   "delivery": "gratuite partout à Conakry, à domicile — nous vous appelons pour confirmer l'adresse",
+   "ends_at": "",
+   "cta": "Commander — payer à la livraison"
+  },
+  {
+   "type": "faq",
+   "nav": "Questions",
+   "title": "Vos questions",
+   "items": [
+    {
+     "q": "Comment ça marche ?",
+     "a": "Branchez Sakina sur une prise murale, puis appuyez longuement sur le bouton Coran, Zikr ou Roqya : la lecture démarre et continue 24h/24."
+    },
+    {
+     "q": "Qu'est-ce qu'elle contient ?",
+     "a": "64 sourates du Coran, 3 listes de roqya, 25 versets du rizq, 8 zikr et des invocations. Tout est déjà intégré : pas besoin d'internet ni de téléphone."
+    },
+    {
+     "q": "Peut-on régler le volume ?",
+     "a": "Oui. Sur le bouton Coran, un appui court règle le volume, un double appui met en pause."
+    },
+    {
+     "q": "La lumière est-elle forte ?",
+     "a": "Vous choisissez : la veilleuse a 5 niveaux, de très douce (idéale pour dormir) à très lumineuse."
+    },
+    {
+     "q": "Quelle prise faut-il ?",
+     "a": "Une prise murale classique à 2 broches rondes, comme celles de la maison."
+    },
+    {
+     "q": "Quelles couleurs sont disponibles ?",
+     "a": "Vert, bleu, violet, rose et jaune. Vous indiquez votre couleur dans le formulaire, nous la confirmons lors de l'appel."
+    },
+    {
+     "q": "Combien coûte la livraison ?",
+     "a": "La livraison est gratuite partout à Conakry et vous payez à la réception du colis."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "Faites entrer la sakina,",
+   "em": "dans chaque pièce de la maison.",
+   "text": "Le Coran, la roqya et le zikr, jour et nuit, d'une simple prise.",
+   "note": "Livraison gratuite · Paiement à la livraison",
+   "button": "Je commande ma Sakina"
+  }
+ ]
+}
