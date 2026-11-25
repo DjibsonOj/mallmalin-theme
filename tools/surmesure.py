@@ -323,6 +323,12 @@ def render(cfg, tpl, asset, svg, jpg, tick):
                  % (img(b['image']), b.get('label', 'Avant'), img(a['image']), a.get('label', 'Après'), b.get('label', 'Avant'), a.get('label', 'Après')))
         return wrap(s, sid, head(s) + inner)
 
+    # "sound": true -> bouton « Activer le son » (la vidéo démarre toujours en muet)
+    SOUND_BTN = ('<button type="button" class="vid-snd" aria-label="Activer le son" style="position:absolute;right:12px;top:12px;z-index:3;'
+                 'display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border:0;border-radius:999px;background:rgba(0,0,0,.62);'
+                 'color:#fff;font:600 13px/1 Poppins,system-ui,sans-serif;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)" '
+                 'onclick="event.stopPropagation();var v=this.parentNode.querySelector(\'video\');v.muted=!v.muted;if(!v.muted){v.volume=1;v.play()}'
+                 'this.innerHTML=v.muted?\'&#128263; Activer le son\':\'&#128266; Couper le son\'">&#128263; Activer le son</button>')
     def s_video(s, sid):
         v = s.get('video', '').strip()
         if not v: return ''
@@ -336,8 +342,8 @@ def render(cfg, tpl, asset, svg, jpg, tick):
             vertical = False
         vstyle = ' style="max-width:min(440px,100%)"' if vertical else ''
         inner = ('<figure class="vid rv"%s><video src="%s"%s muted loop playsinline preload="none" aria-label="%s"%s></video>'
-                 '<button type="button" class="vid-btn" aria-label="Lecture / pause"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></button>%s</figure>'
-                 % (vstyle, src, poster, s.get('alt', 'Vidéo du produit'), (' style="aspect-ratio:%s"' % ratio) if ratio else '', ('<figcaption>%s</figcaption>' % s['caption']) if s.get('caption') else ''))
+                 '<button type="button" class="vid-btn" aria-label="Lecture / pause"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></button>%s%s</figure>'
+                 % (vstyle, src, poster, s.get('alt', 'Vidéo du produit'), (' style="aspect-ratio:%s"' % ratio) if ratio else '', ('<figcaption>%s</figcaption>' % s['caption']) if s.get('caption') else '', SOUND_BTN if s.get('sound') else ''))
         if s.get('cta'): inner += '<div class="vid-cta rv"><a class="btn btn-main" href="#commander" data-order>%s</a></div>' % s['cta']
         return wrap(s, sid, head(s) + inner)
 

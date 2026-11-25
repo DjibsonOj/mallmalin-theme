@@ -101,7 +101,8 @@
    "poster": "action-poster",
    "ratio": "9/16",
    "alt": "Démonstration de la veilleuse Coran Sakina : lumière, Coran, zikr et roqya",
-   "cta": "Je commande ma Sakina"
+   "cta": "Je commande ma Sakina",
+   "sound": true
   },
   {
    "type": "trust",
