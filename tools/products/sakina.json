@@ -92,6 +92,18 @@
  },
  "sections": [
   {
+   "type": "video",
+   "nav": "En vidéo",
+   "kicker": "Sakina en action",
+   "title": "Branchez, appuyez, *écoutez*",
+   "intro": "Voyez comment Sakina s'allume et lance le Coran, le zikr ou la roqya d'un simple appui.",
+   "video": "action",
+   "poster": "action-poster",
+   "ratio": "9/16",
+   "alt": "Démonstration de la veilleuse Coran Sakina : lumière, Coran, zikr et roqya",
+   "cta": "Je commande ma Sakina"
+  },
+  {
    "type": "trust",
    "round": true,
    "card": true,
