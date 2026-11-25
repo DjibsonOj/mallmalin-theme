@@ -29,23 +29,23 @@
  "currency": "$",
  "currency_iso": "USD",
  "price_new_num": "35",
- "announcement": "Colis neutre et discret · Livraison GRATUITE à Kinshasa et Lubumbashi · Paiement à la livraison · Réservé aux adultes",
+ "announcement": "🚚 Livraison PAYANTE · Colis neutre et discret · Paiement à la livraison · Réservé aux adultes",
  "announcement_scroll": true,
- "seo_title": "Bulletzir, mini masseur vibrant 10 modes | {{ mm_new }} {{ mm_cur }} · Livraison gratuite Kinshasa",
- "seo_description": "Mini masseur vibrant rechargeable par USB, étanche, silencieux (moins de 40 dB), 10 modes de vibration. {{ mm_new }} {{ mm_cur }}, livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison. Réservé aux adultes.",
+ "seo_title": "Bulletzir, mini masseur vibrant 10 modes | {{ mm_new }} {{ mm_cur }} · Paiement à la livraison",
+ "seo_description": "Mini masseur vibrant rechargeable par USB, étanche, silencieux (moins de 40 dB), 10 modes de vibration. {{ mm_new }} {{ mm_cur }}, livraison payante, paiement à la livraison. Réservé aux adultes.",
  "og_title": "Bulletzir, mini masseur vibrant 10 modes",
- "og_description": "Livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison. Réservé aux adultes.",
+ "og_description": "Livraison payante, paiement à la livraison. Réservé aux adultes.",
  "ld_name": "Bulletzir, mini masseur vibrant 10 modes",
  "ld_description": "Mini masseur vibrant arc-en-ciel métallisé, rechargeable par USB, étanche, silencieux (moins de 40 dB), 10 modes de vibration. Réservé aux adultes.",
- "footer_note": "Colis neutre · Livraison gratuite à Kinshasa et Lubumbashi · Paiement à la livraison · Réservé aux adultes",
- "order_note": "Colis neutre et discret — paiement à la livraison",
+ "footer_note": "Colis neutre · Livraison payante · Paiement à la livraison · Réservé aux adultes",
+ "order_note": "<span style=\"display:flex;gap:10px;align-items:flex-start;margin-top:6px;padding:11px 13px;border-radius:12px;background:#fff4e0;border:2px solid #f08a00;color:#5a3300;font-weight:500;font-size:13px;line-height:1.4;text-align:left\"><span style=\"font-size:22px;line-height:1\">🚚</span><span><b style=\"display:block;font-size:14.5px;font-weight:800;color:#c25e00;letter-spacing:.02em\">LIVRAISON PAYANTE</b>Les frais de livraison s'ajoutent au prix du produit. Ils vous sont annoncés lors de l'appel de confirmation.</span></span><span style=\"display:block;margin-top:6px;color:inherit\">Colis neutre et discret — paiement à la livraison</span>",
  "hero": {
   "kicker": "Réservé aux adultes · Colis neutre",
   "title_lines": [
    "Petit format,",
    "*grandes sensations.*"
   ],
-  "sub": "Bulletzir est un mini masseur vibrant au format de poche : 10 modes de vibration, rechargeable par USB, étanche et silencieux. Livré gratuitement, payé à la livraison.",
+  "sub": "Bulletzir est un mini masseur vibrant au format de poche : 10 modes de vibration, rechargeable par USB, étanche et silencieux. Livraison payante, réglée à la livraison.",
   "image": "duo",
   "alt": "Mini masseur vibrant Bulletzir arc-en-ciel métallisé",
   "gallery": [
@@ -79,7 +79,7 @@
    }
   ],
   "cta": "Commander discrètement",
-  "note": "Paiement à la livraison"
+  "note": "Livraison payante · paiement à la livraison"
  },
  "sections": [
   {
@@ -87,8 +87,8 @@
    "items": [
     {
      "icon": "truck",
-     "title": "Livraison gratuite",
-     "text": "Kinshasa et Lubumbashi"
+     "title": "Livraison payante",
+     "text": "frais annoncés à l'appel"
     },
     {
      "icon": "cash",
@@ -232,17 +232,17 @@
    "type": "offer",
    "nav": "Offre",
    "kicker": "Offre",
-   "title": "Votre Bulletzir, *livré gratuitement*",
+   "title": "Votre Bulletzir, *livré chez vous*",
    "text": "Votre colis arrive dans un emballage neutre, sans aucune mention de son contenu. Nous vous appelons pour confirmer l'adresse, puis vous payez à la livraison.",
    "image": "produit",
    "alt": "Mini masseur vibrant Bulletzir",
    "items": [
     "1 mini masseur vibrant Bulletzir",
     "10 modes, rechargeable USB, étanche",
-    "Livraison gratuite à Kinshasa et Lubumbashi"
+    "Livraison payante (frais en plus du prix)"
    ],
    "payment": "à la livraison, quand le colis vous est remis",
-   "delivery": "gratuite, à domicile à Kinshasa et à Lubumbashi, dans un colis neutre",
+   "delivery": "payante, à domicile, dans un colis neutre. Les frais s'ajoutent au prix et vous sont annoncés à l'appel de confirmation",
    "ends_at": "",
    "cta": "Commander — payer à la livraison"
   },
@@ -261,7 +261,7 @@
     },
     {
      "q": "Combien coûte la livraison ?",
-     "a": "Elle est gratuite à Kinshasa et à Lubumbashi."
+     "a": "La livraison est payante : ses frais s'ajoutent au prix du produit. Ils vous sont annoncés lors de l'appel de confirmation, avant l'envoi."
     },
     {
      "q": "Comment le recharger ?",
@@ -293,7 +293,7 @@
    "type": "cta",
    "title": "Faites-vous plaisir,",
    "em": "en toute simplicité.",
-   "text": "Colis neutre, livraison gratuite à Kinshasa et Lubumbashi, paiement à la livraison.",
+   "text": "Colis neutre, livraison payante, paiement à la livraison.",
    "note": "Réservé aux adultes · Colis neutre",
    "button": "Commander discrètement"
   }
